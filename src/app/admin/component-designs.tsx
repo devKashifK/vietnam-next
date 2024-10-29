@@ -11,7 +11,7 @@ import {
   CTAWithImage,
 } from "@/components/ui/cta";
 import { ServicesCard } from "@/components/ui/services-card";
-import { InfoCard } from "../(pages)/immigration/immigration-challenges/page";
+import { InfoCard } from "../(pages)/immigration/immigration-challenges/InfoCard";
 // import { InfoCard } from "../immigration/immigration-challenges/page";
 
 export const componentDesigns = {

@@ -14,7 +14,7 @@ import Wrapper from "@/app/admin/wrapper";
 import HoverCard from "@/components/ui/hover-card";
 import { CardWithImage } from "@/components/ui/card-with-image";
 import { ServicesCard } from "@/components/ui/services-card";
-import { InfoCard } from "../../(pages)/immigration/immigration-challenges/page";
+import { InfoCard } from "@/app/(pages)/immigration/immigration-challenges/InfoCard";
 
 export default function DynamicPage() {
   const param = useParams();
