@@ -1,0 +1,122 @@
+.card {
+  --line-width: 1px;
+  --line-color: #b33d3d;
+  --start-angle: 0deg;
+  --delay: 0s;
+  --easing: linear;
+  position: relative;
+  perspective: 1000px;
+}
+
+.card-hero {
+  box-shadow: inset 0 1px 1px 0 rgba(216, 236, 248, 0.2),
+    inset 0 24px 48px 0 rgba(168, 216, 245, 0.06),
+    0 16px 32px rgba(0, 0, 0, 0.3);
+  background-position: center;
+}
+.card-hero:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(247, 215, 186, 0.12);
+}
+
+/* .card-hero:before {
+  --dot-color: #d1e4fa;
+  --dot-size: 4px;
+  content: "";
+  position: absolute;
+  inset: 16px;
+  pointer-events: none;
+  filter: drop-shadow(0 0 8px rgba(209, 228, 250, 1));
+  background-image: radial-gradient(var(--dot-color) 50%, transparent 50%),
+    radial-gradient(var(--dot-color) 50%, transparent 50%),
+    radial-gradient(var(--dot-color) 50%, transparent 50%),
+    radial-gradient(var(--dot-color) 50%, transparent 50%);
+  background-size: var(--dot-size) var(--dot-size),
+    var(--dot-size) var(--dot-size), var(--dot-size) var(--dot-size),
+    var(--dot-size) var(--dot-size);
+  background-position: 0 0, 100% 0, 0 100%, 100% 100%;
+  background-repeat: no-repeat;
+} */
+
+.card-animated .card_effect {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  filter: drop-shadow(0 0 10px var(--line-color));
+}
+
+.card-animated-loop .card_effect {
+  opacity: 0.5;
+  animation: card_line-anim__iu92O 12s var(--easing) infinite,
+    card_line-opacity-loop__KzXmR 3s var(--easing) infinite;
+}
+
+.card-animated-intermittent .card_effect {
+  opacity: 0;
+  animation: card_line-anim__iu92O 8s var(--easing) infinite,
+    card_line-opacity__b1ltN 4s var(--easing) var(--delay);
+}
+
+.card-animated .card_effect:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: var(--line-width);
+  background: conic-gradient(
+    from calc(var(--angle) + var(--start-angle)),
+    transparent 0,
+    var(--line-color) 20%,
+    transparent 25%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: inherit;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes card_line-anim__iu92O {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@keyframes card_line-opacity__b1ltN {
+  0% {
+    opacity: 0;
+  }
+
+  20%,
+  70% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes card_line-opacity-loop__KzXmR {
+  0% {
+    opacity: 0.75;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.75;
+  }
+}

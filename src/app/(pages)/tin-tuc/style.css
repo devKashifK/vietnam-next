@@ -1,0 +1,35 @@
+@media only screen and (min-width: 1170px) {
+  .vertical-timeline--two-columns
+    .vertical-timeline-element-content
+    .vertical-timeline-element-date {
+    position: absolute;
+    width: max-content;
+    left: 124%;
+    top: -02px;
+    font-size: 90px;
+    color: rgb(0, 0, 0);
+    font-size: 1.4rem !important;
+    display: flex;
+  }
+}
+
+.post h2 {
+  font-size: 48px;
+  letter-spacing: 0.1em;
+}
+.post p {
+  font-size: 18px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.post ul {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.post li {
+  font-size: 18px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  list-style: disc;
+  margin-left: 20px;
+}
