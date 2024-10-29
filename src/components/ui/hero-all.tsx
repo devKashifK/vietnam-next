@@ -9,7 +9,7 @@ import { getCachedData } from "@/lib/custom-func";
 export default function HeroDefault() {
   const path = usePathname();
   const lastPath = path.split("/").pop();
-  let { text, image } = getCachedData(lastPath);
+  const { text, image } = getCachedData(lastPath);
   return (
     <div
       className="flex flex-col gap-2 mx-auto bg-center relative bg-cover w-full h-[90vh]"

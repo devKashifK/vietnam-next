@@ -217,11 +217,11 @@ const CustomLegend = (props) => {
                 className="w-4 h-3 rounded-sm"
                 style={{ backgroundColor: entry.color }}
               ></div>
-              <AttributeName
+              {/* <AttributeName
                 className="text-base mt-0.5"
                 name={entry.value}
                 style={{ color: entry.color }}
-              />
+              /> */}
             </div>
           );
         })}
@@ -247,9 +247,9 @@ const CustomTooltip = ({ active, payload, label }) => {
                     className="w-4 h-3 rounded-sm"
                     style={{ background: item.color }}
                   ></div>
-                  <AttributeName name={item.dataKey} className="text-base" />
+                  {/* <AttributeName name={item.dataKey} className="text-base" /> */}
                 </div>
-                <AttributeVal value={item.value} className="text-base" />
+                {/* <AttributeVal value={item.value} className="text-base" /> */}
               </div>
             ))}
       </div>

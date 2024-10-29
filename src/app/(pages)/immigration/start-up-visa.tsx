@@ -7,6 +7,7 @@ import { truncateTextHeading } from "@/components/ui/newsCard";
 import Title from "@/components/ui/Title";
 import Glass from "@/lib/helpers";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import Link from "next/link";
 import { umask } from "process";
 
 export default function StartUpVisa() {
@@ -128,13 +129,13 @@ export default function StartUpVisa() {
               <p className="mb-3 text-sm text-gray-900">
                 {truncateTextHeading(item.description, 14)}
               </p>
-              <a
+              <Link
                 href="/"
                 aria-label=""
                 className="inline-flex bg-background text-white px-4 rounded-full font-light items-center transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
               >
                 Tìm hiểu thêm
-              </a>
+              </Link>
             </div>
           ))}
         </FeatureSection>
