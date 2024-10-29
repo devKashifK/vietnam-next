@@ -276,7 +276,7 @@ const expressEntry = [
   },
 ];
 
-export const features = [
+const features = [
   {
     id: 1,
     title: "Profile Assessment",
