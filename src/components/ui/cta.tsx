@@ -58,7 +58,7 @@ export default function CTA() {
 
 export const CtaCard = ({ item }) => {
   return (
-    <div className="flex hover:bg-background group flex-col  bg-[#E1E2E5] px-4 py-4 border-gray-100 shadow-2xl  sm:w-[420px] md:w-full h-[517px] md:h-max justify-start items-center transition-all duration-100 ease-in-out">
+    <div className="flex hover:bg-background group flex-col  bg-content px-4 py-4 border-gray-100 shadow-md  sm:w-[420px] md:w-full h-[517px] md:h-max justify-start items-center transition-all duration-100 ease-in-out">
       <div className="w-full">
         <img src={item.image} alt="" className="w-full" />
       </div>
@@ -109,7 +109,7 @@ export const CtaCard2 = ({ item, flip }) => {
       </div>
       <div
         className={cn(
-          "px-8 w-full md:w-[330px] h-[330px] md:h-[236px] relative md:absolute rounded-b-2xl md:rounded-2xl -ml-6 shadow-2xl  z-20 border-gray-100 backdrop-blur-3xl bg-opacity-10 bg-clip-padding backdrop-filter bg-gray-100 flex flex-col gap-2 py-5",
+          "px-8 w-full md:w-[330px] h-[330px] md:h-[236px] relative md:absolute rounded-b-2xl md:rounded-2xl -ml-6 shadow-md  z-20 border-gray-100 backdrop-blur-3xl bg-opacity-10 bg-clip-padding backdrop-filter bg-gray-100 flex flex-col gap-2 py-5",
           flip ? "left-2" : "-right-[40%] md:-right-6"
         )}
       >
@@ -289,7 +289,7 @@ export const CTAWithImage = ({
   return (
     <Container
       className={cn(
-        "flex bg-content py-0 shadow-2xl  ",
+        "flex bg-white py-0 shadow-md  ",
         flip ? "flex-row-reverse" : "flex-row"
       )}
     >
@@ -301,14 +301,14 @@ export const CTAWithImage = ({
         //   backgroundPosition: "center",
         // }}
       >
-        <div className="bg-background/40 absolute top-0 left-0 z-10 w-full bg-opacity-80 h-[590px]"></div>
+        <div className="bg-[rgba(0, 0, 0, 0.2)] absolute top-0 left-0 z-10 w-full bg-opacity-80 h-[590px]"></div>
         <img
           src={image}
           className="relative w-full object-cover h-full"
           alt=""
         />
       </div>
-      <div className="flex-1 flex flex-col gap-6 py-10 px-8">
+      <div className="flex-1 bg-white border-t border-l border-b border-black/5  flex flex-col gap-6 py-10 px-8">
         <TitleWithBottomBorder titleClass="">{subtitle}</TitleWithBottomBorder>
         <h2 className="text-4xl text-left">{title}</h2>
 

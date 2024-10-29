@@ -50,9 +50,9 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
       </div>
       <div
         className={cn(
-          "hidden md:flex shadow-lg h-24 justify-start items-center",
+          "hidden md:flex border-b h-24 justify-start items-center",
           "bg-content text-black z-[100000000]",
-          isFixed ? "fixed" : "relative"
+          isFixed ? "fixed w-full" : "relative"
         )}
       >
         <div className="h-full flex justify-center w-[400px] !bg-content items-center px-8 border-r border-background ">
@@ -142,7 +142,7 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
             )}
           </div>
 
-          <div className="flex justify-start gap-4 items-center px-0 w-full h-20">
+          <div className="flex justify-start gap-4 items-center px-0 ml-16 w-full h-20">
             <NavigationMenu>
               <NavigationMenuList className="flex gap-0 py-0">
                 {router.map((navItem) => (
@@ -192,7 +192,7 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
             </NavigationMenu>
           </div>
         </div>
-        <div className="w-[110px]"></div>
+        {/* <div className="w-[110px]"></div> */}
       </div>
     </>
   );

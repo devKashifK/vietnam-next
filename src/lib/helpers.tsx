@@ -12,7 +12,7 @@ export default function Glass({
   return (
     <div
       className={cn(
-        "flex-col w-full bg-content shadow-2xl  mx-auto py-8 px-4 flex",
+        "flex-col w-full bg-white border-black/5 border shadow-xl  mx-auto py-8 px-4 flex",
         className
       )}
       {...props}

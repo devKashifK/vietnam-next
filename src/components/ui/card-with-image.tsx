@@ -19,7 +19,7 @@ export function CardWithImage({
     <div className="max-w-xs w-full group/card">
       <div
         className={cn(
-          " cursor-pointer overflow-hidden relative card h-96  shadow-xl  max-w-sm mx-auto backgroundImage flex flex-col justify-between p-4",
+          " cursor-pointer overflow-hidden relative card h-96  shadow-md border border-black/5  max-w-sm mx-auto backgroundImage flex flex-col justify-between p-4",
           " bg-cover bg-center bg-no-repeat"
         )}
         style={{

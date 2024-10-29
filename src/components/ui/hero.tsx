@@ -34,13 +34,13 @@ export default function Hero() {
 
   return (
     <div className="flex flex-col gap-2 w-full">
-      <div className="w-full mx-auto   md:h-[500px] shadow-2xl flex justify-start items-start flex-col overflow-hidden relative">
-        <div className="absolute top-0 left-0 w-full h-full bg-black  bg-opacity-60"></div>
+      <div className="w-full mx-auto   md:h-[500px] shadow-md flex justify-start items-start flex-col overflow-hidden relative">
+        <div className="absolute top-0 left-0 w-full h-full bg-bg-[rgba(0, 0, 0, 0.2)]"></div>
 
         <div className="flex flex-col w-full  h-full relative ">
           <Navbar type={"hero"} />
           <div className="flex flex-col  md:flex-row  h-full">
-            <div className="md:w-[45%] w-[100%]">
+            <div className="md:w-[50%] w-[100%]">
               <Swiper
                 spaceBetween={50}
                 slidesPerView={1}
@@ -58,7 +58,7 @@ export default function Hero() {
                 ))}
               </Swiper>
             </div>
-            <div className="px-20 pb-20 pt-10 flex-1 h-full bg-content flex gap-8 flex-col justify-center items-center">
+            <div className="px-20 pb-20 pt-10 flex-1 h-full bg-white flex gap-8 flex-col justify-center items-center">
               <div className="flex gap-1 flex-col justify-center items-start w-full relative">
                 <p className="lg:text-4xl text-3xl text-left text-black">
                   {/* Achieve your family Canada */}
@@ -97,7 +97,7 @@ export default function Hero() {
               </div>
             </div>
 
-            <div className="w-[104px]"></div>
+            {/* <div className="w-[104px]"></div> */}
           </div>
         </div>
       </div>

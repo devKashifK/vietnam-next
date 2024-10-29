@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <div className="flex flex-col w-full  mx-auto bg-white shadow-2xl">
+    <div className="flex flex-col w-full  mx-auto bg-white shadow-md">
       <div className="bg-white bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 rounded-t-2xl h-max md:h-[500px] flex  flex-col md:flex-row gap-10 px-12 py-16 items-center justify-center text-white">
         <div className="flex flex-col gap-10 flex-1 text-secondary/50 pt-10  justify-start items-start">
           <img src="/logo.png" alt="" className="w-[60%]  md:pl-8" />

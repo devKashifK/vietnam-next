@@ -36,7 +36,7 @@ module.exports = {
         text: "#f4f4f4",
         // highlight: "#f4f4f4",
         // content: "#E1E2E5",
-        content: "#f1f3f5",
+        content: "#FFFFFF",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
