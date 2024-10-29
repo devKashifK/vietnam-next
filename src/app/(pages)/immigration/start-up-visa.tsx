@@ -106,14 +106,21 @@ export default function StartUpVisa() {
       />
       <div className="flex flex-col gap-2">
         {startUpFAQ.map((item) => (
-          <FAQ description={item.description()} title={item.question} />
+          <FAQ
+            key={index}
+            description={item.description()}
+            title={item.question}
+          />
         ))}
       </div>
 
       <div>
         <FeatureSection title="LỘ TRÌNH SUV" subtitle="Lộ Trình">
           {features.map((item, index) => (
-            <div className="max-w-md sm:mx-auto sm:text-center flex flex-col justify-center items-center">
+            <div
+              key={index}
+              className="max-w-md sm:mx-auto sm:text-center flex flex-col justify-center items-center"
+            >
               <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-background sm:mx-auto sm:w-24 sm:h-24 text-white">
                 {item.icon}
               </div>
@@ -143,7 +150,11 @@ export default function StartUpVisa() {
         <div className="flex gap-2">
           <div className="flex flex-col gap-2 flex-1">
             {visaFAQ.map((item) => (
-              <FAQ description={item.description()} title={item.question} />
+              <FAQ
+                key={index}
+                description={item.description()}
+                title={item.question}
+              />
             ))}
           </div>
         </div>

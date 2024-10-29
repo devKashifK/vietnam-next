@@ -160,7 +160,8 @@ function CTA() {
                 className="justify-center items-center mt-4"
                 title={
                   <p className="text-2xl text-black/50 w-full text">
-                    Take the first step towards your family's Canadian dream
+                    Take the first step towards your family&apos;s Canadian
+                    dream
                   </p>
                 }
                 description={

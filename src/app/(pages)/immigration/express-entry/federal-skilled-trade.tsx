@@ -93,6 +93,7 @@ export default function FedralSkilledTrade() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {workersList.map((item, index) => (
               <ServicesCard
+                key={index}
                 id={item.id}
                 title={item.title}
                 description={truncateTextHeading(item.description, 30)}

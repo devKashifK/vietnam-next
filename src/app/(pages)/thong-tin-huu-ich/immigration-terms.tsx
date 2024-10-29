@@ -17,6 +17,7 @@ export default function ImmigrationTerms() {
 
           {dataContent.map((item, index) => (
             <Title
+              key={index}
               subtitle={`${index + 1}. ${item.title}`}
               description={item.description}
             />
@@ -44,17 +45,17 @@ const dataContent = [
   {
     title: "IRCC - Bộ Di trú, Tị Nạn và Quốc Tịch Canada",
     description:
-      "IRCC, viết tắt của 'Immigration, Refugees, and Citizenship Canada,' là Bộ Di trú, Tị Nạn và Quốc Tịch Canada. Đây là một tổ chức chính phủ liên bang của Canada, được thành lập để tạo điều kiện thuận lợi cho người nhập cư đến Canada, bảo vệ người tị nạn và cung cấp chương trình hỗ trợ cho người mới đến Canada để định cư.",
+      "IRCC, viết tắt của &apos;Immigration, Refugees, and Citizenship Canada,&apos; là Bộ Di trú, Tị Nạn và Quốc Tịch Canada. Đây là một tổ chức chính phủ liên bang của Canada, được thành lập để tạo điều kiện thuận lợi cho người nhập cư đến Canada, bảo vệ người tị nạn và cung cấp chương trình hỗ trợ cho người mới đến Canada để định cư.",
   },
   {
     title: "RCIC - Chuyên gia tư vấn di trú Canada",
     description:
-      "RCIC là viết tắt của 'Regulated Canadian Immigration Consultant,' là người có giấy phép hành nghề tư vấn di trú Canada được cấp bởi Liên Đoàn Tư Vấn Di Trú CICC. RCIC sẽ đại diện cho bạn là đương đơn sẽ đánh giá đơn xin Visa của bạn và nộp thay cho bạn.",
+      "RCIC là viết tắt của &apos;Regulated Canadian Immigration Consultant,&apos; là người có giấy phép hành nghề tư vấn di trú Canada được cấp bởi Liên Đoàn Tư Vấn Di Trú CICC. RCIC sẽ đại diện cho bạn là đương đơn sẽ đánh giá đơn xin Visa của bạn và nộp thay cho bạn.",
   },
   {
     title: "CICC - Liên Đoàn Tư Vấn Di Trú",
     description:
-      "CICC là viết tắt của 'The College of Immigration and Citizenship Consultants,' một tổ chức chịu trách nhiệm cấp giấy phép và quản lý các Chuyên gia tư vấn di trú và quốc tịch Canada với mục tiêu lợi ích của công chúng.",
+      "CICC là viết tắt của &apos;The College of Immigration and Citizenship Consultants,&apos; một tổ chức chịu trách nhiệm cấp giấy phép và quản lý các Chuyên gia tư vấn di trú và quốc tịch Canada với mục tiêu lợi ích của công chúng.",
   },
   {
     title: "PR",
@@ -64,12 +65,12 @@ const dataContent = [
   {
     title: "CRS",
     description:
-      "CRS là từ viết tắt của 'Comprehensive Ranking System,' hay Hệ thống Xếp hạng Toàn diện. Đây là một phần quan trọng của chương trình Kỹ năng Định cư Liên bang của Canada. Hệ thống này được sử dụng để đánh giá và xếp hạng ứng viên dựa trên nhiều yếu tố như tuổi, trình độ học vấn, kinh nghiệm làm việc, điểm số tiếng Anh hoặc tiếng Pháp và các yếu tố khác.",
+      "CRS là từ viết tắt của &apos;Comprehensive Ranking System,&apos; hay Hệ thống Xếp hạng Toàn diện. Đây là một phần quan trọng của chương trình Kỹ năng Định cư Liên bang của Canada. Hệ thống này được sử dụng để đánh giá và xếp hạng ứng viên dựa trên nhiều yếu tố như tuổi, trình độ học vấn, kinh nghiệm làm việc, điểm số tiếng Anh hoặc tiếng Pháp và các yếu tố khác.",
   },
   {
     title: "LMIA",
     description:
-      "LMIA là viết tắt của 'Labour Market Impact Assessment,' nghĩa là Đánh giá Tác động đến Thị trường lao động. Đây là chương trình quản lý lao động của chính phủ Canada, đánh giá khả năng của nhà tuyển dụng Canada trong việc tuyển dụng nhân viên nước ngoài.",
+      "LMIA là viết tắt của &apos;Labour Market Impact Assessment,&apos; nghĩa là Đánh giá Tác động đến Thị trường lao động. Đây là chương trình quản lý lao động của chính phủ Canada, đánh giá khả năng của nhà tuyển dụng Canada trong việc tuyển dụng nhân viên nước ngoài.",
   },
   {
     title: "PNP",
@@ -89,7 +90,7 @@ const dataContent = [
   {
     title: "ITA",
     description:
-      "ITA là viết tắt của 'Invitation to Apply,' một bước quan trọng trong quá trình định cư tại Canada. Khi bạn đăng ký tham gia chương trình Di dân Thường trú Canada (Express Entry) và được xếp hạng trong Comprehensive Ranking System (CRS), bạn có thể nhận được một ITA từ Cục Di trú Canada (IRCC).",
+      "ITA là viết tắt của &apos;Invitation to Apply,&apos; một bước quan trọng trong quá trình định cư tại Canada. Khi bạn đăng ký tham gia chương trình Di dân Thường trú Canada (Express Entry) và được xếp hạng trong Comprehensive Ranking System (CRS), bạn có thể nhận được một ITA từ Cục Di trú Canada (IRCC).",
   },
   {
     title: "ECA",

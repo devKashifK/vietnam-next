@@ -18,7 +18,7 @@ const serviceAccount = JSON.parse(
 );
 
 async function getAccessToken() {
-  // Generate a JWT token signed with the service account's private key
+  // Generate a JWT token signed with the service account&apos;s private key
   const token = jwt.sign(
     {
       iss: serviceAccount.client_email,

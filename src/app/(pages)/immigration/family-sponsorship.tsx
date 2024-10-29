@@ -32,7 +32,7 @@ export default function FamilySponsorship() {
               <p className="text-sm text-black/60 text-left">
                 Canada, known for its breathtaking landscapes, vibrant cities,
                 and welcoming atmosphere, has become an increasingly popular
-                destination for tourists worldwide. If you're considering a
+                destination for tourists worldwide. If you&apos;re considering a
                 visit to the Great White North, you may need to acquaint
                 yourself with the process of obtaining a Canadian Visitor Visa,
                 also known as a Temporary Resident Visa (TRV)
@@ -64,8 +64,9 @@ export default function FamilySponsorship() {
                 Immigration, Refugees, and Citizenship Canada (IRCC). The
                 application form will prompt individuals to enter personal
                 information, details about their trip, and other relevant
-                information. It's crucial to ensure accuracy in the application,
-                as any discrepancies could lead to delays or denials.
+                information. It&apos;s crucial to ensure accuracy in the
+                application, as any discrepancies could lead to delays or
+                denials.
               </p>
               <p className="text-sm text-black/60 text-left">
                 After submitting the application, applicants will be required to
@@ -84,7 +85,7 @@ export default function FamilySponsorship() {
           title="PLAN YOUR VISIT TO CANADA"
           subtitle={
             <p className="text-4xl text-white/90">
-              Let's GreenTech Resources Worldwide Canada <br />
+              Let&apos;s GreenTech Resources Worldwide Canada <br />
               assist you!
             </p>
           }

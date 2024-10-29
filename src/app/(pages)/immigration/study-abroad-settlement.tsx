@@ -17,6 +17,7 @@ export default function StudyAbroadSettlement() {
         <div className="grid grid-cols-2 gap-8">
           {studyAbroad.map((item, index) => (
             <ServicesCard
+              key={index}
               id={item.id}
               title={item.title}
               description={truncateTextHeading(item.description, 30)}
@@ -36,6 +37,7 @@ export default function StudyAbroadSettlement() {
           {studyAbroad2.map((item, index) => (
             <ServicesCard
               id={item.id}
+              key={index}
               title={item.title}
               description={truncateTextHeading(item.description, 30)}
             />
@@ -52,6 +54,7 @@ export default function StudyAbroadSettlement() {
         <div className="grid grid-cols-2 gap-8">
           {studyAbroad3.map((item, index) => (
             <ServicesCard
+              key={index}
               id={item.id}
               title={item.title}
               description={truncateTextHeading(item.description, 30)}

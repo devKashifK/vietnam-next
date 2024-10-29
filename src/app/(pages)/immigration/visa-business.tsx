@@ -161,6 +161,7 @@ export default function VisaBusiness() {
       <Container className="grid grid-cols-2 gap-4">
         {visa.map((item) => (
           <HoverCard
+            key={index}
             description={item.des}
             title={item.title}
             icon="iconamoon:information-square-duotone"

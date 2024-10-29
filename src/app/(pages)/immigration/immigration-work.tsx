@@ -55,6 +55,7 @@ export default function ImmigrationWork() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {expressEntry.map((item, index) => (
               <ServicesCard
+                key={index}
                 id={item.id}
                 title={item.title}
                 description={truncateTextHeading(item.description, 30)}
@@ -76,6 +77,7 @@ export default function ImmigrationWork() {
           <div className="grid grid-cols-2 gap-8">
             {provincial.map((item, index) => (
               <ServicesCard
+                key={index}
                 id={item.id}
                 title={item.title}
                 description={truncateTextHeading(item.description, 30)}

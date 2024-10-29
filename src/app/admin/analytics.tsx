@@ -209,7 +209,10 @@ const CustomLegend = (props) => {
       {payload &&
         payload.map((entry, index) => {
           return (
-            <div className="flex flex-shrink-0 justify-center items-center gap-1.5">
+            <div
+              key={index}
+              className="flex flex-shrink-0 justify-center items-center gap-1.5"
+            >
               <div
                 className="w-4 h-3 rounded-sm"
                 style={{ backgroundColor: entry.color }}

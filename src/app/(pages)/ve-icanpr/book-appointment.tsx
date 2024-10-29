@@ -40,8 +40,8 @@ export default function BookAppointment() {
                 the application process, choosing the right immigration
                 consultant in Saskatchewan is paramount to ensuring a smooth and
                 successful immigration journey. With their knowledge of
-                Saskatchewan's immigration policies, labor market demands, and
-                community dynamics, these consultants play a pivotal role in
+                Saskatchewan&apos;s immigration policies, labor market demands,
+                and community dynamics, these consultants play a pivotal role in
                 helping individuals realize their aspirations of settling and
                 thriving in Saskatchewan.
               </p>
@@ -125,13 +125,14 @@ export default function BookAppointment() {
             <div className="flex flex-col gap-4">
               <p className="text-left">
                 Verifying if your consultant is a Registered Canadian
-                Immigration Consultant (RCIC) is crucial to ensuring that you're
-                receiving guidance from a qualified and authorized professional.
-                Here's how you can check if your consultant is an RCIC. By
-                following these steps and verifying your consultant's
-                registration status with ICCRC, you can ensure that you're
-                working with a legitimate and authorized RCIC who is qualified
-                to provide immigration advice and representation.
+                Immigration Consultant (RCIC) is crucial to ensuring that
+                you&apos;re receiving guidance from a qualified and authorized
+                professional. Here&apos;s how you can check if your consultant
+                is an RCIC. By following these steps and verifying your
+                consultant&apos;s registration status with ICCRC, you can ensure
+                that you&apos;re working with a legitimate and authorized RCIC
+                who is qualified to provide immigration advice and
+                representation.
               </p>
               <div className="text-left">
                 <p className="text-left font-primary tracking-widest text-2xl text-red-900">
@@ -224,7 +225,7 @@ export default function BookAppointment() {
                       Assessment and Eligibility
                     </p>
                     <p className="text-left">
-                      Consultants assess clients' eligibility for various
+                      Consultants assess clients&apos; eligibility for various
                       immigration programs and provide personalized advice based
                       on individual circumstances.
                     </p>
@@ -274,7 +275,7 @@ export const appointment = [
     id: 1,
     title: "Government of Canada Licensed",
     description:
-      "We are authorized to legally represent our clients' files, working directly with the Immigration Department of Canada and the Government of Canada. Our RCIC experts ensure that our clients' files are processed accurately, legally, and securely.",
+      "We are authorized to legally represent our clients&apos; files, working directly with the Immigration Department of Canada and the Government of Canada. Our RCIC experts ensure that our clients&apos; files are processed accurately, legally, and securely.",
     icon: (
       <Icon
         icon="material-symbols:person-apron"

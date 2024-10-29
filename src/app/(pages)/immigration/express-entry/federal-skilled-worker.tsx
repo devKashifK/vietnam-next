@@ -75,6 +75,7 @@ export default function FedralSkilledWorker() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {workersList.map((item, index) => (
               <ServicesCard
+                key={index}
                 id={item.id}
                 title={item.title}
                 description={truncateTextHeading(item.description, 30)}
@@ -159,7 +160,8 @@ function CTA() {
                 className="justify-center items-center mt-4"
                 title={
                   <p className="text-2xl text-black/50 w-full text">
-                    Take the first step towards your family's Canadian dream
+                    Take the first step towards your family&apos;s Canadian
+                    dream
                   </p>
                 }
                 description={

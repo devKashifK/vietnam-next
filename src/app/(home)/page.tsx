@@ -202,8 +202,8 @@ export const dummyNews = [
     title: "India Launches Chandrayaan-3 Mission",
     subTitle: "A Giant Leap for India",
     description:
-      "India successfully launched its third lunar exploration mission, Chandrayaan-3, aiming to land on the Moon's south pole.",
-    comments: "This is a great achievement for India's space program!",
+      "India successfully launched its third lunar exploration mission, Chandrayaan-3, aiming to land on the Moon&apos;s south pole.",
+    comments: "This is a great achievement for India&apos;s space program!",
   },
   {
     id: 2,
@@ -233,7 +233,7 @@ export const dummyNews = [
     subTitle: "Global Markets in Turmoil",
     description:
       "Concerns about a global economic recession grow as stock markets experience significant volatility.",
-    comments: "It's a tough time for the economy.",
+    comments: "It&apos;s a tough time for the economy.",
   },
   {
     id: 5,

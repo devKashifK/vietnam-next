@@ -24,7 +24,7 @@ export default function News() {
         const response = await supabase.from("news").select("content");
         if (response.error) throw response.error;
 
-        // Parse and sort data from newest to oldest based on 'Date'
+        // Parse and sort data from newest to oldest based on &apos;Date&apos;
         const parsedData = response.data
           .map((row) => JSON.parse(row.content))
           .sort((a, b) => new Date(b.Date) - new Date(a.Date)); // Sort by date descending

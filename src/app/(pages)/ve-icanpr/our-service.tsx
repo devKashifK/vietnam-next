@@ -20,6 +20,7 @@ export default function OurService() {
       <div className="grid  grid-cols-1 md:grid-cols-3 gap-8">
         {dummyservices.map((item, index) => (
           <ServicesCard
+            key={index}
             id={item.id}
             title={item.title}
             description={item.description}
@@ -57,19 +58,19 @@ export const dummyservices = [
     id: 3,
     title: "Immigrate to Canada",
     description:
-      "Canada's immigration policies welcome skilled workers, families, and refugees, offering a pathway to citizenship and a new life in a thriving nation.",
+      "Canada&apos;s immigration policies welcome skilled workers, families, and refugees, offering a pathway to citizenship and a new life in a thriving nation.",
   },
   {
     id: 4,
     title: "Visit Canada",
     description:
-      "Canada's stunning landscapes, vibrant cities, and friendly people make it a top destination for travelers seeking adventure, culture, and natural beauty.",
+      "Canada&apos;s stunning landscapes, vibrant cities, and friendly people make it a top destination for travelers seeking adventure, culture, and natural beauty.",
   },
   {
     id: 5,
     title: "Invest in Canada",
     description:
-      "Canada's stable economy, skilled workforce, and innovation-friendly environment provide lucrative opportunities for investors and entrepreneurs.",
+      "Canada&apos;s stable economy, skilled workforce, and innovation-friendly environment provide lucrative opportunities for investors and entrepreneurs.",
   },
   {
     id: 6,

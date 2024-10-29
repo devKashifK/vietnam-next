@@ -102,7 +102,7 @@ export const challengesList = [
     id: 1,
     title: "Criminality",
     description:
-      "If someone has a criminal record or have committed certain offenses, he/she may be deemed inadmissible to Canada. In such cases, it's important to determine if he/she is eligible for criminal rehabilitation, which can allow him/her to overcome past criminal convictions and gain entry into the country",
+      "If someone has a criminal record or have committed certain offenses, he/she may be deemed inadmissible to Canada. In such cases, it&apos;s important to determine if he/she is eligible for criminal rehabilitation, which can allow him/her to overcome past criminal convictions and gain entry into the country",
   },
   {
     id: 2,

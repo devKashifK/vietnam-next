@@ -33,13 +33,13 @@ export default function ExpressEntry() {
               </h3>
 
               <p className="text-sm text-black/60 text-left">
-                Canada's Express Entry program allows highly skilled candidates
-                to attain Canadian permanent residency status in the shortest
-                time, typically within six months. This is the fastest way for
-                eligible candidates who are young, highly educated, and possess
-                valuable work experience to come to Canada. However, achieving a
-                high enough Comprehensive Ranking System (CRS) score in federal
-                draws can be challenging.
+                Canada&apos;s Express Entry program allows highly skilled
+                candidates to attain Canadian permanent residency status in the
+                shortest time, typically within six months. This is the fastest
+                way for eligible candidates who are young, highly educated, and
+                possess valuable work experience to come to Canada. However,
+                achieving a high enough Comprehensive Ranking System (CRS) score
+                in federal draws can be challenging.
               </p>
             </div>
           </div>
@@ -58,6 +58,7 @@ export default function ExpressEntry() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {expressEntry.map((item, index) => (
               <ServicesCard
+                key={index}
                 id={item.id}
                 title={item.title}
                 description={truncateTextHeading(item.description, 30)}
@@ -84,9 +85,10 @@ export default function ExpressEntry() {
           }
         />
         <div className="py-6 ">
-          {faqFederal.map((item) => {
+          {faqFederal.map((item, index) => {
             return (
               <FAQ
+                key={index}
                 title={item.title}
                 id={item.id}
                 description={item.description()}
@@ -227,8 +229,8 @@ const faqFederal = [
           recognized organization like WES or ICAS.
         </li>
         <li>
-          Passport: To verify your identity and immigration status, you'll need
-          a valid passport or travel document.
+          Passport: To verify your identity and immigration status, you&apos;ll
+          need a valid passport or travel document.
         </li>
         <li>
           Once you have organized and prepared these documents, you can submit
