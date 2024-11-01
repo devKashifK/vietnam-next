@@ -10,7 +10,7 @@ import TitleWithBottomBorder from "./title-with-bottom-border";
 export default function WhyChooseUs() {
   return (
     <Container effect="slide-left">
-      <Glass className="flex flex-row gap-10 md:gap-2 h-max px-10 py-10">
+      <Glass className="flex flex-col lg:flex-row gap-10 md:gap-2 h-max px-10 py-10">
         <div className="w-full md:flex-1 flex flex-col gap-2">
           <TitleWithDoubleBorder>Tại sao chọn chúng tôi</TitleWithDoubleBorder>
           <div className="flex flex-col justify-start gap-6">

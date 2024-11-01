@@ -22,7 +22,7 @@ export default function HoverCard({
   return (
     <div
       className={cn(
-        "group flex-1 relative cursor-pointer overflow-hidden bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20 border-background shadow-md rounded-2xl  px-6 pt-10 pb-8 ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-md sm:mx-auto sm:max-w-sm sm:rounded-lg sm:px-10",
+        "group flex-1 relative cursor-pointer overflow-hidden bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20 border-background shadow-md  px-6 pt-10 pb-8 ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-md sm:mx-auto sm:max-w-sm sm:px-10",
         className
       )}
       onMouseEnter={() => setIsHovered(true)}
@@ -37,12 +37,15 @@ export default function HoverCard({
       <div className="relative z-10 mx-auto max-w-md">
         <div
           className={cn(
-            "grid h-20 w-20 place-items-center rounded-full transition-all duration-300 ",
+            "flex justify-center h-20 w-20 items-center rounded-full transition-all duration-300 ",
             isHovered && color
           )}
         >
           {typeof icon === "string" ? (
-            <Icon icon={icon} className="text-highlight h-10 w-full" />
+            <Icon
+              icon={icon}
+              className="text-highlight flex justify-center items-center ml-8 h-10 w-full"
+            />
           ) : (
             icon
           )}

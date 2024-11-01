@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <div className="flex flex-col w-full  mx-auto bg-white shadow-md">
-      <div className="bg-white bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 rounded-t-2xl h-max md:h-[500px] flex  flex-col md:flex-row gap-10 px-12 py-16 items-center justify-center text-white">
+      <div className="bg-white bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 rounded-t-2xl h-max lg:h-[500px] flex  flex-col lg:flex-row gap-10 px-12 py-16 items-center justify-center text-white">
         <div className="flex flex-col gap-10 flex-1 text-secondary/50 pt-10  justify-start items-start">
           <img src="/logo.png" alt="" className="w-[60%]  md:pl-8" />
 
@@ -66,34 +66,36 @@ export default function Footer() {
               Work and Jobs
             </Link> */}
           </div>
-          <div className="flex flex-col gap-6 md:gap-2 md:flex-row  text-sm font-normal text-secondary pb-12 md:px-10">
+          <div className="flex flex-col gap-6 md:gap-2 lg:flex-row  text-sm font-normal text-secondary pb-12 md:px-10">
             <div className="w-[40%] text-left hover:underline">
               {/* 2124 Broad St, Regina, Saskatchewan,Canada S4P 1Y5 (Registered
               office) */}
               Địa chỉ : Tầng 2, tòa nhà Rosana, 60 Nguyễn Đình Chiểu, Quận 1, Hồ
               Chí Minh, Việt Nam
             </div>
-            <div className="flex w-[60%] flex-col gap-1 text-secondary">
-              <div className="flex gap-2 text-left">
-                <p className="flex-1">Email</p>
-                <p className="flex-1 -ml-20 hover:underline">tuvan@icanpr.vn</p>
+            <div className="flex w-[60%] flex-col gap-1  text-secondary">
+              <div className="flex flex-col lg:flex-row  border-b  lg:gap-2 text-left">
+                <p className="flex-1">Email: </p>
+                <p className="flex-1 ml-0 lg:-ml-20 hover:underline">
+                  tuvan@icanpr.vn
+                </p>
               </div>
-              <div className="flex gap-2 text-left">
+              <div className="flex flex-col lg:flex-row border-b  lg:gap-2 text-left">
                 <p className="flex-1">
                   {/* Phone */}
-                  Điện thoại
+                  Điện thoại:
                 </p>
-                <p className="flex-1 -ml-20 hover:underline">
+                <p className="flex-1 ml-0 lg:-ml-20 hover:underline">
                   {/* +1-855-477-9797 */}
                   +84 869967809
                 </p>
               </div>
-              <div className="flex gap-2 text-left">
+              <div className="flex flex-col lg:flex-row border-b   lg:gap-2 text-left">
                 <p className="flex-1">
                   {/* Timings */}
-                  Giờ làm việc
+                  Giờ làm việc:
                 </p>
-                <p className="flex-1 -ml-20 text-secondary hover:underline">
+                <p className="flex-1 ml-0 lg:-ml-20 text-secondary hover:underline">
                   {/* 9AM to 5PM (GMT-6) */}
                   9:00 - 5:00, Thứ 2- Thứ 6, 9-12:00 sáng Thứ 7
                 </p>
@@ -168,7 +170,7 @@ export default function Footer() {
               </Button>
               <img
                 src="./RCIC-CERTIFIED-1.png"
-                className="w-56 absolute right-28 -top-4"
+                className="w-56 absolute right-0 lg:right-28 -top-4"
                 alt=""
               />
             </div>

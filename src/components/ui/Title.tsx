@@ -19,17 +19,17 @@ export default function Title({
   className?: string;
 }) {
   return (
-    <div className=" flex w-full justify-between ">
+    <div className=" flex w-full px-4 lg:px-0 justify-between ">
       <div
         className={cn(
-          "flex flex-col w-full gap-1 justify-center items-center",
+          "flex flex-col w-full gap-1 justify-start items-start lg:justify-center lg:items-center",
           className
         )}
       >
-        <h4 className="text-highlight text-2xl">{subtitle}</h4>
+        <h4 className="text-highlight text-left text-2xl">{subtitle}</h4>
         <div className="flex flex-col gap-3 w-full">
           {typeof title === "string" ? (
-            <div className="relative flex flex-col justify-center items-center gap-1">
+            <div className="relative flex flex-col justify-start items-start lg:justify-center lg:items-center gap-1">
               <h2 className="text-2xl text-center md:text-4xl tracking-wider text-black/50">
                 {title}
                 <span className="block h-0.5 bg-background mt-2"></span>
@@ -43,7 +43,9 @@ export default function Title({
 
         {description &&
           (typeof description === "string" ? (
-            <p className="text-center text-black/50 w-[70%]">{description}</p>
+            <p className="text-left lg:text-center text-black/50 w-full lg:w-[70%]">
+              {description}
+            </p>
           ) : (
             description
           ))}

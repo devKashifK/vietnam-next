@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Sheet, SheetContent, SheetTrigger } from "./sheet";
 import { cn } from "@/lib/utils";
@@ -8,6 +9,7 @@ import {
 } from "./collapsible";
 import { getIcon, Icon } from "@iconify/react/dist/iconify.js";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function MobileNavbar({ isOpen, setIsOpen, config }) {
   return (
@@ -26,6 +28,7 @@ export default function MobileNavbar({ isOpen, setIsOpen, config }) {
         className="w-max h-full overflow-y-scroll flex flex-col gap-6 pretty-scroll bg-white     border-gray-100 border-none justify-start items-center"
       >
         <Link
+          onClick={() => setIsOpen(false)}
           // to={"/"}
           href={"/"}
           className="flex gap-2 py-0.5 cursor-pointer justify-start items-center"
@@ -44,6 +47,10 @@ export default function MobileNavbar({ isOpen, setIsOpen, config }) {
 
 export const SideBar = ({ group, setIsOpen }) => {
   // const activeId = useLocation();
+  const path = usePathname();
+  const activeId = path.split("/").pop();
+  const router = useRouter();
+
   // const navigate = useNavigate();
   return (
     <Collapsible
@@ -74,12 +81,10 @@ export const SideBar = ({ group, setIsOpen }) => {
                   `/${activeId}` === item.path ? group.active : "text-black/80"
                 )}
               >
-                <button
-                  onClick={() => {
-                    // navigate(item.path), setIsOpen(false);
-                  }}
+                <Link
+                  href={item.path}
+                  onClick={() => setIsOpen(false)}
                   key={index}
-                  // to={`${item.path}`}
                   className={cn(
                     "flex gap-2 px-6 w-[95%] items-center transition-all text-sm duration-200 relative ml-[26px] text-black/80"
                   )}
@@ -103,7 +108,7 @@ export const SideBar = ({ group, setIsOpen }) => {
                   ></span>
 
                   {item.name}
-                </button>
+                </Link>
               </div>
             </>
           ))}

@@ -36,7 +36,7 @@ export default function CTA() {
       <Container effect="slide-left" className="flex md:hidden mx-auto">
         <Title
           title={
-            <p className="text-2xl md:text-5xl  text-black/50 w-full text-left">
+            <p className="text-2xl md:text-5xl  text-black/50 w-full !text-left">
               Comprehensive solutions for <br /> all your needs!
             </p>
           }
@@ -44,7 +44,7 @@ export default function CTA() {
           subtitle={"WHAT ARE YOU LOOKING FOR?"}
           cta={"All Solutions"}
         />
-        <div className="flex gap-4 min-h-screen h-max w-[90%] mx-auto pt-96 md:py-0">
+        <div className="flex gap-4 min-h-screen h-max w-[90%] mx-auto pt-80 lg:pt-96 md:py-0">
           <div className="w-full items-center justify-center flex flex-col space-y-96">
             {CtaDetails.slice(0, CtaDetails.length - 1).map((item, index) => (
               <CtaCard2 item={item} key={item.id} flip={true} />
@@ -97,20 +97,17 @@ export const CtaCard2 = ({ item, flip }) => {
         flip ? "justify-end" : "justify-start"
       )}
     >
-      <div className="w-full md:w-[45%] rounded-l-2xl">
+      <div className="w-full lg:w-[45%] ">
         <img
           src={item.image}
           alt=""
-          className={cn(
-            "h-[330px] w-full rounded-t-2xl md:h-[220px] bg-cover z-10 relative",
-            flip ? "md:rounded-r-2xl" : "md:rounded-l-2xl"
-          )}
+          className={cn("h-[330px] w-full md:h-[220px] bg-cover z-10 relative")}
         />
       </div>
       <div
         className={cn(
-          "px-8 w-full md:w-[330px] h-[330px] md:h-[236px] relative md:absolute rounded-b-2xl md:rounded-2xl -ml-6 shadow-md  z-20 border-gray-100 backdrop-blur-3xl bg-opacity-10 bg-clip-padding backdrop-filter bg-gray-100 flex flex-col gap-2 py-5",
-          flip ? "left-2" : "-right-[40%] md:-right-6"
+          "px-8 w-full lg:w-[330px] h-[330px] lg:h-[236px] relative md:absolute lg:-ml-6 shadow-md  z-20 border-gray-100 backdrop-blur-3xl bg-opacity-10 bg-clip-padding backdrop-filter bg-gray-100 flex flex-col gap-2 py-5",
+          flip ? "lg:left-2" : "-right-[30%] lg:-right-6"
         )}
       >
         <div className="flex flex-col justify-center r gap-0">
@@ -289,19 +286,20 @@ export const CTAWithImage = ({
   return (
     <Container
       className={cn(
-        "flex bg-white py-0 shadow-md  ",
-        flip ? "flex-row-reverse" : "flex-row"
+        "flex bg-content py-0 shadow-2xl  ",
+        flip ? "flex-col lg:flex-row-reverse" : " flex-col lg:flex-row"
       )}
     >
       <div
-        className="flex-1 relative h-[590px]"
+        className="flex-1 relative h-auto lg:h-[590px]"
+
         // style={{
         //   backgroundImage: `url(/hero-3.jpg)`,
         //   backgroundSize: "cover",
         //   backgroundPosition: "center",
         // }}
       >
-        <div className="bg-[rgba(0, 0, 0, 0.2)] absolute top-0 left-0 z-10 w-full bg-opacity-80 h-[590px]"></div>
+        <div className="bg-[rgba(0, 0, 0, 0.2)] absolute top-0 left-0 z-10 w-full bg-opacity-80 h-auto lg:h-[590px]"></div>
         <img
           src={image}
           className="relative w-full object-cover h-full"
@@ -326,7 +324,7 @@ export const CTAWithImage = ({
         )}
 
         {ctaAction && (
-          <button className="flex gap-2 bg-background text-text w-max justify-center items-center rounded-none">
+          <button className="flex gap-2 bg-background text-text w-full lg:w-max justify-center items-center rounded-none">
             {ctaAction}
             <Icon icon={"simple-icons:aircanada"} className="" />
           </button>

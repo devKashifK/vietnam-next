@@ -41,7 +41,7 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
 
   return (
     <>
-      <div className="md:hidden flex py-2 z-50 relative bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20 border-gray-100 rounded-t-2xl px-8">
+      <div className="lg:hidden flex py-2 z-50 relative bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20 border-gray-100  px-8">
         <MobileNavbar
           config={mobileConfig}
           isOpen={isOpen}

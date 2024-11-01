@@ -58,7 +58,7 @@ export default function Hero() {
                 ))}
               </Swiper>
             </div>
-            <div className="px-20 pb-20 pt-10 flex-1 h-full bg-white flex gap-8 flex-col justify-center items-center">
+            <div className="px-6 lg:px-20 pb-14 lg:pb-20 pt-10 flex-1 h-full bg-white flex gap-8 flex-col justify-center items-center">
               <div className="flex gap-1 flex-col justify-center items-start w-full relative">
                 <p className="lg:text-4xl text-3xl text-left text-black">
                   {/* Achieve your family Canada */}

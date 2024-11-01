@@ -16,6 +16,19 @@ export default function PnpProgramSlider() {
       className="flex gap-2 overflow-hidden"
       style={{ width: "100%" }}
       modules={[Autoplay]}
+      breakpoints={{
+        // When the viewport is >= 768px
+        768: {
+          slidesPerView: 3,
+        },
+        608: {
+          slidesPerView: 2,
+        },
+        // When the viewport is >= 320px
+        320: {
+          slidesPerView: 1,
+        },
+      }}
     >
       {config.map((item, index) => (
         <SwiperSlide key={index}>

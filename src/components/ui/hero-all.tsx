@@ -19,7 +19,7 @@ export default function HeroDefault() {
         <Navbar defaultStyle={true} />
         <div className="flex justify-center items-center w-full h-[55vh] mt-10">
           <div
-            className=" bg-black bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 h-max px-6 text-6xl py-6 flex justify-center items-center font-primary tracking-widest text-white md:mt-0 mt-40"
+            className=" bg-black bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 h-max px-6 text-6xl py-6 flex justify-center items-center font-primary tracking-widest text-white lg:mt-0 mt-[6rem]"
             dangerouslySetInnerHTML={{ __html: text }}
           />
         </div>

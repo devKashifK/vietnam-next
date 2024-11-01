@@ -20,7 +20,7 @@ export default function Container({
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
         className={cn(
-          "flex flex-col gap-4 py-6 w-[80%]  mr-auto ml-24 mt-2 mb-2",
+          "flex flex-col lg:lg:gap-4 gap-0  py-6 w-[94%] lg:w-[90%]  mr-auto ml-auto lg:ml-24 mt-2 mb-2",
           className
         )}
         {...props}
@@ -36,7 +36,7 @@ export default function Container({
         transition={{ duration: 1 }}
         viewport={{ amount: 0.1 }}
         className={cn(
-          "flex flex-col gap-4 py-6 w-[80%]  mr-auto ml-24 mt-2 mb-2",
+          "flex flex-col lg:gap-4 gap-0 py-6 w-[94%] lg:w-[80%]  mr-auto ml-auto lg:ml-24 mt-2 mb-2",
           className
         )}
         {...props}
@@ -51,7 +51,7 @@ export default function Container({
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}
         className={cn(
-          "flex flex-col gap-4 py-6 w-[80%]  mr-auto ml-24 mt-2 mb-2",
+          "flex flex-col lg:gap-4 gap-0 py-6 w-[94%] lg:w-[80%]  mr-auto ml-auto lg:ml-24 mt-2 mb-2",
           className
         )}
         {...props}
@@ -67,7 +67,7 @@ export default function Container({
         transition={{ duration: 1 }}
         viewport={{ amount: 0.1 }}
         className={cn(
-          "flex flex-col gap-4 py-6 w-[80%]  mr-auto ml-24 mt-2 mb-2",
+          "flex flex-col lg:gap-4 gap-0 py-6 w-[94%] lg:w-[80%]  mr-auto ml-auto lg:ml-24 mt-2 mb-2",
           className
         )}
         {...props}
@@ -83,7 +83,7 @@ export default function Container({
         transition={{ duration: 1 }}
         viewport={{ amount: 0.1 }}
         className={cn(
-          "flex flex-col gap-4 py-6 w-[80%]  mr-auto ml-24 mt-2 mb-2",
+          "flex flex-col lg:gap-4 gap-0 py-6 w-[94%] lg:w-[80%]  mr-auto ml-auto lg:ml-24 mt-2 mb-2",
           className
         )}
         {...props}
@@ -99,7 +99,7 @@ export default function Container({
         transition={{ duration: 1 }}
         viewport={{ amount: 0.1 }}
         className={cn(
-          "flex flex-col gap-4 py-6 w-[80%]  mr-auto ml-24 mt-2 mb-2",
+          "flex flex-col lg:gap-4 gap-0 py-6 w-[94%] lg:w-[80%]  mr-auto ml-auto lg:ml-24 mt-2 mb-2",
           className
         )}
         {...props}
@@ -111,7 +111,7 @@ export default function Container({
     return (
       <div
         className={cn(
-          "flex flex-col gap-4 py-6 w-[80%]  mr-auto ml-24 mt-2 mb-2",
+          "flex flex-col lg:gap-4 gap-0 py-6 w-[94%] lg:w-[80%]  mr-auto ml-auto lg:ml-24 mt-2 mb-2",
           className
         )}
         {...props}
