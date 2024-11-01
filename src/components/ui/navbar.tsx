@@ -94,6 +94,16 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
             </Link>
 
             <Link
+              href={"/tin-tuc"}
+              className="bg-transparent text-xs font-light flex flex-col gap-0.5 group"
+            >
+              <span className={"text-highlight font-semibold text-xs"}>
+                Tin Tức
+              </span>
+              <div className="group-hover:bg-background w-full border border-transparent ease-out duration-150"></div>
+            </Link>
+
+            <Link
               href={"/doanh-nghiep"}
               className="text-xs flex font-light flex-col gap-0.5 group"
             >
