@@ -36,6 +36,19 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${redditSansCondensed.variable} antialiased`}>
         {children}
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-BRSFV6Z670"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-BRSFV6Z670');
+          `}
+        </Script>
         <Script id="zoho-salesiq-script" strategy="afterInteractive">
           {`
             window.$zoho = window.$zoho || {};

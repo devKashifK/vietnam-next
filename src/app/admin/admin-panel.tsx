@@ -63,8 +63,6 @@ export default function AdminPanel() {
       ...pageData,
     };
 
-    console.log(newPage, "checkingNewPage");
-
     setPages([...pages, newPage]);
     setActiveTab("pages");
   };

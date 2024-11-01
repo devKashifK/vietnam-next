@@ -26,15 +26,15 @@ export function CardWithImage({
           backgroundImage: `url(${image})`,
         }}
       >
-        <div className="absolute w-full h-full top-0 left-0 transition duration-300 group-hover/card:bg-black opacity-60"></div>
+        <div className="absolute w-full h-full top-0 left-0 transition duration-300 group-hover/card:bg-white opacity-60"></div>
 
         <div className="text content flex justify-end h-full items-start flex-col relative z-10">
-          <TitleWithBottomBorder titleClass="text-white">
+          <TitleWithBottomBorder titleClass="text-white group-hover/card:text-black">
             {title}
           </TitleWithBottomBorder>
           <div className="group-hover/card:flex hidden transition-all duration-150 ease-linear">
             {typeof description === "string" ? (
-              <p className="font-normal text-left  text-sm text-gray-50 relative z-10 my-4">
+              <p className="font-normal text-left  text-sm text-gray-50 group-hover/card:text-black relative z-10 my-4">
                 {description}
               </p>
             ) : (

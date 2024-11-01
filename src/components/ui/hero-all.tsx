@@ -6,21 +6,30 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { getCachedData } from "@/lib/custom-func";
 // import { Link, useLocation } from "react-router-dom";
-export default function HeroDefault() {
+export default function HeroDefault({
+  text,
+  image,
+}: {
+  text?: string;
+  image?: string;
+}) {
   const path = usePathname();
   const lastPath = path.split("/").pop();
-  const { text, image } = getCachedData(lastPath);
+
+  const displayText = text || getCachedData(lastPath)?.text;
+  const displayImage = image || getCachedData(lastPath)?.image;
+
   return (
     <div
       className="flex flex-col gap-2 mx-auto bg-center relative bg-cover w-full h-[90vh]"
-      style={{ backgroundImage: `url(${image})` }}
+      style={{ backgroundImage: `url(${displayImage})` }}
     >
       <div className="relative z-10">
         <Navbar defaultStyle={true} />
         <div className="flex justify-center items-center w-full h-[55vh] mt-10">
           <div
             className=" bg-black bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 h-max px-6 text-6xl py-6 flex justify-center items-center font-primary tracking-widest text-white lg:mt-0 mt-[6rem]"
-            dangerouslySetInnerHTML={{ __html: text }}
+            dangerouslySetInnerHTML={{ __html: displayText }}
           />
         </div>
       </div>

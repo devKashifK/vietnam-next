@@ -38,6 +38,7 @@ export function NewPageForm({ onSubmit }) {
     slug: "",
     description: "",
     image: "",
+    menu: "",
     sections: [],
   });
 
@@ -303,6 +304,10 @@ export function NewPageForm({ onSubmit }) {
                         handleImageChange(image);
                       }}
                     />
+                    <Category
+                      value={formData.menu}
+                      onChange={handleInputChange}
+                    />
                   </div>
                 </CardContent>
               </Card>
@@ -507,154 +512,26 @@ export function NewPageForm({ onSubmit }) {
   );
 }
 
-function BasicCards({ cards = [] }) {
+function Category({ value, onChange }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-      {cards.map((card, index) => (
-        <Card key={index}>
-          <CardContent className="p-4">
-            <h3 className="text-lg font-semibold mb-2">{card.title}</h3>
-            <p>{card.content}</p>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
+    <>
+      <Input
+        value={value}
+        onChange={onChange}
+        list="category"
+        id="categoryType"
+        name="menu"
+        placeholder="Select a category or add a new one..."
+      />
+
+      <datalist id="category">
+        <option value="ICANPR" />
+        <option value="Nhập cư Canada" />
+        <option value="Chương trình đề cử cấp tỉnh" />
+        <option value="Cuộc sống Canada" />
+        <option value="Thông tin hữu ích" />
+        <option value="tuyển dụng" />
+      </datalist>
+    </>
   );
 }
-
-function HoverCards({ cards = [] }) {
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-      {cards.map((card, index) => (
-        <Card
-          key={index}
-          className="transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-        >
-          <CardContent className="p-4">
-            <h3 className="text-lg font-semibold mb-2">{card.title}</h3>
-            <p>{card.content}</p>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-  );
-}
-
-function SimpleCTA({ title, description, buttonText }) {
-  return (
-    <div className="bg-primary text-primary-foreground p-8 rounded-lg text-center">
-      <h2 className="text-2xl font-bold mb-4">{title}</h2>
-      <p className="mb-6">{description}</p>
-      <Button variant="secondary">{buttonText}</Button>
-    </div>
-  );
-}
-
-function SplitCTA({ title, description, buttonText, image }) {
-  return (
-    <div className="flex flex-col md:flex-row items-center bg-primary text-primary-foreground rounded-lg overflow-hidden">
-      <div className="md:w-1/2 p-8">
-        <h2 className="text-2xl font-bold mb-4">{title}</h2>
-        <p className="mb-6">{description}</p>
-        <Button variant="secondary">{buttonText}</Button>
-      </div>
-      <div className="md:w-1/2">
-        {image ? (
-          <img src={image} alt="CTA" className="w-full h-full object-cover" />
-        ) : (
-          <div className="w-full h-full bg-primary-foreground/10 flex items-center justify-center">
-            [Image Placeholder]
-          </div>
-        )}
-      </div>
-    </div>
-  );
-}
-
-// function CustomSection({
-//   title,
-//   subtitle,
-//   description,
-//   image,
-//   imagePosition,
-//   backgroundColor,
-//   textColor,
-//   borderColor,
-//   borderWidth,
-//   padding,
-// }) {
-//   const containerStyle = {
-//     backgroundColor,
-//     color: textColor,
-//     borderColor,
-//     borderWidth: `${borderWidth}px`,
-//     borderStyle: "solid",
-//     padding: `${padding}px`,
-//   };
-
-//   const imageElement = image ? (
-//     <img
-//       src={image}
-//       alt={title}
-//       className="w-full h-64 object-cover rounded-lg"
-//     />
-//   ) : (
-//     <div className="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center">
-//       [Image Placeholder]
-//     </div>
-//   );
-
-//   const contentElement = (
-//     <div className="space-y-4">
-//       <h2 className="text-3xl font-bold">{title}</h2>
-//       <h3 className="text-xl font-semibold">{subtitle}</h3>
-//       <p>{description}</p>
-//     </div>
-//   );
-
-//   const renderContent = () => {
-//     switch (imagePosition) {
-//       case "left":
-//         return (
-//           <div className="flex flex-col md:flex-row gap-8">
-//             <div className="w-full md:w-1/2">{imageElement}</div>
-//             <div className="w-full md:w-1/2">{contentElement}</div>
-//           </div>
-//         );
-//       case "right":
-//         return (
-//           <div className="flex flex-col md:flex-row gap-8">
-//             <div className="w-full md:w-1/2">{contentElement}</div>
-//             <div className="w-full md:w-1/2">{imageElement}</div>
-//           </div>
-//         );
-//       case "top":
-//         return (
-//           <div className="space-y-8">
-//             {imageElement}
-//             {contentElement}
-//           </div>
-//         );
-//       case "bottom":
-//         return (
-//           <div className="space-y-8">
-//             {contentElement}
-//             {imageElement}
-//           </div>
-//         );
-//       default:
-//         return (
-//           <div className="flex flex-col md:flex-row gap-8">
-//             <div className="w-full md:w-1/2">{imageElement}</div>
-//             <div className="w-full md:w-1/2">{contentElement}</div>
-//           </div>
-//         );
-//     }
-//   };
-
-//   return (
-//     <section className="py-12" style={containerStyle}>
-//       <div className="container mx-auto px-4">{renderContent()}</div>
-//     </section>
-//   );
-// }

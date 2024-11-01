@@ -147,7 +147,7 @@ export function truncateTextHeading(text) {
 const CtaDetails = [
   {
     id: 1,
-    image: "/immigrate.jpg",
+    image: "/ao-dai-traditional-dress-vietnam.jpg",
     title: "Nhập cư",
     subtitle:
       "Exploring Canada for immigration is an exciting and life-altering choice.",
@@ -158,7 +158,7 @@ const CtaDetails = [
   },
   {
     id: 2,
-    image: "/work.jpg",
+    image: "/work12.jpg",
     title: "Làm việc",
     subtitle:
       "Working in Canada offers a wide array of opportunities for skilled workers from around the world.",
@@ -181,7 +181,7 @@ const CtaDetails = [
   {
     id: 4,
     title: "Học tập",
-    image: "/study.jpg",
+    image: "/mom.jpg",
     subtitle:
       "Học tập tại Canada mang đến nền giáo dục hàng đầu, trải nghiệm văn hóa đa dạng và cơ hội tuyệt vời cho sự phát triển cá nhân và nghề nghiệp.",
     labels: ["High Quality Education", "Diverse Campuses and Programs"],
@@ -193,7 +193,7 @@ const CtaDetails = [
   {
     id: 5,
     title: "Bảo lãnh gia đình",
-    image: "/family.jpg",
+    image: "/hero-25.jpg",
     subtitle:
       "Chương trình cho phép các cá nhân đủ điều kiện bảo lãnh người thân gần gũi của họ để định cư lâu dài tại Canada.",
     labels: ["Sponsoring a spouse or partner", "Sponsoring dependent children"],
@@ -204,7 +204,7 @@ const CtaDetails = [
 
   {
     id: 6,
-    image: "/doubt.jpg",
+    image: "/vietnamese-people-a-culture-of-hospitality.jpg",
     title: "Chưa chắc chắn?",
     subtitle:
       "Cảm thấy không chắc chắn về hành trình di cư của bạn? Đội ngũ dày dạn kinh nghiệm của ICAN sẵn sàng cung cấp hướng dẫn và hỗ trợ chuyên môn cho bạn!",

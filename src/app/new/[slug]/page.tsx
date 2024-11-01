@@ -1,5 +1,5 @@
 "use client";
-import { use, useEffect, useMemo, useState } from "react";
+import { cache, use, useEffect, useMemo, useState } from "react";
 import {
   CtaCard,
   CtaCard2,
@@ -15,32 +15,19 @@ import HoverCard from "@/components/ui/hover-card";
 import { CardWithImage } from "@/components/ui/card-with-image";
 import { ServicesCard } from "@/components/ui/services-card";
 import { InfoCard } from "@/app/(pages)/immigration/immigration-challenges/InfoCard";
+import Hero from "@/components/ui/hero";
+import Footer from "@/components/ui/footer";
+import HeroDefault from "@/components/ui/hero-all";
 
 export default function DynamicPage() {
   const param = useParams();
-  const [data, setData] = useState(null);
   const { slug } = param;
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const { data: pageData, error } = await supabase
-        .from("pages")
-        .select("*")
-        .eq("slug", slug)
-        .single();
-      if (!error) {
-        setData(pageData);
-      } else {
-        console.error("Error fetching page content:", error);
-      }
-    };
-    fetchData();
-  }, [slug]);
+  const data = slug ? use(fetchData(slug)) : null;
 
   const pageContent = useMemo(() => {
     if (data) {
       const parsedData = JSON.parse(data.content);
-      console.log(parsedData, "parsedData");
+      console.log(parsedData, data, "parsedData");
       return parsedData.map((section, index) => {
         if (section.component === "Container") {
           return renderContainerWithChildren(section, index);
@@ -49,11 +36,14 @@ export default function DynamicPage() {
         }
       });
     }
-  }, [slug, data]);
-
-  console.log(slug, "slug");
-
-  return <div>{pageContent}</div>;
+  }, [data]);
+  return (
+    <div>
+      <HeroDefault text={data?.name} image={data?.image} />
+      {pageContent}
+      <Footer />
+    </div>
+  );
 }
 
 const renderWithChildren = (section, index) => {
@@ -199,3 +189,16 @@ const getPageContent = async (slug: string) => {
     .single();
   return data;
 };
+
+const fetchData = cache(async (slug: string) => {
+  const { data: pageData, error } = await supabase
+    .from("pages")
+    .select("*")
+    .eq("slug", slug)
+    .single();
+  if (!error) {
+    return pageData;
+  } else {
+    console.error("Error fetching page content:", error);
+  }
+});
