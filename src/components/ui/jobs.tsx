@@ -11,7 +11,6 @@ import { Autoplay } from "swiper/modules";
 
 // const DynamicSwiper = dynamic(() => import("swiper/react"), { ssr: false });
 
-
 export default function Jobs() {
   return (
     <Container effect="slide-down" className="">
@@ -50,7 +49,7 @@ export default function Jobs() {
                 alt=""
                 className="w-60 h-28 object-contain mix-blend-multiply"
               />
-            </SwiperS>
+            </SwiperSlide>
           ))}
         </Swiper>
       </Glass>
