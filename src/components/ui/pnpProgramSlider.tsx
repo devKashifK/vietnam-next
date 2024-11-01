@@ -12,8 +12,9 @@ export default function PnpProgramSlider() {
     <Swiper
       spaceBetween={50}
       slidesPerView={3}
+      centeredSlides={true}
       autoplay={{ delay: 2500, disableOnInteraction: false }}
-      className="flex gap-2 overflow-hidden"
+      className="flex  gap-2 overflow-hidden"
       style={{ width: "100%" }}
       modules={[Autoplay]}
       breakpoints={{
