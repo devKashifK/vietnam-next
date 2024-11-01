@@ -15,7 +15,7 @@ export default function layout({ children }: { children: React.ReactNode }) {
       <HeroDefault />
       {children}
       <Footer />
-      <nav className="fixed bottom-0 left-0 w-full bg-white shadow-lg border-t border-highlight lg:hidden">
+      <nav className="fixed z-[9999999999999999999] bottom-0 left-0 w-full bg-white shadow-lg border-t border-highlight lg:hidden">
         <ul className="flex justify-around items-center h-full py-0">
           <li className="flex flex-1 justify-center items-center border border-r-highlight">
             <Link
