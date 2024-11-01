@@ -33,8 +33,8 @@ export default function MobileNavbar({ isOpen, setIsOpen, config }) {
           href={"/"}
           className="flex gap-2 py-0.5 cursor-pointer justify-start items-center"
         >
-          <div className="flex-col flex">
-            <img src="/gt-removebg.png" className="w-36" alt="" />
+          <div className="flex-col flex w-full justify-start items-start">
+            <img src="/logo.png" className="w-28 mt-[-5px] ml-[-10px]" alt="" />
           </div>
         </Link>
         {config.map((group, index) => {
