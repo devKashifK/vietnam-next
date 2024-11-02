@@ -15,7 +15,7 @@ export async function GET() {
 
     const keyPath = path.join(
       process.cwd(),
-      "./config/service-account-key-2.json"
+      "./config/service-account-key-3.json"
     );
 
     if (!fs.existsSync(keyPath)) {
