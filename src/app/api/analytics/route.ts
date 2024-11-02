@@ -1,9 +1,5 @@
-// app/api/analytics/route.js
-
 import { google } from "googleapis";
 import { NextResponse } from "next/server";
-import path from "path";
-import fs from "fs";
 
 const GA4_PROPERTY_ID = process.env.GA4_PROPERTY_ID;
 
@@ -13,21 +9,10 @@ export async function GET() {
       throw new Error("GA4_PROPERTY_ID is not configured");
     }
 
-    const keyPath = path.join(
-      process.cwd(),
-      "./config/service-account-key-3.json"
-    );
-
-    if (!fs.existsSync(keyPath)) {
-      throw new Error("Service account key file not found");
-    }
-
-    const keyFile = JSON.parse(fs.readFileSync(keyPath, "utf8"));
-    const cleanedPrivateKey = keyFile.private_key.replace(/\\n/g, "\n");
-
+    // Use the environment variables for client email and private key
     const auth = new google.auth.JWT({
-      email: keyFile.client_email,
-      key: cleanedPrivateKey,
+      email: process.env.GOOGLE_CLIENT_EMAIL,
+      key: process.env.GOOGLE_PRIVATE_KEY,
       scopes: ["https://www.googleapis.com/auth/analytics.readonly"],
     });
 
@@ -58,7 +43,7 @@ export async function GET() {
     }
 
     return NextResponse.json(result.data);
-  } catch (error: any) {
+  } catch (error) {
     console.error("Analytics API Error:", {
       message: error.message,
       details: error.response?.data,
