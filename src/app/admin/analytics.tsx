@@ -2,18 +2,18 @@
 
 import { useEffect, useState } from "react";
 import {
-  Bar,
   BarChart,
-  Pie,
+  Bar,
   PieChart,
+  Pie,
   Cell,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
   Legend,
-  LabelList,
   ResponsiveContainer,
+  LabelList,
 } from "recharts";
 import {
   Card,
@@ -32,11 +32,11 @@ import {
 } from "@/components/ui/table";
 
 const CHART_COLORS = {
-  primary: "#2563eb", // Blue
-  secondary: "#0891b2", // Cyan
-  accent: "#7c3aed", // Purple
-  success: "#059669", // Green
-  warning: "#d97706", // Orange
+  primary: "#2563eb",
+  secondary: "#0891b2",
+  accent: "#7c3aed",
+  success: "#059669",
+  warning: "#d97706",
 };
 
 const CHART_COLOR_SCHEME = [
@@ -60,27 +60,12 @@ const CHART_STYLES = {
   },
   label: {
     fontSize: 12,
-    fill: "#6B7280", // text-gray-500
+    fill: "#6B7280",
   },
 };
 
-interface AnalyticsData {
-  country: string;
-  city: string;
-  browser: string;
-  activeUsers: number;
-  sessions: number;
-  newUsers: number;
-}
-
-interface ChartProps {
-  data: any[];
-  dataKeys: string[];
-  colors: string[];
-}
-
 export default function Analytics() {
-  const [data, setData] = useState<AnalyticsData[]>([]);
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -91,7 +76,6 @@ export default function Analytics() {
         if (!response.ok)
           throw new Error(`HTTP error! status: ${response.status}`);
         const result = await response.json();
-
         if (!result.rows || result.rows.length === 0)
           throw new Error("No data received from API");
 
@@ -99,9 +83,14 @@ export default function Analytics() {
           country: row.dimensionValues[0].value,
           city: row.dimensionValues[1].value,
           browser: row.dimensionValues[2].value,
+          pagePath: row.dimensionValues[3].value,
           activeUsers: parseInt(row.metricValues[0].value),
           sessions: parseInt(row.metricValues[1].value),
           newUsers: parseInt(row.metricValues[2].value),
+          screenPageViews: parseInt(row.metricValues[3].value),
+          engagementRate: parseFloat(row.metricValues[4].value),
+          averageSessionDuration: parseFloat(row.metricValues[5].value),
+          bounceRate: parseFloat(row.metricValues[6].value),
         }));
 
         setData(processedData);
@@ -116,46 +105,17 @@ export default function Analytics() {
   }, []);
 
   if (loading) {
-    return (
-      <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900 mx-auto"></div>
-          <p className="mt-4">Loading analytics data...</p>
-        </div>
-      </div>
-    );
+    return <LoadingIndicator />;
   }
 
   if (error) {
-    return (
-      <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-center text-red-600">
-          <p className="text-lg font-medium">Error loading analytics data</p>
-          <p className="text-sm mt-2">{error}</p>
-        </div>
-      </div>
-    );
+    return <ErrorMessage error={error} />;
   }
 
-  const countryData = data.reduce((acc, item) => {
-    const existingCountry = acc.find((c) => c.country === item.country);
-    if (existingCountry) {
-      existingCountry.activeUsers += item.activeUsers;
-    } else {
-      acc.push({ country: item.country, activeUsers: item.activeUsers });
-    }
-    return acc;
-  }, []);
-
-  const browserData = data.reduce((acc, item) => {
-    const existingBrowser = acc.find((b) => b.browser === item.browser);
-    if (existingBrowser) {
-      existingBrowser.sessions += item.sessions;
-    } else {
-      acc.push({ browser: item.browser, sessions: item.sessions });
-    }
-    return acc;
-  }, []);
+  // Aggregate data by country, browser, and page path for visualization
+  const countryData = aggregateData(data, "country", "activeUsers");
+  const browserData = aggregateData(data, "browser", "sessions");
+  const pageViewData = aggregateData(data, "pagePath", "screenPageViews");
 
   return (
     <div className="space-y-8 p-6 px-0 max-w-7xl mx-auto">
@@ -169,216 +129,205 @@ export default function Analytics() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <Card className="rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <CardHeader className="border-b bg-muted/30 py-2  ">
-                <CardTitle className="text-base font-medium">
-                  Active Users by Country
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="h-[350px] w-full pt-4">
-                <BarChartComponent
-                  data={countryData}
-                  dataKeys={["activeUsers"]}
-                  colors={[CHART_COLORS.primary]}
-                />
-              </CardContent>
-            </Card>
-
-            <Card className="rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <CardHeader className="border-b bg-muted/30 py-2">
-                <CardTitle className="text-base font-medium">
-                  Sessions by Browser
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="h-[350px] w-full pt-4">
-                <PieChart width={450} height={250}>
-                  <Pie
-                    data={browserData}
-                    dataKey="sessions"
-                    nameKey="browser"
-                    cx="50%"
-                    cy="50%"
-                    innerRadius={60}
-                    outerRadius={100}
-                    paddingAngle={2}
-                    label={({
-                      cx,
-                      cy,
-                      midAngle,
-                      innerRadius,
-                      outerRadius,
-                      value,
-                      name,
-                    }) => {
-                      const RADIAN = Math.PI / 180;
-                      const radius = outerRadius * 1.2;
-                      const x = cx + radius * Math.cos(-midAngle * RADIAN);
-                      const y = cy + radius * Math.sin(-midAngle * RADIAN);
-                      const percent = (
-                        (value /
-                          browserData.reduce(
-                            (sum, entry) => sum + entry.sessions,
-                            0
-                          )) *
-                        100
-                      ).toFixed(0);
-
-                      return (
-                        <text
-                          x={x}
-                          y={y}
-                          fill="#4B5563"
-                          textAnchor={x > cx ? "start" : "end"}
-                          dominantBaseline="central"
-                          style={CHART_STYLES.label}
-                        >
-                          {`${name} (${percent}%)`}
-                        </text>
-                      );
-                    }}
-                  >
-                    {browserData.map((entry, index) => (
-                      <Cell
-                        key={`cell-${index}`}
-                        fill={
-                          CHART_COLOR_SCHEME[index % CHART_COLOR_SCHEME.length]
-                        }
-                        stroke="white"
-                        strokeWidth={2}
-                      />
-                    ))}
-                  </Pie>
-                  <Tooltip
-                    contentStyle={CHART_STYLES.tooltip}
-                    formatter={(value) => new Intl.NumberFormat().format(value)}
-                  />
-                  {/* <Legend
-                    wrapperStyle={{ marginTop: "100px", marginLeft: "0px" }}
-                    iconType="circle"
-                    formatter={(value) => (
-                      <span style={{ color: "#4B5563", fontSize: "12px" }}>
-                        {value.charAt(0).toUpperCase() + value.slice(1)}
-                      </span>
-                    )}
-                  /> */}
-                </PieChart>
-              </CardContent>
-            </Card>
+          <div className="grid h-max grid-cols-1 lg:grid-cols-2 space-x-8">
+            <ChartCard
+              title="Active Users by Country"
+              data={countryData}
+              dataKey="activeUsers"
+              chartType="bar"
+              width={350}
+              height={450}
+            />
+            <ChartCard
+              title="Sessions by Browser"
+              data={browserData}
+              dataKey="sessions"
+              chartType="pie"
+              width={350}
+              height={450}
+            />
+          </div>
+          <div className="mt-4">
+            <ChartCard
+              title="Page Views by Page Path"
+              data={pageViewData}
+              width={900}
+              height={450}
+              dataKey="screenPageViews"
+              chartType="bar"
+            />
           </div>
         </CardContent>
       </Card>
 
-      <Card className="rounded-xl border-border/40 shadow-sm">
-        <CardHeader className="space-y-1 border-b bg-muted/30 py-2">
-          <CardTitle className="text-base font-semibold">
-            Detailed Analytics
-          </CardTitle>
-          <CardDescription className="text-sm">
-            Comprehensive breakdown of analytics data
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="p-0">
-          <div className="overflow-x-auto">
-            <Table>
-              <TableHeader>
-                <TableRow className="bg-muted/50 hover:bg-muted/50">
-                  <TableHead className="font-semibold">Country</TableHead>
-                  <TableHead className="font-semibold">City</TableHead>
-                  <TableHead className="font-semibold">Browser</TableHead>
-                  <TableHead className="font-semibold text-right">
-                    Active Users
-                  </TableHead>
-                  <TableHead className="font-semibold text-right">
-                    Sessions
-                  </TableHead>
-                  <TableHead className="font-semibold text-right">
-                    New Users
-                  </TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {data.map((item, index) => (
-                  <TableRow key={index} className="hover:bg-muted/30">
-                    <TableCell className="font-medium">
-                      {item.country}
-                    </TableCell>
-                    <TableCell>{item.city}</TableCell>
-                    <TableCell>{item.browser}</TableCell>
-                    <TableCell className="text-right">
-                      {item.activeUsers.toLocaleString()}
-                    </TableCell>
-                    <TableCell className="text-right">
-                      {item.sessions.toLocaleString()}
-                    </TableCell>
-                    <TableCell className="text-right">
-                      {item.newUsers.toLocaleString()}
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </div>
-        </CardContent>
-      </Card>
+      <DetailedAnalyticsTable data={data} />
     </div>
   );
 }
 
-const BarChartComponent = ({ data, dataKeys, colors }) => (
-  <BarChart
-    width={400}
-    height={320}
-    data={data}
-    margin={{ top: 20, right: 30, left: -60, bottom: 5 }}
-  >
-    <XAxis
-      dataKey="country"
-      tick={CHART_STYLES.label}
-      axisLine={{ stroke: "#e5e7eb" }}
-      tickLine={false}
-    />
-    <YAxis
-      tick={CHART_STYLES.label}
-      axisLine={{ stroke: "#e5e7eb" }}
-      tickLine={false}
-      width={80}
-    />
-    <CartesianGrid strokeDasharray="3 3" stroke="#f3f4f6" vertical={false} />
-    <Tooltip
-      contentStyle={CHART_STYLES.tooltip}
-      cursor={{ fill: "rgba(224, 231, 255, 0.2)" }}
-      formatter={(value) => new Intl.NumberFormat().format(value)}
-    />
-    <Legend
-      wrapperStyle={{ paddingTop: "20px", paddingLeft: "50px" }}
-      iconType="circle"
-      formatter={(value) => (
-        <span style={{ color: "#4B5563", fontSize: "12px" }}>
-          {value.charAt(0).toUpperCase() + value.slice(1)}
-        </span>
-      )}
-    />
-    {dataKeys.map((key, index) => (
-      <Bar
-        key={key}
-        dataKey={key}
-        fill={colors[index % colors.length]}
-        barSize={40}
-        radius={[6, 6, 0, 0]}
-      >
-        <LabelList
-          dataKey={key}
-          position="top"
-          style={CHART_STYLES.label}
-          formatter={(value) =>
-            new Intl.NumberFormat("en", {
-              notation: "compact",
-              compactDisplay: "short",
-            }).format(value)
-          }
-        />
-      </Bar>
-    ))}
-  </BarChart>
-);
+// Components and Helpers
+
+function LoadingIndicator() {
+  return (
+    <div className="flex items-center justify-center min-h-[400px]">
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900 mx-auto"></div>
+        <p className="mt-4">Loading analytics data...</p>
+      </div>
+    </div>
+  );
+}
+
+function ErrorMessage({ error }) {
+  return (
+    <div className="flex items-center justify-center min-h-[400px]">
+      <div className="text-center text-red-600">
+        <p className="text-lg font-medium">Error loading analytics data</p>
+        <p className="text-sm mt-2">{error}</p>
+      </div>
+    </div>
+  );
+}
+
+function ChartCard({ title, data, dataKey, chartType, width, height }) {
+  return (
+    <Card className="rounded-lg shadow-sm hover:shadow-md transition-shadow">
+      <CardHeader className="border-b bg-muted/30 py-2">
+        <CardTitle className="text-base font-medium">{title}</CardTitle>
+      </CardHeader>
+      <CardContent className="h-[550px]  w-full pt-4">
+        {chartType === "bar" ? (
+          <BarChart
+            width={width}
+            height={height}
+            data={data}
+            margin={{ top: 20, right: 30, left: 0, bottom: 5 }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" tick={CHART_STYLES.label} />
+            <YAxis tick={CHART_STYLES.label} />
+            <Tooltip contentStyle={CHART_STYLES.tooltip} />
+            <Legend />
+            <Bar dataKey={dataKey} fill={CHART_COLORS.primary} />
+          </BarChart>
+        ) : (
+          <PieChart width={350} height={450}>
+            <Pie
+              data={data}
+              dataKey={dataKey}
+              nameKey="name"
+              cx="50%"
+              cy="50%"
+              outerRadius={80}
+              fill={CHART_COLORS.primary}
+            >
+              {data.map((entry, index) => (
+                <Cell
+                  key={`cell-${index}`}
+                  fill={CHART_COLOR_SCHEME[index % CHART_COLOR_SCHEME.length]}
+                />
+              ))}
+            </Pie>
+            <Tooltip contentStyle={CHART_STYLES.tooltip} />
+            <Legend />
+          </PieChart>
+        )}
+      </CardContent>
+    </Card>
+  );
+}
+
+function DetailedAnalyticsTable({ data }) {
+  return (
+    <Card className="rounded-xl border-border/40 shadow-sm">
+      <CardHeader className="space-y-1 border-b bg-muted/30 py-2">
+        <CardTitle className="text-base font-semibold">
+          Detailed Analytics
+        </CardTitle>
+        <CardDescription className="text-sm">
+          Comprehensive breakdown of analytics data
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="p-0">
+        <div className="overflow-x-auto">
+          <Table>
+            <TableHeader>
+              <TableRow className="bg-muted/50 hover:bg-muted/50">
+                <TableHead className="font-semibold">Country</TableHead>
+                <TableHead className="font-semibold">City</TableHead>
+                <TableHead className="font-semibold">Browser</TableHead>
+                <TableHead className="font-semibold">Page Path</TableHead>
+                <TableHead className="font-semibold text-right">
+                  Active Users
+                </TableHead>
+                <TableHead className="font-semibold text-right">
+                  Sessions
+                </TableHead>
+                <TableHead className="font-semibold text-right">
+                  New Users
+                </TableHead>
+                <TableHead className="font-semibold text-right">
+                  Page Views
+                </TableHead>
+                <TableHead className="font-semibold text-right">
+                  Engagement Rate
+                </TableHead>
+                <TableHead className="font-semibold text-right">
+                  Avg. Session Duration
+                </TableHead>
+                <TableHead className="font-semibold text-right">
+                  Bounce Rate
+                </TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {data.map((item, index) => (
+                <TableRow key={index} className="hover:bg-muted/30">
+                  <TableCell className="font-medium">{item.country}</TableCell>
+                  <TableCell>{item.city}</TableCell>
+                  <TableCell>{item.browser}</TableCell>
+                  <TableCell>{item.pagePath}</TableCell>
+                  <TableCell className="text-right">
+                    {item.activeUsers}
+                  </TableCell>
+                  <TableCell className="text-right">{item.sessions}</TableCell>
+                  <TableCell className="text-right">{item.newUsers}</TableCell>
+                  <TableCell className="text-right">
+                    {item.screenPageViews}
+                  </TableCell>
+                  <TableCell className="text-right">
+                    {(item.engagementRate * 100).toFixed(1)}%
+                  </TableCell>
+                  <TableCell className="text-right">
+                    {formatDuration(item.averageSessionDuration)}
+                  </TableCell>
+                  <TableCell className="text-right">
+                    {(item.bounceRate * 100).toFixed(1)}%
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
+
+function aggregateData(data, dimension, metric) {
+  return data.reduce((acc, item) => {
+    const existingItem = acc.find((d) => d.name === item[dimension]);
+    if (existingItem) {
+      existingItem[metric] += item[metric];
+    } else {
+      acc.push({ name: item[dimension], [metric]: item[metric] });
+    }
+    return acc;
+  }, []);
+}
+
+function formatDuration(seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = Math.floor(seconds % 60);
+  return `${minutes}m ${remainingSeconds}s`;
+}

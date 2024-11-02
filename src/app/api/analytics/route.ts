@@ -29,12 +29,18 @@ export async function GET() {
           { name: "country" },
           { name: "city" },
           { name: "browser" },
+          { name: "pagePath" }, // Add page URL dimension
         ],
         metrics: [
           { name: "activeUsers" },
           { name: "sessions" },
           { name: "newUsers" },
+          { name: "screenPageViews" }, // Add page views metric
+          { name: "engagementRate" }, // Engagement rate metric
+          { name: "averageSessionDuration" }, // Average session duration metric
+          { name: "bounceRate" }, // Bounce rate metric
         ],
+        orderBys: [{ metric: { metricName: "screenPageViews" }, desc: true }],
       },
     });
 
