@@ -20,7 +20,7 @@ export default function Container({
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
         className={cn(
-          "flex flex-col lg:lg:gap-4 gap-0  py-6 w-[94%] lg:w-[90%]  mr-auto ml-auto lg:ml-24 mt-2 mb-2",
+          "flex flex-col lg:gap-4 gap-0  py-6 w-[94%] lg:w-[90%]  mr-auto ml-auto lg:ml-24 mt-2 mb-2",
           className
         )}
         {...props}

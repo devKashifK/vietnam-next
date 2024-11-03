@@ -15,6 +15,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Loader2, Upload, Image as ImageIcon } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
+import { cn } from "@/lib/utils";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 const supabaseService = createClient(
   "https://etsnyvijvhklcwfnczkq.supabase.co",
@@ -38,6 +40,8 @@ async function fetchImages() {
   const { data, error } = await supabaseService.storage
     .from("images")
     .list("public");
+
+  console.log(data);
 
   if (error) {
     throw new Error(error.message);
@@ -117,6 +121,16 @@ export function ImageUploaderAndPicker({
     setDialogOpen(false);
   };
 
+  async function deleteImage(imageName) {
+    const { error } = await supabaseService.storage
+      .from("images") // Replace "images" with your actual bucket name if different
+      .remove([`public/${imageName}`]); // Use the correct folder path if you have one
+
+    if (error) {
+      throw new Error(error.message);
+    }
+  }
+
   return (
     <div className="space-y-6 w-full">
       <div className="flex w-full items-center space-x-4">
@@ -133,7 +147,7 @@ export function ImageUploaderAndPicker({
               Choose Image
             </Button>
           </DialogTrigger>
-          <DialogContent className="bg-primary sm:max-w-[725px]">
+          <DialogContent className="bg-content sm:max-w-[725px]">
             <DialogHeader>
               <DialogTitle>Select an Image</DialogTitle>
             </DialogHeader>
@@ -148,23 +162,51 @@ export function ImageUploaderAndPicker({
                     <Loader2 className="h-8 w-8 animate-spin" />
                   </div>
                 ) : (
-                  <div className="grid grid-cols-3 gap-4 max-h-[400px] overflow-y-auto">
+                  <div className="grid grid-cols-3 gap-4 max-h-[350px] pretty-scroll overflow-y-auto">
                     {images.map((image) => (
                       <Card
                         key={image.name}
-                        className={`cursor-pointer hover:shadow-md transition-shadow ${
-                          selectedImage === image.url
-                            ? "ring-2 ring-primary"
-                            : ""
-                        }`}
+                        className={`cursor-pointer hover:shadow-md transition-shadow `}
                         onClick={() => setSelectedImage(image.url)}
                       >
-                        <CardContent className="p-0">
+                        <CardContent className="p-0 relative">
                           <img
                             src={image.url}
                             alt={image.name}
-                            className="w-full h-32 object-cover rounded-md"
+                            className={cn(
+                              "w-full h-32 object-cover rounded-md",
+                              selectedImage === image.url
+                                ? "border-2 border-highlight transition-all duration-300 ease-in-out"
+                                : ""
+                            )}
                           />
+                          {selectedImage === image.url && (
+                            <div className="absolute top-0 right-0 bg-black/50 w-full h-full flex items-center justify-center gap-3">
+                              <div
+                                className="p-1 rounded-full hover:bg-highlight transition-colors duration-300 ease-in-out"
+                                onClick={() => {
+                                  handleImageSelect(selectedImage || ""),
+                                    setDialogOpen(false);
+                                }}
+                              >
+                                <Icon
+                                  icon={"material-symbols:add-2"}
+                                  className="text-content text-2xl"
+                                />
+                              </div>
+                              <div
+                                className="p-1 rounded-full hover:bg-highlight transition-colors duration-300 ease-in-out"
+                                onClick={async () =>
+                                  await deleteImage(image.name)
+                                }
+                              >
+                                <Icon
+                                  icon={"material-symbols:delete"}
+                                  className="text-content text-2xl "
+                                />
+                              </div>
+                            </div>
+                          )}
                         </CardContent>
                       </Card>
                     ))}
@@ -189,15 +231,16 @@ export function ImageUploaderAndPicker({
                 </div>
               </TabsContent>
             </Tabs>
-            <div className="flex justify-end mt-4">
+            {/* <div className="flex justify-end mt-4">
               <Button
+                className="bg-highlight"
                 onClick={() => {
                   handleImageSelect(selectedImage || ""), setDialogOpen(false);
                 }}
               >
                 Add Image
               </Button>
-            </div>
+            </div> */}
           </DialogContent>
         </Dialog>
       </div>

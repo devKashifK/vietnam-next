@@ -1,11 +1,13 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { PlusCircle, FileText, Newspaper } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { NewPageForm } from "./new-page";
 import { PageList } from "./exsisting-page";
 import { NewsForm, NewsList } from "./news-admin";
 import Analytics from "./analytics";
+import { useCheckSession } from "@/auth";
+import { supabase } from "@/supabaseClient";
 
 const Sidebar = ({ activeTab, setActiveTab, pages, news }) => (
   <div className="w-64 bg-gray-100 h-screen over p-4">
@@ -34,11 +36,13 @@ const Sidebar = ({ activeTab, setActiveTab, pages, news }) => (
 );
 
 export default function AdminPanel() {
+  const session = useCheckSession();
   const [activeTab, setActiveTab] = useState("pages");
   const [pages, setPages] = useState([
     { id: 1, title: "Home Page", createdAt: "2023-05-15" },
     { id: 2, title: "About Us", createdAt: "2023-05-16" },
   ]);
+
   const [news, setNews] = useState([
     {
       id: 1,
@@ -65,14 +69,6 @@ export default function AdminPanel() {
 
     setPages([...pages, newPage]);
     setActiveTab("pages");
-  };
-
-  const handleEditPage = (id) => {
-    console.log("Edit page", id);
-  };
-
-  const handleDeletePage = (id) => {
-    setPages(pages.filter((page) => page.id !== id));
   };
 
   const handleAddNews = (newsData) => {
@@ -115,11 +111,7 @@ export default function AdminPanel() {
         <Tabs value={activeTab}>
           <TabsContent value="pages">
             <h2 className="text-2xl font-bold mb-4">Pages</h2>
-            <PageList
-              pages={pages}
-              onEdit={handleEditPage}
-              onDelete={handleDeletePage}
-            />
+            <PageList />
           </TabsContent>
           <TabsContent value="new">
             <h2 className="text-2xl font-bold mb-4">Create New Page</h2>

@@ -31,6 +31,8 @@ import { saveToDatabase } from "./save-to-json";
 import { ImageUploaderAndPicker } from "./image-picker";
 import { componentDesigns } from "./component-designs";
 import CustomDropdown from "./custom-dropdown";
+import HeroDefault from "@/components/ui/hero-all";
+import Footer from "@/components/ui/footer";
 
 export function NewPageForm({ onSubmit }) {
   const [formData, setFormData] = React.useState({
@@ -263,7 +265,6 @@ export function NewPageForm({ onSubmit }) {
   return (
     <div className="container mx-auto p-4 relative">
       <h1 className="text-3xl font-bold mb-6 text-left">Page Builder</h1>
-      <CustomDropdown />
       <form onSubmit={handleSubmit}>
         <Tabs defaultValue="edit" className="space-y-4 justify-start">
           <TabsList className="justify-start flex w-max">
@@ -462,32 +463,24 @@ export function NewPageForm({ onSubmit }) {
             </div>
           </TabsContent>
           <TabsContent value="preview">
-            <Card>
-              <CardContent className="p-6">
-                <div
-                  className="absolute right-20 cursor-pointer bg-content rounded-sm px-1 py-1"
-                  onClick={() => setExpandView(true)}
-                >
-                  <Icon icon={"material-symbols:expand-content"} />
+            <div
+              className="absolute right-20 cursor-pointer bg-content rounded-sm px-1 py-1"
+              onClick={() => setExpandView(true)}
+            >
+              <Icon icon={"material-symbols:expand-content"} />
+            </div>
+            <h2 className="text-2xl font-bold mb-4">Page Preview</h2>
+            <div className="space-y-8 border py-0 px-0 rounded-lg overflow-hidden">
+              <HeroDefault image={formData.image} text={formData.title} />
+              {formData.sections.map((section) => (
+                <div key={section.id}>
+                  {componentDesigns[section.type]
+                    .find((d) => d.id === section.design)
+                    ?.component(section.content)}
                 </div>
-                <h2 className="text-2xl font-bold mb-4">Page Preview</h2>
-                <div className="space-y-8 border p-4 rounded-lg">
-                  <h1 className="text-4xl font-bold">
-                    {formData.title || "Page Title"}
-                  </h1>
-                  <p className="text-xl">
-                    {formData.description || "Page Description"}
-                  </p>
-                  {formData.sections.map((section) => (
-                    <div key={section.id}>
-                      {componentDesigns[section.type]
-                        .find((d) => d.id === section.design)
-                        ?.component(section.content)}
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+              ))}
+              <Footer />
+            </div>
           </TabsContent>
         </Tabs>
 

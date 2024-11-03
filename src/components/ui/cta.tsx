@@ -238,7 +238,7 @@ export const CTADefault = ({
             {title}
           </h4>
           {typeof subtitle === "string" ? (
-            <p className="text-4xl text-white/90">{subtitle}</p>
+            <p className="text-lg text-white/90">{subtitle}</p>
           ) : (
             subtitle
           )}

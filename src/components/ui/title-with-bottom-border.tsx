@@ -10,6 +10,7 @@ export default function TitleWithBottomBorder({
   borderClass?: string;
   titleClass?: string;
 }) {
+  console.log(children, "CheckChildren23");
   return (
     <div className="relative flex flex-col justify-start items-start gap-1">
       <h2

@@ -1,3 +1,4 @@
+"use client";
 import {
   Accordion,
   AccordionContent,
@@ -10,7 +11,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Edit, Trash2, X } from "lucide-react";
-import { useState } from "react";
+import React, { useState } from "react";
+import ReactQuill from "react-quill-new";
+import "react-quill-new/dist/quill.snow.css";
 
 export const NewsForm = ({ onSubmit, initialData = {} }) => {
   const [formData, setFormData] = useState({
@@ -136,6 +139,9 @@ export const NewsForm = ({ onSubmit, initialData = {} }) => {
           )}
         </div>
       </div>
+
+      <ReactQuill value={formData.content} onChange={handleContentChange} />
+
       <div className="space-y-4">
         <div className="flex justify-between items-center">
           <h3 className="text-lg font-semibold">Sections</h3>
