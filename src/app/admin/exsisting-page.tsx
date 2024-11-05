@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { supabase } from "@/supabaseClient";
 import { Edit, Trash2 } from "lucide-react";
+import Link from "next/link";
 import { cache, use, useEffect, useState } from "react";
 
 export const getPageList = cache(async () => {
@@ -38,14 +39,13 @@ export function PageList({}) {
                 Created: {page.created_at}
               </p>
             </div>
-            <div>
-              <Button
-                variant="outline"
-                size="icon"
-                className="mr-2 text-content"
+            <div className="flex items-center gap-2">
+              <Link
+                href={`/admin/editor/${page.slug}`}
+                className="mr-2 text-content cursor-pointer"
               >
-                <Edit className="h-4 w-4" />
-              </Button>
+                <Edit className="h-4 w-4 text-black" />
+              </Link>
               <Button
                 variant="destructive"
                 size="icon"

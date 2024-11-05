@@ -1,17 +1,35 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { supabase } from "@/supabaseClient";
-import { AppSidebar } from "./app-sidebar";
-import { EditorDynamicComponent } from "./dynamic-editable-component";
-import { generateUniqueId } from "./generateId";
 import Footer from "@/components/ui/footer";
 import HeroDefault from "@/components/ui/hero-all";
+import { generateUniqueId } from "../generateId";
+import { EditorDynamicComponent } from "../dynamic-editable-component";
+import { AppSidebar } from "../app-sidebar";
+import { useParams } from "next/navigation";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 
-export default function EditorInterface({ selectedPage }) {
+export default function EditorInterface() {
+  const { slug } = useParams();
+  const selectedPage = slug;
+  console.log("selectedPage", selectedPage);
+  const [pages, setPages] = useState([]);
+  // const [selectedPage, setSelectedPage] = useState(null);
   const [pageData, setPageData] = useState(null);
   const [previewData, setPreviewData] = useState(null);
   const [selectedComponent, setSelectedComponent] = useState(null);
 
+  // Fetch available pages
+  useEffect(() => {
+    async function fetchPages() {
+      const { data, error } = await supabase.from("pages").select("slug");
+      if (error) console.error("Error fetching pages:", error);
+      else setPages(data);
+    }
+    fetchPages();
+  }, []);
+
+  // Fetch page data when a page is selected
   useEffect(() => {
     if (selectedPage) {
       async function fetchPageData() {
@@ -108,38 +126,60 @@ export default function EditorInterface({ selectedPage }) {
   };
 
   return (
-    <div className="min-h-screen w-full bg-gray-100">
-      <div className="flex h-screen w-full">
-        {/* Main Content Area */}
-        <div className="w-full p-1 overflow-x-hidden">
-          {/* Editor Area */}
-          <div className="bg-white w-full shadow-lg">
-            {previewData ? (
-              <>
-                <HeroDefault />
-                <EditorDynamicComponent
-                  data={previewData}
-                  onComponentSelect={handleComponentSelect}
-                  selectedComponent={selectedComponent}
-                />
-                <Footer />
-              </>
-            ) : (
-              <div className="text-center text-gray-500 py-8">
-                Select a page to start editing
-              </div>
-            )}
-          </div>
-        </div>
+    <SidebarProvider>
+      <AppSidebar />
+      <SidebarTrigger />
+      <div className="min-h-screen w-full bg-gray-100">
+        <div className="flex h-screen w-full">
+          {/* Main Content Area */}
+          <div className="w-full p-1 overflow-x-hidden">
+            {/* Top Bar */}
+            {/* <div className="mb-6 flex gap-4 items-center">
+              <select
+                onChange={(e) => setSelectedPage(e.target.value)}
+                value={selectedPage || ""}
+                className="border rounded-md p-2"
+              >
+                <option value="" disabled>
+                  Select a page to edit
+                </option>
+                {pages.map((page) => (
+                  <option key={page.slug} value={page.slug}>
+                    {page.slug}
+                  </option>
+                ))}
+              </select>
+            </div> */}
 
-        {/* Sidebar */}
-        <AppSidebar
-          pageData={pageData}
-          selectedPage={selectedPage}
-          onUpdate={handlePageDataUpdate}
-          onLocalUpdate={handleLocalUpdate}
-        />
+            {/* Editor Area */}
+            <div className="bg-white w-full shadow-lg">
+              {previewData ? (
+                <>
+                  <HeroDefault />
+                  <EditorDynamicComponent
+                    data={previewData}
+                    onComponentSelect={handleComponentSelect}
+                    selectedComponent={selectedComponent}
+                  />
+                  <Footer />
+                </>
+              ) : (
+                <div className="text-center text-gray-500 py-8">
+                  Select a page to start editing
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Sidebar */}
+          <AppSidebar
+            pageData={pageData}
+            selectedPage={selectedPage}
+            onUpdate={handlePageDataUpdate}
+            onLocalUpdate={handleLocalUpdate}
+          />
+        </div>
       </div>
-    </div>
+    </SidebarProvider>
   );
 }

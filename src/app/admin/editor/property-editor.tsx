@@ -25,19 +25,43 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 
-const LAYOUT_COMPONENTS = ["Container", "Glass"];
+const LAYOUT_COMPONENTS = [];
 
 const isVisibleComponent = (component: any) => {
   return !LAYOUT_COMPONENTS.includes(component.component);
 };
 
-const ComponentHeader = ({ component }) => {
+const ComponentHeader = ({ component, onDelete }) => {
   return (
     <div className="flex items-center justify-between w-full">
       <div className="flex items-center gap-2">
         <span className="font-medium">{component.component}</span>
-        {/* <span className="text-sm text-gray-500">({component.id})</span> */}
       </div>
+      <AlertDialog>
+        <AlertDialogTrigger asChild>
+          <Button variant="ghost" size="icon" className="h-8 w-8">
+            <Icon icon="lucide:trash-2" className="h-4 w-4 text-red-500" />
+          </Button>
+        </AlertDialogTrigger>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Are you sure?</AlertDialogTitle>
+            <AlertDialogDescription>
+              This action cannot be undone. This will permanently delete this
+              component.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogAction
+              onClick={() => onDelete(component.id)}
+              className="bg-red-500 hover:bg-red-600"
+            >
+              Delete
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   );
 };
@@ -227,136 +251,15 @@ export default function PropertyEditor({
     }
   };
 
-  //   const renderFields = (component) => {
-  //     const { id, props = {}, component: componentType } = component;
-  //     const changes = localChanges[id] || {};
-
-  //     switch (componentType) {
-  //       case "ServicesCard":
-  //         return (
-  //           <div className="space-y-4">
-  //             <div className="p-4 border rounded-lg">
-  //               <Label className="block mb-2">Title Components</Label>
-  //               {props.title?.props?.children?.map((child, index) => (
-  //                 <div key={index} className="ml-4 border-l-2 pl-4 mt-2">
-  //                   {child.component === "TitleWithBottomBorder" && (
-  //                     <div className="mb-2">
-  //                       <Label className="block mb-1 text-sm">Border Title</Label>
-  //                       <Input
-  //                         value={
-  //                           changes[`title_border_${index}`] ??
-  //                           child.props.children
-  //                         }
-  //                         onChange={(e) =>
-  //                           handleUpdate(
-  //                             id,
-  //                             `title_border_${index}`,
-  //                             e.target.value
-  //                           )
-  //                         }
-  //                       />
-  //                     </div>
-  //                   )}
-  //                   {child.component === "h5" && (
-  //                     <div className="mb-2">
-  //                       <Label className="block mb-1 text-sm">Heading</Label>
-  //                       <Input
-  //                         value={
-  //                           changes[`title_h5_${index}`] ?? child.props.children
-  //                         }
-  //                         onChange={(e) =>
-  //                           handleUpdate(id, `title_h5_${index}`, e.target.value)
-  //                         }
-  //                       />
-  //                     </div>
-  //                   )}
-  //                 </div>
-  //               ))}
-  //             </div>
-  //             <div className="p-4 border rounded-lg">
-  //               <Label className="block mb-2">Description</Label>
-  //               <Input
-  //                 value={changes.description ?? (props.description || "")}
-  //                 onChange={(e) =>
-  //                   handleUpdate(id, "description", e.target.value)
-  //                 }
-  //                 placeholder="Enter description..."
-  //               />
-  //             </div>
-  //           </div>
-  //         );
-
-  //       case "TitleWithDoubleBorder":
-  //       case "TitleWithBottomBorder":
-  //         return (
-  //           <div className="space-y-4">
-  //             <div className="p-4 border rounded-lg">
-  //               <Label className="block mb-2">Content</Label>
-  //               <Input
-  //                 value={changes.children ?? (props.children || "")}
-  //                 onChange={(e) => handleUpdate(id, "children", e.target.value)}
-  //                 placeholder="Enter content..."
-  //               />
-  //             </div>
-  //           </div>
-  //         );
-
-  //       case "h2":
-  //       case "h5":
-  //       case "p":
-  //         return (
-  //           <div className="space-y-4">
-  //             <div className="p-4 border rounded-lg">
-  //               <Label className="block mb-2">Content</Label>
-  //               <Input
-  //                 value={changes.children ?? (props.children || "")}
-  //                 onChange={(e) => handleUpdate(id, "children", e.target.value)}
-  //                 placeholder="Enter content..."
-  //               />
-  //             </div>
-  //             {props.className && (
-  //               <div className="p-4 border rounded-lg">
-  //                 <Label className="block mb-2">Class Name</Label>
-  //                 <Input
-  //                   value={changes.className ?? (props.className || "")}
-  //                   onChange={(e) =>
-  //                     handleUpdate(id, "className", e.target.value)
-  //                   }
-  //                   placeholder="Enter class name..."
-  //                 />
-  //               </div>
-  //             )}
-  //           </div>
-  //         );
-
-  //       case "div":
-  //         return (
-  //           <div className="space-y-4">
-  //             {props.className && (
-  //               <div className="p-4 border rounded-lg">
-  //                 <Label className="block mb-2">Class Name</Label>
-  //                 <Input
-  //                   value={changes.className ?? (props.className || "")}
-  //                   onChange={(e) =>
-  //                     handleUpdate(id, "className", e.target.value)
-  //                   }
-  //                   placeholder="Enter class name..."
-  //                 />
-  //               </div>
-  //             )}
-  //           </div>
-  //         );
-
-  //       default:
-  //         return null;
-  //     }
-  //   };
-
-  // ... previous imports and code ...
-
   const renderFields = (component) => {
     const { id, props = {}, component: componentType } = component;
     const changes = localChanges[id] || {};
+
+    const renderNestedComponents = (children) => {
+      return children.map((child, index) => (
+        <div key={index}>{renderFields(child)}</div>
+      ));
+    };
 
     switch (componentType) {
       case "Title":
@@ -526,7 +429,84 @@ export default function PropertyEditor({
             )}
           </div>
         );
-
+      case "ServicesCard":
+        return (
+          <div className="space-y-4 w-full">
+            {props.title?.props?.children && (
+              <div className="px-2 w-full rounded-lg">
+                {props.title.props.children.map((child, index) => {
+                  if (child.component === "TitleWithBottomBorder") {
+                    return (
+                      <div key={index} className="mb-4">
+                        <Label className="block mb-2">Title with Border</Label>
+                        <Input
+                          value={
+                            changes[`title_border_${index}`] ??
+                            (child.props.children || "")
+                          }
+                          onChange={(e) =>
+                            handleUpdate(
+                              id,
+                              `title_border_${index}`,
+                              e.target.value
+                            )
+                          }
+                          placeholder="Enter title..."
+                        />
+                      </div>
+                    );
+                  }
+                  if (child.component === "h5") {
+                    return (
+                      <div key={index} className="mb-4">
+                        <Label className="block mb-2">Subtitle</Label>
+                        <Input
+                          value={
+                            changes[`title_h5_${index}`] ??
+                            (child.props.children || "")
+                          }
+                          onChange={(e) =>
+                            handleUpdate(
+                              id,
+                              `title_h5_${index}`,
+                              e.target.value
+                            )
+                          }
+                          placeholder="Enter subtitle..."
+                        />
+                      </div>
+                    );
+                  }
+                  return null;
+                })}
+              </div>
+            )}
+            {props.description !== undefined && (
+              <div className="px-2 rounded-lg">
+                <Label className="block mb-2">Description</Label>
+                <Input
+                  value={changes.description ?? (props.description || "")}
+                  onChange={(e) =>
+                    handleUpdate(id, "description", e.target.value)
+                  }
+                  placeholder="Enter description..."
+                />
+              </div>
+            )}
+            {props.className && (
+              <div className="px-2 rounded-lg">
+                <Label className="block mb-2">Class Name</Label>
+                <Input
+                  value={changes.className ?? (props.className || "")}
+                  onChange={(e) =>
+                    handleUpdate(id, "className", e.target.value)
+                  }
+                  placeholder="Enter class name..."
+                />
+              </div>
+            )}
+          </div>
+        );
       case "Icon":
         return (
           <div className="space-y-4">
@@ -560,6 +540,81 @@ export default function PropertyEditor({
 
   // ... rest of your component code ...
 
+  const handleDeleteComponent = async (componentId: string) => {
+    setIsSaving(true);
+    setError(null);
+
+    try {
+      const deleteComponent = (data: any): any => {
+        if (!data) return data;
+
+        // Handle arrays
+        if (Array.isArray(data)) {
+          return data
+            .filter((item) => item.id !== componentId)
+            .map((item) => deleteComponent(item));
+        }
+
+        // Handle objects
+        if (typeof data === "object") {
+          // If this component has children, process them
+          if (data.props?.children) {
+            return {
+              ...data,
+              props: {
+                ...data.props,
+                children: deleteComponent(data.props.children),
+              },
+            };
+          }
+        }
+
+        return data;
+      };
+
+      const updatedData = deleteComponent(pageData);
+
+      // Update preview immediately
+      if (onLocalUpdate) {
+        onLocalUpdate(updatedData);
+      }
+
+      // Make sure we have the required data
+      if (!selectedPage) {
+        throw new Error("No page selected");
+      }
+
+      // Update the database
+      const { data, error: supabaseError } = await supabase
+        .from("pages")
+        .update({
+          content: updatedData,
+        })
+        .eq("slug", selectedPage)
+        .select();
+
+      if (supabaseError) {
+        throw supabaseError;
+      }
+
+      // Update parent component
+      if (onUpdate) {
+        onUpdate(updatedData);
+      }
+
+      console.log("Component deleted successfully");
+    } catch (err) {
+      setError(err.message);
+      console.error("Error deleting component:", {
+        error: err,
+        message: err.message,
+        details: err.details,
+      });
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
   const renderComponent = (component) => {
     if (!component || !component.id) return null;
 
@@ -570,9 +625,12 @@ export default function PropertyEditor({
         className="border-b rounded-none px-0"
       >
         <AccordionTrigger className="hover:bg-gray-50 py-2 px-4 border-b rounded-none">
-          <ComponentHeader component={component} />
+          <ComponentHeader
+            component={component}
+            onDelete={handleDeleteComponent}
+          />
         </AccordionTrigger>
-        <AccordionContent className="px-0.5 pb-4 mt-4">
+        <AccordionContent className="px-0 pb-4 mt-4">
           {renderFields(component)}
           {component.props?.children &&
             Array.isArray(component.props.children) && (
