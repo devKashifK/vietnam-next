@@ -140,7 +140,7 @@ export const NewsForm = ({ onSubmit, initialData = {} }) => {
         </div>
       </div>
 
-      <ReactQuill value={formData.content} onChange={handleContentChange} />
+      <ReactQuill />
 
       <div className="space-y-4">
         <div className="flex justify-between items-center">
