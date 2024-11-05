@@ -1,7 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
 import TitleWithBottomBorder from "./title-with-bottom-border";
-// import { Link } from "react-router-dom";
 import Link from "next/link";
 
 export function CardWithImage({

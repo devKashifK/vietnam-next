@@ -32,10 +32,6 @@ const Sidebar = ({ activeTab, setActiveTab, pages, news }) => (
           <Newspaper className="mr-2 h-4 w-4" />
           News
         </TabsTrigger>
-        <TabsTrigger value="editor" className="justify-start">
-          <Newspaper className="mr-2 h-4 w-4" />
-          Editor
-        </TabsTrigger>
       </TabsList>
     </Tabs>
   </div>
@@ -123,9 +119,7 @@ export default function AdminPanel() {
             <h2 className="text-2xl font-bold mb-4">Create New Page</h2>
             <NewPageForm onSubmit={handleNewPage} />
           </TabsContent>
-          <TabsContent value="editor">
-            <EditorInterface />
-          </TabsContent>
+
           <TabsContent value="news">
             <h2 className="text-2xl font-bold mb-4">News Management</h2>
             {editingNews ? (

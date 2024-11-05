@@ -61,6 +61,16 @@ export function DynamicComponent({ data }) {
   switch (component) {
     case "Container":
       return <Container {...props}>{renderChildren()}</Container>;
+    case "TitleWithDoubleBorder":
+      return <TitleWithDoubleBorder {...props} />;
+    case "HoverCard":
+      return <HoverCard {...props} />;
+    case "List":
+      return <List {...props}>{renderChildren()}</List>;
+    case "UL":
+      return <UL {...props}>{renderChildren()}</UL>;
+    case "ServicesCard":
+      return <ServicesCard {...props} />;
     case "CTAWithImage":
       return (
         <CTAWithImage

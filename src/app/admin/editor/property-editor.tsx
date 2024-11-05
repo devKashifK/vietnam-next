@@ -24,6 +24,10 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import { IconPickerPanel } from "../icon-picker";
+import { Popover, PopoverContent } from "@/components/ui/popover";
+import { PopoverTrigger } from "@radix-ui/react-popover";
+import { Textarea } from "@/components/ui/textarea";
 
 const LAYOUT_COMPONENTS = [];
 
@@ -229,16 +233,11 @@ export default function PropertyEditor({
         throw supabaseError;
       }
 
-      // Clear local changes after successful save
       setLocalChanges({});
 
-      // Update parent component
       if (onUpdate) {
         onUpdate(updatedData);
       }
-
-      // Show success message (you might want to add a toast notification here)
-      console.log("Changes saved successfully");
     } catch (err) {
       setError(err.message);
       console.error("Error saving changes:", {
@@ -262,6 +261,36 @@ export default function PropertyEditor({
     };
 
     switch (componentType) {
+      case "CardWithImage":
+        console.log(props, "checkProps");
+        return (
+          <div className="flex flex-col gap-2">
+            <div className="px-2 flex flex-col gap-1  rounded-lg">
+              <img src={changes.image ?? (props.image || "")} />
+              <ImageUploaderAndPicker
+                onChange={(e) => handleUpdate(id, "image", e)}
+              />
+            </div>
+            <div className="px-2 w-full  rounded-lg">
+              <Label className="block mb-2">Title</Label>
+              <Input
+                value={changes.title ?? (props.title || "")}
+                onChange={(e) => handleUpdate(id, "title", e.target.value)}
+                placeholder="Enter title..."
+              />
+            </div>
+            <div className="px-2 w-full  rounded-lg">
+              <Label className="block mb-2">Description</Label>
+              <Textarea
+                value={changes.description ?? (props.description || "")}
+                onChange={(e) =>
+                  handleUpdate(id, "description", e.target.value)
+                }
+              />
+            </div>
+          </div>
+        );
+
       case "Title":
         return (
           <div className="space-y-4 w-full">
@@ -305,10 +334,10 @@ export default function PropertyEditor({
           <div className="space-y-4">
             <div className="p-4  rounded-lg">
               <Label className="block mb-2">Icon</Label>
-              <Input
-                value={changes.icon ?? (props.icon || "")}
-                onChange={(e) => handleUpdate(id, "icon", e.target.value)}
-                placeholder="Enter icon name..."
+              <IconSelector
+                handleUpdate={handleUpdate}
+                id={id}
+                icon={props.icon}
               />
             </div>
             <div className="px-2  rounded-lg">
@@ -329,13 +358,20 @@ export default function PropertyEditor({
             </div>
             <div className="px-2  rounded-lg">
               <Label className="block mb-2">Description</Label>
-              <Input
+              <Textarea
                 value={changes.description ?? (props.description || "")}
                 onChange={(e) =>
                   handleUpdate(id, "description", e.target.value)
                 }
                 placeholder="Enter description..."
               />
+              {/* <Input
+                value={changes.description ?? (props.description || "")}
+                onChange={(e) =>
+                  handleUpdate(id, "description", e.target.value)
+                }
+                placeholder="Enter description..."
+              /> */}
             </div>
           </div>
         );
@@ -345,12 +381,10 @@ export default function PropertyEditor({
         return (
           <div className="space-y-4">
             {props.image !== undefined && (
-              <div className="px-2  rounded-lg">
-                <Label className="block mb-2">Image</Label>
-                <Input
-                  value={changes.image ?? (props.image || "")}
-                  onChange={(e) => handleUpdate(id, "image", e.target.value)}
-                  placeholder="Enter image URL..."
+              <div className="px-2 flex felx-col gap-1  rounded-lg">
+                <img src={changes.image ?? (props.image || "")} />
+                <ImageUploaderAndPicker
+                  onChange={(e) => handleUpdate(id, "image", e)}
                 />
               </div>
             )}
@@ -714,3 +748,22 @@ export default function PropertyEditor({
     </div>
   );
 }
+
+const IconSelector = ({ icon, id, handleUpdate }) => {
+  const [open, setOpen] = useState(false);
+  return (
+    <Popover open={open} onOpenChange={setOpen}>
+      <PopoverTrigger className="border w-full flex gap-2 justify-start items-center">
+        <span>Change Icon</span>
+        <Icon icon={icon} />
+      </PopoverTrigger>
+      <PopoverContent>
+        <IconPickerPanel
+          onChangeIcon={(icon) => {
+            handleUpdate(id, "icon", icon), setOpen(!open);
+          }}
+        />
+      </PopoverContent>
+    </Popover>
+  );
+};
