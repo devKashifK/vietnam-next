@@ -1,92 +1,28 @@
-import { CardWithImage } from "@/components/ui/card-with-image";
-import Container from "@/components/ui/container";
-import { ServicesCard } from "@/components/ui/services-card";
-import Title from "@/components/ui/Title";
-import TitleWithBottomBorder from "@/components/ui/title-with-bottom-border";
-import Glass from "@/lib/helpers";
-import { Icon } from "@iconify/react/dist/iconify.js";
-import React from "react";
+// import NewsShowcase from "../../news.tsx/news-showcase";
 
-export default function CultureReligion() {
+import { getDataBySlug } from "@/components/ui/dynamic-component";
+import { DynamicComponent } from "@/components/ui/dynamic-component";
+import { use } from "react";
+
+export default function CultureReligion({ slug }) {
+  const pageData = use(getDataBySlug("van-hoa-ton-gaio"));
+
+  // Check if pageData and pageData.content are available
+  if (!pageData) return <p>Loading...</p>;
+  if (!pageData.content || !Array.isArray(pageData.content)) {
+    console.error("No content array found in pageData:", pageData); // Log error details
+    return <p>No components to display</p>;
+  }
+
   return (
-    <Container className="py-10 flex flex-col gap-20">
-      <div className="flex flex-col gap-8">
-        <Title title="Văn Hóa" />
-        <div className="grid grid-cols-2 gap-8">
-          {culture.map((item, index) =>
-            Object.entries(culture[0]).map(([key, i], index) => (
-              <ServicesCard
-                key={index}
-                title={
-                  <div className="flex flex-col gap-1">
-                    <TitleWithBottomBorder>{key}</TitleWithBottomBorder>
-                    <h5 className="text-2xl text-left text-highlight">
-                      {i.title}
-                    </h5>
-                  </div>
-                }
-                description={i.content}
-              />
-            ))
-          )}
-        </div>
-      </div>
-
-      <Glass className="flex flex-col gap-8 px-10">
-        <h2 className="text-6xl text-background">{religion[0].category}</h2>
-        <Title title={religion[0].title} description={religion[0].content} />
-        <div className="grid grid-cols-2 gap-8">
-          {religion[0].subsections.map((item, index) => (
-            <ServicesCard
-              key={index}
-              title={
-                <div className="flex flex-col gap-1">
-                  <TitleWithBottomBorder>{item.title}</TitleWithBottomBorder>
-                  <h5 className="text-2xl text-left text-highlight">
-                    {item.title}
-                  </h5>
-                </div>
-              }
-              description={item.content}
-            />
-          ))}
-        </div>
-      </Glass>
-
-      <Glass className="flex flex-col gap-8 px-10">
-        <h2 className="text-6xl text-background">{people[0].category}</h2>
-        <Title title={people[0].title} description={people[0].content} />
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {people[0].subsections.map((item, index) => (
-            <CardWithImage
-              key={index}
-              image={item.image}
-              title={item.title}
-              description={item.content}
-            />
-          ))}
-        </div>
-      </Glass>
-
-      <Glass className="flex flex-col gap-8 px-10">
-        <h2 className="text-6xl text-background">{history[0].category}</h2>
-        <Title title={history[0].title} description={history[0].content} />
-        <div className="grid grid-cols-2 gap-8">
-          {history[0].events.map((item, index) => (
-            <ServicesCard
-              key={index}
-              title={
-                <h2 className="text-2xl flex text-left text-highlight gap-2 ">
-                  <Icon icon="simple-icons:aircanada" className="mt-1 " />
-                  {item.year}
-                </h2>
-              }
-              description={item.event}
-            />
-          ))}
-        </div>
-      </Glass>
-    </Container>
+    <div className="flex flex-col gap-10">
+      {pageData.content.map(
+        (componentData, index) => (
+          console.log(componentData, "componentData"),
+          (<DynamicComponent key={index} data={componentData} />)
+        )
+      )}
+    </div>
   );
 }
 

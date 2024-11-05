@@ -8,6 +8,8 @@ import { NewsForm, NewsList } from "./news-admin";
 import Analytics from "./analytics";
 import { useCheckSession } from "@/auth";
 import { supabase } from "@/supabaseClient";
+import PageEditor from "./editor/page-editor";
+import EditorInterface from "./editor/editor-interference";
 
 const Sidebar = ({ activeTab, setActiveTab, pages, news }) => (
   <div className="w-64 bg-gray-100 h-screen over p-4">
@@ -29,6 +31,10 @@ const Sidebar = ({ activeTab, setActiveTab, pages, news }) => (
         <TabsTrigger value="news" className="justify-start">
           <Newspaper className="mr-2 h-4 w-4" />
           News
+        </TabsTrigger>
+        <TabsTrigger value="editor" className="justify-start">
+          <Newspaper className="mr-2 h-4 w-4" />
+          Editor
         </TabsTrigger>
       </TabsList>
     </Tabs>
@@ -116,6 +122,9 @@ export default function AdminPanel() {
           <TabsContent value="new">
             <h2 className="text-2xl font-bold mb-4">Create New Page</h2>
             <NewPageForm onSubmit={handleNewPage} />
+          </TabsContent>
+          <TabsContent value="editor">
+            <EditorInterface />
           </TabsContent>
           <TabsContent value="news">
             <h2 className="text-2xl font-bold mb-4">News Management</h2>

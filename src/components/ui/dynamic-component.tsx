@@ -1,3 +1,4 @@
+import React from "react";
 import { CTAWithImage } from "./cta";
 import { CTADefault } from "./cta";
 import HoverCard from "./hover-card";
@@ -5,13 +6,14 @@ import { List, UL } from "./list";
 import TitleWithBottomBorder from "./title-with-bottom-border";
 import Glass from "@/lib/helpers";
 import TitleWithDoubleBorder from "./title-with-double-border";
+import { supabase } from "@/supabaseClient";
 import Title from "./Title";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { supabase } from "@/supabaseClient";
-import { cache } from "react";
 import Container from "./container";
+import { CardWithImage } from "./card-with-image";
+import { ServicesCard } from "./services-card";
 
-export const getDataBySlug = cache(async function getDataBySlug(slug: string) {
+export async function getDataBySlug(slug) {
   const { data, error } = await supabase
     .from("pages")
     .select("*")
@@ -20,74 +22,103 @@ export const getDataBySlug = cache(async function getDataBySlug(slug: string) {
 
   if (error) throw error;
   return data;
-});
+}
 
+// Recursive function to render components dynamically
 export function DynamicComponent({ data }) {
   if (!data || typeof data !== "object") return null;
 
   const { component, props = {} } = data;
   const children = data.children || props.children;
-  console.log(
-    "Rendering component:",
-    component,
-    "Props:",
-    props,
-    "Children:",
-    children
-  );
 
-  // Enhanced renderChildren function to handle various cases
-  const renderChildren = () => {
-    if (!children) return null;
-    if (typeof children === "string") return children;
-
-    if (!Array.isArray(children)) {
-      return <DynamicComponent data={children} />;
+  // Helper function to recursively render nested components
+  const renderNestedComponent = (nestedData) => {
+    if (typeof nestedData === "string" || typeof nestedData === "number")
+      return nestedData;
+    if (Array.isArray(nestedData)) {
+      return nestedData.map((item, index) => (
+        <DynamicComponent key={index} data={item} />
+      ));
     }
+    if (nestedData && typeof nestedData === "object" && nestedData.component) {
+      return <DynamicComponent data={nestedData} />;
+    }
+    return null;
+  };
 
-    return children.map((child, index) => {
-      if (typeof child === "string") return child;
-      return <DynamicComponent key={index} data={child} />;
-    });
+  // Render function for children elements or other nested properties
+  const renderChildren = () => renderNestedComponent(children);
+
+  // Handling for components that may have nested `description` properties
+  const renderProp = (prop) => {
+    if (Array.isArray(prop))
+      return prop.map((item, index) => renderNestedComponent(item));
+    if (typeof prop === "object" && prop.component)
+      return renderNestedComponent(prop);
+    return prop;
   };
 
   switch (component) {
     case "Container":
       return <Container {...props}>{renderChildren()}</Container>;
-    case "CTADefault":
-      return <CTADefault {...props} />;
     case "CTAWithImage":
-      return <CTAWithImage {...props} />;
-    case "HoverCard":
-      console.log("Rendering HoverCard:", props);
       return (
-        <HoverCard
-          icon={props.icon}
-          color={props.color}
-          title={props.title}
+        <CTAWithImage
+          {...props}
+          description={renderProp(props.description)} // Handle nested description
+        />
+      );
+    case "CTADefault":
+      return (
+        <CTADefault
+          {...props}
+          description={renderProp(props.description)} // Handle nested description
+        />
+      );
+    case "CardWithImage":
+      return <CardWithImage {...props} />;
+    case "ServicesCard":
+      return (
+        <ServicesCard
+          title={renderProp(props.title)} // Handle nested title if needed
           description={props.description}
         />
       );
-    case "List":
-      return <List {...props}>{renderChildren()}</List>;
-    case "UL":
-      return <UL {...props}>{renderChildren()}</UL>;
     case "Title":
       return <Title {...props} />;
     case "TitleWithBottomBorder":
       return <TitleWithBottomBorder {...props} />;
-    case "TitleWithDoubleBorder":
-      return <TitleWithDoubleBorder {...props} />;
     case "Glass":
       return <Glass {...props}>{renderChildren()}</Glass>;
     case "Icon":
-      if (!props.icon) {
-        console.warn("Missing icon property in Icon component", props);
-        return null;
-      }
       return <Icon {...props} />;
+    case "iframe": // Adding iframe support
+      return <iframe {...props} />;
     case "div":
       return <div className={props.className}>{renderChildren()}</div>;
+    case "p":
+      return <p {...props}>{renderChildren()}</p>;
+    case "h5":
+      return <h5 {...props}>{renderChildren()}</h5>;
+
+    case "div":
+      return <div {...props}>{renderChildren()}</div>;
+    case "p":
+      return <p {...props}>{renderChildren()}</p>;
+    case "h1":
+      return <h1 {...props}>{renderChildren()}</h1>;
+    case "h2":
+      return <h2 {...props}>{renderChildren()}</h2>;
+    case "ul":
+      return <ul {...props}>{renderChildren()}</ul>;
+    case "li":
+      return <li {...props}>{renderChildren()}</li>;
+    case "img":
+      return <img {...props} />;
+    case "button":
+      return <button {...props}>{renderChildren()}</button>;
+    case "input":
+      return <input {...props} />;
     default:
       console.warn(`Unrecognized component: ${component}`);
       return <div {...props}>{renderChildren()}</div>;

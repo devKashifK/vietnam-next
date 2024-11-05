@@ -11,16 +11,16 @@ const AccordionItem = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>
 >(({ className, ...props }, ref) => (
-  <Glass className="w-full h-max py-0 px-0 rounded-md my-1">
-    <AccordionPrimitive.Item
-      ref={ref}
-      className={cn(
-        "w-full rounded-md data-[state=open]:border-highlight",
-        className
-      )}
-      {...props}
-    />
-  </Glass>
+  // <Glass className="w-full h-max py-0 px-0 rounded-md my-1">
+  <AccordionPrimitive.Item
+    ref={ref}
+    className={cn(
+      "w-full rounded-md data-[state=open]:border-highlight",
+      className
+    )}
+    {...props}
+  />
+  // </Glass>
 ));
 AccordionItem.displayName = "AccordionItem";
 
@@ -32,7 +32,7 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "flex flex-1 items-center justify-between py-4 text-sm font-medium transition-all duration-150 ease-in-out hover:underline [&[data-state=open]>svg]:rotate-180 hover:bg-highlight hover:text-white/80 rounded-t-md group ",
+        "flex flex-1 items-center justify-between py-4 text-sm font-medium transition-all duration-150 ease-in-out hover:underline [&[data-state=open]>svg]:rotate-180 hover:bg-highlight hover:text-black/80 rounded-t-md group ",
         className
       )}
       {...props}
