@@ -7,9 +7,6 @@ import { PageList } from "./exsisting-page";
 import { NewsForm, NewsList } from "./news-admin";
 import Analytics from "./analytics";
 import { useCheckSession } from "@/auth";
-import { supabase } from "@/supabaseClient";
-import PageEditor from "./editor/page-editor";
-import EditorInterface from "./editor/editor-interference";
 
 const Sidebar = ({ activeTab, setActiveTab, pages, news }) => (
   <div className="w-64 bg-gray-100 h-screen over p-4">
