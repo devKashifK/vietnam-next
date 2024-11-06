@@ -21,15 +21,15 @@ export default function News() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await supabase.from("news").select("content");
+        const response = await supabase.from("news").select("*");
         if (response.error) throw response.error;
 
         // Parse and sort data from newest to oldest based on &apos;Date&apos;
-        const parsedData = response.data
-          .map((row) => JSON.parse(row.content))
-          .sort((a, b) => new Date(b.Date) - new Date(a.Date)); // Sort by date descending
+        // const parsedData = response.data
+        //   .map((row) => JSON.parse(row.content))
+        //   .sort((a, b) => new Date(b.Date) - new Date(a.Date)); // Sort by date descending
 
-        setData(parsedData);
+        setData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
@@ -48,7 +48,7 @@ export default function News() {
         {data.map((item, index) => {
           const colors = ["#F2961B", "#007bff", "#28a745", "#ffc107"];
           const bgColor = colors[index % colors.length];
-          const formattedDate = new Date(item.Date).toLocaleDateString(
+          const formattedDate = new Date(item.created_at).toLocaleDateString(
             undefined,
             {
               year: "numeric",
@@ -82,17 +82,24 @@ export default function News() {
               }
             >
               <Link
-                href={`/tin-tuc/${item.ID}`}
+                href={`/tin-tuc/${item.slug}`}
                 className="flex w-full flex-col"
               >
                 <div className="flex gap-2 flex-col group">
-                  <h3 className="text-left text-2xl tracking-wide">
-                    {item.Title}
+                  <h3 className="text-left text-xl tracking-wide">
+                    {item.title}
                   </h3>
                   <p className="text-left !text-xs text-white/90 tracking-wider">
-                    {item.Content
-                      ? item.Content.slice(0, 100)
-                      : "No content available"}{" "}
+                    {item.content ? (
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: item.content.slice(0, 100),
+                        }}
+                        className="text-sm"
+                      />
+                    ) : (
+                      "No content available"
+                    )}{" "}
                     <span className="text-black group-hover:underline">
                       Read More
                     </span>
@@ -101,7 +108,7 @@ export default function News() {
 
                 <div className="flex w-full justify-between items-center gap-2 mt-4">
                   <div className="flex gap-2 items-center">
-                    {item.Categories?.split(",").map((category, index) => (
+                    {item.categories?.split(",").map((category, index) => (
                       <Badge key={index}>{category}</Badge>
                     ))}
                   </div>
@@ -109,7 +116,7 @@ export default function News() {
                     <p className="font-primary tracking-widest">
                       Author:{" "}
                       <span className="font-secondary text-white/90 tracking-normal">
-                        {item["Author First Name"]} {item["Author Last Name"]}
+                        {item.author}
                       </span>
                     </p>
                   </div>

@@ -1,20 +1,22 @@
 "use client";
-import { useQuery } from "@tanstack/react-query";
-import React from "react";
-import { supabase } from "./../../supabaseClient";
+import React, { useEffect, useState } from "react";
 import { Autoplay } from "swiper/modules";
 import { NewsFeedCard } from "@/components/ui/newsCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { supabase } from "@/supabaseClient";
 
 export default function NewsShowcase() {
-  const { data } = useQuery({
-    queryKey: ["showCasePost"],
-    queryFn: async () => {
-      const response = await supabase.from("News").select("*").limit(6);
-      return response.data;
-    },
-  });
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const fetchNews = async () => {
+      const { data: dd } = await supabase.from("news").select("*").limit(6);
+      console.log(dd, "checkDD");
+      setData(dd);
+    };
+    fetchNews();
+  }, []);
+
   return (
     <Swiper
       spaceBetween={30}
@@ -36,7 +38,7 @@ export default function NewsShowcase() {
     >
       {data &&
         data.map((item, index) => {
-          const formattedDate = new Date(item.pub_date).toLocaleDateString(
+          const formattedDate = new Date(item.created_at).toLocaleDateString(
             undefined,
             {
               year: "numeric",
@@ -49,12 +51,13 @@ export default function NewsShowcase() {
               <NewsFeedCard
                 title={item.title}
                 subTitle={item.subTitle}
-                author={item.creator.toUpperCase()}
+                author={item.author && item.author.toUpperCase()}
                 date={formattedDate}
-                description={item.description}
+                description={item.content}
                 image={item.image}
                 key={item.id}
                 id={item.id}
+                slug={item.slug}
               />
             </SwiperSlide>
           );

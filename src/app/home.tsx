@@ -12,6 +12,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import { Title } from "@radix-ui/react-toast";
 import React from "react";
 import CountUp from "react-countup";
+import NewsShowcase from "./(pages)/news.tsx/news-showcase";
 
 export default function Home() {
   return (
@@ -162,7 +163,7 @@ export default function Home() {
             title="Tin Tức & Sự Kiện Mới Nhất"
             to="/news"
           />
-          {/* <NewsShowcase /> add supabse */}
+          <NewsShowcase />
         </Container>
         <CTADefault
           image="/service.jpg"

@@ -209,10 +209,6 @@ export default function PropertyEditor({
       const updatedData = applyLocalChanges(pageData, localChanges);
 
       // Log the data being sent
-      console.log("Saving updated data:", {
-        selectedPage,
-        updatedData,
-      });
 
       // Make sure we have the required data
       if (!selectedPage) {
@@ -220,7 +216,6 @@ export default function PropertyEditor({
       }
 
       // Update the database
-      console.log("Updating database", updatedData);
       const { data, error: supabaseError } = await supabase
         .from("pages")
         .update({
@@ -317,12 +312,11 @@ export default function PropertyEditor({
             {props.description !== undefined && (
               <div className="px-2  rounded-lg">
                 <Label className="block mb-2">Description</Label>
-                <Input
+                <Textarea
                   value={changes.description ?? (props.description || "")}
                   onChange={(e) =>
                     handleUpdate(id, "description", e.target.value)
                   }
-                  placeholder="Enter description..."
                 />
               </div>
             )}
@@ -423,12 +417,11 @@ export default function PropertyEditor({
             {props.description !== undefined && (
               <div className="px-2  rounded-lg">
                 <Label className="block mb-2">Description</Label>
-                <Input
+                <Textarea
                   value={changes.description ?? (props.description || "")}
                   onChange={(e) =>
                     handleUpdate(id, "description", e.target.value)
                   }
-                  placeholder="Enter description..."
                 />
               </div>
             )}
@@ -518,12 +511,11 @@ export default function PropertyEditor({
             {props.description !== undefined && (
               <div className="px-2 rounded-lg">
                 <Label className="block mb-2">Description</Label>
-                <Input
+                <Textarea
                   value={changes.description ?? (props.description || "")}
                   onChange={(e) =>
                     handleUpdate(id, "description", e.target.value)
                   }
-                  placeholder="Enter description..."
                 />
               </div>
             )}

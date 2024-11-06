@@ -1,0 +1,30 @@
+.dangerouHtml {
+  font-size: 1rem; /* Adjust font size */
+  line-height: 1.6; /* Improve readability */
+  color: #333; /* Darker text color for better contrast */
+  margin: 1rem 0; /* Add vertical spacing */
+  padding: 1rem; /* Add padding */
+  border-radius: 8px; /* Rounded corners */
+}
+
+.dangerouHtml h1,
+.dangerouHtml h2,
+.dangerouHtml h3 {
+  font-weight: 600;
+  color: #444; /* Heading color */
+  margin-top: 1.5rem; /* Space above headings */
+  margin-bottom: 0.5rem; /* Space below headings */
+}
+
+.dangerouHtml p {
+  margin-bottom: 1rem; /* Space between paragraphs */
+}
+
+.dangerouHtml a {
+  color: #007bff; /* Link color */
+  text-decoration: underline;
+}
+
+.dangerouHtml a:hover {
+  color: #0056b3; /* Hover color for links */
+}

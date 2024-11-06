@@ -1,24 +1,47 @@
 "use client";
-"use client";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import { Edit, Trash2, X } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
 import { ImageUploaderAndPicker } from "./image-picker";
-import { set } from "react-hook-form";
+
 import { supabase } from "@/supabaseClient";
 import ReactQuill from "react-quill-new";
 import "react-quill-new/dist/quill.snow.css";
+import Link from "next/link";
+
+// async function pushToSupabase(data) {
+//   try {
+//     const insertions = data.map((dd) =>
+//       supabase.from("news").insert({
+//         title: dd.Title,
+//         image: dd.image,
+//         content: dd.Content,
+//         author: dd["Author First Name"],
+//         category: dd.Categories,
+//         slug: dd.Slug,
+//         created_at: dd.Date,
+//       })
+//     );
+
+//     const results = await Promise.all(insertions);
+
+//     // Check if any insertion had an error
+//     const errors = results.filter((result) => result.error);
+//     if (errors.length > 0) {
+//       console.error("Insert errors:", errors);
+//       return { success: false, errors };
+//     }
+
+//     return { success: true, data: results.map((result) => result.data) };
+//   } catch (error) {
+//     console.error("Unexpected error:", error);
+//     return { success: false, error };
+//   }
+// }
 
 export const NewsForm = ({ initialData = {} }) => {
   const generateSlug = (title) => {
@@ -184,7 +207,6 @@ export const NewsList = ({ onEdit, onDelete }) => {
   useEffect(() => {
     const fetchNews = async () => {
       const { data, error } = await supabase.from("news").select("*");
-      console.log("dataNews", data);
       if (error) {
         console.error("Error fetching news:", error);
         return;
@@ -203,21 +225,19 @@ export const NewsList = ({ onEdit, onDelete }) => {
               <h3 className="text-lg font-semibold">{article.title}</h3>
               <p className="text-sm text-gray-500">Author: {article.author}</p>
             </div>
-            <div>
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={() => onEdit(article.id)}
+            <div className="flex gap-2 justify-center items-center">
+              <Link
+                href={`/admin/news-editor/${article.slug}`}
                 className="mr-2"
               >
-                <Edit className="h-4 w-4" />
-              </Button>
+                <Edit className="h-4 w-4 text-black" />
+              </Link>
               <Button
                 variant="destructive"
                 size="icon"
                 onClick={() => onDelete(article.id)}
               >
-                <Trash2 className="h-4 w-4" />
+                <Trash2 className="h-4 w-4 text-content" />
               </Button>
             </div>
           </CardContent>

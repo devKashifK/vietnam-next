@@ -35,7 +35,7 @@ const Sidebar = ({ activeTab, setActiveTab, pages, news }) => (
 );
 
 export default function AdminPanel() {
-  // const session = useCheckSession();
+  const session = useCheckSession();
   const [activeTab, setActiveTab] = useState("pages");
   const [pages, setPages] = useState([
     { id: 1, title: "Home Page", createdAt: "2023-05-15" },
@@ -120,6 +120,16 @@ export default function AdminPanel() {
 
           <TabsContent value="news">
             <h2 className="text-2xl font-bold mb-4">News Management</h2>
+            <div className="mt-8 mb-8">
+              <h3 className="text-xl font-semibold mb-4">
+                Existing News Articles
+              </h3>
+              <NewsList
+                news={news}
+                onEdit={handleEditNews}
+                onDelete={handleDeleteNews}
+              />
+            </div>
             {editingNews ? (
               <>
                 <h3 className="text-xl font-semibold mb-4">
@@ -132,20 +142,10 @@ export default function AdminPanel() {
               </>
             ) : (
               <>
-                <h3 className="text-xl font-semibold mb-4">Add New Article</h3>
+                <h3 className="text-xl font-semibold mb-4">Add New</h3>
                 <NewsForm onSubmit={handleAddNews} />
               </>
             )}
-            <div className="mt-8">
-              <h3 className="text-xl font-semibold mb-4">
-                Existing News Articles
-              </h3>
-              <NewsList
-                news={news}
-                onEdit={handleEditNews}
-                onDelete={handleDeleteNews}
-              />
-            </div>
           </TabsContent>
           <TabsContent value="analytics">
             <h2 className="text-2xl font-bold mb-4">Analytics</h2>

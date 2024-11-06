@@ -15,6 +15,7 @@ export const NewsFeedCard = ({
   author,
   description,
   id,
+  slug,
 }: {
   image?: string;
   title?: string;
@@ -23,6 +24,7 @@ export const NewsFeedCard = ({
   author?: string;
   description?: string;
   id?: string;
+  slug?: string;
 }) => {
   return (
     <div className="w-full h-full">
@@ -48,9 +50,12 @@ export const NewsFeedCard = ({
             </h5>
           )}
           {description && (
-            <p className="text-sm font-normal text-left pb-5 h-[100px] text-stone-700">
-              {truncateTextHeading(description, 18)}...
-            </p>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: truncateTextHeading(description, 28),
+              }}
+              className="text-sm font-normal text-left pb-5 h-[100px] text-stone-700"
+            />
           )}
           <div className="flex gap-5 text-stone-500 pb-4 text-xs">
             <div className="flex gap-1 ">
@@ -70,7 +75,7 @@ export const NewsFeedCard = ({
           </div>
           <div className="pb-6">
             <Link
-              href={`/news/${id}`}
+              href={`/news/${slug}`}
               className="bg-background flex justify-center items-center text-slate-50 px-3 py-1 text-sm text-left w-[50%]"
             >
               Read More
