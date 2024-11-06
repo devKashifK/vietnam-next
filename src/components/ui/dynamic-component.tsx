@@ -29,32 +29,38 @@ export function DynamicComponent({ data }) {
   if (!data || typeof data !== "object") return null;
 
   const { component, props = {} } = data;
-  const children = data.children || props.children;
+  const children = props.children;
 
   // Helper function to recursively render nested components
   const renderNestedComponent = (nestedData) => {
-    if (typeof nestedData === "string" || typeof nestedData === "number")
+    if (typeof nestedData === "string" || typeof nestedData === "number") {
       return nestedData;
+    }
+
     if (Array.isArray(nestedData)) {
       return nestedData.map((item, index) => (
         <DynamicComponent key={index} data={item} />
       ));
     }
+
     if (nestedData && typeof nestedData === "object" && nestedData.component) {
       return <DynamicComponent data={nestedData} />;
     }
+
     return null;
   };
 
   // Render function for children elements or other nested properties
   const renderChildren = () => renderNestedComponent(children);
 
-  // Handling for components that may have nested `description` properties
+  // Handling for components that may have nested `description` or `title` properties
   const renderProp = (prop) => {
-    if (Array.isArray(prop))
+    if (Array.isArray(prop)) {
       return prop.map((item, index) => renderNestedComponent(item));
-    if (typeof prop === "object" && prop.component)
-      return renderNestedComponent(prop);
+    }
+    if (prop && typeof prop === "object" && prop.component) {
+      return <DynamicComponent data={prop} />;
+    }
     return prop;
   };
 
@@ -70,7 +76,12 @@ export function DynamicComponent({ data }) {
     case "UL":
       return <UL {...props}>{renderChildren()}</UL>;
     case "ServicesCard":
-      return <ServicesCard {...props} />;
+      return (
+        <ServicesCard
+          title={renderProp(props.title)} // Handle nested title if needed
+          description={props.description}
+        />
+      );
     case "CTAWithImage":
       return (
         <CTAWithImage
@@ -87,13 +98,6 @@ export function DynamicComponent({ data }) {
       );
     case "CardWithImage":
       return <CardWithImage {...props} />;
-    case "ServicesCard":
-      return (
-        <ServicesCard
-          title={renderProp(props.title)} // Handle nested title if needed
-          description={props.description}
-        />
-      );
     case "Title":
       return <Title {...props} />;
     case "TitleWithBottomBorder":
@@ -104,17 +108,14 @@ export function DynamicComponent({ data }) {
       return <Icon {...props} />;
     case "iframe": // Adding iframe support
       return <iframe {...props} />;
+
+    // Standard HTML elements
     case "div":
       return <div className={props.className}>{renderChildren()}</div>;
     case "p":
       return <p {...props}>{renderChildren()}</p>;
     case "h5":
       return <h5 {...props}>{renderChildren()}</h5>;
-
-    case "div":
-      return <div {...props}>{renderChildren()}</div>;
-    case "p":
-      return <p {...props}>{renderChildren()}</p>;
     case "h1":
       return <h1 {...props}>{renderChildren()}</h1>;
     case "h2":
