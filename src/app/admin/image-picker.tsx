@@ -231,7 +231,7 @@ export function ImageUploaderAndPicker({
                 </div>
               </TabsContent>
             </Tabs>
-            {/* <div className="flex justify-end mt-4">
+            <div className="flex justify-end mt-4">
               <Button
                 className="bg-highlight"
                 onClick={() => {
@@ -240,7 +240,7 @@ export function ImageUploaderAndPicker({
               >
                 Add Image
               </Button>
-            </div> */}
+            </div>
           </DialogContent>
         </Dialog>
       </div>

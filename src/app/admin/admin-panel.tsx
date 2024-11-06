@@ -35,7 +35,7 @@ const Sidebar = ({ activeTab, setActiveTab, pages, news }) => (
 );
 
 export default function AdminPanel() {
-  const session = useCheckSession();
+  // const session = useCheckSession();
   const [activeTab, setActiveTab] = useState("pages");
   const [pages, setPages] = useState([
     { id: 1, title: "Home Page", createdAt: "2023-05-15" },
@@ -52,7 +52,8 @@ export default function AdminPanel() {
     {
       id: 2,
       title: "Company Milestone Achieved",
-      publishedAt: "2023-05-22",
+      author: "2023-05-22",
+      content: "",
       sections: [],
     },
   ]);
@@ -125,7 +126,7 @@ export default function AdminPanel() {
                   Edit News Article
                 </h3>
                 <NewsForm
-                  onSubmit={handleUpdateNews}
+                  // onSubmit={handleUpdateNews}
                   initialData={editingNews}
                 />
               </>

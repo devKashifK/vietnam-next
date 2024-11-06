@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+
 import Footer from "@/components/ui/footer";
 import HeroDefault from "@/components/ui/hero-all";
 import { HomeIcon, Search, Bell } from "lucide-react";
