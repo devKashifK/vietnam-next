@@ -9,24 +9,16 @@ export default function UsefulWebsite() {
   return (
     <>
       <Container>
-        <Glass className="flex flex-col gap-8">
+        <Glass className="flex flex-col items-start gap-8">
           <Title
-            // title={"Useful Websites"}
-            subtitle="http://canada.ca"
+            title="Trang web hữu ích"
             description={
-              "Trang web tổng hợp thông tin về chính sách, thủ tục và quy trình định cư tại Canada:"
+              "Những trang web này sẽ cung cấp cho bạn thông tin chi tiết về các chương trình nhập cư, yêu cầu, thủ tục, và hướng dẫn cụ thể để bạn có thể chuẩn bị tốt cho quá trình định cư tại Canada."
             }
           />
           <Title
-            subtitle="http://canada.ca"
             description={
-              "Trang web chính thức của Chính phủ Canada về nhập cư và công dân"
-            }
-          />
-          <Title
-            subtitle="Trang web của các tỉnh bang"
-            description={
-              "Các trang web chính thức của từng tỉnh bang và lãnh thổ tại Canada, cung cấp thông tin về các chương trình đề cử tỉnh bang "
+              "Ngoài những trang web đã đề cập, bạn cũng có thể tham khảo trang web chúng tôi http://icanpr.vn để cập nhật các tin tức mới nhất về di trú và các cơ hội việc làm, đầu tư tại Canada."
             }
           />
           <UL>
@@ -37,13 +29,28 @@ export default function UsefulWebsite() {
             <List>Manitoba Provincial Nominee Program (MPNP)</List>
           </UL>
           <Title
+            className="text-left lg:items-start"
+            descriptionClassName="lg:text-left"
+            // title={"Useful Websites"}
+            subtitle="http://canada.ca"
             description={
-              "Những trang web này sẽ cung cấp cho bạn thông tin chi tiết về các chương trình nhập cư, yêu cầu, thủ tục, và hướng dẫn cụ thể để bạn có thể chuẩn bị tốt cho quá trình định cư tại Canada."
+              "Trang web tổng hợp thông tin về chính sách, thủ tục và quy trình định cư tại Canada:"
             }
           />
           <Title
+            className="text-left lg:items-start"
+            descriptionClassName="lg:text-left"
+            subtitle="http://canada.ca"
             description={
-              "Ngoài những trang web đã đề cập, bạn cũng có thể tham khảo trang web chúng tôi http://icanpr.vn để cập nhật các tin tức mới nhất về di trú và các cơ hội việc làm, đầu tư tại Canada."
+              "Trang web chính thức của Chính phủ Canada về nhập cư và công dân"
+            }
+          />
+          <Title
+            className="text-left lg:items-start"
+            descriptionClassName="lg:text-left"
+            subtitle="Trang web của các tỉnh bang"
+            description={
+              "Các trang web chính thức của từng tỉnh bang và lãnh thổ tại Canada, cung cấp thông tin về các chương trình đề cử tỉnh bang "
             }
           />
         </Glass>

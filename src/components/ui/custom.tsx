@@ -1,4 +1,6 @@
+"use client";
 import { cn } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 import { ButtonHTMLAttributes, ReactNode } from "react";
 // import { useNavigate } from "react-router-dom";
 
@@ -14,11 +16,13 @@ export const Button = ({
   ...props
 }: ButtonProps) => {
   // const navigate = useNavigate();
+  const navigate = useRouter();
   // const handleClick = () => {
   //   navigate("/book-appointment");
   // };
   return (
     <button
+      onClick={() => navigate.push("/book-appointment")}
       className={cn(
         "relative bg-background rounded-none py-2 text-white flex justify-center group/modal-btn",
         className

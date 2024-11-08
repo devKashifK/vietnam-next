@@ -25,7 +25,7 @@ export const ServicesCard = ({
         {description}
         <span className="text-black">Read More</span>
       </p>
-      <div className="w-full flex justify-start items-start mt-4">
+      {/* <div className="w-full flex justify-start items-start mt-4">
         <div
           // to={item.href}
           className="flex flex-row gap-2 bg-background text-white py-1 shadow-xl px-4 text-xs rounded-md w-max"
@@ -33,7 +33,7 @@ export const ServicesCard = ({
           Find Out More
           <Icon icon={"carbon:arrow-right"} className="mt-1" />
         </div>
-      </div>
+      </div> */}
     </Glass>
   );
 };

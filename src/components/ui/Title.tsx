@@ -10,6 +10,7 @@ export default function Title({
   to,
   cta,
   className,
+  descriptionClassName,
 }: {
   title?: string | React.ReactNode;
   subtitle?: string;
@@ -17,6 +18,7 @@ export default function Title({
   to?: string;
   cta?: string;
   className?: string;
+  descriptionClassName?: string;
 }) {
   return (
     <div className=" flex w-full px-4 lg:px-0 justify-between ">
@@ -43,7 +45,12 @@ export default function Title({
 
         {description &&
           (typeof description === "string" ? (
-            <p className="text-left lg:text-center text-black/50 w-full lg:w-[70%]">
+            <p
+              className={cn(
+                "text-left lg:text-center text-black/50 w-full lg:w-[70%]",
+                descriptionClassName
+              )}
+            >
               {description}
             </p>
           ) : (

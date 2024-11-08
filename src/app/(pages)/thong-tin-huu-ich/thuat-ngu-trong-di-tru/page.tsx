@@ -10,6 +10,9 @@ export default function ImmigrationTerms() {
       <Container>
         <Glass className="flex flex-col gap-8">
           <Title
+            title="Thuật ngữ di trú Canada lg:text-left"
+            className="text-left lg:items-start"
+            descriptionClassName="lg:text-left"
             description={
               "Canada là một trong những điểm đến định cư phổ biến và hấp dẫn trên thế giới, thu hút hàng nghìn người muốn tìm kiếm cơ hội mới và chất lượng cuộc sống tốt hơn. Tuy nhiên, trước khi bắt đầu hành trình định cư của mình, việc hiểu rõ về những thuật ngữ quan trọng trong di trú là điều hết sức cần thiết. Sau đây là một số thuật ngữ di trú Canada mà bạn nên biết để có một trải nghiệm định cư suôn sẻ."
             }
@@ -18,6 +21,8 @@ export default function ImmigrationTerms() {
           {dataContent.map((item, index) => (
             <Title
               key={index}
+              className="text-left lg:items-start"
+              descriptionClassName="lg:text-left"
               subtitle={`${index + 1}. ${item.title}`}
               description={item.description}
             />

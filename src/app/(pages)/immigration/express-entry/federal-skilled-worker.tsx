@@ -93,13 +93,13 @@ export default function FedralSkilledWorker() {
           <img src="/work.jpg" className="rounded-md" alt="work" />
         </div>
         <div className="flex-1 flex flex-col gap-4">
-          <Title
+          {/* <Title
             className="px-4"
             subtitle="FAQ"
             title={"How to apply for a Work Permit"}
             description="Applying for a work permit in Canada can be a multi-step process, depending on your situation and the type of work permit you require. Here are the general steps to follow"
-          />
-          <FAQ />
+          /> */}
+          {/* <FAQ /> */}
         </div>
       </Container>
     </>
