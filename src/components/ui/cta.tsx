@@ -1,8 +1,9 @@
+"use client";
 import React from "react";
 import { Button } from "./custom";
 import { Icon } from "@iconify/react/dist/iconify.js";
 // import { Link } from "react-router-dom";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import Title from "./Title";
 import Container from "./container";
@@ -14,7 +15,7 @@ export default function CTA() {
   return (
     <>
       <Container
-        effect="slide-left"
+        effect="none"
         className="flex flex-col mx-auto  md:flex-row relative z-[10000]"
       >
         {/* <Title
@@ -60,7 +61,7 @@ export const CtaCard = ({ item }) => {
   return (
     <div className="flex hover:bg-background group flex-col  bg-content px-4 py-4 border-gray-100 shadow-md  sm:w-[420px] md:w-full h-[517px] md:h-max justify-start items-center transition-all duration-100 ease-in-out">
       <div className="w-full">
-        <img src={item.image} alt="" className="w-full" />
+        <img src={item.image} alt={item.title} className="w-full" />
       </div>
       <div className="px-8 flex flex-col gap-2 py-5">
         <div className="flex flex-col gap-0">
@@ -100,7 +101,7 @@ export const CtaCard2 = ({ item, flip }) => {
       <div className="w-full lg:w-[45%] ">
         <img
           src={item.image}
-          alt=""
+          alt={item.title}
           className={cn("h-[330px] w-full md:h-[220px] bg-cover z-10 relative")}
         />
       </div>
@@ -154,7 +155,7 @@ const CtaDetails = [
     labels: ["Express Entry Program", "Family Sponsorship"],
     description:
       "Với việc định cư tại Canada đạt mức cao kỷ lục, bây giờ là thời điểm lý tưởng để bắt đầu hành trình di cư của bạn. Có nhiều con đường để nhập cư vào Canada và đạt được quyền cư trú lâu dài. Mặc dù việc nhập cư vào Canada yêu cầu... ",
-    href: "/immigration/express-entry/federal-skilled-worker",
+    href: "/immigration/express-entry/federal-skilled-trade",
   },
   {
     id: 2,
@@ -165,7 +166,7 @@ const CtaDetails = [
     labels: ["Express Entry", "PR eligibility"],
     description:
       "Canada với nền kinh tế mạnh mẽ, chất lượng cuộc sống cao và xã hội hòa nhập, là điểm đến hấp dẫn cho những ai tìm kiếm sự phát triển nghề nghiệp và tiêu chuẩn sống cao cho gia đình của mình. Tuy nhiên, việc điều hướng quy trình nhập cư và.",
-    href: "work-and-jobs/work-permit",
+    href: "/immigration/express-entry/federal-skilled-worker",
   },
   {
     id: 3,
@@ -176,7 +177,7 @@ const CtaDetails = [
     labels: ["Quebec Investor", "Start Up Visa"],
     description:
       "Các chương trình visa nhập cư doanh nghiệp tại Canada được thiết kế cho những cá nhân mong muốn nhập cư vào Canada để bắt đầu, đầu tư vào hoặc quản lý một doanh nghiệp. Các chương trình này nhằm thúc đẩy tăng trưởng kinh tế và tạo ra việc làm tại Canada.",
-    href: "business/federal-programs/self-employed-person",
+    href: "/immigration/viec-lam-dinh-cu",
   },
   {
     id: 4,
@@ -187,7 +188,7 @@ const CtaDetails = [
     labels: ["High Quality Education", "Diverse Campuses and Programs"],
     description:
       "Canada nổi tiếng với các cơ sở giáo dục hàng đầu. Nhiều trường đại học và cao đẳng của Canada liên tục đứng trong danh sách những cơ sở giáo dục tốt nhất toàn cầu. Các bằng cấp và chứng chỉ của Canada được công nhận và tôn trọng trên toàn thế giới.",
-    href: "study/study-in-canada",
+    href: "/immigration/du-hoc-dinh-cu",
   },
 
   {
@@ -199,7 +200,7 @@ const CtaDetails = [
     labels: ["Sponsoring a spouse or partner", "Sponsoring dependent children"],
     description:
       "Ngoài các chương trình xin visa thông thường, mọi người cũng có thể nộp đơn xin visa hoặc thậm chí định cư vĩnh viễn dưới các chương trình bảo lãnh nhất định, cho phép các cá nhân đủ điều kiện bảo lãnh các thành viên gia đình gần gũi của họ để được định cư vĩnh viễn tại Canada.",
-    href: "/family-sponsorship",
+    href: "/immigration/family-sponsorship",
   },
 
   {
@@ -211,7 +212,7 @@ const CtaDetails = [
     labels: ["Why GTR Immigration?", "Reasonable cost guaranteed quality"],
     description:
       "Saskatchewan nổi bật là một tỉnh ở Canada với các chương trình di cư mở, phù hợp với nhiều cá nhân đang tìm kiếm cơ hội định cư tại quốc gia này..",
-    href: "/about",
+    href: "/book-appointment",
   },
 ];
 
@@ -226,6 +227,7 @@ export const CTADefault = ({
   image?: string;
   description?: string | React.ReactNode;
 }) => {
+  const navigate = useRouter();
   return (
     <Container>
       <Glass
@@ -248,6 +250,7 @@ export const CTADefault = ({
             description
           )}
           <Button
+            onClick={() => navigate.push("/lien-he")}
             className="py-3 w-[190px]"
             icon={
               <div className="flex gap-2 text-[10px] justify-center items-center">
@@ -274,6 +277,7 @@ export const CTAWithImage = ({
   image,
   flip,
   desClassName,
+  link = "/",
 }: {
   subtitle: string | React.ReactNode;
   title: string | React.ReactNode;
@@ -281,8 +285,10 @@ export const CTAWithImage = ({
   ctaAction?: string | React.ReactNode;
   image: string;
   flip?: boolean;
+  link?: string;
   desClassName?: string;
 }) => {
+  const navigate = useRouter();
   return (
     <Container
       className={cn(
@@ -303,12 +309,12 @@ export const CTAWithImage = ({
         <img
           src={image}
           className="relative w-full object-cover h-full"
-          alt=""
+          alt={title}
         />
       </div>
       <div className="flex-1 bg-white border-t border-l border-b border-black/5  flex flex-col gap-6 py-10 px-8">
         <TitleWithBottomBorder titleClass="">{subtitle}</TitleWithBottomBorder>
-        <h2 className="text-4xl text-left">{title}</h2>
+        <h2 className="text-4xl text-left uppercase">{title}</h2>
 
         {typeof description === "string" ? (
           <p className="text-left">{description}</p>
@@ -324,7 +330,10 @@ export const CTAWithImage = ({
         )}
 
         {ctaAction && (
-          <button className="flex gap-2 bg-background text-text w-full lg:w-max justify-center items-center rounded-none">
+          <button
+            className="flex gap-2 bg-background text-text w-full lg:w-max justify-center items-center rounded-none"
+            onClick={() => navigate.push(link)}
+          >
             {ctaAction}
             <Icon icon={"simple-icons:aircanada"} className="" />
           </button>

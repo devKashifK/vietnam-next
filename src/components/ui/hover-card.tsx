@@ -44,7 +44,7 @@ export default function HoverCard({
           {typeof icon === "string" ? (
             <Icon
               icon={icon}
-              className="text-highlight flex justify-center items-center ml-8 h-10 w-full"
+              className="text-highlight flex justify-center items-center h-10 w-full"
             />
           ) : (
             icon

@@ -128,7 +128,7 @@ const features = [
           <img
             src="/electric.png"
             className="rounded-full w-full h-full"
-            alt=""
+            alt="Profile Assessment"
           />
         </div>
       </div>

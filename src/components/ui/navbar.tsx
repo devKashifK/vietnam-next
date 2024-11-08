@@ -17,10 +17,12 @@ import { motion } from "framer-motion";
 import MobileNavbar from "./mobile-navbar";
 import { relative } from "path";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Navbar({ defaultStyle = false, type = "default" }) {
   const [isOpen, setIsOpen] = useState(false);
   const [hoveredPath, setHoveredPath] = useState(null);
+  const navigate = useRouter();
 
   const [isFixed, setIsFixed] = useState(false);
 
@@ -56,7 +58,12 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
         )}
       >
         <div className="h-full flex justify-center w-[400px] !bg-content items-center px-8 border-r border-background ">
-          <img src="/logo.png" alt="" className="w-[95%]" />
+          <img
+            src="/logo.png"
+            alt="logo"
+            className="w-[95%] cursor-pointer"
+            onClick={() => navigate.push("/")}
+          />
         </div>
         <div className="flex flex-col w-full justify-start items-start h-24">
           <div
@@ -104,7 +111,7 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
             </Link>
 
             <Link
-              href={"/doanh-nghiep"}
+              href="tel:+84869967809"
               className="text-xs flex font-light flex-col gap-0.5 group"
             >
               <span className={"text-highlight font-semibold text-xs"}>

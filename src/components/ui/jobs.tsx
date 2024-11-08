@@ -46,7 +46,7 @@ export default function Jobs() {
             <SwiperSlide key={index}>
               <img
                 src={`${item}`}
-                alt=""
+                alt="logo"
                 className="w-60 h-28 object-contain mix-blend-multiply"
               />
             </SwiperSlide>

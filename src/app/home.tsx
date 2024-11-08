@@ -154,6 +154,7 @@ export default function Home() {
           ctaAction={
             "Hãy cùng bắt đầu hành trình thay đổi cuộc sống này cùng nhau nào!"
           }
+          link="/ve-icanpr"
         />
 
         <Container effect="slide-up" className="flex flex-col gap-10">

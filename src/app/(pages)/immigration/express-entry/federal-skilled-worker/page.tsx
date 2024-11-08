@@ -90,7 +90,7 @@ export default function FedralSkilledWorker() {
       <Container className="flex flex-col md:flex-row gap-16 py-10 justify-center items-center">
         <div className="flex-1 relative">
           <div className="absolute top-0 left-0 w-full h-full bg-gray-50 bg-opacity-20"></div>
-          <img src="/work.jpg" className="rounded-md" alt="" />
+          <img src="/work.jpg" className="rounded-md" alt="work" />
         </div>
         <div className="flex-1 flex flex-col gap-4">
           <Title

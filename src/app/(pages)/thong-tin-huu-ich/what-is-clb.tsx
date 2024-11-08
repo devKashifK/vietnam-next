@@ -37,7 +37,11 @@ export default function WhatIsCLB() {
               "Để đạt được CLB, người tham gia phải tham gia vào các bài kiểm tra được công nhận, chẳng hạn như IELTS (International English Language Testing System) hoặc CELPIP (Canadian English Language Proficiency Index Program) cho tiếng Anh, hoặc TEF (Test d&apos;évaluation de français) cho tiếng Pháp. Kết quả từ các bài kiểm tra này sẽ phản ánh vào mức độ CLB của họ."
             }
           />
-          <img src="/clbimage.png" className=" flex  mx-auto w-[70%]" />
+          <img
+            src="/clbimage.png"
+            alt="dánh-giá-clb"
+            className=" flex  mx-auto w-[70%]"
+          />
           <Title
             description={
               "CLB4 thường là yêu cầu tối thiểu để tham gia vào nhiều chương trình định cư và việc làm tại Canada."

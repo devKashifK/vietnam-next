@@ -9,12 +9,14 @@ import "swiper/css/autoplay";
 
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useRouter } from "next/navigation";
 
 export default function Hero() {
   const images = ["/aaa.jpg", "/hero-2.jpg", "/hero-3.jpg"];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [nextImageIndex, setNextImageIndex] = useState(1);
   const [slide, setSlide] = useState(true);
+  const navigate = useRouter();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -53,7 +55,11 @@ export default function Hero() {
               >
                 {images.map((item, index) => (
                   <SwiperSlide className="!py-0 !px-0" key={index}>
-                    <img src={`${item}`} alt="" className="w-full h-full " />
+                    <img
+                      src={`${item}`}
+                      alt={item}
+                      className="w-full h-full "
+                    />
                   </SwiperSlide>
                 ))}
               </Swiper>
@@ -71,10 +77,11 @@ export default function Hero() {
                 </p>
               </div>
 
-              <p className="text-left w-full text-black">
-                Chúng tôi hỗ trợ các công ty trong quá trình chuyển đổi kỹ thuật{" "}
-                <br /> số bằng cách tạo ra các công cụ nội bộ và cung cấp tư vấn{" "}
-                <br /> phát triển phần mềm.
+              <p className="text-left -mt-2 w-full text-black">
+                Hãy bắt đầu hành trình định cư Canada và mở ra cơ hội tương lai
+                tươi sáng cho gia đình bạn. Với kinh nghiệm chuyên sâu về di trú
+                Canada, chúng tôi sẽ giúp bạn từng bước chạm đến giấc mơ an cư
+                lạc nghiệp tại một trong những quốc gia đáng sống nhất thế giới.
               </p>
               <div className="flex w-full justify-start items-start">
                 <Button
@@ -85,6 +92,7 @@ export default function Hero() {
                       <span>+84 869967809</span>
                     </div>
                   }
+                  onClick={() => navigate.push("/lien-he")}
                 >
                   <span className="text-[10px] relative flex gap-1 justify-start items-center">
                     <Icon

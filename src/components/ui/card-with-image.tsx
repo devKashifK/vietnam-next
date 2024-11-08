@@ -7,12 +7,12 @@ export function CardWithImage({
   image,
   title,
   description,
-  to,
+  href,
 }: {
   title?: string;
   description?: React.ReactNode | string;
   image?: string;
-  to?: string;
+  href?: string;
 }) {
   return (
     <div className="lg:max-w-xs w-full group/card">
@@ -42,7 +42,7 @@ export function CardWithImage({
           </div>
           <Link
             // href={}
-            href={""}
+            href={href}
             // to={}
             className="group-hover/card:bg-background px-3 py-1 group-hover/card:flex  hidden text-white rounded-none relative transition-all duration-150 z-10 ease-linear"
           >

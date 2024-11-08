@@ -64,14 +64,14 @@ export default function Post() {
         {data.image ? (
           <img
             src={data.image || getRandomImage()}
-            alt="news"
+            alt={data.title}
             className="w-full rounded-2xl h-[400px] object-cover"
           />
         ) : (
           <img
             src={getRandomImage()}
             className="w-full rounded-2xl h-[400px] object-cover"
-            alt=""
+            alt={data.title}
           />
         )}
         <div

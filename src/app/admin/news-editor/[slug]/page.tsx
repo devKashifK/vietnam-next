@@ -84,14 +84,14 @@ export default function NewsEditor() {
             {editedNews.image ? (
               <img
                 src={editedNews.image || "/no-image.jpg"}
-                alt="news"
+                alt={editedNews.title}
                 className="w-full rounded-2xl h-[400px] object-cover"
               />
             ) : (
               <img
                 src={editedNews.image || "/no-image.jpg"}
                 className="w-full rounded-2xl h-[400px] object-cover"
-                alt=""
+                alt={editedNews.title}
               />
             )}
             <div

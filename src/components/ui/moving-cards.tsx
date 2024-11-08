@@ -108,7 +108,7 @@ export const InfiniteMovingCards = ({
                   <img
                     src={item.image}
                     className="w-full h-full rounded-full border-highlight border bg-cover"
-                    alt=""
+                    alt={item.name}
                   />
                 </div>
                 <div className="relative z-20 flex flex-row items-center">

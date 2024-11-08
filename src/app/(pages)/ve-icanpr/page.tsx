@@ -24,7 +24,7 @@ export default function About() {
           <HoverCard
             title={"Quan Hệ Chặt Chẽ với Nhà Tuyển Dụng"}
             color="bg-yellow-400"
-            icon={"iconamoon:delivery-free-light"}
+            icon={"game-icons:relationship-bounds"}
             description={
               "Mạng lưới luật sư di trú của chúng tôi sẽ đảm bảo mọi thủ tục pháp lý của bạn được thực hiện chính xác và nhanh chóng, giúp giảm thiểu rủi ro và thời gian chờ đợi."
             }
@@ -32,7 +32,7 @@ export default function About() {
           <HoverCard
             color="bg-green-400"
             title={"Liên Kết với Các Tổ Chức Giáo Dục:"}
-            icon={"arcticons:netbenefits"}
+            icon={"cil:education"}
             description={
               "Chúng tôi hợp tác chặt chẽ với nhiều trường đại học, cao đẳng uy tín tại Canada, giúp bạn có nhiều lựa chọn về học tập và các chương trình học bổng"
             }
@@ -40,7 +40,9 @@ export default function About() {
           <HoverCard
             color="bg-sky-400"
             title={"Hỗ Trợ Pháp Lý Từ Các Luật Sư Di Trú"}
-            icon={"material-symbols:lock-reset"}
+            icon={
+              "streamline:legal-justice-hammer-hammer-work-legal-mallet-office-company-gavel-justice-judge-arbitration-court"
+            }
             description={
               "Mạng lưới luật sư di trú của chúng tôi sẽ đảm bảo mọi thủ tục pháp lý của bạn được thực hiện chính xác và nhanh chóng, giúp giảm thiểu rủi ro và thời gian chờ đợi."
             }
@@ -69,15 +71,23 @@ export default function About() {
           <div className="w-full  md:flex-1 flex flex-col gap-3 justify-center items-center h-max">
             <ul className="flex gap-6 flex-wrap justify-center cursor-pointer ">
               <li className="text-center flex gap-1 justify-center bg-highlight/80 font-primary tracking-widest px-8 w-full md:w-[200px]  flex-col items-center text-white/90 py-6">
-                <Icon icon={"iconamoon:profile-light"} className="text-4xl" />
+                <Icon icon={"hugeicons:job-search"} className="text-4xl" />
                 Cơ hội việc làm cho người nước ngoài
               </li>
               <li className="text-center flex gap-1 justify-center bg-background/80 font-primary tracking-widest px-8 py-6 w-full md:w-[200px]  flex-col items-center text-white/90">
-                <Icon icon={"hugeicons:absolute"} className="text-4xl" />
+                <Icon
+                  icon={
+                    "streamline:money-graph-bar-increase-up-product-performance-increase-arrow-graph-business-chart"
+                  }
+                  className="text-4xl"
+                />
                 Thành lập doanh nghiệp tại Canada
               </li>
               <li className="text-center flex gap-1 justify-center bg-background/80  font-primary tracking-widest px-8 py-6 w-full md:w-[200px]  flex-col items-center text-white/90">
-                <Icon icon={"solar:hand-money-linear"} className="text-4xl" />
+                <Icon
+                  icon={"material-symbols:conversion-path"}
+                  className="text-4xl"
+                />
                 Lộ trình từ du học đến định cư Canada
               </li>
               <li className="text-center flex gap-1 justify-center bg-highlight/80 font-primary tracking-widest px-8 py-6 w-full md:w-[200px]  flex-col items-center text-white/90">
@@ -130,6 +140,7 @@ export default function About() {
           }
           image="/alberta.png"
           ctaAction={"Xem thêm chương trình AAIP"}
+          link="/de-cu-tinh-bang-pnp/alberta-immigration-aaip"
         />
         <CTAWithImage
           flip={true}
@@ -166,6 +177,7 @@ export default function About() {
           }
           image="/saskatchewan.jpg"
           ctaAction={"Xem thêm về SINP"}
+          link="/de-cu-tinh-bang-pnp/saskatchewan-sinp"
         />
       </div>
       <CTADefault

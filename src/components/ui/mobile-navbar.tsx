@@ -16,7 +16,7 @@ export default function MobileNavbar({ isOpen, setIsOpen, config }) {
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger className="z-[100000] h-full" asChild>
         <div className="flex w-full justify-between items-center">
-          <img src="/logo.png" alt="" className="h-8" />
+          <img src="/logo.png" alt="logo" className="h-8" />
           <Icon
             icon={"solar:hamburger-menu-broken"}
             className="text-black text-scale-1200 cursor-pointer px-0 py-2 text-4xl"
@@ -34,7 +34,11 @@ export default function MobileNavbar({ isOpen, setIsOpen, config }) {
           className="flex gap-2 py-0.5 cursor-pointer justify-start items-center"
         >
           <div className="flex-col flex w-full justify-start items-start">
-            <img src="/logo.png" className="w-28 mt-[-5px] ml-[-10px]" alt="" />
+            <img
+              src="/logo.png"
+              className="w-28 mt-[-5px] ml-[-10px]"
+              alt="logo"
+            />
           </div>
         </Link>
         {config.map((group, index) => {

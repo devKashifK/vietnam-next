@@ -33,6 +33,7 @@ export const NewsFeedCard = ({
           <img
             src={image ? image : getRandomImage()}
             className="object-cover w-full h-52"
+            alt={title}
           />
 
           <span className="bg-red-600 text-slate-50 h-14 w-14 flex flex-col justify-center items-center rounded-full text-wrap absolute right-4 top-4 text-sm font-bold">
@@ -75,7 +76,7 @@ export const NewsFeedCard = ({
           </div>
           <div className="pb-6">
             <Link
-              href={`/news/${slug}`}
+              href={`/tin-tuc/${slug}`}
               className="bg-background flex justify-center items-center text-slate-50 px-3 py-1 text-sm text-left w-[50%]"
             >
               Read More
