@@ -37,7 +37,7 @@ export default function Alberta() {
       </Container>
       <Container className="flex flex-col gap-5 px-10">
         <TitleWithDoubleBorder>{pageData[1].section}</TitleWithDoubleBorder>
-        <TitleWithBottomBorder>{pageData[1].title}</TitleWithBottomBorder>
+        <h4 className="text-4xl text-black/50">{pageData[1].title}</h4>
         <div className="py-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
           {pageData[1]?.subsections.map((item, index) => {
             return (
@@ -51,49 +51,45 @@ export default function Alberta() {
         </div>
       </Container>
       <Container className="flex flex-col gap-5">
-        <Glass className="px-10 py-8 flex flex-col gap-10">
-          <div className="flex flex-col gap-4">
-            <TitleWithDoubleBorder>{pageData[2].section}</TitleWithDoubleBorder>
-            <TitleWithBottomBorder>{pageData[2].title}</TitleWithBottomBorder>
-          </div>
-          <div className="py-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {pageData[2]?.subsections.map((item, index) => {
-              return (
-                <ServicesCard
-                  key={index}
-                  title={item.title}
-                  description={item.description}
-                />
-              );
-            })}
-          </div>
-        </Glass>
+        <div className="flex flex-col gap-4">
+          <TitleWithDoubleBorder>{pageData[2].section}</TitleWithDoubleBorder>
+          <h4 className="text-4xl text-black/50">{pageData[2].title}</h4>
+        </div>
+        <div className="py-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {pageData[2]?.subsections.map((item, index) => {
+            return (
+              <ServicesCard
+                key={index}
+                title={item.title}
+                description={item.description}
+              />
+            );
+          })}
+        </div>
       </Container>
       <Container className="flex flex-col gap-5">
-        <Glass className="px-10 py-6 flex flex-col gap-10">
-          <div className="flex flex-col gap-4">
-            <TitleWithDoubleBorder>{pageData[3].section}</TitleWithDoubleBorder>
-            <TitleWithBottomBorder>{pageData[3].title}</TitleWithBottomBorder>
-          </div>
-          <div className="py-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {pageData[3]?.subsections.map((item, index) => {
-              return (
-                <Feature
-                  key={index}
-                  index={index}
-                  icon={
-                    <Icon
-                      icon="maki:religious-buddhist-11"
-                      className="text-6xl"
-                    />
-                  }
-                  title={item.title}
-                  description={item.description}
-                />
-              );
-            })}
-          </div>
-        </Glass>
+        <div className="flex flex-col gap-4">
+          <TitleWithDoubleBorder>{pageData[3].section}</TitleWithDoubleBorder>
+          <h4 className="text-4xl text-black/50">{pageData[3].title}</h4>
+        </div>
+        <div className="py-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {pageData[3]?.subsections.map((item, index) => {
+            return (
+              <Feature
+                key={index}
+                index={index}
+                icon={
+                  <Icon
+                    icon="maki:religious-buddhist-11"
+                    className="text-6xl"
+                  />
+                }
+                title={item.title}
+                description={item.description}
+              />
+            );
+          })}
+        </div>
       </Container>
 
       <CTAWithImage
