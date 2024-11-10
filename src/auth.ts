@@ -4,12 +4,12 @@ import { supabase } from "./supabaseClient";
 import { useEffect } from "react";
 
 export const signIn = async (email, password) => {
-  const { user, error } = await supabase.auth.signInWithPassword({
+  const { data, error } = await supabase.auth.signInWithPassword({
     email,
     password,
   });
   if (error) throw error;
-  return user;
+  return data.user;
 };
 
 // The signIn function is a wrapper around the signInWithPassword method provided by the Supabase auth object. It takes an email and password as arguments, signs in the user, and returns the user object if successful. If an error occurs, it throws the error.
