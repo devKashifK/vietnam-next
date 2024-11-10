@@ -49,6 +49,7 @@ export default function CanadianExperienceClass() {
         <Glass className="flex gap-2 px-10 py-10">
           <div className="flex-1 flex flex-col gap-4">
             <Title
+              className="px-2 text-left lg:justify-start lg:items-start"
               subtitle="Canadian Experience Class"
               title={
                 <p className="text-4xl text-black/50 w-full text-left pt-3">
@@ -73,38 +74,29 @@ export default function CanadianExperienceClass() {
         </Glass>
       </Container>
       <Container>
-        <Glass className="flex gap-2 px-10 py-10">
-          <div className="flex-1 flex flex-col gap-4">
-            <Title
-              subtitle="Express Entry"
-              title={
-                <p className="text-4xl text-black/50 w-full text-left pt-3">
-                  Factors that increase your chance to receive Invitation to
-                  Apply (ITA) in the Express Entry Program
-                </p>
-              }
-            />
-
-            <div className="flex flex-col justify-start gap-6">
-              <p className="text-sm text-black/60 text-left">
-                Through Express Entry, candidates and their family can
-                participate and compete for points to receive an ITA –
-                Invitation to Apply from the Canadian government to immigrate
-                and work in the country.
+        <div className="flex-1 flex flex-col gap-4">
+          <Title
+            className="px-2 text-left lg:justify-start lg:items-start"
+            subtitle="Express Entry"
+            title={
+              <p className="text-4xl text-black/50 w-full text-left pt-3">
+                Factors that increase your chance to receive Invitation to Apply
+                (ITA) in the Express Entry Program
               </p>
-            </div>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {workersList.map((item, index) => (
-                <ServicesCard
-                  key={index}
-                  id={index}
-                  title={item.title}
-                  description={truncateTextHeading(item.description, 30)}
-                />
-              ))}
-            </div>
+            }
+          />
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {workersList.map((item, index) => (
+              <ServicesCard
+                key={index}
+                id={index}
+                title={item.title}
+                description={truncateTextHeading(item.description, 30)}
+              />
+            ))}
           </div>
-        </Glass>
+        </div>
       </Container>
     </>
   );

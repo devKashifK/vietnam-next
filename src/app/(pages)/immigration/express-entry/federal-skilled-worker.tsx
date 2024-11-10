@@ -120,7 +120,9 @@ export const FAQ = ({
       className="w-full px-2 md:px-0 flex flex-col gap-2"
     >
       <AccordionItem value="item-1" className="w-full ">
-        <AccordionTrigger>{title}</AccordionTrigger>
+        <AccordionTrigger className="text-base text-left">
+          {title}
+        </AccordionTrigger>
         <AccordionContent className="">
           <div className="flex flex-col gap-2 my-2">{description}</div>
         </AccordionContent>
@@ -150,7 +152,7 @@ function CTA() {
                 description="GTR Worldwide can assist you in increasing your Comprehensive Ranking System (CRS) score for Express Entry in several ways:"
               />
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-2 max-w-7xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-2 max-w-full mx-auto">
                 {features.map((feature, index) => (
                   <Feature key={feature.title} {...feature} index={index} />
                 ))}
@@ -159,7 +161,7 @@ function CTA() {
               <Title
                 className="justify-center items-center mt-4"
                 title={
-                  <p className="text-2xl text-black/50 w-full text">
+                  <p className="text-2xl text-black/50 w-full text-center">
                     Take the first step towards your family&apos;s Canadian
                     dream
                   </p>

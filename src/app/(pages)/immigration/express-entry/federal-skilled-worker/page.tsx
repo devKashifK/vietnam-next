@@ -56,22 +56,16 @@ export default function FedralSkilledWorker() {
         {/* <Glass className="flex gap-2 px-10 py-10"> */}
         <div className="flex-1 flex flex-col gap-4">
           <Title
+            className="px-2 text-left lg:justify-start lg:items-start"
             subtitle="Express Entry"
             title={
-              <p className="text-4xl text-black/50 w-full text-left pt-3">
+              <h3 className="tracking-wide text-left text-4xl text-black/70">
                 Factors that increase your chance to receive Invitation to Apply
                 (ITA) in the Express Entry Program
-              </p>
+              </h3>
             }
           />
 
-          <div className="flex flex-col justify-start gap-6">
-            <p className="text-sm text-black/60 text-left">
-              Through Express Entry, candidates and their family can participate
-              and compete for points to receive an ITA – Invitation to Apply
-              from the Canadian government to immigrate and work in the country.
-            </p>
-          </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {workersList.map((item, index) => (
               <ServicesCard
@@ -92,10 +86,12 @@ export default function FedralSkilledWorker() {
           <div className="absolute top-0 left-0 w-full h-full bg-gray-50 bg-opacity-20"></div>
           <img src="/work.jpg" className="rounded-md" alt="work" />
         </div>
-        <div className="flex-1 flex flex-col gap-4">
+        <div className="flex-1 flex flex-col lg:justify-start lg:items-start gap-4">
           <Title
-            className="px-4"
+            className="px-4 text-left lg:justify-start lg:items-start"
+            titleClassName="lg:justify-start lg:items-start text-left"
             subtitle="FAQ"
+            descriptionClassName="lg:text-left lg:w-full"
             title={"How to apply for a Work Permit"}
             description="Applying for a work permit in Canada can be a multi-step process, depending on your situation and the type of work permit you require. Here are the general steps to follow"
           />
@@ -120,7 +116,9 @@ export const FAQ = ({
       className="w-full px-2 md:px-0 flex flex-col gap-2"
     >
       <AccordionItem value="item-1" className="w-full ">
-        <AccordionTrigger>{title}</AccordionTrigger>
+        <AccordionTrigger className="text-base text-left">
+          {title}
+        </AccordionTrigger>
         <AccordionContent className="">
           <div className="flex flex-col gap-2 my-2">{description}</div>
         </AccordionContent>
@@ -132,9 +130,8 @@ export const FAQ = ({
 function CTA() {
   return (
     <Container className="">
-      <Glass className="py-2 w-full">
-        <div className="flex gap-2">
-          {/* <div className="relative">
+      <div className="flex gap-2">
+        {/* <div className="relative">
               <div className="absolute top-0 left-0 bg-gradient-to-r from-blue-100/40 to-cyan-300/40 rounded-md w-[450px] h-full"></div>
               <img
                 src="/aaa.jpg"
@@ -142,52 +139,48 @@ function CTA() {
                 className="w-[450px] h-full rounded-md"
               />
             </div> */}
-          <Container>
-            <div className="flex-1 flex flex-col gap-2 pt-8 justify-center items-center">
-              <Title
-                subtitle="Express Entry"
-                title="How can we help you?"
-                description="GTR Worldwide can assist you in increasing your Comprehensive Ranking System (CRS) score for Express Entry in several ways:"
-              />
+        <div className="flex-1 flex flex-col gap-2 pt-8 justify-center items-center">
+          <Title
+            subtitle="Express Entry"
+            title="How can we help you?"
+            description="GTR Worldwide can assist you in increasing your Comprehensive Ranking System (CRS) score for Express Entry in several ways:"
+          />
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-2 max-w-7xl mx-auto">
-                {features.map((feature, index) => (
-                  <Feature key={feature.title} {...feature} index={index} />
-                ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-2 max-w-full mx-auto">
+            {features.map((feature, index) => (
+              <Feature key={feature.title} {...feature} index={index} />
+            ))}
+          </div>
+
+          <Title
+            className="justify-center items-center mt-4"
+            title={
+              <p className="text-2xl text-black/50 w-full text-center">
+                Take the first step towards your family&apos;s Canadian dream
+              </p>
+            }
+            description={
+              <p className="text-center  text-black/50 w-[70%]">
+                For personalized assistance and expert guidance, contact
+                GreenTech Resources Worldwide Canada so our experts can help you
+                navigate the work permit application process and ensure a smooth
+                transition to working in Canada
+              </p>
+            }
+          />
+          <Button
+            className="py-3 px-6 mt-3"
+            icon={
+              <div className="flex gap-2 justify-center items-center text-xs ">
+                <Icon icon={"mdi:phone"} />
+                <span>+1855 477 9797</span>
               </div>
-
-              <Title
-                className="justify-center items-center mt-4"
-                title={
-                  <p className="text-2xl text-black/50 w-full text">
-                    Take the first step towards your family&apos;s Canadian
-                    dream
-                  </p>
-                }
-                description={
-                  <p className="text-center  text-black/50 w-[70%]">
-                    For personalized assistance and expert guidance, contact
-                    GreenTech Resources Worldwide Canada so our experts can help
-                    you navigate the work permit application process and ensure
-                    a smooth transition to working in Canada
-                  </p>
-                }
-              />
-              <Button
-                className="py-3 px-6 mt-3"
-                icon={
-                  <div className="flex gap-2 justify-center items-center text-xs ">
-                    <Icon icon={"mdi:phone"} />
-                    <span>+1855 477 9797</span>
-                  </div>
-                }
-              >
-                <span className="text-sm">Book An Appointment</span>
-              </Button>
-            </div>
-          </Container>
+            }
+          >
+            <span className="text-sm">Book An Appointment</span>
+          </Button>
         </div>
-      </Glass>
+      </div>
     </Container>
   );
 }

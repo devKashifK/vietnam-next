@@ -5,7 +5,7 @@ import { MapPin, Phone, Mail } from "lucide-react";
 
 const ContactForm = () => {
   return (
-    <form className="max-w-md mx-auto mt-8 p-6 bg-white rounded-lg shadow-md">
+    <form className="max-w-[80%] mx-auto mt-8 p-6 bg-white rounded-lg shadow-md">
       <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
       <div className="mb-4">
         <label htmlFor="name" className="block mb-2">
@@ -89,7 +89,7 @@ const OfficeCard = ({ country, imageUrl, address, phone, email }) => {
 
 const EnhancedContact = () => {
   return (
-    <div className="container mx-auto px-4">
+    <div className="container mx-auto px-4 py-10">
       <div className="flex flex-wrap justify-center mt-8">
         <OfficeCard
           country="Bangladesh"

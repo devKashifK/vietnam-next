@@ -312,7 +312,7 @@ export const CTAWithImage = ({
           alt={title}
         />
       </div>
-      <div className="flex-1 bg-white border-t border-l border-b border-black/5  flex flex-col gap-6 py-10 px-8">
+      <div className="flex-1 bg-white border-t  border-b border-black/5  flex flex-col gap-6 py-10 px-8">
         <TitleWithBottomBorder titleClass="">{subtitle}</TitleWithBottomBorder>
         <h2 className="text-4xl text-left uppercase">{title}</h2>
 

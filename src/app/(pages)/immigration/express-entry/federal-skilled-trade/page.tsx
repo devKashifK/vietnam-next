@@ -43,6 +43,7 @@ export default function FedralSkilledTrade() {
       <Container>
         <div className="flex-1 flex flex-col gap-4">
           <Title
+            className="px-2 text-left lg:justify-start lg:items-start"
             subtitle="Federal Skilled Trades​"
             title={
               <p className="text-4xl text-black/50 w-full text-left pt-3">
@@ -74,6 +75,7 @@ export default function FedralSkilledTrade() {
       <Container>
         <div className="flex-1 flex flex-col gap-4">
           <Title
+            className="px-2 text-left lg:justify-start lg:items-start"
             subtitle="Express Entry"
             title={
               <p className="text-4xl text-black/50 w-full text-left pt-3">
@@ -103,13 +105,11 @@ export default function FedralSkilledTrade() {
         </div>
       </Container>
       <Container>
-        <Glass>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-2 max-w-7xl mx-auto">
-            {features.map((feature, index) => (
-              <Feature key={feature.title} {...feature} index={index} />
-            ))}
-          </div>
-        </Glass>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-2 max-w-7xl mx-auto">
+          {features.map((feature, index) => (
+            <Feature key={feature.title} {...feature} index={index} />
+          ))}
+        </div>
       </Container>
     </>
   );

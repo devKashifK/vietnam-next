@@ -157,7 +157,7 @@ export default function DoanhNghiepC11VisaPage() {
         </Glass>
       </Container>
 
-      <Container className="grid grid-cols-2 gap-4">
+      <Container className="grid grid-cols-3 gap-4">
         {visa.map((item, index) => (
           <HoverCard
             key={index}
