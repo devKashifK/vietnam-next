@@ -4,8 +4,8 @@ import { getDataBySlug } from "@/components/ui/dynamic-component";
 import { DynamicComponent } from "@/components/ui/dynamic-component";
 import React, { use } from "react";
 
-export default function EnvCanada({ slug }) {
-  const pageData = use(getDataBySlug("moi-truong-canada"));
+export default async function EnvCanada({ slug }) {
+  const pageData = await getDataBySlug("moi-truong-canada");
 
   // Check if pageData and pageData.content are available
   if (!pageData) return <p>Loading...</p>;
