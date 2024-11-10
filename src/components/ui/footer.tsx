@@ -9,8 +9,8 @@ import { useRouter } from "next/navigation";
 export default function Footer() {
   const navigate = useRouter();
   return (
-    <div className="flex flex-col w-full  mx-auto bg-white shadow-md">
-      <div className="bg-white bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 rounded-t-2xl h-max lg:h-[500px] flex  flex-col lg:flex-row gap-10 px-12 py-16 items-center justify-center text-white">
+    <div className="flex flex-col w-full  mx-auto bg-highlight shadow-md">
+      <div className="bg-white bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-80  h-max lg:h-[500px] flex  flex-col lg:flex-row gap-10 px-12 py-16 items-center justify-center text-white">
         <div className="flex flex-col gap-10 flex-1 text-secondary/50 pt-10  justify-start items-start">
           <img src="/logo.png" alt="logo" className="w-[60%]  md:pl-8" />
 
