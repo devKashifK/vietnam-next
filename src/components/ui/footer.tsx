@@ -188,7 +188,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="flex  py-5  px-12 bg-highlight  w-full text-white text-xs">
-        <span className="">© ICANPR - All rights reserved</span>
+        <span className="">© iCanPr - All rights reserved</span>
       </div>
     </div>
   );

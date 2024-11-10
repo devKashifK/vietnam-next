@@ -39,7 +39,7 @@ export default function HeroDefault({
           href={"/"}
           className="text-white/60 uppercase font-primary tracking-widest"
         >
-          Home
+          Trang chủ
         </Link>
         <Icon
           icon={"zondicons:cheveron-right"}
