@@ -50,71 +50,61 @@ export default function BritishColumbia() {
       </Container>
       {pageData[2]?.subsections ? (
         <Container className="flex flex-col gap-5">
-          <Glass className="px-10 py-10 flex flex-col gap-10">
-            <div className="flex flex-col gap-4">
-              <TitleWithDoubleBorder>
-                {pageData[2].section}
-              </TitleWithDoubleBorder>
-              <TitleWithBottomBorder>{pageData[2].title}</TitleWithBottomBorder>
-            </div>
-            <div className="py-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
-              {pageData[2]?.subsections.map((item, index) => {
-                return (
-                  <ServicesCard
-                    key={index}
-                    title={item.title}
-                    description={item.description}
-                  />
-                );
-              })}
-            </div>
-          </Glass>
+          <div className="flex flex-col gap-4">
+            <TitleWithDoubleBorder>{pageData[2].section}</TitleWithDoubleBorder>
+            <TitleWithBottomBorder>{pageData[2].title}</TitleWithBottomBorder>
+          </div>
+          <div className="py-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {pageData[2]?.subsections.map((item, index) => {
+              return (
+                <ServicesCard
+                  key={index}
+                  title={item.title}
+                  description={item.description}
+                />
+              );
+            })}
+          </div>
         </Container>
       ) : (
         <Container>
-          <Glass className="flex gap-2 px-10 py-10">
-            <div className="flex-1 flex flex-col gap-2">
-              <div className="relative w-max">
-                <div className="px-3 py-1.5">
-                  <TitleWithDoubleBorder>
-                    {pageData[2].section}
-                  </TitleWithDoubleBorder>
-                </div>
-              </div>
-              <div className="flex flex-col justify-start gap-6">
-                <h3 className="tracking-wide text-left text-4xl text-black/70">
-                  {pageData[2].title}
-                </h3>
-
-                <p className="text-sm text-black/60 text-left">
-                  {pageData[2].content}
-                </p>
+          <div className="flex-1 flex flex-col gap-2">
+            <div className="relative w-max">
+              <div className="px-3 py-1.5">
+                <TitleWithDoubleBorder>
+                  {pageData[2].section}
+                </TitleWithDoubleBorder>
               </div>
             </div>
-          </Glass>
+            <div className="flex flex-col justify-start gap-6">
+              <h3 className="tracking-wide text-left text-4xl text-black/70">
+                {pageData[2].title}
+              </h3>
+
+              <p className="text-sm text-black/60 text-left">
+                {pageData[2].content}
+              </p>
+            </div>
+          </div>
         </Container>
       )}
       {pageData[3]?.subsections ? (
         <Container className="flex flex-col gap-5">
-          <Glass className="px-10 py-10 flex flex-col gap-10">
-            <div className="flex flex-col gap-4">
-              <TitleWithDoubleBorder>
-                {pageData[3].section}
-              </TitleWithDoubleBorder>
-              <TitleWithBottomBorder>{pageData[3].title}</TitleWithBottomBorder>
-            </div>
-            <div className="py-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
-              {pageData[3]?.subsections.map((item, index) => {
-                return (
-                  <ServicesCard
-                    key={index}
-                    title={item.title}
-                    description={item.description}
-                  />
-                );
-              })}
-            </div>
-          </Glass>
+          <div className="flex flex-col gap-4">
+            <TitleWithDoubleBorder>{pageData[3].section}</TitleWithDoubleBorder>
+            <TitleWithBottomBorder>{pageData[3].title}</TitleWithBottomBorder>
+          </div>
+          <div className="py-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {pageData[3]?.subsections.map((item, index) => {
+              return (
+                <ServicesCard
+                  key={index}
+                  title={item.title}
+                  description={item.description}
+                />
+              );
+            })}
+          </div>
         </Container>
       ) : (
         <Container>
@@ -143,32 +133,28 @@ export default function BritishColumbia() {
 
       {pageData[4] && pageData[4]?.subsections ? (
         <Container className="flex flex-col gap-5">
-          <Glass className="px-10 py-10 flex flex-col gap-10">
-            <div className="flex flex-col gap-4">
-              <TitleWithDoubleBorder>
-                {pageData[4].section}
-              </TitleWithDoubleBorder>
-              <TitleWithBottomBorder>{pageData[4].title}</TitleWithBottomBorder>
-            </div>
-            <div className="py-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
-              {pageData[4]?.subsections.map((item, index) => {
-                return (
-                  <Feature
-                    key={index}
-                    index={index}
-                    icon={
-                      <Icon
-                        icon="maki:religious-buddhist-11"
-                        className="text-6xl"
-                      />
-                    }
-                    title={item.title}
-                    description={item.description}
-                  />
-                );
-              })}
-            </div>
-          </Glass>
+          <div className="flex flex-col gap-4">
+            <TitleWithDoubleBorder>{pageData[4].section}</TitleWithDoubleBorder>
+            <TitleWithBottomBorder>{pageData[4].title}</TitleWithBottomBorder>
+          </div>
+          <div className="py-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {pageData[4]?.subsections.map((item, index) => {
+              return (
+                <Feature
+                  key={index}
+                  index={index}
+                  icon={
+                    <Icon
+                      icon="maki:religious-buddhist-11"
+                      className="text-6xl"
+                    />
+                  }
+                  title={item.title}
+                  description={item.description}
+                />
+              );
+            })}
+          </div>
         </Container>
       ) : (
         <Container>
@@ -197,25 +183,21 @@ export default function BritishColumbia() {
 
       {pageData[5] && pageData[5]?.subsections ? (
         <Container className="flex flex-col gap-5">
-          <Glass className="px-10 py-10 flex flex-col gap-10">
-            <div className="flex flex-col gap-4">
-              <TitleWithDoubleBorder>
-                {pageData[4].section}
-              </TitleWithDoubleBorder>
-              <TitleWithBottomBorder>{pageData[4].title}</TitleWithBottomBorder>
-            </div>
-            <div className="py-6 grid grid-cols-2 gap-6">
-              {pageData[5]?.subsections.map((item, index) => {
-                return (
-                  <ServicesCard
-                    key={index}
-                    title={item.title}
-                    description={item.description}
-                  />
-                );
-              })}
-            </div>
-          </Glass>
+          <div className="flex flex-col gap-4">
+            <TitleWithDoubleBorder>{pageData[4].section}</TitleWithDoubleBorder>
+            <TitleWithBottomBorder>{pageData[4].title}</TitleWithBottomBorder>
+          </div>
+          <div className="py-6 grid grid-cols-2 gap-6">
+            {pageData[5]?.subsections.map((item, index) => {
+              return (
+                <ServicesCard
+                  key={index}
+                  title={item.title}
+                  description={item.description}
+                />
+              );
+            })}
+          </div>
         </Container>
       ) : (
         <Container>
