@@ -7,7 +7,7 @@ export function CardWithImage({
   image,
   title,
   description,
-  href,
+  href = "/",
 }: {
   title?: string;
   description?: React.ReactNode | string;

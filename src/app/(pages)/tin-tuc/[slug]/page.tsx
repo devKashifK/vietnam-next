@@ -124,7 +124,7 @@ function HoverCard({
   icon,
   color,
   className,
-  to,
+  to = "/",
   subtitle,
 }: {
   subtitle?: string;
