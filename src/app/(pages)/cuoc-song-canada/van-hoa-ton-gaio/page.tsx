@@ -42,6 +42,7 @@ export default function CultureReligion() {
           {culture.map((item, index) =>
             Object.entries(culture[0]).map(([key, i], index) => (
               <ServicesCard
+                key={key}
                 title={
                   <div className="flex flex-col gap-1">
                     <TitleWithBottomBorder>{key}</TitleWithBottomBorder>

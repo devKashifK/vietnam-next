@@ -3,6 +3,9 @@
 import Container from "@/components/ui/container";
 import { getDataBySlug } from "@/components/ui/dynamic-component";
 import { DynamicComponent } from "@/components/ui/dynamic-component";
+import { ServicesCard } from "@/components/ui/services-card";
+import TitleWithBottomBorder from "@/components/ui/title-with-bottom-border";
+import TitleWithDoubleBorder from "@/components/ui/title-with-double-border";
 import { use } from "react";
 
 // export default function ExchangeRate({ slug }) {
