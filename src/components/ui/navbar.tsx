@@ -445,7 +445,7 @@ export const mobileConfig = [
       {
         provider: "internal",
         name: "Bảo lãnh gia đình",
-        path: "/immigration/bảo-lãnh-gia-đình",
+        path: "/immigration/bao-lanh-gia-dinh",
       },
       {
         provider: "internal",
@@ -614,12 +614,12 @@ export const mobileConfig = [
       {
         provider: "internal",
         name: "Tổng hợp việc làm Canada",
-        path: "/tuyen-dung/tong-hợp-viec-lam-canada",
+        path: "https://jobs.icanpr.vn/jobs/Careers",
       },
       {
         provider: "internal",
         name: "Công nhân trại gà",
-        path: "/tuyen-dung/cong-nhan-trai-ga",
+        path: "https://icanpr.zohorecruit.com/jobs/Careers/777018000000558001/75119---General-Labour-C%C3%B4ng-nh%C3%A2n-n%C3%B4ng-tr%E1%BA%A1i-g%C3%A0?source=CareerSite",
       },
       {
         provider: "internal",
@@ -798,7 +798,7 @@ const router = [
         element: "Visa khởi nghiệp",
       },
       {
-        path: "/immigration/bảo-lãnh-gia-đình",
+        path: "/immigration/bao-lanh-gia-dinh",
         element: "Bảo lãnh gia đình",
         // element: "Family sponsorship",
       },
@@ -1010,12 +1010,12 @@ const router = [
         // element: "Work for ICanPR",
       },
       {
-        path: "/tuyen-dung/tong-hợp-viec-lam-canada",
+        path: "https://jobs.icanpr.vn/jobs/Careers",
         element: "Tổng hợp việc làm Canada",
         // element: "Canada Jobs Summary",
       },
       {
-        path: "/tuyen-dung/cong-nhan-trai-ga",
+        path: "https://icanpr.zohorecruit.com/jobs/Careers/777018000000558001/75119---General-Labour-C%C3%B4ng-nh%C3%A2n-n%C3%B4ng-tr%E1%BA%A1i-g%C3%A0?source=CareerSite",
         element: "Công nhân trại gà",
         // element: "Chicken farm Worker",
       },

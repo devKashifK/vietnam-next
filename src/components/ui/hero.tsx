@@ -10,6 +10,7 @@ import "swiper/css/autoplay";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useRouter } from "next/navigation";
+import { List, UL } from "./list";
 
 export default function Hero() {
   const images = ["/aaa.jpg", "/hero-2.jpg", "/hero-3.jpg"];
@@ -36,7 +37,7 @@ export default function Hero() {
 
   return (
     <div className="flex flex-col gap-2 w-full">
-      <div className="w-full mx-auto   md:h-[500px] shadow-md flex justify-start items-start flex-col overflow-hidden relative">
+      <div className="w-full mx-auto   lg:h-[600px] shadow-md flex justify-start items-start flex-col overflow-hidden relative">
         <div className="absolute top-0 left-0 w-full h-full bg-bg-[rgba(0, 0, 0, 0.2)]"></div>
 
         <div className="flex flex-col w-full  h-full relative ">
@@ -66,7 +67,7 @@ export default function Hero() {
             </div>
             <div className="px-6 lg:px-20 pb-14 lg:pb-20 pt-10 flex-1 h-full bg-white flex gap-8 flex-col justify-center items-center">
               <div className="flex gap-1 flex-col justify-center items-start w-full relative">
-                <p className="lg:text-4xl text-3xl text-left text-black">
+                <p className="lg:text-3xl text-2xl text-left text-black">
                   {/* Achieve your family Canada */}
                   Đạt được gia đình của bạn Canada <br />
                   <strong className="text-background ">
@@ -77,12 +78,35 @@ export default function Hero() {
                 </p>
               </div>
 
-              <p className="text-left -mt-2 w-full text-black">
-                Hãy bắt đầu hành trình định cư Canada và mở ra cơ hội tương lai
-                tươi sáng cho gia đình bạn. Với kinh nghiệm chuyên sâu về di trú
-                Canada, chúng tôi sẽ giúp bạn từng bước chạm đến giấc mơ an cư
-                lạc nghiệp tại một trong những quốc gia đáng sống nhất thế giới.
+              <p className="text-left text-base -mt-2 w-full text-black">
+                ICanPR là công ty chuyên môi giới tuyển dụng và tư vấn nhập cư
+                hàng đầu tại Việt Nam
               </p>
+
+              <p className="text-left text-base -mt-2 w-full text-black">
+                Chúng tôi tự tin có khả năng cung cấp giải pháp, giúp rút ngắn
+                hành trình đến với đất nước Canada yên bình và xinh đẹp cho cả
+                gia đình:
+              </p>
+
+              <UL>
+                <List className="text-sm">
+                  Giải pháp di trú thiết kế riêng, phù hợp với hồ sơ từng khách
+                  hàng
+                </List>
+                <List className="text-sm">
+                  Kết nối khách hàng với nhà tuyển dụng tại Canada
+                </List>
+                <List className="text-sm">
+                  Xúc tiến các dự án đầu tư kinh doanh
+                </List>
+                <List className="text-sm">
+                  An cư dễ dàng tại Canada. Chúng tôi cung cấp hỗ trợ để bạn có
+                  một sự chuyển đổi mượt mà, giúp bạn cảm thấy như ở nhà tại một
+                  đất nước mới – Canada.
+                </List>
+              </UL>
+
               <div className="flex w-full justify-start items-start">
                 <Button
                   className="py-3 -mt-4 w-[190px] bg-background"

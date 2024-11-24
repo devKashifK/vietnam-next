@@ -27,7 +27,7 @@ export default function CTA() {
           cta={"All Solutions"}
         /> */}
         <div className="flex gap-4 min-h-screen  mx-auto">
-          <div className="flex-1 items-center justify-center grid grid-cols-1 md:grid-cols-2 gap-10 md:-mt-24 -mt-12 relative z-50">
+          <div className="flex-1 items-center justify-center grid grid-cols-1 md:grid-cols-2 gap-10  relative z-50">
             {CtaDetails.map((item, index) => (
               <CtaCard item={item} key={item.id} />
             ))}
@@ -155,7 +155,7 @@ const CtaDetails = [
     labels: ["Express Entry Program", "Family Sponsorship"],
     description:
       "Với việc định cư tại Canada đạt mức cao kỷ lục, bây giờ là thời điểm lý tưởng để bắt đầu hành trình di cư của bạn. Có nhiều con đường để nhập cư vào Canada và đạt được quyền cư trú lâu dài. Mặc dù việc nhập cư vào Canada yêu cầu... ",
-    href: "/immigration/express-entry/federal-skilled-trade",
+    href: "/immigration/dinh-cu-canada",
   },
   {
     id: 2,
@@ -221,11 +221,13 @@ export const CTADefault = ({
   subtitle,
   image,
   description,
+  descriptionClassName,
 }: {
   title?: string;
   subtitle?: string | React.ReactNode;
   image?: string;
   description?: string | React.ReactNode;
+  descriptionClassName?: string;
 }) => {
   const navigate = useRouter();
   return (
@@ -245,7 +247,7 @@ export const CTADefault = ({
             subtitle
           )}
           {typeof description === "string" ? (
-            <p className="text-sm">{description}</p>
+            <p className={cn("text-sm", descriptionClassName)}>{description}</p>
           ) : (
             description
           )}
@@ -279,7 +281,7 @@ export const CTAWithImage = ({
   desClassName,
   link = "/",
 }: {
-  subtitle: string | React.ReactNode;
+  subtitle?: string | React.ReactNode;
   title: string | React.ReactNode;
   description: string | React.ReactNode;
   ctaAction?: string | React.ReactNode;

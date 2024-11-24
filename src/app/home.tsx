@@ -9,21 +9,20 @@ import { InfiniteMovingCardsDemo } from "@/components/ui/testimonial";
 import WhyChooseUs from "@/components/ui/why-choose-us";
 import Glass from "@/lib/helpers";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { Title } from "@radix-ui/react-toast";
 import React from "react";
 import CountUp from "react-countup";
 import NewsShowcase from "./(pages)/news.tsx/news-showcase";
+import Title from "@/components/ui/Title";
+import OurService from "@/components/ui/hom-service";
 
 export default function Home() {
+  console.log("home");
   return (
     <>
-      {/* <Sidebar /> */}
       <Hero />
       <div className="py-10 sm:py-10 flex flex-col gap-12">
         <CTA />
-
         <WhyChooseUs />
-
         <Container className="gap-10">
           <Title
             subtitle="Chúng tôi tự tin có thể giúp giấc mơ Canada của gia đình bạn thành sự thật"
@@ -47,7 +46,9 @@ export default function Home() {
           />
           <PnpProgramSlider />
         </Container>
-        <Container>
+
+        <OurService />
+        {/* <Container>
           <Glass
             className="flex-col  gap-8 py-20 justify-center items-center bg-cover bg-center relative"
             style={{
@@ -127,7 +128,7 @@ export default function Home() {
               </div>
             </div>
           </Glass>
-        </Container>
+        </Container> */}
         <CTAWithImage
           flip={true}
           title={
@@ -157,10 +158,10 @@ export default function Home() {
           link="/ve-icanpr"
         />
 
-        <Container effect="slide-up" className="flex flex-col gap-10">
+        <Container effect="none" className="flex flex-col gap-10">
           <Title
             cta="All News & Events"
-            subtitle="Tin Tức Di Trú Canada"
+            subtitle="Tin Tức Di Trú"
             title="Tin Tức & Sự Kiện Mới Nhất"
             to="/news"
           />

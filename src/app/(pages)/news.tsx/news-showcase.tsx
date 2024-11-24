@@ -17,6 +17,7 @@ export default function NewsShowcase() {
     fetchNews();
   }, []);
 
+  console.log(data, "checkNews");
   return (
     <Swiper
       spaceBetween={30}

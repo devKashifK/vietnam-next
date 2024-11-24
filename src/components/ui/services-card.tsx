@@ -21,9 +21,9 @@ export const ServicesCard = ({
             {truncateTextHeading(item.subtitle)}
           </p> */}
       </div>
-      <p className="text-xs text-left text-black/80">
+      <p className="text-sm text-left text-black/80">
         {description}
-        <span className="text-black">Read More</span>
+        <span className="text-black"> ...read more</span>
       </p>
       {/* <div className="w-full flex justify-start items-start mt-4">
         <div

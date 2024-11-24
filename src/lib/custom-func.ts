@@ -137,7 +137,7 @@ const cacheData = {
     text: "Start Up Visa",
     image: "/federalSkill.png",
   },
-  ["bảo-lãnh-gia-đình"]: {
+  ["bao-lanh-gia-dinh"]: {
     text: "Bảo lãnh gia đình",
     image: "/federalSkill.png",
   },
@@ -328,6 +328,10 @@ image:"/canada.jpg"
   ["cong-viec-nong"]: {
     text: "Cong Viec Nong",
     image: "/work.jpg",
+  },
+  ["dinh-cu-canada"]: {
+    text: "Định cư Canada",
+    image: "/immigration-cannada.jpg",
   },
 };
 export const getCachedData = (pathname: string) => {
