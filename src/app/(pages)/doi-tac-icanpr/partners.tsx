@@ -43,8 +43,11 @@ export default function Partners() {
             description="Khi nói đến du học, Canada là một trong những điểm đến hàng đầu với hệ thống giáo dục đẳng cấp thế giới và môi trường sống an toàn, thân thiện. Để mang đến cơ hội học tập tốt nhất cho sinh viên quốc tế, chúng tôi không ngừng tìm kiếm và xây dựng các mối quan hệ đối tác là các trường, cơ sở đào tạo uy tín."
           />
           <div className="h-56 overflow-y-auto pretty-scroll">
-            {patnersConfig.map((partner) => (
-              <div className="py-1 px-2 border border-background/60 text-left">
+            {patnersConfig.map((partner, index) => (
+              <div
+                key={index}
+                className="py-1 px-2 border border-background/60 text-left"
+              >
                 {partner}
               </div>
             ))}
