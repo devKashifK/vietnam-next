@@ -26,7 +26,7 @@ const immigrationProgramsConfig = [
     title: "Những chương trình định cư phổ biến tại Canada",
     content: [
       "Canada có nhiều chương trình định cư khác nhau, bao gồm:",
-      "- **Express Entry**: Chương trình dành cho lao động có kỹ năng cao, bao gồm ba diện chính là Federal Skilled Worker, Federal Skilled Trades, và Canadian Experience Class.",
+      "- **Express Entry**: Chương trình dành cho lao động có kỹ năng cao, bao gồm ba diện chính là Công nhân lành nghề liên bang, Thương mại tay nghề liên bangs, và Canadian Experience Class.",
       "- **Provincial Nominee Program (PNP)**: Chương trình đề cử tỉnh bang, cho phép các tỉnh bang và vùng lãnh thổ đề cử những ứng viên đáp ứng nhu cầu kinh tế và lao động của họ.",
       "- **Family Sponsorship**: Chương trình bảo lãnh gia đình, cho phép công dân và thường trú nhân Canada bảo lãnh người thân sang định cư.",
       "- **Startup Visa Program**: Dành cho những doanh nhân có ý tưởng kinh doanh sáng tạo và nhận được sự hỗ trợ từ các tổ chức được chỉ định tại Canada.",

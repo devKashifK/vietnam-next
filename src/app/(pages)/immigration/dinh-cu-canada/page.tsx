@@ -3,7 +3,6 @@ import CTA, { CTADefault, CTAWithImage } from "@/components/ui/cta";
 import Title from "@/components/ui/Title";
 import Glass from "@/lib/helpers";
 import React from "react";
-import { FAQ } from "../express-entry/federal-skilled-worker";
 import { ServicesCard } from "@/components/ui/services-card";
 import { truncateTextHeading } from "@/components/ui/newsCard";
 
@@ -88,7 +87,7 @@ export default function CanadaImmigration() {
         }
         image="/about.png"
         ctaAction={"Việc làm định cư Canada"}
-        link="/immigration/express-entry/federal-skilled-worker"
+        link="/immigration/express-entry/cong-nhan-lanh-nghe-lien-bang"
       />
       <CTAWithImage
         flip={true}

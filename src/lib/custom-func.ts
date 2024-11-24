@@ -100,25 +100,25 @@ const cacheData = {
   //   text: "Please Rate Our Quality",
   //   image: "/testimonial.jpg",
   // },
-  "express-entry": {
-    text: "Express Entry",
+  "nhap-canh-nhanh": {
+    text: "Nhập cảnh nhanh",
     image: "/expressEntry.png",
   },
 
-  "federal-skilled-trade": {
-    text: "Federal Skilled Trades Program",
+  "thuong-mai-co-tay-nghe-lien-bang": {
+    text: "Thương mại tay nghề liên bangs Program",
     image: "/federalSkill.png",
   },
-  "federal-skilled-worker": {
-    text: "Federal Skilled Worker Program",
+  "cong-nhan-lanh-nghe-lien-bang": {
+    text: "Công nhân lành nghề liên bang Program",
     image: "/federalSkill.png",
   },
-  "canadian-experience-class": {
-    text: "Canadian Experience Class",
+  "lop-hoc-trai-nghiem-canada": {
+    text: "Lớp trải nghiệm Canada",
     image: "/federalSkill.png",
   },
-  "crs-score-calculation": {
-    text: "CRS Score Calculation",
+  "tinh-toan-diem-crs": {
+    text: "Tính điểm CRS",
     image: "/federalSkill.png",
   },
   ["viec-lam-dinh-cu"]: {
@@ -192,9 +192,9 @@ const cacheData = {
     text: "Saskatchewan (SINP)",
     image: "/saskatchewan.jpg",
   },
-  "cuoc-song-canada":{
-text:"Cuộc sống Canada",
-image:"/canada.jpg"
+  "cuoc-song-canada": {
+    text: "Cuộc sống Canada",
+    image: "/canada.jpg",
   },
 
   quebec: {
@@ -207,10 +207,9 @@ image:"/canada.jpg"
     text: "Yukon (YNP)",
     image: "/yukon.jpg",
   },
-  
-    "các-tỉnh-bang-canada":{
 
-    text:"Các Tỉnh Bang Canada",
+  "các-tỉnh-bang-canada": {
+    text: "Các Tỉnh Bang Canada",
     image: "/canada.jpg",
   },
   "tinh-alberta": {

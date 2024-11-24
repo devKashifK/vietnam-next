@@ -258,13 +258,13 @@ const faqFederal = [
 const expressEntry = [
   {
     id: 1,
-    title: "Federal Skilled Worker (FSW)",
+    title: "Công nhân lành nghề liên bang (FSW)",
     description:
       "For skilled workers at the federal level. This program does not require a connection to Canada, making it an ideal immigration option for foreign citizens living outside of Canada",
   },
   {
     id: 2,
-    title: "Federal Skilled Trades (FST)",
+    title: "Thương mại tay nghề liên bangs (FST)",
     description:
       "For skilled tradespersons in industrial and artisanal sectors. You must meet all the minimum requirements for your skilled trades work experience job offer or  certificate of qualification and language ability",
   },

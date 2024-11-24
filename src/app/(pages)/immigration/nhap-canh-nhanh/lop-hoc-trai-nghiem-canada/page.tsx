@@ -3,7 +3,7 @@ import Title from "@/components/ui/Title";
 import Glass from "@/lib/helpers";
 import { ServicesCard } from "@/components/ui/services-card";
 import { truncateTextHeading } from "@/components/ui/newsCard";
-import { workersList } from "../federal-skilled-trade/page";
+import { workersList } from "../thuong-mai-co-tay-nghe-lien-bang/page";
 
 export default function CanadianExperienceClass() {
   return (

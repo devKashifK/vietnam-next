@@ -120,13 +120,14 @@ const studyAbroad2 = [
   },
   {
     id: 2,
-    title: "Federal Skilled Worker Program (Tay nghề kỹ năng Liên bang)",
+    title: "Công nhân lành nghề liên bang Program (Tay nghề kỹ năng Liên bang)",
     description:
       "Chương trình dành cho những lao động lành nghề có kinh nghiệm làm việc ở nước ngoài muốn nhập cư vào Canada lâu dài.",
   },
   {
     id: 3,
-    title: "Federal Skilled Trades Program (Tay nghề nhóm thợ Liên bang)",
+    title:
+      "Thương mại tay nghề liên bangs Program (Tay nghề nhóm thợ Liên bang)",
     description:
       "Chương trình dành cho những công dân lao động tay nghề cao trong một ngành thương mại lành nghề mong muốn trở thành thường trú nhân tại Canada.",
   },

@@ -322,7 +322,7 @@ export const mobileConfig = [
     ],
   },
   {
-    name: "Express Entry",
+    name: "Nhập cảnh nhanh",
     icon: "mdi:airplane-takeoff",
     heading: "font-semibold text-red-800",
     pointer: "bg-red-700",
@@ -332,23 +332,23 @@ export const mobileConfig = [
     apis: [
       {
         provider: "internal",
-        name: "Federal Skilled Worker",
-        path: "/immigration/express-entry/federal-skilled-worker",
+        name: "Công nhân lành nghề liên bang",
+        path: "/immigration/nhap-canh-nhanh/cong-nhan-lanh-nghe-lien-bang",
       },
       {
         provider: "internal",
-        name: "Federal Skilled Trade",
-        path: "/immigration/express-entry/federal-skilled-trade",
+        name: "Thương mại tay nghề liên bang",
+        path: "/immigration/nhap-canh-nhanh/thuong-mai-co-tay-nghe-lien-bang",
       },
       {
         provider: "internal",
-        name: "Canadian Experience Class",
-        path: "/immigration/express-entry/canadian-experience-class",
+        name: "Lớp trải nghiệm Canada",
+        path: "/immigration/nhap-canh-nhanh/lop-hoc-trai-nghiem-canada",
       },
       {
         provider: "internal",
-        name: "CRS Score Calculation",
-        path: "/immigration/express-entry/crs-score-calculation",
+        name: "Tính điểm CRS",
+        path: "/immigration/nhap-canh-nhanh/tinh-toan-diem-crs",
       },
     ],
   },
@@ -756,24 +756,24 @@ const router = [
 
     children: [
       {
-        path: "Express Entry",
-        element: `Express Entry`,
+        path: "Nhập cảnh nhanh",
+        element: `Nhập cảnh nhanh`,
         children: [
           {
-            path: "/immigration/express-entry/federal-skilled-worker",
-            element: "Fedral Skilled Worker (FSW)",
+            path: "/immigration/nhap-canh-nhanh/cong-nhan-lanh-nghe-lien-bang",
+            element: "Công nhân lành nghề liên bang (FSW)",
           },
           {
-            path: "/immigration/express-entry/federal-skilled-trade",
-            element: "Fedral Skilled Trade (FST)",
+            path: "/immigration/nhap-canh-nhanh/thuong-mai-co-tay-nghe-lien-bang",
+            element: "Thương mại tay nghề liên bang (FST)",
           },
           {
-            path: "/immigration/express-entry/canadian-experience-class",
-            element: "Canadian Experience Class (CEC)",
+            path: "/immigration/nhap-canh-nhanh/lop-hoc-trai-nghiem-canada",
+            element: "Lớp trải nghiệm Canada (CEC)",
           },
           {
-            path: "/immigration/express-entry/crs-score-calculation",
-            element: "CRS Score Calculation",
+            path: "/immigration/nhap-canh-nhanh/tinh-toan-diem-crs",
+            element: "Tính điểm CRS",
           },
         ],
       },

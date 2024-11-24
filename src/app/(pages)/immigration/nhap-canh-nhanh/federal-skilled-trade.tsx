@@ -5,7 +5,7 @@ import { ServicesCard } from "@/components/ui/services-card";
 import Title from "@/components/ui/Title";
 import Glass from "@/lib/helpers";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { FAQ } from "./federal-skilled-worker/page";
+import { FAQ } from "./cong-nhan-lanh-nghe-lien-bang/page";
 
 export default function FedralSkilledTrade() {
   return (
@@ -26,15 +26,15 @@ export default function FedralSkilledTrade() {
             </div>
             <div className="flex flex-col justify-start gap-6">
               <h3 className="tracking-wide text-left text-4xl text-black/70">
-                Federal Skilled Trades
+                Thương mại tay nghề liên bangs
               </h3>
 
               <p className="text-sm text-black/60 text-left">
-                To be eligible for the Federal Skilled Trades Program (FST),
-                candidates must have a minimum of two years of work experience
-                in a skilled trade within the last five years. Additionally,
-                candidates may be required to have trade certificates issued by
-                a Canadian province or territory.
+                To be eligible for the Thương mại tay nghề liên bangs Program
+                (FST), candidates must have a minimum of two years of work
+                experience in a skilled trade within the last five years.
+                Additionally, candidates may be required to have trade
+                certificates issued by a Canadian province or territory.
               </p>
             </div>
           </div>
@@ -43,7 +43,7 @@ export default function FedralSkilledTrade() {
       <Container>
         <div className="flex-1 flex flex-col gap-4">
           <Title
-            subtitle="Federal Skilled Trades​"
+            subtitle="Thương mại tay nghề liên bangs​"
             title={
               <p className="text-4xl text-black/50 w-full text-left pt-3">
                 Minimum Criteria

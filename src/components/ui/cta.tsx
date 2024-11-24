@@ -166,7 +166,7 @@ const CtaDetails = [
     labels: ["Express Entry", "PR eligibility"],
     description:
       "Canada với nền kinh tế mạnh mẽ, chất lượng cuộc sống cao và xã hội hòa nhập, là điểm đến hấp dẫn cho những ai tìm kiếm sự phát triển nghề nghiệp và tiêu chuẩn sống cao cho gia đình của mình. Tuy nhiên, việc điều hướng quy trình nhập cư và.",
-    href: "/immigration/express-entry/federal-skilled-worker",
+    href: "/immigration/nhap-canh-nhanh/cong-nhan-lanh-nghe-lien-bang",
   },
   {
     id: 3,

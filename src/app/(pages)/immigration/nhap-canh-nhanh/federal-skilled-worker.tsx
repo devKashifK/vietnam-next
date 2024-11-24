@@ -9,7 +9,7 @@ import Container from "@/components/ui/container";
 import Title from "@/components/ui/Title";
 import Glass from "@/lib/helpers";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { workersList } from "./federal-skilled-trade";
+import { workersList } from "./thuong-mai-co-tay-nghe-lien-bang";
 import { truncateTextHeading } from "@/components/ui/newsCard";
 import { ServicesCard } from "@/components/ui/services-card";
 import { Button } from "@/components/ui/custom";
@@ -32,7 +32,7 @@ export default function FedralSkilledWorker() {
             </div>
             <div className="flex flex-col justify-start gap-6">
               <h3 className="tracking-wide text-left text-4xl text-black/70">
-                Federal Skilled Worker
+                Công nhân lành nghề liên bang
               </h3>
               <p className="text-sm text-black/60 text-left">
                 This program does not require a connection to Canada, making it
@@ -44,9 +44,9 @@ export default function FedralSkilledWorker() {
               <p className="text-sm text-black/60 text-left">
                 However, this program has high requirements for work experience,
                 educational qualifications, age, and language proficiency in
-                English/French. All applicants for the Federal Skilled Worker
-                Program (FSW) must have at least one year of work experience in
-                a specialized field
+                English/French. All applicants for the Công nhân lành nghề liên
+                bang Program (FSW) must have at least one year of work
+                experience in a specialized field
               </p>
             </div>
           </div>

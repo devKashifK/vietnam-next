@@ -108,13 +108,13 @@ export default function ImmigrationWork() {
 const expressEntry = [
   {
     id: 1,
-    title: "Federal Skilled Worker (FSW)",
+    title: "Công nhân lành nghề liên bang (FSW)",
     description:
       "Lao động Tay nghề Liên bang - Dành cho những ứng viên có tay nghề và trình độ chuyên môn cao đến từ mọi quốc gia trên thế giới.",
   },
   {
     id: 2,
-    title: "Federal Skilled Trades (FST)",
+    title: "Thương mại tay nghề liên bangs (FST)",
     description:
       "Nhóm thợ Lành nghề Liên bang - Phù hợp với ứng viên có thời gian làm việc ít nhất 2 năm trong 5 năm gần nhất ở một lĩnh vực kỹ thuật với chứng chỉ chuyên môn theo danh sách quy định.",
   },
