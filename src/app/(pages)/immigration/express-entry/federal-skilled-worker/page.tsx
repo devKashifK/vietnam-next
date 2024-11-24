@@ -24,7 +24,7 @@ export default function FedralSkilledWorker() {
               <div className="absolute top-[12px] transform rotate-90 -left-[12px] w-6 h-0.5 bg-highlight rounded-md"></div>
 
               <div className="px-3 py-1.5">
-                <h5 className="tracking-widest text-xl">Express entry</h5>
+                <h5 className="tracking-widest text-xl">Nhập cảnh nhanh</h5>
               </div>
 
               <div className="absolute bottom-0 right-0 w-6 h-0.5 bg-highlight rounded-md"></div>
@@ -32,21 +32,21 @@ export default function FedralSkilledWorker() {
             </div>
             <div className="flex flex-col justify-start gap-6">
               <h3 className="tracking-wide text-left text-4xl text-black/70">
-                Federal Skilled Worker
+                Công nhân lành nghề liên bang
               </h3>
               <p className="text-sm text-black/60 text-left">
-                This program does not require a connection to Canada, making it
-                an ideal immigration option for foreign citizens living outside
-                of Canada. You do not need to be currently living in Canada,
-                have any immediate family members residing in the country, nor
-                have previous work or educational experiences in Canada.
+                Chương trình này không yêu cầu kết nối với Canada, khiến nó một
+                lựa chọn nhập cư lý tưởng cho công dân nước ngoài sống bên ngoài
+                của Canada. Bạn không cần phải hiện đang sống ở Canada, có thành
+                viên gia đình trực tiếp cư trú ở trong nước, cũng không có kinh
+                nghiệm làm việc hoặc giáo dục trước đây ở Canada.
               </p>
               <p className="text-sm text-black/60 text-left">
-                However, this program has high requirements for work experience,
-                educational qualifications, age, and language proficiency in
-                English/French. All applicants for the Federal Skilled Worker
-                Program (FSW) must have at least one year of work experience in
-                a specialized field
+                Tuy nhiên, chương trình này có yêu cầu cao về kinh nghiệm làm
+                việc, trình độ học vấn, độ tuổi và trình độ ngoại ngữ ở Tiếng
+                Anh/Pháp. Tất cả những người nộp đơn cho Công nhân lành nghề
+                Liên bang Chương trình (FSW) phải có ít nhất một năm kinh nghiệm
+                làm việc trong một lĩnh vực chuyên môn
               </p>
             </div>
           </div>
@@ -57,11 +57,11 @@ export default function FedralSkilledWorker() {
         <div className="flex-1 flex flex-col gap-4">
           <Title
             className="px-2 text-left lg:justify-start lg:items-start"
-            subtitle="Express Entry"
+            subtitle="Nhập cảnh nhanh"
             title={
               <h3 className="tracking-wide text-left text-4xl text-black/70">
-                Factors that increase your chance to receive Invitation to Apply
-                (ITA) in the Express Entry Program
+                Các yếu tố làm tăng cơ hội nhận được Lời mời nộp hồ sơ (ITA)
+                trong Chương trình Express Entry
               </h3>
             }
           />
@@ -95,7 +95,7 @@ export default function FedralSkilledWorker() {
             title={"How to apply for a Work Permit"}
             description="Applying for a work permit in Canada can be a multi-step process, depending on your situation and the type of work permit you require. Here are the general steps to follow"
           />
-          <FAQ />
+          {/* <FAQ /> */}
         </div>
       </Container>
     </>
@@ -141,9 +141,9 @@ function CTA() {
             </div> */}
         <div className="flex-1 flex flex-col gap-2 pt-8 justify-center items-center">
           <Title
-            subtitle="Express Entry"
-            title="How can we help you?"
-            description="GTR Worldwide can assist you in increasing your Comprehensive Ranking System (CRS) score for Express Entry in several ways:"
+            subtitle="Nhập cảnh nhanh"
+            title="Chúng tôi có thể giúp gì cho bạn?"
+            description="GTR Worldwide có thể hỗ trợ bạn tăng điểm Hệ thống xếp hạng toàn diện (CRS) cho Express Entry theo nhiều cách:"
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-2 max-w-full mx-auto">
@@ -156,15 +156,16 @@ function CTA() {
             className="justify-center items-center mt-4"
             title={
               <p className="text-2xl text-black/50 w-full text-center">
-                Take the first step towards your family&apos;s Canadian dream
+                Thực hiện bước đầu tiên hướng tới giấc mơ Canada của gia đình
+                bạn
               </p>
             }
             description={
               <p className="text-center  text-black/50 w-[70%]">
-                For personalized assistance and expert guidance, contact
-                GreenTech Resources Worldwide Canada so our experts can help you
-                navigate the work permit application process and ensure a smooth
-                transition to working in Canada
+                Để được hỗ trợ cá nhân và hướng dẫn chuyên môn, hãy liên hệ
+                GreenTech Resources Worldwide Canada để các chuyên gia của chúng
+                tôi có thể giúp bạn điều hướng quá trình xin giấy phép lao động
+                và đảm bảo diễn ra suôn sẻ chuyển sang làm việc tại Canada
               </p>
             }
           />
@@ -177,7 +178,7 @@ function CTA() {
               </div>
             }
           >
-            <span className="text-sm">Book An Appointment</span>
+            <span className="text-sm">Đặt một cuộc hẹn</span>
           </Button>
         </div>
       </div>
@@ -188,21 +189,16 @@ function CTA() {
 const features = [
   {
     id: 1,
-    title: "Profile Assessment",
+    title: "Đánh giá hồ sơ",
     description:
-      "Our RCIC and expert team can evaluate your qualifications, work experience, and personal circumstances to identify your potential jobs and employers in Canada.",
-    icon: (
-      <Icon
-        icon="material-symbols:person-apron"
-        className="text-6xl w-[54px]"
-      />
-    ),
+      "RCIC và nhóm chuyên gia của chúng tôi có thể đánh giá trình độ chuyên môn, kinh nghiệm làm việc và hoàn cảnh cá nhân của bạn để xác định công việc và nhà tuyển dụng tiềm năng của bạn ở Canada.",
+    icon: <Icon icon="ooui:user-active" className="text-6xl w-[54px]" />,
   },
   {
     id: 2,
-    title: "Provincial Nominee Programs (PNPs)",
+    title: "Chương trình đề cử cấp tỉnh (PNP)",
     description:
-      "We can advise on PNPs and help you prepare for provincial nominations, which is suitable with your experiences.",
+      "Chúng tôi có thể tư vấn về PNP và giúp bạn chuẩn bị cho các đề cử cấp tỉnh phù hợp với kinh nghiệm của bạn.",
 
     icon: (
       <Icon
@@ -213,16 +209,16 @@ const features = [
   },
   {
     id: 3,
-    title: "Secure a Job Offers",
+    title: "Đảm bảo một lời mời làm việc",
     description:
-      "We can assist in searching for job in Canada. We can also help you understand the requirements for a valid job offer, resume preparation and interview coaching.",
+      "Chúng tôi có thể hỗ trợ tìm kiếm việc làm ở Canada. Chúng tôi cũng có thể giúp bạn hiểu các yêu cầu để có được lời mời làm việc hợp lệ, chuẩn bị sơ yếu lý lịch và huấn luyện phỏng vấn.",
     icon: <Icon icon="oui:ml-regression-job" className="text-6xl w-[54px]" />,
   },
   {
     id: 4,
-    title: "Educational credential assessment",
+    title: "Đánh giá chứng chỉ giáo dục",
     description:
-      "We can help you navigate the process of obtaining an ECA for your foreign educational credentials,",
+      "Chúng tôi có thể giúp bạn điều hướng quá trình lấy ECA cho thông tin giáo dục nước ngoài của bạn,",
     icon: (
       <Icon
         icon="streamline:quality-education-solid"

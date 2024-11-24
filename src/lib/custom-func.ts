@@ -1,5 +1,7 @@
 // cache.ts
 
+import { text } from "stream/consumers";
+
 // Define the cache object
 // const cacheData = {
 //     "about": {
@@ -190,6 +192,10 @@ const cacheData = {
     text: "Saskatchewan (SINP)",
     image: "/saskatchewan.jpg",
   },
+  "cuoc-song-canada":{
+text:"Cuộc sống Canada",
+image:"/canada.jpg"
+  },
 
   quebec: {
     text: "Quebec (PNP)",
@@ -201,8 +207,14 @@ const cacheData = {
     text: "Yukon (YNP)",
     image: "/yukon.jpg",
   },
-  albertaP: {
-    text: "Alberta Province",
+  
+    "các-tỉnh-bang-canada":{
+
+    text:"Các Tỉnh Bang Canada",
+    image: "/canada.jpg",
+  },
+  "tinh-alberta": {
+    text: "Tinh Alberta",
     image: "/alberta.png",
   },
   brcolumbiaP: {
@@ -313,8 +325,8 @@ const cacheData = {
     text: "LMIA Map",
     image: "/lmia.jpg",
   },
-  ["hot-job"]: {
-    text: "Hot JOB",
+  ["cong-viec-nong"]: {
+    text: "Cong Viec Nong",
     image: "/work.jpg",
   },
 };

@@ -6,10 +6,10 @@ import { MapPin, Phone, Mail } from "lucide-react";
 const ContactForm = () => {
   return (
     <form className="max-w-[80%] mx-auto mt-8 p-6 bg-white rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
+      <h2 className="text-2xl font-bold mb-4"> Liên hệ với chúng tôi</h2>
       <div className="mb-4">
         <label htmlFor="name" className="block mb-2">
-          Name
+          Tên
         </label>
         <input
           type="text"
@@ -19,7 +19,7 @@ const ContactForm = () => {
       </div>
       <div className="mb-4">
         <label htmlFor="email" className="block mb-2">
-          Email
+          E-mail
         </label>
         <input
           type="email"
@@ -29,7 +29,7 @@ const ContactForm = () => {
       </div>
       <div className="mb-4">
         <label htmlFor="message" className="block mb-2">
-          Message
+          Tin nhắn
         </label>
         <textarea
           id="message"
@@ -41,7 +41,7 @@ const ContactForm = () => {
         type="submit"
         className="bg-primary text-primary-foreground px-4 py-2 rounded hover:bg-primary/90"
       >
-        Send Message
+        Gửi tin nhắn
       </button>
     </form>
   );
@@ -94,23 +94,23 @@ const EnhancedContact = () => {
         <OfficeCard
           country="Bangladesh"
           imageUrl="/bangladesh-earth-map.jpg"
-          address="123 Mumbai Street, Mumbai, India"
-          phone="+91 123 456 7890"
-          email="india@example.com"
+          address="2124 Broad St, Regina, Saskatchewan,Canada S4P 1Y5 (Văn phòng đã đăng ký)"
+          phone="+1-855-477-9797"
+          email="info@gtrworldwide.com"
         />
         <OfficeCard
           country="Vietnam"
           imageUrl="/vietnam-map.jpg"
-          address="456 Hanoi Road, Hanoi, Vietnam"
-          phone="+84 987 654 3210"
-          email="vietnam@example.com"
+          address="Tang  85 Nguyễn Hữu Cầu, phường Tân Định, Quận 1, Tp. Hồ Chí Minh, Việt Nam"
+          phone="+84 86996 7809"
+          email="tuvan@icanpr.vn"
         />
         <OfficeCard
           country="India"
           imageUrl="/India-map.jpg"
-          address="789 Toronto Avenue, Toronto, Canada"
-          phone="+1 416 123 4567"
-          email="canada@example.com"
+          address="Gurgaon, Haryana, India"
+          phone="+91 88612 80099"
+          email=""
         />
       </div>
       <ContactForm />

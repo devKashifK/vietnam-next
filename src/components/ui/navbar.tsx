@@ -91,7 +91,7 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
               <div className="group-hover:bg-background w-full border border-transparent ease-out duration-150"></div>
             </Link>
             <Link
-              href={"/hot-job"}
+              href={"/cong-viec-nong"}
               className="bg-transparent text-xs font-light flex flex-col gap-0.5 group"
             >
               <span className={"text-highlight font-semibold text-xs"}>
@@ -455,7 +455,7 @@ export const mobileConfig = [
     ],
   },
   {
-    name: "Các-tỉnh-bang-canada",
+    name: "cac-tinh-bang-canada",
     icon: "mdi:briefcase-outline",
     heading: "font-semibold text-brown-800",
     pointer: "bg-brown-700",
@@ -466,62 +466,62 @@ export const mobileConfig = [
       {
         provider: "internal",
         name: "Alberta Province",
-        path: "/cuoc-song-canada/các-tỉnh-bang-canada/albertaP",
+        path: "/cuoc-song-canada/cac-tinh-bang-canada/tinh-alberta",
       },
       {
         provider: "internal",
         name: "British Colombia (BC PNP)",
-        path: "/cuoc-song-canada/các-tỉnh-bang-canada/brcolumbiaP",
+        path: "/cuoc-song-canada/cac-tinh-bang-canada/brcolumbiaP",
       },
       {
         provider: "internal",
         name: "Manitoba Province",
-        path: "/cuoc-song-canada/các-tỉnh-bang-canada/manitobaP",
+        path: "/cuoc-song-canada/cac-tinh-bang-canada/manitobaP",
       },
       {
         provider: "internal",
         name: "New Brunswick Province",
-        path: "/cuoc-song-canada/các-tỉnh-bang-canada/new-brunswickP",
+        path: "/cuoc-song-canada/cac-tinh-bang-canada/new-brunswickP",
       },
       {
         provider: "internal",
         name: "Newfoundland and Labrador",
-        path: "/cuoc-song-canada/các-tỉnh-bang-canada/newfoundland-labradorP",
+        path: "/cuoc-song-canada/cac-tinh-bang-canada/newfoundland-labradorP",
       },
       {
         provider: "internal",
         name: "Northwest Territories Province",
-        path: "/cuoc-song-canada/các-tỉnh-bang-canada/northwest-territoriesP",
+        path: "/cuoc-song-canada/cac-tinh-bang-canada/northwest-territoriesP",
       },
       {
         provider: "internal",
         name: "Nova Scotia Province",
-        path: "/cuoc-song-canada/các-tỉnh-bang-canada/nova-scotiaP",
+        path: "/cuoc-song-canada/cac-tinh-bang-canada/nova-scotiaP",
       },
       {
         provider: "internal",
         name: "Nunavut Province",
-        path: "/cuoc-song-canada/các-tỉnh-bang-canada/nunavutP",
+        path: "/cuoc-song-canada/cac-tinh-bang-canada/nunavutP",
       },
       {
         provider: "internal",
         name: "Ontario Province",
-        path: "/cuoc-song-canada/các-tỉnh-bang-canada/ontarioP",
+        path: "/cuoc-song-canada/cac-tinh-bang-canada/ontarioP",
       },
       {
         provider: "internal",
         name: "Prince Edward Island Province",
-        path: "/cuoc-song-canada/các-tỉnh-bang-canada/prince-edwardP",
+        path: "/cuoc-song-canada/cac-tinh-bang-canada/prince-edwardP",
       },
       {
         provider: "internal",
         name: "Saskatchewan Province",
-        path: "/cuoc-song-canada/các-tỉnh-bang-canada/ saskatchewanP",
+        path: "/cuoc-song-canada/cac-tinh-bang-canada/ saskatchewanP",
       },
       {
         provider: "internal",
         name: "Yukon Province",
-        path: "/cuoc-song-canada/các-tỉnh-bang-canada/yukonP",
+        path: "/cuoc-song-canada/cac-tinh-bang-canada/yukonP",
       },
     ],
   },
@@ -641,7 +641,7 @@ export const mobileConfig = [
       {
         provider: "internal",
         name: "Công Việc",
-        path: "/hot-job",
+        path: "/cong-viec-nong",
       },
     ],
   },
@@ -876,62 +876,63 @@ const router = [
     // path: "Cuộc sống Canada",
     children: [
       {
-        path: "Canadian Provinces",
-        // path: "Các tỉnh bang Canada",
+        // path: "cac-tinh-bang-canada",
+        path: "Các tỉnh bang Canada",
+        element: "Các tỉnh bang Canada",
         children: [
           {
-            path: "/cuoc-song-canada/các-tỉnh-bang-canada/albertaP",
+            path: "/cuoc-song-canada/cac-tinh-bang-canada/tinh-alberta",
             element: "Alberta (AAIP)",
           },
 
           {
-            path: "/cuoc-song-canada/các-tỉnh-bang-canada/brcolumbiaP",
+            path: "/cuoc-song-canada/cac-tinh-bang-canada/brcolumbiaP",
             element: "British Colombia (BC PNP)",
           },
 
           {
-            path: "/cuoc-song-canada/các-tỉnh-bang-canada/manitobaP",
+            path: "/cuoc-song-canada/cac-tinh-bang-canada/manitobaP",
             element: "Manitoba (MPNP)",
           },
           {
-            path: "/cuoc-song-canada/các-tỉnh-bang-canada/new-brunswickP",
+            path: "/cuoc-song-canada/cac-tinh-bang-canada/new-brunswickP",
             element: "New Brunswick (NBPNP)",
           },
           {
-            path: "/cuoc-song-canada/các-tỉnh-bang-canada/newfoundland-labradorP",
+            path: "/cuoc-song-canada/cac-tinh-bang-canada/newfoundland-labradorP",
             element: "Newfoundland and Labrador",
           },
 
           {
-            path: "/cuoc-song-canada/các-tỉnh-bang-canada/northwest-territoriesP",
+            path: "/cuoc-song-canada/cac-tinh-bang-canada/northwest-territoriesP",
             element: "Northwest Territories",
           },
           {
-            path: "/cuoc-song-canada/các-tỉnh-bang-canada/nova-scotiaP",
+            path: "/cuoc-song-canada/cac-tinh-bang-canada/nova-scotiaP",
             element: "Nova Scotia (NSNP)",
           },
           {
-            path: "/cuoc-song-canada/các-tỉnh-bang-canada/nunavutP",
+            path: "/cuoc-song-canada/cac-tinh-bang-canada/nunavutP",
             element: "Nunavut",
           },
           {
-            path: "/cuoc-song-canada/các-tỉnh-bang-canada/ontarioP",
+            path: "/cuoc-song-canada/cac-tinh-bang-canada/ontarioP",
             element: "Ontario (OINP)",
           },
           {
-            path: "/cuoc-song-canada/các-tỉnh-bang-canada/prince-edwardP",
+            path: "/cuoc-song-canada/cac-tinh-bang-canada/prince-edwardP",
             element: "Prince Edward Island (PEI PNP)",
           },
           {
-            path: "/cuoc-song-canada/các-tỉnh-bang-canada/quebecP",
+            path: "/cuoc-song-canada/cac-tinh-bang-canada/quebecP",
             element: "Quebec",
           },
           {
-            path: "/cuoc-song-canada/các-tỉnh-bang-canada/saskatchewanP",
+            path: "/cuoc-song-canada/cac-tinh-bang-canada/saskatchewanP",
             element: "Saskatchewan (SINP)",
           },
           {
-            path: "/cuoc-song-canada/các-tỉnh-bang-canada/yukonP",
+            path: "/cuoc-song-canada/cac-tinh-bang-canada/yukonP",
             element: "Yukon (YNP)",
           },
         ],

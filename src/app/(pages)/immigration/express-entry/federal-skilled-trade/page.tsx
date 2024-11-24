@@ -5,7 +5,6 @@ import { ServicesCard } from "@/components/ui/services-card";
 import Title from "@/components/ui/Title";
 import Glass from "@/lib/helpers";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { FAQ } from "../federal-skilled-worker/page";
 
 export default function FedralSkilledTrade() {
   return (
@@ -18,7 +17,7 @@ export default function FedralSkilledTrade() {
               <div className="absolute top-[12px] transform rotate-90 -left-[12px] w-6 h-0.5 bg-highlight rounded-md"></div>
 
               <div className="px-3 py-1.5">
-                <h5 className="tracking-widest text-xl">Express entry</h5>
+                <h5 className="tracking-widest text-xl">Nhập cảnh nhanh</h5>
               </div>
 
               <div className="absolute bottom-0 right-0 w-6 h-0.5 bg-highlight rounded-md"></div>
@@ -26,15 +25,15 @@ export default function FedralSkilledTrade() {
             </div>
             <div className="flex flex-col justify-start gap-6">
               <h3 className="tracking-wide text-left text-4xl text-black/70">
-                Federal Skilled Trades
+                Giao dịch tay nghề liên bang
               </h3>
 
               <p className="text-sm text-black/60 text-left">
-                To be eligible for the Federal Skilled Trades Program (FST),
-                candidates must have a minimum of two years of work experience
-                in a skilled trade within the last five years. Additionally,
-                candidates may be required to have trade certificates issued by
-                a Canadian province or territory.
+                Để đủ điều kiện tham gia Chương trình Giao dịch Tay nghề Liên
+                bang (FST) , ứng viên phải có tối thiểu hai năm kinh nghiệm làm
+                việc trong một ngành nghề lành nghề trong vòng năm năm qua.
+                Ngoài ra , ứng viên có thể được yêu cầu phải có giao dịch giấy
+                chứng nhận do một tỉnh hoặc vùng lãnh thổ của Canada cấp.
               </p>
             </div>
           </div>
@@ -44,52 +43,50 @@ export default function FedralSkilledTrade() {
         <div className="flex-1 flex flex-col gap-4">
           <Title
             className="px-2 text-left lg:justify-start lg:items-start"
-            subtitle="Federal Skilled Trades​"
+            subtitle="Giao dịch tay nghề liên bang​"
             title={
               <p className="text-4xl text-black/50 w-full text-left pt-3">
-                Minimum Criteria
+                Tiêu chí tối thiểu
               </p>
             }
           />
 
           <div className="flex flex-col justify-start gap-6">
             <p className="text-sm text-black/60 text-left">
-              To be eligible, you must meet all the minimum requirements for
-              your skilled trades work experience, job offer or certificate of
-              qualification and language ability
+              Để đủ điều kiện, bạn phải đáp ứng tất cả các yêu cầu tối thiểu về
+              kinh nghiệm làm việc, lời mời làm việc hoặc giấy chứng nhận về
+              trình độ chuyên môn và khả năng ngôn ngữ
             </p>
             <p className="text-sm text-black/60 text-left">
-              Before applying, candidates should carefully review the program
-              requirements and ensure they meet the necessary qualifications.
-              Additionally, individuals in skilled trades may also consider
-              seeking employment through the Provincial Nominee Program (PNP) if
-              a particular province has a demand for their skills.
+              Trước khi nộp đơn, ứng viên nên xem kỹ chương trình yêu cầu và đảm
+              bảo họ đáp ứng được các tiêu chuẩn cần thiết. Ngoài ra, các cá
+              nhân trong các ngành nghề có tay nghề cao cũng có thể xem xét tìm
+              kiếm việc làm thông qua Chương trình đề cử cấp tỉnh (PNP) nếu một
+              tỉnh cụ thể có nhu cầu về kỹ năng của họ.
             </p>
           </div>
 
-          <div className="mt-8">
-            <FAQ />
-          </div>
+          <div className="mt-8">{/* <FAQ /> */}</div>
         </div>
       </Container>
       <Container>
         <div className="flex-1 flex flex-col gap-4">
           <Title
             className="px-2 text-left lg:justify-start lg:items-start"
-            subtitle="Express Entry"
+            subtitle="Nhập cảnh nhanh"
             title={
               <p className="text-4xl text-black/50 w-full text-left pt-3">
-                Factors that increase your chance to receive Invitation to Apply
-                (ITA) in the Express Entry Program
+                Các yếu tố làm tăng cơ hội nhận được Lời mời nộp hồ sơ (ITA)
+                trong Chương trình Express Entry
               </p>
             }
           />
 
           <div className="flex flex-col justify-start gap-6">
             <p className="text-sm text-black/60 text-left">
-              Through Express Entry, candidates and their family can participate
-              and compete for points to receive an ITA – Invitation to Apply
-              from the Canadian government to immigrate and work in the country.
+              Thông qua Express Entry, ứng viên và gia đình họ có thể tham gia
+              và cạnh tranh giành điểm để nhận ITA – Lời mời đăng ký từ chính
+              phủ Canada để nhập cư và làm việc tại nước này.
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -118,27 +115,16 @@ export default function FedralSkilledTrade() {
 const features = [
   {
     id: 1,
-    title: "Profile Assessment",
+    title: "Đánh giá hồ sơ",
     description:
-      "Our RCIC and expert team can evaluate your qualifications, work experience, and personal circumstances to identify your potential jobs and employers in Canada.",
-    icon: (
-      <div className="w-full rounded-md flex justify-center items-center">
-        <div className="w-[100px] h-[100px] relative">
-          <div className="absolute top-0 left-0 w-full h-full rounded-full bg-gradient-to-r from-blue-100/40 to-cyan-300/40"></div>
-          <img
-            src="/electric.png"
-            className="rounded-full w-full h-full"
-            alt="Profile Assessment"
-          />
-        </div>
-      </div>
-    ),
+      "RCIC và nhóm chuyên gia của chúng tôi có thể đánh giá trình độ chuyên môn, kinh nghiệm làm việc và hoàn cảnh cá nhân của bạn để xác định công việc và nhà tuyển dụng tiềm năng của bạn ở Canada.",
+    icon: <Icon icon="ooui:user-active" className="text-6xl w-[54px]" />,
   },
   {
     id: 2,
-    title: "Provincial Nominee Programs (PNPs)",
+    title: "Chương trình đề cử cấp tỉnh (PNP)",
     description:
-      "We can advise on PNPs and help you prepare for provincial nominations, which is suitable with your experiences.",
+      "Chúng tôi có thể tư vấn về PNP và giúp bạn chuẩn bị cho các đề cử cấp tỉnh phù hợp với kinh nghiệm của bạn.",
 
     icon: (
       <Icon
@@ -149,16 +135,16 @@ const features = [
   },
   {
     id: 3,
-    title: "Secure a Job Offers",
+    title: "Đảm bảo một lời mời làm việc",
     description:
-      "We can assist in searching for job in Canada. We can also help you understand the requirements for a valid job offer, resume preparation and interview coaching.",
+      "Chúng tôi có thể hỗ trợ tìm kiếm việc làm ở Canada. Chúng tôi cũng có thể giúp bạn hiểu các yêu cầu để có được lời mời làm việc hợp lệ, chuẩn bị sơ yếu lý lịch và huấn luyện phỏng vấn.",
     icon: <Icon icon="oui:ml-regression-job" className="text-6xl w-[54px]" />,
   },
   {
     id: 4,
-    title: "Educational credential assessment",
+    title: "Đánh giá chứng chỉ giáo dục",
     description:
-      "We can help you navigate the process of obtaining an ECA for your foreign educational credentials,",
+      "Chúng tôi có thể giúp bạn điều hướng quá trình lấy ECA cho thông tin giáo dục nước ngoài của bạn,",
     icon: (
       <Icon
         icon="streamline:quality-education-solid"
@@ -171,21 +157,20 @@ const features = [
 export const workersList = [
   {
     id: 1,
-    title: "Working for a company or organization ",
+    title: " Làm việc cho một công ty hoặc tổ chức",
     description:
-      "A job offer that can earn you additional points within the Comprehensive Ranking System (CRS). If you receive a job offer from a company or organization in Canada, you can gain extra points and increase your likelihood of being invited to participate in the program",
+      "Một lời mời làm việc có thể giúp bạn kiếm thêm điểm trong Hệ thống xếp hạng toàn diện (CRS). Nếu bạn nhận được lời mời làm việc từ một công ty hoặc tổ chức ở Canada, bạn có thể được cộng thêm điểm và tăng khả năng được mời tham gia chương trình",
   },
   {
     id: 2,
-    title: "Nomination from a province or territory",
+    title: "Đề cử từ một tỉnh hoặc vùng lãnh thổ",
     description:
-      "If you receive a nomination from a province or territory through the Provincial Nominee Program (PNP), your CRS score will significantly increase, giving you priority in receiving an invitation to join Express Entry",
+      "Nếu bạn nhận được đề cử từ một tỉnh hoặc vùng lãnh thổ thông qua Chương trình đề cử cấp tỉnh (PNP), điểm CRS của bạn sẽ tăng đáng kể, giúp bạn được ưu tiên nhận lời mời tham gia Express Entry",
   },
   {
     id: 3,
-    title: "French-Language Advantage",
+    title: "Lợi thế tiếng Pháp",
     description:
-      "Proficiency in French, in addition to English, is highly valued by Canada. Demonstrating strong French language skills through recognized tests can earn extra points in the Comprehensive Ranking System (CRS). This boosts your chances of receiving an Invitation to Apply (ITA) for permanent residency in Canada",
-    //   "If you receive a nomination from a province or territory through the Provincial Nominee Program (PNP), your CRS score will significantly increase, giving you priority in receiving an invitation to join Express Entry",
+      "Trình độ thông thạo tiếng Pháp, ngoài tiếng Anh, được Canada đánh giá cao. Thể hiện kỹ năng tiếng Pháp vững vàng thông qua các bài kiểm tra được công nhận có thể kiếm thêm điểm trong Hệ thống xếp hạng toàn diện (CRS). Điều này giúp tăng cơ hội nhận được Lời mời đăng ký (ITA) để thường trú tại Canada",
   },
 ];

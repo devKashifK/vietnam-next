@@ -16,7 +16,7 @@ export default function CanadianExperienceClass() {
               <div className="absolute top-[12px] transform rotate-90 -left-[12px] w-6 h-0.5 bg-highlight rounded-md"></div>
 
               <div className="px-3 py-1.5">
-                <h5 className="tracking-widest text-xl">Express entry</h5>
+                <h5 className="tracking-widest text-xl">Nhập cảnh nhanh</h5>
               </div>
 
               <div className="absolute bottom-0 right-0 w-6 h-0.5 bg-highlight rounded-md"></div>
@@ -24,22 +24,24 @@ export default function CanadianExperienceClass() {
             </div>
             <div className="flex flex-col justify-start gap-6">
               <h3 className="tracking-wide text-left text-4xl text-black/70">
-                Canadian Experience Class (CEC)
+                Lớp trải nghiệm Canada (CEC)
               </h3>
 
               <p className="text-sm text-black/60 text-left">
-                The Canadian Experience Class (CEC) is an economic immigration
-                program that requires work experience in Canada. Applicants must
-                have a minimum of 12 months of full-time work experience in a
-                skilled occupation in Canada within the last 3 years.
+                Canadian Experience Class (CEC) là chương trình nhập cư kinh tế
+                chương trình yêu cầu kinh nghiệm làm việc ở Canada. Ứng viên
+                phải có tối thiểu 12 tháng kinh nghiệm làm việc toàn thời gian ở
+                một doanh nghiệp nghề nghiệp có tay nghề cao ở Canada trong vòng
+                3 năm qua.
               </p>
               <p className="text-sm text-black/60 text-left">
-                The CEC Express Entry program is a popular choice for foreign
-                workers who have accumulated work experience in Canada and
-                international students who have found employment in Canada after
-                graduation, all of whom aspire to fulfill their Canadian
-                immigration dreams. This program is not suitable for foreign
-                nationals without any prior work experience in Canada
+                Chương trình CEC Express Entry là sự lựa chọn phổ biến của người
+                nước ngoài những người lao động đã tích lũy kinh nghiệm làm việc
+                ở Canada và sinh viên quốc tế đã tìm được việc làm ở Canada sau
+                tốt nghiệp, tất cả đều mong muốn hoàn thành sứ mệnh Canada của
+                mình giấc mơ nhập cư Chương trình này không phù hợp với người
+                nước ngoài công dân không có kinh nghiệm làm việc trước đây ở
+                Canada
               </p>
             </div>
           </div>
@@ -50,24 +52,24 @@ export default function CanadianExperienceClass() {
           <div className="flex-1 flex flex-col gap-4">
             <Title
               className="px-2 text-left lg:justify-start lg:items-start"
-              subtitle="Canadian Experience Class"
+              subtitle="Lớp trải nghiệm Canada"
               title={
                 <p className="text-4xl text-black/50 w-full text-left pt-3">
-                  Minimum Criteria
+                  Tiêu chí tối thiểu
                 </p>
               }
             />
 
             <div className="flex flex-col justify-start gap-6">
               <p className="text-sm text-black/60 text-left">
-                To be eligible, you must meet all the minimum requirements
+                Để đủ điều kiện, bạn phải đáp ứng tất cả các yêu cầu tối thiểu
               </p>
               <p className="text-sm text-black/60 text-left">
-                Before applying, candidates should carefully review the program
-                requirements and ensure they meet the necessary qualifications.
-                Additionally, individuals in skilled trades may also consider
-                seeking employment through the Provincial Nominee Program (PNP)
-                if a particular province has a demand for their skills.
+                Trước khi nộp đơn, ứng viên nên xem kỹ chương trình yêu cầu và
+                đảm bảo họ đáp ứng được các tiêu chuẩn cần thiết. Ngoài ra, các
+                cá nhân trong các ngành nghề có tay nghề cao cũng có thể xem xét
+                tìm kiếm việc làm thông qua Chương trình đề cử cấp tỉnh (PNP)
+                nếu một tỉnh cụ thể có nhu cầu về kỹ năng của họ.
               </p>
             </div>
           </div>
@@ -77,11 +79,11 @@ export default function CanadianExperienceClass() {
         <div className="flex-1 flex flex-col gap-4">
           <Title
             className="px-2 text-left lg:justify-start lg:items-start"
-            subtitle="Express Entry"
+            subtitle="Nhập cảnh nhanh"
             title={
               <p className="text-4xl text-black/50 w-full text-left pt-3">
-                Factors that increase your chance to receive Invitation to Apply
-                (ITA) in the Express Entry Program
+                Các yếu tố làm tăng cơ hội nhận được Lời mời nộp hồ sơ (ITA)
+                trong Chương trình Express Entry
               </p>
             }
           />

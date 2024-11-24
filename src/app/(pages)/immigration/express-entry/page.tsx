@@ -282,18 +282,7 @@ const features = [
     title: "Profile Assessment",
     description:
       "Our RCIC and expert team can evaluate your qualifications, work experience, and personal circumstances to identify your potential jobs and employers in Canada.",
-    icon: (
-      <div className="w-full rounded-md flex justify-center items-center">
-        <div className="w-[100px] h-[100px] relative">
-          <div className="absolute top-0 left-0 w-full h-full rounded-full bg-gradient-to-r from-blue-100/40 to-cyan-300/40"></div>
-          <img
-            src="/electric.png"
-            className="rounded-full w-full h-full"
-            alt="Profile Assessment"
-          />
-        </div>
-      </div>
-    ),
+    icon: <Icon icon="ooui:user-active" className="text-6xl w-[54px]" />,
   },
   {
     id: 2,
