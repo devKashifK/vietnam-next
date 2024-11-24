@@ -1,9 +1,9 @@
 import Container from "@/components/ui/container";
 import Title from "@/components/ui/Title";
 import Glass from "@/lib/helpers";
-import { workersList } from "./thuong-mai-co-tay-nghe-lien-bang";
 import { ServicesCard } from "@/components/ui/services-card";
 import { truncateTextHeading } from "@/components/ui/newsCard";
+import { workersList } from "./thuong-mai-co-tay-nghe-lien-bang/page";
 
 export default function CanadianExperienceClass() {
   return (

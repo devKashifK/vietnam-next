@@ -9,10 +9,10 @@ import Container from "@/components/ui/container";
 import Title from "@/components/ui/Title";
 import Glass from "@/lib/helpers";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { workersList } from "./thuong-mai-co-tay-nghe-lien-bang";
 import { truncateTextHeading } from "@/components/ui/newsCard";
 import { ServicesCard } from "@/components/ui/services-card";
 import { Button } from "@/components/ui/custom";
+import { workersList } from "./thuong-mai-co-tay-nghe-lien-bang/page";
 export default function FedralSkilledWorker() {
   return (
     <>
