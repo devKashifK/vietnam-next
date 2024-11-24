@@ -140,7 +140,7 @@ export default function About() {
           }
           image="/alberta.png"
           ctaAction={"Xem thêm chương trình AAIP"}
-          link="/de-cu-tinh-bang-pnp/alberta-immigration-aaip"
+          link="/de-cu-tinh-bang-pnp/alberta-nhap-cu-aaip"
         />
         <CTAWithImage
           flip={true}

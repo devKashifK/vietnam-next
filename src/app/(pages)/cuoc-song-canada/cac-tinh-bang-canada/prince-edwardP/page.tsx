@@ -136,7 +136,6 @@ const maniConfig = [
     id: 8,
     image: "/province/prince/h.png",
     title: "Historic Site",
-    description:
-      "Province House National Historic Site, nơi sinh của liên bang",
+    description: "Tinh House National Historic Site, nơi sinh của liên bang",
   },
 ];

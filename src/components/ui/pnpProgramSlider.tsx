@@ -50,7 +50,7 @@ const config = [
     image: "/alberta.png",
     title: "Alberta",
     des: "Nổi bật với chương trình Alberta Rural Renewal, mang lại cơ hội xin PR trực tiếp từ Việt Nam cho lao động lành nghề",
-    href: "/de-cu-tinh-bang-pnp/alberta-immigration-aaip",
+    href: "/de-cu-tinh-bang-pnp/alberta-nhap-cu-aaip",
   },
   {
     id: 2,

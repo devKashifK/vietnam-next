@@ -363,8 +363,8 @@ export const mobileConfig = [
     apis: [
       {
         provider: "internal",
-        name: "Alberta (AAIP)",
-        path: "/de-cu-tinh-bang-pnp/alberta-immigration-aaip",
+        name: "Alberta Nhap Cu (AAIP)",
+        path: "/de-cu-tinh-bang-pnp/alberta-nhap-cu-aaip",
       },
       {
         provider: "internal",
@@ -465,7 +465,7 @@ export const mobileConfig = [
     apis: [
       {
         provider: "internal",
-        name: "Alberta Province",
+        name: "Alberta Tinh",
         path: "/cuoc-song-canada/cac-tinh-bang-canada/tinh-alberta",
       },
       {
@@ -475,12 +475,12 @@ export const mobileConfig = [
       },
       {
         provider: "internal",
-        name: "Manitoba Province",
+        name: "Manitoba Tinh",
         path: "/cuoc-song-canada/cac-tinh-bang-canada/manitobaP",
       },
       {
         provider: "internal",
-        name: "New Brunswick Province",
+        name: "New Brunswick Tinh",
         path: "/cuoc-song-canada/cac-tinh-bang-canada/new-brunswickP",
       },
       {
@@ -490,37 +490,37 @@ export const mobileConfig = [
       },
       {
         provider: "internal",
-        name: "Northwest Territories Province",
+        name: "Northwest Territories Tinh",
         path: "/cuoc-song-canada/cac-tinh-bang-canada/northwest-territoriesP",
       },
       {
         provider: "internal",
-        name: "Nova Scotia Province",
+        name: "Nova Scotia Tinh",
         path: "/cuoc-song-canada/cac-tinh-bang-canada/nova-scotiaP",
       },
       {
         provider: "internal",
-        name: "Nunavut Province",
+        name: "Nunavut Tinh",
         path: "/cuoc-song-canada/cac-tinh-bang-canada/nunavutP",
       },
       {
         provider: "internal",
-        name: "Ontario Province",
+        name: "Ontario Tinh",
         path: "/cuoc-song-canada/cac-tinh-bang-canada/ontarioP",
       },
       {
         provider: "internal",
-        name: "Prince Edward Island Province",
+        name: "Prince Edward Island Tinh",
         path: "/cuoc-song-canada/cac-tinh-bang-canada/prince-edwardP",
       },
       {
         provider: "internal",
-        name: "Saskatchewan Province",
+        name: "Saskatchewan Tinh",
         path: "/cuoc-song-canada/cac-tinh-bang-canada/ saskatchewanP",
       },
       {
         provider: "internal",
-        name: "Yukon Province",
+        name: "Yukon Tinh",
         path: "/cuoc-song-canada/cac-tinh-bang-canada/yukonP",
       },
     ],
@@ -814,8 +814,8 @@ const router = [
     // path: "Đề cử tỉnh bang PNP"
     children: [
       {
-        path: "/de-cu-tinh-bang-pnp/alberta-immigration-aaip",
-        element: "Alberta (AAIP)",
+        path: "/de-cu-tinh-bang-pnp/alberta-nhap-cu-aaip",
+        element: "Alberta Nhap Cu (AAIP)",
       },
 
       {
@@ -965,7 +965,7 @@ const router = [
 
       {
         path: "/cuoc-song-canada/chinh-sach-thue",
-        element: "Tax Policy",
+        element: "Chính sách thuế",
         // element: "Chính sách thuế",
       },
     ],

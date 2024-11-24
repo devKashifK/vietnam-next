@@ -2,7 +2,7 @@ import { Feature } from "@/components/ui/cards-set";
 import Container from "@/components/ui/container";
 import Glass from "@/lib/helpers";
 import Title from "@/components/ui/Title";
-import { featuresPage } from "../alberta-immigration-aaip/page";
+import { featuresPage } from "../alberta-nhap-cu-aaip/page";
 
 export default function NewFoundlandLabrador() {
   return (

@@ -150,8 +150,8 @@ const cacheData = {
     text: "Provincial Nominee Programs",
     image: "/immigrationProvincial.png",
   },
-  "alberta-immigration-aaip": {
-    text: "Alberta Immigration (AAIP)",
+  "alberta-nhap-cu-aaip": {
+    text: "Alberta Nhap Cu (AAIP)",
     image: "/alberta.png",
   },
 
@@ -222,11 +222,11 @@ image:"/canada.jpg"
     image: "/british.jpg",
   },
   manitobaP: {
-    text: "Manitoba Province",
+    text: "Manitoba Tinh",
     image: "/manitoba.png",
   },
   "new-brunswickP": {
-    text: "New Brunswick Province",
+    text: "New Brunswick Tinh",
     image: "/newbrunswick.png",
   },
   "newfoundland-labradorP": {
@@ -234,35 +234,35 @@ image:"/canada.jpg"
     image: "/newbrunswick.png",
   },
   "northwest-territoriesP": {
-    text: "Northwest Territories Province",
+    text: "Northwest Territories Tinh",
     image: "/northwestterritories.png",
   },
   "nova-scotiaP": {
-    text: "Nova Scotia Province",
+    text: "Nova Scotia Tinh",
     image: "/novaScotia.jpg",
   },
   nunavutP: {
-    text: "Nunavut Province",
+    text: "Nunavut Tinh",
     image: "/novaScotia.jpg",
   },
   ontarioP: {
-    text: "Ontario Province",
+    text: "Ontario Tinh",
     image: "/ontario.png",
   },
   "prince-edwardP": {
-    text: "Prince Edward Island Province",
+    text: "Prince Edward Island Tinh",
     image: "/novaScotia.jpg",
   },
   saskatchewanP: {
-    text: "Saskatchewan Province",
+    text: "Saskatchewan Tinh",
     image: "/saskatchewan.jpg",
   },
   yukonP: {
-    text: "Yukon Province",
+    text: "Yukon Tinh",
     image: "/yukon.jpg",
   },
   quebecP: {
-    text: "Quebec Province",
+    text: "Quebec Tinh",
     image: "/northwestterritories.png",
   },
   ["moi-truong-canada"]: {
