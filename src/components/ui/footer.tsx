@@ -155,7 +155,7 @@ export default function Footer() {
               className="w-[80%] bg-secondary-gray-400 border-secondary-gray-400  focus:border-secondary text-secondary-none cursor-pointer outline-none px-4 py-3 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60  rounded-lg"
             /> */}
 
-            <div className="pt-4 mt-8 flex gap-6 relative w-full">
+            <div className="pt-4 mt-8 flex flex-col lg:flex-row gap-6 relative w-full">
               <Button
                 onClick={() => navigate.push("/lien-he")}
                 className="py-2 px-4  text-white"
@@ -173,7 +173,7 @@ export default function Footer() {
               </Button>
               <img
                 src="./RCIC-CERTIFIED-1.png"
-                className="w-56 absolute right-0 lg:right-28 -top-4"
+                className="w-56 lg:absolute  lg:right-28 lg:-top-4"
                 alt="RCIC-CERTIFIED-1"
               />
             </div>
