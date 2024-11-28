@@ -306,7 +306,7 @@ const cacheData = {
   },
   ["lam-viec-cho-icanpr"]: {
     text: "Làm việc cho iCanPR",
-    image: "/about.png",
+    image: "/job-bann.jpg",
   },
   ["tong-hợp-viec-lam-canada"]: {
     text: "Tổng hợp việc làm Canada",
@@ -318,7 +318,7 @@ const cacheData = {
   },
   ["dau-bep-mon-au"]: {
     text: "Đầu bếp Món Âu",
-    image: "/about.png",
+    image: "/cook.png",
   },
   ["lmia-map"]: {
     text: "LMIA Map",

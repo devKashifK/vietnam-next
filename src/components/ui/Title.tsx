@@ -40,7 +40,7 @@ export default function Title({
             >
               <h2
                 className={cn(
-                  " text-center relative lg:text-4xl tracking-wider text-black/50",
+                  "text-center relative lg:text-4xl tracking-wider text-black/50",
                   titleClassName
                 )}
               >

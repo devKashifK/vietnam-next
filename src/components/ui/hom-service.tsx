@@ -111,7 +111,7 @@ const ourService = [
     description:
       "Canada với nhiều cơ hội việc làm đa dạng, thúc đẩy sự phát triển nghề nghiệp và trải nghiệm toàn cầu. Là một quốc gia phồn thịnh và thân thiện đang chào đón các chuyên gia có kỹ năng và người lao động thời vụ.",
     ctaText: "Khám phá cơ hội",
-    ctaLink: "/immigration/express-entry/cong-nhan-lanh-nghe-lien-bang",
+    ctaLink: "/immigration/nhap-canh-nhanh/cong-nhan-lanh-nghe-lien-bang",
   },
   {
     id: "study-in-canada",

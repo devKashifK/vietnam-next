@@ -18,6 +18,9 @@ export default function PnpProgramSlider() {
       modules={[Autoplay]}
       breakpoints={{
         // When the viewport is >= 768px
+        1300: {
+          slidesPerView: 4,
+        },
         768: {
           slidesPerView: 3,
         },

@@ -9,48 +9,41 @@ import { useRouter } from "next/navigation";
 export default function Footer() {
   const navigate = useRouter();
   return (
-    <div className="flex flex-col w-full  mx-auto bg-highlight shadow-md">
-      <div className="bg-white bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40  h-max lg:h-[500px] flex  flex-col lg:flex-row gap-10 px-12 py-16 items-center justify-center text-white">
+    <div className="flex flex-col w-full  mx-auto  shadow-md">
+      <div className="bg-clip-padding backdrop-filter border-t border-highlight bg-highlight  backdrop-blur-sm bg-opacity-10  h-max lg:h-[500px] flex  flex-col lg:flex-row gap-10 px-12 py-16 items-center justify-center text-secondary/50">
         <div className="flex flex-col gap-10 flex-1 text-secondary/50 pt-10  justify-start items-start">
           <img src="/logo.png" alt="logo" className="w-[60%]  md:pl-8" />
 
-          <div className="flex flex-col gap-2 text-white font-no8rmal justify-start items-start w-full cursor-pointer pl-0 md:pl-2 text-sm">
+          <div className="flex flex-col gap-2 text-secondary/50 font-no8rmal justify-start items-start w-full cursor-pointer pl-0 md:pl-2 text-sm">
             <Link
               // to={""}
-              href={""}
-              className="border-secondary hover:underline text-secondary-b text-white w-[80%] text-left  px-0 md:px-8 block"
+              href={"/ve-icanpr"}
+              className="border-secondary hover:underline text-secondary-b text-secondary/50 w-[80%] text-left  px-0 md:px-8 block"
             >
               {/* About iCanPR company */}
               Giới thiệu về công ty iCanPR
             </Link>
             <Link
               // to={""}
-              href={""}
-              className="border-secondary text-secondary-b text-white w-[80%] text-left hover:underline text-secondary-white/25 px-0 md:px-8 block"
+              href={"/lien-he"}
+              className="border-secondary text-secondary-b text-secondary/50 w-[80%] text-left hover:underline text-secondary-white/25 px-0 md:px-8 block"
             >
               {/* Contact */}
               Liên hệ
             </Link>
             <Link
               // to={""}
-              href={""}
-              className="border-secondary text-secondary-b text-white w-[80%] text-left hover:underline text-secondary-white/25 px-0 md:px-8 block"
+              href={"/doi-tac-icanpr"}
+              className="border-secondary text-secondary-b text-secondary/50 w-[80%] text-left hover:underline text-secondary-white/25 px-0 md:px-8 block"
             >
               {/* iCanPR Partner */}
               Đối tác iCanPR
             </Link>
+
             <Link
               // to={""}
-              href={""}
-              className="border-secondary text-secondary-b text-white w-[80%] text-left hover:underline text-secondary-white/25 px-0 md:px-8 block"
-            >
-              {/* Service */}
-              Dịch vụ
-            </Link>
-            <Link
-              // to={""}
-              href={""}
-              className="border-secondary text-secondary-b text-white w-[80%] text-left hover:underline text-secondary-white/25 px-0 md:px-8 block"
+              href={"/cuoc-song-canada/cac-tinh-bang-canada/tinh-alberta"}
+              className="border-secondary text-secondary-b text-secondary/50 w-[80%] text-left hover:underline text-secondary-white/25 px-0 md:px-8 block"
             >
               {/* Provincial Program */}
               Chương trình tỉnh bang
@@ -69,14 +62,14 @@ export default function Footer() {
               Work and Jobs
             </Link> */}
           </div>
-          <div className="flex flex-col gap-6 md:gap-2 lg:flex-row  text-sm font-normal text-white pb-12 md:px-10">
+          <div className="flex flex-col gap-6 md:gap-2 lg:flex-row  text-sm font-normal text-secondary/50 pb-12 md:px-10">
             <div className="w-[40%] text-left hover:underline">
               {/* 2124 Broad St, Regina, Saskatchewan,Canada S4P 1Y5 (Registered
               office) */}
               Địa chỉ : Tầng 7, 85 Nguyễn Hữu Cầu, phường Tân Định, Quận 1, Tp.
               Hồ Chí Minh, Việt Nam
             </div>
-            <div className="flex w-[60%] flex-col gap-1  text-white">
+            <div className="flex w-[60%] flex-col gap-1  text-secondary/50">
               <div className="flex flex-col lg:flex-row  border-b  lg:gap-2 text-left">
                 <p className="flex-1">Email: </p>
                 <p className="flex-1 ml-0 lg:-ml-20 hover:underline">
@@ -116,7 +109,7 @@ export default function Footer() {
               <span className="w-14 h-14">
                 <Icon
                   icon={"carbon:logo-linkedin"}
-                  className="text-4xl text- cursor-pointer border  border-white rounded-full py-2 px-2"
+                  className="text-4xl text- cursor-pointer border  border-secondary-gray-400 rounded-full py-2 px-2"
                 />
               </span>
               <Link
@@ -125,19 +118,19 @@ export default function Footer() {
               >
                 <Icon
                   icon={"carbon:logo-facebook"}
-                  className="text-4xl cursor-pointer border border-white rounded-full py-2 px-2"
+                  className="text-4xl cursor-pointer border border-secondary-gray-400 rounded-full py-2 px-2"
                 />
               </Link>
               <span className="w-14 h-14">
                 <Icon
                   icon={"carbon:logo-twitter"}
-                  className="text-4xl cursor-pointer border border-white  rounded-full py-2 px-2"
+                  className="text-4xl cursor-pointer border border-secondary-gray-400  rounded-full py-2 px-2"
                 />
               </span>
               <span className="w-14 h-14">
                 <Icon
                   icon={"carbon:logo-instagram"}
-                  className="text-4xl cursor-pointer border  border-white rounded-full py-2 px-2"
+                  className="text-4xl cursor-pointer border  border-secondary-gray-400 rounded-full py-2 px-2"
                 />
               </span>
               <Link
@@ -146,7 +139,7 @@ export default function Footer() {
               >
                 <Icon
                   icon={"carbon:logo-youtube"}
-                  className="text-4xl cursor-pointer border border-white   rounded-full py-2 px-2"
+                  className="text-4xl cursor-pointer border border-secondary-gray-400   rounded-full py-2 px-2"
                 />
               </Link>
             </div>
@@ -157,10 +150,10 @@ export default function Footer() {
               lai. Bạn có thể hủy bất cứ lúc nào.
             </p>
 
-            <input
+            {/* <input
               placeholder="Email"
-              className="w-[80%] bg-white border-white  focus:border-secondary text-secondary-none cursor-pointer outline-none px-4 py-3 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60  rounded-lg"
-            />
+              className="w-[80%] bg-secondary-gray-400 border-secondary-gray-400  focus:border-secondary text-secondary-none cursor-pointer outline-none px-4 py-3 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60  rounded-lg"
+            /> */}
 
             <div className="pt-4 mt-8 flex gap-6 relative w-full">
               <Button

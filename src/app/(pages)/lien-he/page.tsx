@@ -92,7 +92,7 @@ const EnhancedContact = () => {
     <div className="container mx-auto px-4 py-10">
       <div className="flex flex-wrap justify-center mt-8">
         <OfficeCard
-          country="Bangladesh"
+          country="Canada"
           imageUrl="/bangladesh-earth-map.jpg"
           address="2124 Broad St, Regina, Saskatchewan,Canada S4P 1Y5 (Văn phòng đã đăng ký)"
           phone="+1-855-477-9797"
@@ -101,7 +101,8 @@ const EnhancedContact = () => {
         <OfficeCard
           country="Vietnam"
           imageUrl="/vietnam-map.jpg"
-          address="Tang  85 Nguyễn Hữu Cầu, phường Tân Định, Quận 1, Tp. Hồ Chí Minh, Việt Nam"
+          address="Địa chỉ
+Tầng 7, 85 Nguyễn Hữu Cầu, phường Tân Định, Quận 1, Tp. Hồ Chí Minh, Việt Nam"
           phone="+84 86996 7809"
           email="tuvan@icanpr.vn"
         />

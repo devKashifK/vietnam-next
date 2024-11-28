@@ -21,8 +21,11 @@ export default function HeroDefault({
 
   return (
     <div
-      className="flex flex-col gap-2 mx-auto bg-center relative bg-cover w-full  h-[90vh]"
-      style={{ backgroundImage: `url(${displayImage})` }}
+      className="flex flex-col gap-2 mx-auto bg-center relative bg-cover aspect-square  w-full  h-[90vh]"
+      style={{
+        backgroundImage: `url(${displayImage})`,
+        backgroundPosition: "start",
+      }}
     >
       <div className="relative z-10">
         <Navbar defaultStyle={true} />

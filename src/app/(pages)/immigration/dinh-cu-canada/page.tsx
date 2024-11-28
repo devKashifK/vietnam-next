@@ -87,7 +87,7 @@ export default function CanadaImmigration() {
         }
         image="/about.png"
         ctaAction={"Việc làm định cư Canada"}
-        link="/immigration/express-entry/cong-nhan-lanh-nghe-lien-bang"
+        link="/immigration/nhap-canh-nhanh/cong-nhan-lanh-nghe-lien-bang"
       />
       <CTAWithImage
         flip={true}
