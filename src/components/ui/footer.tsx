@@ -109,7 +109,7 @@ export default function Footer() {
               <span className="w-14 h-14">
                 <Icon
                   icon={"carbon:logo-linkedin"}
-                  className="text-4xl text- cursor-pointer border  border-secondary-gray-400 rounded-full py-2 px-2"
+                  className="text-4xl text- cursor-pointer border border-black rounded-full py-2 px-2"
                 />
               </span>
               <Link
@@ -118,19 +118,19 @@ export default function Footer() {
               >
                 <Icon
                   icon={"carbon:logo-facebook"}
-                  className="text-4xl cursor-pointer border border-secondary-gray-400 rounded-full py-2 px-2"
+                  className="text-4xl cursor-pointer border border-black rounded-full py-2 px-2"
                 />
               </Link>
               <span className="w-14 h-14">
                 <Icon
                   icon={"carbon:logo-twitter"}
-                  className="text-4xl cursor-pointer border border-secondary-gray-400  rounded-full py-2 px-2"
+                  className="text-4xl cursor-pointer border border-black  rounded-full py-2 px-2"
                 />
               </span>
               <span className="w-14 h-14">
                 <Icon
                   icon={"carbon:logo-instagram"}
-                  className="text-4xl cursor-pointer border  border-secondary-gray-400 rounded-full py-2 px-2"
+                  className="text-4xl cursor-pointer border  border-black rounded-full py-2 px-2"
                 />
               </span>
               <Link
@@ -139,7 +139,7 @@ export default function Footer() {
               >
                 <Icon
                   icon={"carbon:logo-youtube"}
-                  className="text-4xl cursor-pointer border border-secondary-gray-400   rounded-full py-2 px-2"
+                  className="text-4xl cursor-pointer border border-black   rounded-full py-2 px-2"
                 />
               </Link>
             </div>
