@@ -159,7 +159,7 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
             )}
           </div>
 
-          <div className="flex justify-start gap-4 items-center px-0 ml-16 w-full h-20">
+          <div className="flex justify-start gap-4 items-center px-0 ml-4 w-full h-20">
             <NavigationMenu>
               <NavigationMenuList className="flex gap-0 py-0">
                 {router.map((navItem) => (

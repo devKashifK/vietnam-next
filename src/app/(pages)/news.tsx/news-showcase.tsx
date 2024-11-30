@@ -5,19 +5,48 @@ import { NewsFeedCard } from "@/components/ui/newsCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { supabase } from "@/supabaseClient";
+import { LoadingAnimation } from "../tin-tuc/page";
 
 export default function NewsShowcase() {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const fetchNews = async () => {
-      const { data: dd } = await supabase.from("news").select("*").limit(6);
-      console.log(dd, "checkDD");
-      setData(dd);
+      try {
+        // Fetch the 12 most recent posts
+        const response = await fetch(
+          "https://icanpr.vn/wp-json/wp/v2/posts?per_page=12&orderby=date&order=desc&_embed"
+        );
+        if (!response.ok) throw new Error("Failed to fetch news");
+
+        const posts = await response.json();
+        // Format the posts
+        const formattedPosts = posts.map((post) => ({
+          id: post.id,
+          title: post.title.rendered,
+          subTitle: post.excerpt.rendered,
+          content: post.excerpt.rendered,
+          author: post.author,
+          date: post.date,
+          slug: post.slug,
+          image:
+            post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
+            "/default.jpg",
+        }));
+
+        setData(formattedPosts);
+      } catch (error) {
+        console.error("Error fetching news:", error);
+      } finally {
+        setLoading(false);
+      }
     };
+
     fetchNews();
   }, []);
 
-  console.log(data, "checkNews");
+  if (loading) return <LoadingAnimation />;
   return (
     <Swiper
       spaceBetween={30}
@@ -25,7 +54,7 @@ export default function NewsShowcase() {
       breakpoints={{
         // When the viewport is >= 768px
         768: {
-          slidesPerView: 2,
+          slidesPerView: 3,
         },
 
         // When the viewport is >= 320px
@@ -39,21 +68,21 @@ export default function NewsShowcase() {
     >
       {data &&
         data.map((item, index) => {
-          const formattedDate = new Date(item.created_at).toLocaleDateString(
-            undefined,
-            {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            }
-          );
+          // const formattedDate = new Date(item.created_at).toLocaleDateString(
+          //   undefined,
+          //   {
+          //     year: "numeric",
+          //     month: "long",
+          //     day: "numeric",
+          //   }
+          // );
           return (
             <SwiperSlide key={index} className="w-[480px]">
               <NewsFeedCard
                 title={item.title}
                 subTitle={item.subTitle}
-                author={item.author && item.author.toUpperCase()}
-                date={formattedDate}
+                // author={item.author && item.author.toUpperCase()}
+                date={item.date}
                 description={item.content}
                 image={item.image}
                 key={item.id}
@@ -66,3 +95,15 @@ export default function NewsShowcase() {
     </Swiper>
   );
 }
+
+const fetchMedia = async (mediaId) => {
+  try {
+    const res = await fetch(`https://icanpr.vn/wp-json/wp/v2/media/${mediaId}`);
+    if (!res.ok) throw new Error("Failed to fetch media");
+    const media = await res.json();
+    return media.source_url;
+  } catch (error) {
+    console.error("Error fetching media:", error);
+    return "/default.jpg";
+  }
+};

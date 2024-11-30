@@ -12,7 +12,6 @@ export const NewsFeedCard = ({
   title,
   subTitle,
   date,
-  author,
   description,
   id,
   slug,
@@ -21,7 +20,6 @@ export const NewsFeedCard = ({
   title?: string;
   subTitle?: string;
   date?: string;
-  author?: string;
   description?: string;
   id?: string;
   slug?: string;
@@ -36,29 +34,29 @@ export const NewsFeedCard = ({
             alt={title}
           />
 
-          <span className="bg-red-600 text-slate-50 h-14 w-14 flex flex-col justify-center items-center rounded-full text-wrap absolute right-4 top-4 text-sm font-bold">
+          {/* <span className="bg-red-600 text-slate-50 h-14 w-14 flex flex-col justify-center items-center rounded-full text-wrap absolute right-4 top-4 text-sm font-bold">
             <span>14</span>
             <span className="">AUG</span>
-          </span>
+          </span> */}
         </div>
-        <div className="px-10 h-[280px] py-8 bg-content  ">
+        <div className="px-10 flex flex-col gap-6 h-[280px] py-8 bg-content  ">
           <p className="text-2xl text-black/60 font-semibold text-left">
             {truncateTextHeading(title)}
           </p>
-          {subTitle && (
+          {/* {subTitle && (
             <h5 className="text-lg font-normal text-red-600 text-left pb-3">
               {subTitle}
             </h5>
-          )}
+          )} */}
           {description && (
             <p
               dangerouslySetInnerHTML={{
-                __html: truncateTextHeading(description, 28),
+                __html: truncateTextHeading(description, 40),
               }}
               className="text-sm font-normal text-left pb-5 h-[100px] text-stone-700"
             />
           )}
-          <div className="flex gap-5 text-stone-500 pb-4 text-xs">
+          <div className="flex flex flex-col gap-2 text-stone-500 pb-4 text-xs">
             <div className="flex gap-1 ">
               <Icon
                 icon={"carbon:time"}
@@ -66,21 +64,20 @@ export const NewsFeedCard = ({
               />
               <span className="text-black/60">{date}</span>
             </div>
-            <div className="flex gap-1">
-              <Icon
+            {/* <Icon
                 icon={"carbon:chat"}
                 className="text-center text-black/60 mt-0.5"
               />
               <span className="text-black/60">Author : {author}</span>
+            </div> */}
+            <div className="pb-6">
+              <Link
+                href={`/tin-tuc/${slug}`}
+                className="bg-background flex justify-center items-center text-slate-50 px-3 py-1 text-sm text-left w-[50%]"
+              >
+                Read More
+              </Link>
             </div>
-          </div>
-          <div className="pb-6">
-            <Link
-              href={`/tin-tuc/${slug}`}
-              className="bg-background flex justify-center items-center text-slate-50 px-3 py-1 text-sm text-left w-[50%]"
-            >
-              Read More
-            </Link>
           </div>
         </div>
       </div>

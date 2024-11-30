@@ -50,7 +50,7 @@ export default function About() {
         </div>
       </Container>
       <Container effect="slide-left">
-        <Glass className="flex flex-row gap-10 md:gap-2 h-max px-10 py-10">
+        <Glass className="flex flex-col lg:flex-row  gap-10 md:gap-2 h-max px-10 py-10">
           <div className="w-full md:flex-1 flex flex-col gap-2">
             <TitleWithDoubleBorder>iCanPR</TitleWithDoubleBorder>
             <div className="flex flex-col justify-start gap-6">
@@ -69,7 +69,7 @@ export default function About() {
             </div>
           </div>
           <div className="w-full  md:flex-1 flex flex-col gap-3 justify-center items-center h-max">
-            <ul className="flex gap-6 flex-wrap justify-center cursor-pointer ">
+            <ul className="grid grid-cols-1 lg:grid-cols-2 gap-6 justify-center cursor-pointer ">
               <li className="text-center flex gap-1 justify-center bg-highlight/80 font-primary tracking-widest px-8 w-full md:w-[200px]  flex-col items-center text-white/90 py-6">
                 <Icon icon={"hugeicons:job-search"} className="text-4xl" />
                 Cơ hội việc làm cho người nước ngoài
