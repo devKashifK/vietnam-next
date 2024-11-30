@@ -10,7 +10,7 @@ export default function Footer() {
   const navigate = useRouter();
 
   return (
-    <footer className="w-full mx-auto bg-[#1A2A3A] text-white">
+    <footer className="w-full mx-auto bg-[#1A2A3A] text-white pb-14 lg:pb-0">
       <div className="px-4 py-8 mx-auto max-w-7xl">
         <div className="grid px-12 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {/* Logo and Links */}
@@ -111,7 +111,7 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        <div className="mt-8 pt-4 border-t border-white/10 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        <div className="mt-8 pt-4 border-t border-white/10 flex  flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-sm text-white/60">
             © iCanPr - All rights reserved
           </p>
