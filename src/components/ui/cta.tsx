@@ -102,7 +102,7 @@ export const CtaCard2 = ({ item, flip }) => {
         <img
           src={item.image}
           alt={item.title}
-          className={cn("h-[330px] w-full md:h-[220px] bg-cover z-10 relative")}
+          className={cn("h-[250px] w-full lg:h-[220px] bg-cover z-10 relative")}
         />
       </div>
       <div

@@ -55,13 +55,13 @@ export default function Post() {
       effect="none"
       className="text-left post flex gap-6 flex-row px-0"
     >
-      <Glass className=" w-[70%]  flex flex-col gap-8">
+      <Glass className="w-full lg:w-[70%]   flex flex-col gap-8">
         <img
           src={mediaUrl}
           alt={post.title.rendered}
           style={{ width: "100%", height: "auto" }}
         />
-        <div className="flex flex-col gap-8 px-14 py-5">
+        <div className="flex flex-col gap-8 px-4 lg:px-14 py-5">
           <div
             dangerouslySetInnerHTML={{ __html: post.content.rendered }}
             className="text-sm dangerouHtml"

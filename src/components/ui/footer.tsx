@@ -14,8 +14,10 @@ export default function Footer() {
       <div className="px-4 py-8 mx-auto max-w-7xl">
         <div className="grid px-12 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {/* Logo and Links */}
-          <div className="space-y-4">
-            <img src="/logo.png" alt="logo" className="w-40" />
+          <div className="space-y-4  ">
+            <div className="bg-black bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-20 h-max px-2 py-2 text-6xl w-max  flex flex-col justify-starr items-start font-primary tracking-widest text-white">
+              <img src="/logo.png" alt="logo" className="w-40" />
+            </div>
             <nav className="grid gap-2 text-sm">
               <Link href="/ve-icanpr" className="hover:underline">
                 Giới thiệu về công ty iCanPR
