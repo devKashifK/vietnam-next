@@ -35,7 +35,7 @@ const Sidebar = ({ activeTab, setActiveTab, pages, news }) => (
 );
 
 export default function AdminPanel() {
-  const session = useCheckSession();
+  // const session = useCheckSession();
   const [activeTab, setActiveTab] = useState("pages");
   const [pages, setPages] = useState([
     { id: 1, title: "Home Page", createdAt: "2023-05-15" },
