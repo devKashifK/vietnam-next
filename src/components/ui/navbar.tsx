@@ -54,7 +54,7 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
         className={cn(
           "hidden md:flex border-b h-24 justify-start items-center",
           "bg-content text-black z-[100000000]",
-          isFixed ? "fixed w-full" : "relative"
+          isFixed ? "fixed w-full z-[100000000000]" : "relative"
         )}
       >
         <div className="h-full flex justify-center w-[400px] !bg-content items-center px-8 border-r border-background ">

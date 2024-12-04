@@ -237,7 +237,7 @@ export const CTADefault = ({
         style={{ backgroundImage: `url(${image})` }}
       >
         <div className="flex absolute left-0 top-0 w-full h-full bg-black/60"></div>
-        <div className="flex flex-col justify-center items-center gap-8 md:gap-3 relative z-10 px-8">
+        <div className="flex flex-col justify-center items-center gap-8 md:gap-3 relative px-8">
           <h4 className="text-4xl tracking-wider text-center text-white ">
             {title}
           </h4>
