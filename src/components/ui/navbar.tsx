@@ -139,24 +139,24 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
               <div className="group-hover:bg-background w-full border border-transparent ease-out duration-150"></div>
             </Link>
 
-            {!isFixed && (
-              <>
-                <a
-                  href="https://api.whatsapp.com/send?phone=84869967809"
-                  target="_blank"
-                  className="text-xs bg-green-500 text-white px-3 rounded-sm justify-center items-center py-1 flex  gap-2 group w-max -mr-6"
-                >
-                  <Icon icon={"mdi:whatsapp"} className="text-xl" />
-                </a>
-                <a
-                  href="https://zalo.me/84869967809"
-                  target="_blank"
-                  className="text-xs bg-blue-500 text-white px-3 rounded-sm justify-center items-center py-1 flex  gap-2 group w-max  ml-2"
-                >
-                  <Icon icon={"simple-icons:zalo"} className="text-xl" />
-                </a>
-              </>
-            )}
+            {/* {!isFixed && ( */}
+            <>
+              <a
+                href="https://api.whatsapp.com/send?phone=84869967809"
+                target="_blank"
+                className="text-xs bg-green-500 text-white px-3 rounded-sm justify-center items-center py-1 flex  gap-2 group w-max -mr-6"
+              >
+                <Icon icon={"mdi:whatsapp"} className="text-xl" />
+              </a>
+              <a
+                href="https://zalo.me/84869967809"
+                target="_blank"
+                className="text-xs bg-blue-500 text-white px-3 rounded-sm justify-center items-center py-1 flex  gap-2 group w-max  ml-2"
+              >
+                <Icon icon={"simple-icons:zalo"} className="text-xl" />
+              </a>
+            </>
+            {/* )} */}
           </div>
 
           <div className="flex justify-start gap-4 items-center px-0 ml-4 w-full h-20">
