@@ -18,7 +18,7 @@ export function CardWithImage({
     <div className="lg:max-w-xs w-full group/card">
       <div
         className={cn(
-          " cursor-pointer overflow-hidden relative card h-96  shadow-md border border-black/5  max-w-sm mx-auto backgroundImage flex flex-col justify-between p-4",
+          "overflow-hidden relative card h-96  shadow-md border border-black/5  max-w-sm mx-auto backgroundImage flex flex-col justify-between p-4",
           " bg-cover bg-center bg-no-repeat"
         )}
         style={{
