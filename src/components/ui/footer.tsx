@@ -21,7 +21,7 @@ export default function Footer() {
           <span> +84 869967809</span>
         </a>
       </div>
-      <div className=" py-8 mx-auto max-w-7xl bg-[#1A2A3A]">
+      <div className=" py-8 mx-auto w-full bg-[#1A2A3A]">
         <div className="grid px-12 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {/* Logo and Links */}
           <div className="space-y-4  ">
