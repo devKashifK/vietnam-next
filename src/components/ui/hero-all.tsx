@@ -36,7 +36,7 @@ export default function HeroDefault({
           />
         </div>
       </div>
-      <div className="absolute bg-background bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 w-full py-1 bottom-0 px-12 z-10 flex justify-start items-center gap-2 cursor-pointer">
+      <div className="absolute  bg-background bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 w-full py-1 bottom-0 px-12  flex justify-start items-center gap-2 cursor-pointer">
         <Link
           // to={"/"}
           href={"/"}
@@ -48,7 +48,7 @@ export default function HeroDefault({
           icon={"zondicons:cheveron-right"}
           className="text-white/60 -mt-1"
         />
-        <span className="text-white font-bold uppercase font-primary tracking-widest">
+        <span className="text-white relative  font-bold uppercase font-primary tracking-widest">
           {lastPath}
         </span>
       </div>

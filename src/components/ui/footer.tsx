@@ -10,14 +10,21 @@ export default function Footer() {
   const navigate = useRouter();
 
   return (
-    <footer className="w-full mx-auto bg-[#1A2A3A] text-white pb-14 lg:pb-0">
-      <div className="px-4 py-8 mx-auto max-w-7xl">
+    <footer className="w-full mx-auto  text-white pb-14 lg:pb-0">
+      <div className="px-10 bg-black w-full bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-20 h-max  py-2 text-xl pt-3  flex  justify-between items-center font-primary tracking-widest text-white">
+        <img src="/logo.png" alt="logo" className="w-40" />
+        <a
+          href="tel:+84869967809"
+          className="inline-flex text-black items-center justify-center space-x-2 hover:underline"
+        >
+          <Icon icon="mdi:phone" className="w-5 h-5" />
+          <span> +84 869967809</span>
+        </a>
+      </div>
+      <div className=" py-8 mx-auto max-w-7xl bg-[#1A2A3A]">
         <div className="grid px-12 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {/* Logo and Links */}
           <div className="space-y-4  ">
-            <div className="bg-black bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-20 h-max px-2 py-2 text-6xl w-max  flex flex-col justify-starr items-start font-primary tracking-widest text-white">
-              <img src="/logo.png" alt="logo" className="w-40" />
-            </div>
             <nav className="grid gap-2 text-sm">
               <Link href="/ve-icanpr" className="hover:underline">
                 Giới thiệu về công ty iCanPR
@@ -104,16 +111,9 @@ export default function Footer() {
                 <span className="text-sm">Tư vấn miễn phí</span>
               </Button>
             </form>
-            <a
-              href="tel:+84869967809"
-              className="inline-flex items-center space-x-2 hover:underline"
-            >
-              <Icon icon="mdi:phone" className="w-5 h-5" />
-              <span>+84 869967809</span>
-            </a>
           </div>
         </div>
-        <div className="mt-8 pt-4 border-t border-white/10 flex  flex-row justify-between items-center space-y-4 md:space-y-0">
+        <div className="mt-8 pt-4 border-t px-10 border-white/10 flex  flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-sm text-white/60">
             © iCanPr - All rights reserved
           </p>
