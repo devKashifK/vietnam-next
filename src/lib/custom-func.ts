@@ -121,6 +121,10 @@ const cacheData = {
     text: "Tính điểm CRS",
     image: "/federalSkill.png",
   },
+  "doanh-nghiep-c11-visa" :{
+    text: "Chương Trình Doanh nhân diện điều hành doanh nghiệp (C11 - Significant Benefit Program)",
+    image: "/federalSkill.png",
+  },
   ["viec-lam-dinh-cu"]: {
     text: "Việc làm định cư",
     image: "/federalSkill.png",
@@ -151,24 +155,24 @@ const cacheData = {
     image: "/immigrationProvincial.png",
   },
   "alberta-nhap-cu-aaip": {
-    text: "Alberta Nhap Cu (AAIP)",
+    text: "Chương trình Di Trú Lợi Thế của tỉnh bang Alberta (AAIP)",
     image: "/alberta.png",
   },
 
   "british-columbia-bcpnp": {
-    text: "British Columbia (BC PNP)",
+    text: "Chương trình đề cử tỉnh bang British Columbia (BC PNP)",
     image: "/british.jpg",
   },
   "ontario-oinp": {
-    text: "Ontario (OINP)",
+    text: "Chương trình đề cử tỉnh bang Ontario (OINP)",
     image: "/ontario.png",
   },
   "manitoba-mpnp": {
-    text: "Manitoba (MPNP)",
+    text: "Chương trình Đề Cử Tỉnh Bang Manitoba (MPNP)",
     image: "/manitoba.png",
   },
   "new-brunswick-nbpnp": {
-    text: "New Brunswick (NB PNP)",
+    text: "Chương trình đề cử tỉnh bang New Brunswick (NB PNP)",
     image: "/newbrunswick.png",
   },
   // "newfoundland-and-labrador": {
@@ -181,15 +185,15 @@ const cacheData = {
   //   image: "/northwestterritories.png",
   // },
   "nova-scotia-nsnp": {
-    text: "Nova Scotia (NSNP)",
+    text: "CHƯƠNG TRÌNH ĐỀ CỬ TỈNH BANG NOVA SCOTIA",
     image: "/novaScotia.jpg",
   },
   "prince-edward-island-peipnp": {
-    text: "Prince Edward Island (PEI PNP)",
+    text: "Chương trình đề cử tỉnh bang Prince Edward Island (PEI PNP)",
     image: "/novaScotia.jpg",
   },
   "saskatchewan-sinp": {
-    text: "Saskatchewan (SINP)",
+    text: "Chương trình đề cử tỉnh bang Saskatchewan (SINP)",
     image: "/saskatchewan.jpg",
   },
   "cuoc-song-canada": {
@@ -198,13 +202,13 @@ const cacheData = {
   },
 
   quebec: {
-    text: "Quebec (PNP)",
+    text: "Chương Trình Đề Cử Tỉnh Bang Quebec",
     image: "/northwestterritories.png",
   },
   // path: "các-tỉnh-bang-canada",
 
   "yukon-ynp": {
-    text: "Yukon (YNP)",
+    text: "Chương trình đề cử tỉnh bang Yukon (YPNP)",
     image: "/yukon.jpg",
   },
 

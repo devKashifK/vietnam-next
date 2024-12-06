@@ -16,8 +16,7 @@ export default function FamilySponsorship() {
 
               <div className="px-3 py-1.5">
                 <h5 className="tracking-widest text-xl">
-                  Canada Immigration Program
-                  {/* {albertaImmigrationAAIP[language].title} */}
+                  Chương trình nhập cư Canada
                 </h5>
               </div>
 
@@ -26,55 +25,55 @@ export default function FamilySponsorship() {
             </div>
             <div className="flex flex-col justify-start gap-6">
               <h3 className="tracking-wide text-left text-4xl text-black/70">
-                Family Sponsorship
+                Bảo trợ gia đình
               </h3>
 
               <p className="text-sm text-black/60 text-left">
-                Canada, known for its breathtaking landscapes, vibrant cities,
-                and welcoming atmosphere, has become an increasingly popular
-                destination for tourists worldwide. If you&apos;re considering a
-                visit to the Great White North, you may need to acquaint
-                yourself with the process of obtaining a Canadian Visitor Visa,
-                also known as a Temporary Resident Visa (TRV)
+                Canada, nổi tiếng với những cảnh quan ngoạn mục, những thành phố
+                sôi động, và bầu không khí chào đón, đã trở thành một xu hướng
+                ngày càng phổ biến điểm đến của khách du lịch trên toàn thế
+                giới. Nếu bạn đang xem xét một thăm Great White North, bạn có
+                thể cần làm quen bản thân bạn trong quá trình xin Visa du lịch
+                Canada, còn được gọi là Visa tạm trú (TRV)
               </p>
-              <Title subtitle="Understanding the Canadian Visitor Visa" />
+              <Title subtitle="Tìm hiểu về Visa du lịch Canada" />
               <p className="text-sm text-black/60 text-left">
-                The Canadian Visitor Visa is designed for individuals who wish
-                to enter the country temporarily for tourism, family visits, or
-                business purposes. It is essential to distinguish between a
-                tourist visa and other types of visas, such as work or study
-                permits, as they serve different purposes.
+                Visa du lịch Canada được thiết kế dành cho những cá nhân mong
+                muốn nhập cảnh tạm thời vào nước này để du lịch, thăm gia đình
+                hoặc mục đích kinh doanh. Điều cần thiết là phải phân biệt giữa
+                một thị thực du lịch và các loại thị thực khác, chẳng hạn như
+                làm việc hoặc học tập giấy phép, vì chúng phục vụ các mục đích
+                khác nhau.
               </p>
-              <Title subtitle="Seeking Canadian Visitor Visa" />
+              <Title subtitle="Xin Visa du lịch Canada" />
 
               <p className="text-sm text-black/60 text-left">
-                The process of applying for a Canadian Visitor Visa involves
-                several key steps. First, applicants need to determine whether
-                they require a visa to enter Canada based on their citizenship.
-                If a visa is needed, the next step is to gather the necessary
-                documents, which typically include a valid passport, proof of
-                financial support, a letter of invitation (if applicable), and
-                travel itinerary. Applicants may also need to provide proof of
-                ties to their home country, such as employment, property, or
-                family connections, to demonstrate their intent to return.
+                Quá trình xin Visa du lịch Canada bao gồm một số bước quan
+                trọng. Đầu tiên, người nộp đơn cần xác định xem liệu họ yêu cầu
+                thị thực để vào Canada dựa trên quốc tịch của họ. Nếu cần có thị
+                thực, bước tiếp theo là thu thập các thông tin cần thiết tài
+                liệu, thường bao gồm hộ chiếu hợp lệ, bằng chứng về hỗ trợ tài
+                chính, thư mời (nếu có) và hành trình du lịch. Người nộp đơn
+                cũng có thể cần phải cung cấp bằng chứng về ràng buộc với đất
+                nước của họ, chẳng hạn như việc làm, tài sản, hoặc kết nối gia
+                đình, để chứng minh ý định quay trở lại của họ.
               </p>
               <p className="text-sm text-black/60 text-left">
-                Once the documents are prepared, applicants can fill out the
-                online visa application form through the official website of the
-                Immigration, Refugees, and Citizenship Canada (IRCC). The
-                application form will prompt individuals to enter personal
-                information, details about their trip, and other relevant
-                information. It&apos;s crucial to ensure accuracy in the
-                application, as any discrepancies could lead to delays or
-                denials.
+                Sau khi chuẩn bị đầy đủ hồ sơ, người nộp đơn có thể điền vào mẫu
+                đơn xin thị thực trực tuyến thông qua trang web chính thức của
+                Bộ Di trú, Người tị nạn và Quốc tịch Canada (IRCC). các mẫu đơn
+                sẽ nhắc các cá nhân nhập thông tin cá nhân thông tin, chi tiết
+                về chuyến đi của họ và các thông tin liên quan khác thông tin.
+                Điều quan trọng là phải đảm bảo tính chính xác trong ứng dụng,
+                vì bất kỳ sự khác biệt nào cũng có thể dẫn đến sự chậm trễ hoặc
+                những lời phủ nhận.
               </p>
               <p className="text-sm text-black/60 text-left">
-                After submitting the application, applicants will be required to
-                pay the necessary visa fees. Processing times vary, but
-                applicants are advised to apply well in advance of their planned
-                travel date. If the application is approved, a visa will be
-                stamped in the passport, allowing the individual to travel to
-                Canada for the specified period.
+                Sau khi nộp đơn, người nộp đơn sẽ được yêu cầu nộp lệ phí thị
+                thực cần thiết. Thời gian xử lý khác nhau, nhưng ứng viên nên
+                nộp đơn sớm trước thời gian dự kiến ngày du lịch. Nếu đơn được
+                chấp thuận, thị thực sẽ được cấp đóng dấu vào hộ chiếu, cho phép
+                cá nhân đi du lịch đến Canada trong khoảng thời gian quy định.
               </p>
             </div>
           </div>
@@ -82,11 +81,11 @@ export default function FamilySponsorship() {
       </Container>
       <Container>
         <CTADefault
-          title="PLAN YOUR VISIT TO CANADA"
+          title="KẾ HOẠCH THAM QUAN CANADA"
           subtitle={
             <p className="text-4xl text-white/90">
-              Let&apos;s GreenTech Resources Worldwide Canada <br />
-              assist you!
+              Hãy cùng ICANPR <br />
+              hỗ trợ bạn!
             </p>
           }
           image={"/service.jpg"}
