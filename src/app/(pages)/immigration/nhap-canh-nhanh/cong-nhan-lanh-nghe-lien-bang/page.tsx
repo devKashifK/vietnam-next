@@ -283,73 +283,73 @@ const features = [
 
 const fswpData = [
   {
-    section: "Program Overview",
-    title: "Federal Skilled Worker Program (FSWP)",
+    section: "Tổng Quan Chương Trình",
+    title: "Chương Trình Lao Động Tay Nghề Liên Bang (FSWP)",
     content: [
-      "The FSWP (Federal Skilled Worker Program) is a program for skilled foreign workers who wish to become permanent residents of Canada.",
-      "The FSWP is operated and operated by the Express Entry system. This program is aimed at people who can utilize their education, work experience, language ability and other factors to build a career in Canada.",
-      "This is the first immigration program in the world to use a points system to evaluate candidates. This method has also been successfully applied by Australia and New Zealand.",
+      "Chương trình FSWP (Federal Skilled Worker Program) là một chương trình dành cho lao động nước ngoài có tay nghề cao mong muốn trở thành thường trú nhân tại Canada.",
+      "Chương trình FSWP được vận hành bởi hệ thống Express Entry. Chương trình này nhắm đến những người có thể sử dụng giáo dục, kinh nghiệm làm việc, khả năng ngôn ngữ và các yếu tố khác để xây dựng sự nghiệp tại Canada.",
+      "Đây là chương trình nhập cư đầu tiên trên thế giới sử dụng hệ thống điểm để đánh giá ứng viên. Phương pháp này cũng đã được áp dụng thành công tại Úc và New Zealand.",
     ],
   },
   {
-    section: "Conditions of Participation",
-    title: "Eligibility Requirements for FSWP",
+    section: "Điều Kiện Tham Gia",
+    title: "Yêu Cầu Đủ Điều Kiện Cho FSWP",
     subsections: [
       {
-        title: "Work Experience",
+        title: "Kinh Nghiệm Làm Việc",
         description:
-          "Have at least one year of full-time or equivalent paid work experience for 10 years in an occupation classified under the National Occupational Classification (NOC) level 0, A or B.",
+          "Có ít nhất một năm kinh nghiệm làm việc toàn thời gian hoặc tương đương trong vòng 10 năm qua ở một nghề nghiệp được phân loại theo danh mục National Occupational Classification (NOC) cấp độ 0, A hoặc B.",
         details: [
-          "NOC 0: Management position",
-          "NOC A: Jobs that typically require a college degree",
-          "NOC B: Occupations requiring specialization",
+          "NOC 0: Vị trí quản lý",
+          "NOC A: Công việc yêu cầu trình độ đại học",
+          "NOC B: Nghề yêu cầu chuyên môn hóa",
         ],
       },
       {
-        title: "Education",
+        title: "Giáo Dục",
         description:
-          "Applicants must have completed at least high school in Canada or abroad. If studies were completed abroad, applicants are required to have an Educational Credential Assessment (ECA).",
+          "Ứng viên phải hoàn thành ít nhất trình độ trung học ở Canada hoặc nước ngoài. Nếu học ở nước ngoài, ứng viên phải có Đánh Giá Bằng Cấp Giáo Dục (ECA).",
       },
       {
-        title: "Language Requirements",
+        title: "Yêu Cầu Ngôn Ngữ",
         description:
-          "Workers must complete a standardized language test and achieve a minimum CLB of 7 in English or French in all four skills (Listening, Speaking, Reading, Writing).",
+          "Lao động phải hoàn thành bài kiểm tra ngôn ngữ tiêu chuẩn và đạt tối thiểu CLB 7 bằng tiếng Anh hoặc tiếng Pháp ở cả bốn kỹ năng (Nghe, Nói, Đọc, Viết).",
       },
       {
-        title: "Proof of Financial Resources",
+        title: "Chứng Minh Tài Chính",
         description:
-          "Applicants must demonstrate that they have sufficient savings to support themselves and any dependents while they are in Canada. The required funds vary based on the number of people being supported.",
+          "Ứng viên phải chứng minh rằng họ có đủ tiền tiết kiệm để hỗ trợ bản thân và các thành viên phụ thuộc trong thời gian ở Canada. Số tiền cần thiết sẽ thay đổi tùy theo số lượng người được hỗ trợ.",
       },
       {
-        title: "Health Check",
+        title: "Kiểm Tra Sức Khỏe",
         description:
-          "Applicants and their dependents must complete a medical examination and submit a police certificate to prove their admissibility into Canada.",
+          "Ứng viên và các thành viên phụ thuộc phải hoàn thành kiểm tra y tế và nộp giấy chứng nhận cảnh sát để chứng minh khả năng nhập cư hợp pháp vào Canada.",
       },
     ],
   },
   {
-    section: "Points System",
-    title: "FSWP Points Scale",
+    section: "Hệ Thống Điểm",
+    title: "Thang Điểm FSWP",
     content: [
-      "Candidates are assessed on criteria such as language, work experience, age, job placement, and adaptability (e.g., having siblings or family in Canada).",
-      "To qualify, candidates need at least 67/100 points. The breakdown is as follows:",
+      "Các ứng viên được đánh giá dựa trên các tiêu chí như ngôn ngữ, kinh nghiệm làm việc, độ tuổi, cơ hội việc làm và khả năng thích nghi (ví dụ: có anh chị em hoặc gia đình tại Canada).",
+      "Để đủ điều kiện, ứng viên cần đạt ít nhất 67/100 điểm. Chi tiết phân loại như sau:",
     ],
     table: [
-      { factor: "Education", points: "Maximum 25 points" },
-      { factor: "Language proficiency", points: "Maximum 28 points" },
-      { factor: "Work experience", points: "Maximum 15 points" },
-      { factor: "Job placement", points: "Maximum 10 points" },
-      { factor: "Adaptability", points: "Maximum 10 points" },
-      { factor: "Age", points: "Maximum 12 points" },
+      { factor: "Giáo Dục", points: "Tối đa 25 điểm" },
+      { factor: "Trình Độ Ngôn Ngữ", points: "Tối đa 28 điểm" },
+      { factor: "Kinh Nghiệm Làm Việc", points: "Tối đa 15 điểm" },
+      { factor: "Cơ Hội Việc Làm", points: "Tối đa 10 điểm" },
+      { factor: "Khả Năng Thích Nghi", points: "Tối đa 10 điểm" },
+      { factor: "Độ Tuổi", points: "Tối đa 12 điểm" },
     ],
   },
   {
-    section: "Application Processing Time",
-    title: "FSWP Application Process",
+    section: "Thời Gian Xử Lý Hồ Sơ",
+    title: "Quy Trình Xử Lý Hồ Sơ FSWP",
     content: [
-      "Candidates assess whether they meet the basic requirements of the program. If eligible, they can upload their application to the IRCC website.",
-      "Once the application is complete, candidates receive a CRS ranking score. Candidates with higher scores are more likely to receive an invitation to apply (ITA) for permanent residence.",
-      "After receiving an ITA, candidates have 60 days to submit their application. It usually takes about 6 months for a candidate to process their application from the time they submit a complete application.",
+      "Ứng viên đánh giá xem họ có đáp ứng các yêu cầu cơ bản của chương trình không. Nếu đủ điều kiện, họ có thể tải lên hồ sơ trên trang web IRCC.",
+      "Khi hồ sơ hoàn tất, ứng viên sẽ nhận được điểm CRS. Những ứng viên có điểm số cao hơn sẽ có cơ hội nhận được lời mời nộp đơn (ITA) để trở thành thường trú nhân.",
+      "Sau khi nhận được ITA, ứng viên có 60 ngày để nộp hồ sơ. Thường mất khoảng 6 tháng để xử lý hồ sơ kể từ khi nộp đầy đủ.",
     ],
   },
 ];
