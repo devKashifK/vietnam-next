@@ -216,6 +216,7 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
 }
 
 const renderSubmenus = (submenus, hoveredPath, setHoveredPath) => {
+  console.log(submenus, "checkSubMenus");
   return (
     <ul className=" z-[1000000000000000000] overflow-visible">
       {submenus.map((subPage) => (
@@ -263,6 +264,7 @@ const renderSubmenus = (submenus, hoveredPath, setHoveredPath) => {
             </div>
           ) : (
             <Link
+              target={subPage.external ? "_blank" : "_parent"}
               className="text-left hover:bg-[#b33d3d] text-text py-1  text-sm border-b last:border-b-0 px-2 w-full"
               href={subPage.path}
             >
@@ -598,7 +600,7 @@ export const mobileConfig = [
     ],
   },
   {
-    name: "tuyen-dung",
+    name: "Tuyen-dung",
     icon: "mdi:briefcase-check-outline",
     heading: "font-semibold text-orange-800",
     pointer: "bg-orange-700",
@@ -612,12 +614,12 @@ export const mobileConfig = [
         path: "/tuyen-dung/lam-viec-cho-icanpr",
       },
       {
-        provider: "internal",
+        provider: "external",
         name: "Tổng hợp việc làm Canada",
         path: "https://jobs.icanpr.vn/jobs/Careers",
       },
       {
-        provider: "internal",
+        provider: "external",
         name: "Công nhân trại gà",
         path: "https://icanpr.zohorecruit.com/jobs/Careers/777018000000558001/75119---General-Labour-C%C3%B4ng-nh%C3%A2n-n%C3%B4ng-tr%E1%BA%A1i-g%C3%A0?source=CareerSite",
       },
@@ -1001,7 +1003,7 @@ const router = [
     ],
   },
   {
-    path: "tuyển dụng",
+    path: "Tuyển dụng",
     // path:"Tuyển dụng",
     children: [
       {
@@ -1012,11 +1014,13 @@ const router = [
       {
         path: "https://jobs.icanpr.vn/jobs/Careers",
         element: "Tổng hợp việc làm Canada",
+        external: true,
         // element: "Canada Jobs Summary",
       },
       {
         path: "https://icanpr.zohorecruit.com/jobs/Careers/777018000000558001/75119---General-Labour-C%C3%B4ng-nh%C3%A2n-n%C3%B4ng-tr%E1%BA%A1i-g%C3%A0?source=CareerSite",
         element: "Công nhân trại gà",
+        external: true,
         // element: "Chicken farm Worker",
       },
       {

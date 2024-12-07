@@ -16,6 +16,77 @@ import { workersList } from "../thuong-mai-co-tay-nghe-lien-bang/page";
 export default function FedralSkilledWorker() {
   return (
     <>
+      <Container effect="none" className="flex flex-col gap-10 py-10">
+        {fswpData.map((section, index) => (
+          <div key={index} className="px-6">
+            {/* Section Title */}
+            <h2 className="text-2xl font-bold text-black mb-4">
+              {section.section}
+            </h2>
+
+            {/* Section Content */}
+            <div className="flex flex-col gap-6">
+              {/* Title */}
+              <h3 className="text-xl font-semibold text-black/70">
+                {section.title}
+              </h3>
+
+              {/* Content */}
+              {section.content && (
+                <div className="flex flex-col gap-4">
+                  {section.content.map((item, i) => (
+                    <p key={i} className="text-sm text-black/60">
+                      {item}
+                    </p>
+                  ))}
+                </div>
+              )}
+
+              {/* Subsections */}
+              {section.subsections &&
+                section.subsections.map((sub, subIndex) => (
+                  <div
+                    key={subIndex}
+                    className="border-t pt-4 mt-4 flex flex-col gap-2"
+                  >
+                    <h4 className="text-lg font-semibold text-black/80">
+                      {sub.title}
+                    </h4>
+                    <p className="text-sm text-black/60">{sub.description}</p>
+
+                    {sub.details && (
+                      <ul className="list-disc list-inside text-sm text-black/60 mt-2">
+                        {sub.details.map((detail, detailIndex) => (
+                          <li key={detailIndex}>{detail}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                ))}
+
+              {/* Points Table */}
+              {section.table && (
+                <table className="w-full text-sm text-black/60 border mt-4">
+                  <thead>
+                    <tr>
+                      <th className="border px-4 py-2">Factor</th>
+                      <th className="border px-4 py-2">Points</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {section.table.map((row, rowIndex) => (
+                      <tr key={rowIndex}>
+                        <td className="border px-4 py-2">{row.factor}</td>
+                        <td className="border px-4 py-2">{row.points}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              )}
+            </div>
+          </div>
+        ))}
+      </Container>
       <Container>
         <Glass className="flex gap-2 px-10 py-10">
           <div className="flex-1 flex flex-col gap-2">
@@ -80,24 +151,6 @@ export default function FedralSkilledWorker() {
         {/* </Glass> */}
       </Container>
       <CTA />
-
-      <Container className="flex flex-col md:flex-row gap-16 py-10 justify-center items-center">
-        <div className="flex-1 relative">
-          <div className="absolute top-0 left-0 w-full h-full bg-gray-50 bg-opacity-20"></div>
-          <img src="/work.jpg" className="rounded-md" alt="work" />
-        </div>
-        <div className="flex-1 flex flex-col lg:justify-start lg:items-start gap-4">
-          <Title
-            className="px-4 text-left lg:justify-start lg:items-start"
-            titleClassName="lg:justify-start lg:items-start text-left"
-            subtitle="FAQ"
-            descriptionClassName="lg:text-left lg:w-full"
-            title={"How to apply for a Work Permit"}
-            description="Applying for a work permit in Canada can be a multi-step process, depending on your situation and the type of work permit you require. Here are the general steps to follow"
-          />
-          {/* <FAQ /> */}
-        </div>
-      </Container>
     </>
   );
 }
@@ -225,5 +278,78 @@ const features = [
         className="text-6xl w-[54px]"
       />
     ),
+  },
+];
+
+const fswpData = [
+  {
+    section: "Program Overview",
+    title: "Federal Skilled Worker Program (FSWP)",
+    content: [
+      "The FSWP (Federal Skilled Worker Program) is a program for skilled foreign workers who wish to become permanent residents of Canada.",
+      "The FSWP is operated and operated by the Express Entry system. This program is aimed at people who can utilize their education, work experience, language ability and other factors to build a career in Canada.",
+      "This is the first immigration program in the world to use a points system to evaluate candidates. This method has also been successfully applied by Australia and New Zealand.",
+    ],
+  },
+  {
+    section: "Conditions of Participation",
+    title: "Eligibility Requirements for FSWP",
+    subsections: [
+      {
+        title: "Work Experience",
+        description:
+          "Have at least one year of full-time or equivalent paid work experience for 10 years in an occupation classified under the National Occupational Classification (NOC) level 0, A or B.",
+        details: [
+          "NOC 0: Management position",
+          "NOC A: Jobs that typically require a college degree",
+          "NOC B: Occupations requiring specialization",
+        ],
+      },
+      {
+        title: "Education",
+        description:
+          "Applicants must have completed at least high school in Canada or abroad. If studies were completed abroad, applicants are required to have an Educational Credential Assessment (ECA).",
+      },
+      {
+        title: "Language Requirements",
+        description:
+          "Workers must complete a standardized language test and achieve a minimum CLB of 7 in English or French in all four skills (Listening, Speaking, Reading, Writing).",
+      },
+      {
+        title: "Proof of Financial Resources",
+        description:
+          "Applicants must demonstrate that they have sufficient savings to support themselves and any dependents while they are in Canada. The required funds vary based on the number of people being supported.",
+      },
+      {
+        title: "Health Check",
+        description:
+          "Applicants and their dependents must complete a medical examination and submit a police certificate to prove their admissibility into Canada.",
+      },
+    ],
+  },
+  {
+    section: "Points System",
+    title: "FSWP Points Scale",
+    content: [
+      "Candidates are assessed on criteria such as language, work experience, age, job placement, and adaptability (e.g., having siblings or family in Canada).",
+      "To qualify, candidates need at least 67/100 points. The breakdown is as follows:",
+    ],
+    table: [
+      { factor: "Education", points: "Maximum 25 points" },
+      { factor: "Language proficiency", points: "Maximum 28 points" },
+      { factor: "Work experience", points: "Maximum 15 points" },
+      { factor: "Job placement", points: "Maximum 10 points" },
+      { factor: "Adaptability", points: "Maximum 10 points" },
+      { factor: "Age", points: "Maximum 12 points" },
+    ],
+  },
+  {
+    section: "Application Processing Time",
+    title: "FSWP Application Process",
+    content: [
+      "Candidates assess whether they meet the basic requirements of the program. If eligible, they can upload their application to the IRCC website.",
+      "Once the application is complete, candidates receive a CRS ranking score. Candidates with higher scores are more likely to receive an invitation to apply (ITA) for permanent residence.",
+      "After receiving an ITA, candidates have 60 days to submit their application. It usually takes about 6 months for a candidate to process their application from the time they submit a complete application.",
+    ],
   },
 ];

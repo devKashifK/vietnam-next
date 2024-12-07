@@ -157,12 +157,14 @@ export default function DoanhNghiepC11VisaPage() {
         </Glass>
       </Container>
 
-      <Container className="grid grid-cols-3 gap-4">
+      <Container className="grid grid-cols-2 gap-4">
         {visa.map((item, index) => (
           <HoverCard
             key={index}
             description={item.des}
             title={item.title}
+            color={item.color}
+            iconColor="text-white"
             icon="iconamoon:information-square-duotone"
           />
         ))}
@@ -242,21 +244,25 @@ const visa = [
   {
     id: 1,
     title: "Lên Ý Tưởng Kinh Doanh",
+    color: "bg-green-600",
     des: "Ứng viên cần phát triển ý tưởng kinh doanh cho doanh nghiệp ở Canada. Ứng viên sẽ nhận được yêu cầu nộp các tài liệu liên quan đến ý tưởng kinh doanh, kinh nghiệm, tài liệu cá nhân và báo cáo tài chính.",
   },
   {
     id: 2,
     title: "Thành lập công ty tại Canada",
+    color: "bg-yellow-600",
     des: "tiến hành đăng ký một công ty ở Canada. Công ty Canada này bắt buộc sẽ do người nộp đơn sở hữu hoặc quản lý.",
   },
   {
     id: 3,
     title: "Nộp đơn xin giấy phép lao động",
+    color: "bg-red-600",
     des: "Ứng viên sẽ tiến hành nộp đơn xin giấy phép. Trong bộ hồ sơ đó, đương đơn cần chuẩn bị kế hoạch kinh doanh, lời mời làm việc từ doanh nghiệp Canada, tài liệu công ty và cá nhân của cả công ty nước ngoài và người nộp đơn.",
   },
   {
     id: 4,
     title: "Chờ kết quả",
+    color: "bg-purple-600",
     des: "Sau khi tất cả các tài liệu được thu thập và hồ sơ đã sẵn sàng, hồ sơ của đương đơn sẽ được nộp trực tuyến đến văn phòng chịu trách nhiệm xử lý. Trong vòng 3 đến 4 tháng thời điểm nộp đơn, người nộp đơn có thể nhận được giấy phép lao động đến Canada.",
   },
 ];

@@ -12,6 +12,7 @@ export default function HoverCard({
   color = "bg-background",
   className,
   link = "#",
+  iconColor,
 }: {
   icon?: string | React.ReactNode;
   title?: string | React.ReactNode;
@@ -20,6 +21,7 @@ export default function HoverCard({
   color?: string;
   className?: string;
   link?: string;
+  iconColor?: string;
 }) {
   const [isHovered, setIsHovered] = useState(false);
   return (
@@ -48,7 +50,10 @@ export default function HoverCard({
           {typeof icon === "string" ? (
             <Icon
               icon={icon}
-              className="text-highlight flex justify-center items-center h-10 w-full"
+              className={cn(
+                "text-highlight flex justify-center items-center h-10 w-full",
+                iconColor
+              )}
             />
           ) : (
             icon
