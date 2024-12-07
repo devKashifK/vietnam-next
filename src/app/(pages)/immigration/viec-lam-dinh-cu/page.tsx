@@ -56,6 +56,7 @@ export default function ImmigrationWork() {
                 id={item.id}
                 title={item.title}
                 description={truncateTextHeading(item.description, 30)}
+                readMore={false}
               />
             ))}
           </div>
@@ -78,6 +79,7 @@ export default function ImmigrationWork() {
                 id={item.id}
                 title={item.title}
                 description={truncateTextHeading(item.description, 30)}
+                readMore={false}
               />
             ))}
           </div>
