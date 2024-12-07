@@ -5,7 +5,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 export const ServicesCard = ({
   title,
   description,
-  readMore = true,
+  readMore = false,
 }: {
   title?: string | React.ReactNode;
   description?: string;

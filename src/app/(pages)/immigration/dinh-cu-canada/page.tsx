@@ -31,6 +31,7 @@ export default function CanadaImmigration() {
                 key={index}
                 title={item.title}
                 description={truncateTextHeading(item.description, 120)}
+                readMore={false}
               />
             ))}
           </div>

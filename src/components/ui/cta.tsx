@@ -331,7 +331,7 @@ export const CTAWithImage = ({
           </div>
         )}
 
-        {ctaAction && (
+        {link !== "/" && ctaAction && (
           <button
             className="flex gap-2 bg-background text-text w-full lg:w-max justify-center items-center rounded-none"
             onClick={() => navigate.push(link)}

@@ -336,6 +336,10 @@ const cacheData = {
     text: "Định cư Canada",
     image: "/immigration-cannada.jpg",
   },
+  ["book-appointment"]: {
+    text: "Book Appointment",
+    image: "/book.webp",
+  },
 };
 export const getCachedData = (pathname: string) => {
   const sanitizedPath = pathname.replace(/^\/|\/$/g, ""); // removes leading and trailing slashes
