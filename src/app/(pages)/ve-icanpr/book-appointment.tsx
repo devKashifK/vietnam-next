@@ -5,6 +5,7 @@ import Glass from "@/lib/helpers";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import React from "react";
 import CountUp, { useCountUp } from "react-countup";
+import { ContactForm } from "../lien-he/page";
 
 export default function BookAppointment() {
   return (
@@ -265,6 +266,8 @@ export default function BookAppointment() {
           />
         </Glass>
       </Container>
+
+      <ContactForm />
     </>
   );
 }

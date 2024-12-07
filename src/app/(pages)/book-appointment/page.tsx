@@ -6,45 +6,45 @@ import Glass from "@/lib/helpers";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import React from "react";
 import CountUp, { useCountUp } from "react-countup";
+import { ContactForm } from "../lien-he/page";
 
 export default function BookAppointment() {
   return (
-    <>
+    <div className="mb-10">
       <Container>
         <Title
           title={
-            "Why Choosing Saskatchewan Immigration and a Consultant in Saskatchewan is vital?"
+            "Tại sao việc chọn cơ quan nhập cư Saskatchewan và nhà tư vấn ở Saskatchewan là quan trọng?"
           }
-          subtitle={"Saskatchewan stands out as a province in Canada."}
+          subtitle={"Saskatchewan nổi bật là một tỉnh của Canada."}
           description={
             <div className="flex flex-col gap-4">
               <p className="text-left">
-                Saskatchewan stands out as a province in Canada with open
-                immigration schemes that are suitable for many individuals
-                seeking to establish themselves in the country.
+                Saskatchewan nổi bật là một tỉnh ở Canada có môi trường mở
+                chương trình nhập cư phù hợp với nhiều cá nhân đang tìm cách
+                khẳng định mình ở trong nước.
               </p>
               <p className="text-left">
-                With its diverse economy, welcoming communities, and ample
-                opportunities for skilled workers, entrepreneurs, and investors,
-                Saskatchewan has become an attractive destination for
-                immigrants. However, navigating the immigration process in
-                Saskatchewan requires careful planning and expertise. This is
-                where the role of a Saskatchewan immigration consultant becomes
-                crucial. These consultants specialize in understanding the
-                unique immigration pathways offered by the province, such as the
-                Saskatchewan Immigrant Nominee Program (SINP), and can provide
-                tailored guidance to individuals looking to make Saskatchewan
-                their new home.
+                Với nền kinh tế đa dạng, cộng đồng thân thiện và nguồn lực dồi
+                dào cơ hội cho người lao động lành nghề, doanh nhân và nhà đầu
+                tư, Saskatchewan đã trở thành điểm đến hấp dẫn cho người nhập
+                cư. Tuy nhiên, điều hướng quá trình nhập cư ở Saskatchewan đòi
+                hỏi phải có kế hoạch cẩn thận và chuyên môn. Đây là nơi vai trò
+                của nhà tư vấn nhập cư Saskatchewan trở nên chủ yếu. Những nhà
+                tư vấn này chuyên tìm hiểu các con đường nhập cư độc đáo do tỉnh
+                cung cấp, chẳng hạn như Chương trình Đề cử Người nhập cư
+                Saskatchewan (SINP) và có thể cung cấp hướng dẫn phù hợp cho
+                những cá nhân muốn đến Saskatchewan ngôi nhà mới của họ.
               </p>
               <p className="text-left">
-                Given the multitude of options available and the intricacies of
-                the application process, choosing the right immigration
-                consultant in Saskatchewan is paramount to ensuring a smooth and
-                successful immigration journey. With their knowledge of
-                Saskatchewan&apos;s immigration policies, labor market demands,
-                and community dynamics, these consultants play a pivotal role in
-                helping individuals realize their aspirations of settling and
-                thriving in Saskatchewan.
+                Với vô số lựa chọn có sẵn và sự phức tạp của quy trình nộp đơn,
+                lựa chọn nơi nhập cư phù hợp chuyên gia tư vấn ở Saskatchewan là
+                điều tối quan trọng để đảm bảo một quá trình suôn sẻ và hành
+                trình nhập cư thành công. Với kiến ​​thức của họ về Chính sách
+                nhập cư của Saskatchewan, nhu cầu thị trường lao động, và sự
+                năng động của cộng đồng, những nhà tư vấn này đóng vai trò nòng
+                cốt trong giúp các cá nhân thực hiện được nguyện vọng định cư và
+                phát triển mạnh ở Saskatchewan.
               </p>
             </div>
           }
@@ -74,7 +74,7 @@ export default function BookAppointment() {
                 <span className="text-4xl">+</span>
               </div>
               <span className="uppercase text-lg font-primary tracking-widest">
-                successful visas in 2023
+                visa thành công vào năm 2023
               </span>
             </div>
             <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
@@ -87,7 +87,7 @@ export default function BookAppointment() {
                 <CountUp enableScrollSpy={true} end={14} className="text-6xl" />
               </div>
               <span className="uppercase text-lg font-primary tracking-widest">
-                Success Start Up Visa
+                Visa khởi nghiệp thành công
               </span>
             </div>
             <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
@@ -101,7 +101,7 @@ export default function BookAppointment() {
               </div>
 
               <span className="uppercase text-lg font-primary tracking-widest">
-                happy clients
+                khách hàng hạnh phúc
               </span>
             </div>
             <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
@@ -113,7 +113,7 @@ export default function BookAppointment() {
                 <CountUp enableScrollSpy={true} end={3} className="text-6xl" />
               </div>
               <span className="uppercase text-lg font-primary tracking-widest">
-                Consultants
+                Nhà tư vấn
               </span>
             </div>
           </div>
@@ -121,78 +121,78 @@ export default function BookAppointment() {
       </Container>
       <Container>
         <Title
-          title={"How to check if my consultant is RCIC?"}
+          title={
+            "Làm cách nào để kiểm tra xem nhà tư vấn của tôi có phải là RCIC không?"
+          }
           description={
             <div className="flex flex-col gap-4">
               <p className="text-left">
-                Verifying if your consultant is a Registered Canadian
-                Immigration Consultant (RCIC) is crucial to ensuring that
-                you&apos;re receiving guidance from a qualified and authorized
-                professional. Here&apos;s how you can check if your consultant
-                is an RCIC. By following these steps and verifying your
-                consultant&apos;s registration status with ICCRC, you can ensure
-                that you&apos;re working with a legitimate and authorized RCIC
-                who is qualified to provide immigration advice and
-                representation.
+                Xác minh xem nhà tư vấn của bạn có phải là người Canada đã đăng
+                ký hay không Tư vấn Nhập cư (RCIC) là rất quan trọng để đảm bảo
+                rằng bạn đang nhận được hướng dẫn từ một người có trình độ và
+                được ủy quyền chuyên nghiệp. Đây là cách bạn có thể kiểm tra xem
+                nhà tư vấn của bạn có là một RCIC. Bằng cách làm theo các bước
+                sau và xác minh trạng thái đăng ký của nhà tư vấn với ICCRC, bạn
+                có thể đảm bảo rằng bạn đang làm việc với RCIC hợp pháp và được
+                ủy quyền người có đủ điều kiện để cung cấp lời khuyên về nhập cư
+                và đại diện.
               </p>
               <div className="text-left">
                 <p className="text-left font-primary tracking-widest text-2xl text-red-900">
-                  Visit the ICCRC Website:
+                  Truy cập trang web ICCRC:
                 </p>
                 <p>
-                  The College of Immigration and Citizenship Consultants is the
-                  regulatory body that oversees RCICs.
+                  Trường Cao đẳng Tư vấn Nhập cư và Quốc tịch là cơ quan quản lý
+                  giám sát RCIC.
                   <a
                     className="text-sky-400 hover:underline"
                     href="https://www.college-ic.ca"
                   >
-                    Visit their official website
+                    Truy cập trang web chính thức của họ
                   </a>
                 </p>
               </div>
               <div className="text-left">
                 <p className="text-left font-primary tracking-widest text-2xl text-red-900">
-                  Search the Online Registry:
+                  Tìm kiếm Cơ quan đăng ký trực tuyến:
                 </p>
                 <p>
-                  On the website, navigate to the “Find an Immigration
-                  Professional” section. Here, you can search for your
-                  consultant by name or registration number.
+                  Trên trang web, hãy điều hướng đến phần “Tìm nơi nhập cư phần
+                  chuyên nghiệp”. Tại đây, bạn có thể tìm kiếm tư vấn theo tên
+                  hoặc số đăng ký.
                 </p>
               </div>
               <div className="text-left">
                 <p className="text-left font-primary tracking-widest text-2xl text-red-900">
-                  Verify Registration Status:
+                  Xác minh trạng thái đăng ký:
                 </p>
                 <p>
-                  Enter your consultant’s name or registration number into the
-                  search bar and click on the search button. The search results
-                  will display the consultant’s registration status, including
-                  whether they are an RCIC in good standing or if any
-                  disciplinary actions have been taken against them.
+                  Nhập tên hoặc số đăng ký của nhà tư vấn của bạn vào thanh tìm
+                  kiếm và bấm vào nút tìm kiếm. Kết quả tìm kiếm sẽ hiển thị
+                  trạng thái đăng ký của nhà tư vấn, bao gồm liệu họ có phải là
+                  RCIC ở trạng thái tốt hay không đã có những biện pháp kỷ luật
+                  đối với họ.
                 </p>
               </div>
               <div className="text-left">
                 <p className="text-left font-primary tracking-widest text-2xl text-red-900">
-                  Review Details:
+                  Đánh giá chi tiết:
                 </p>
                 <p>
-                  Once you’ve found your consultant in the search results,
-                  review the details provided to ensure they match the
-                  information you have. Pay attention to their registration
-                  status, registration number, and any additional information
-                  provided.
+                  Khi bạn đã tìm thấy nhà tư vấn của mình trong kết quả tìm
+                  kiếm, xem lại các chi tiết được cung cấp để đảm bảo chúng khớp
+                  với thông tin bạn có. Hãy chú ý đến việc đăng ký của họ trạng
+                  thái, số đăng ký và bất kỳ thông tin bổ sung nào cung cấp.
                 </p>
               </div>
               <div className="text-left">
                 <p className="text-left font-primary tracking-widest text-2xl text-red-900">
-                  Contact The College of Immigration and Citizenship
-                  Consultants:
+                  Liên hệ với Trường Cao đẳng Di trú và Quốc tịch Nhà tư vấn:
                 </p>
                 <p>
-                  If you have any doubts or concerns about the authenticity of
-                  your consultant’s registration, you can contact ICCRC directly
-                  for further verification or clarification.
+                  Nếu bạn có bất kỳ nghi ngờ hoặc lo ngại nào về tính xác thực
+                  của đăng ký tư vấn của bạn, bạn có thể liên hệ trực tiếp với
+                  ICCRC để xác minh hoặc làm rõ thêm.
                 </p>
               </div>
             </div>
@@ -212,53 +212,53 @@ export default function BookAppointment() {
       <Container>
         <Glass className="px-10">
           <Title
-            title={"What Can an Immigration Consultant Do?"}
+            title={"Tư vấn viên nhập cư có thể làm gì?"}
             description={
               <div className="flex flex-col gap-6">
                 <p className="text-left">
-                  Immigration consultants offer a range of services to assist
-                  clients throughout the immigration process. Some of the key
-                  roles they play include:
+                  Các nhà tư vấn nhập cư cung cấp một loạt các dịch vụ để hỗ trợ
+                  khách hàng trong suốt quá trình nhập cư. Một số chìa khóa vai
+                  trò của họ bao gồm:
                 </p>
                 <ul className="flex flex-col gap-6">
                   <li>
                     <p className="text-left font-primary tracking-widest text-2xl text-red-900">
-                      Assessment and Eligibility
+                      Đánh giá và đủ điều kiện
                     </p>
                     <p className="text-left">
-                      Consultants assess clients&apos; eligibility for various
-                      immigration programs and provide personalized advice based
-                      on individual circumstances.
+                      Nhà tư vấn đánh giá khách hàng; đủ điều kiện cho khác nhau
+                      các chương trình nhập cư và cung cấp lời khuyên cá nhân
+                      dựa trên về hoàn cảnh cá nhân.
                     </p>
                   </li>
                   <li>
                     <p className="text-left font-primary tracking-widest text-2xl text-red-900">
-                      Application Preparation
+                      Chuẩn bị hồ sơ
                     </p>
                     <p className="text-left">
-                      Consultants assist in completing and submitting
-                      immigration applications, ensuring all required documents
-                      are accurate and submitted within deadlines.
+                      Chuyên viên tư vấn hỗ trợ hoàn thiện và nộp hồ sơ đơn xin
+                      nhập cư, đảm bảo tất cả các tài liệu cần thiết chính xác
+                      và nộp đúng thời hạn.
                     </p>
                   </li>
                   <li>
                     <p className="text-left font-primary tracking-widest text-2xl text-red-900">
-                      Representation and Advocacy
+                      Đại diện và Vận động
                     </p>
                     <p className="text-left">
-                      Consultants represent clients in communications with
-                      immigration authorities, advocating on their behalf and
-                      addressing any concerns or inquiries.
+                      Chuyên gia tư vấn đại diện cho khách hàng trong giao tiếp
+                      với cơ quan nhập cư, thay mặt họ vận động và giải quyết
+                      bất kỳ mối quan tâm hoặc thắc mắc nào.
                     </p>
                   </li>
                   <li>
                     <p className="text-left font-primary tracking-widest text-2xl text-red-900">
-                      Post-Immigration Support
+                      Hỗ trợ sau nhập cư
                     </p>
                     <p className="text-left">
-                      Consultants offer support and guidance even after
-                      immigration approval, assisting with settlement, obtaining
-                      essential documents, and navigating life in Canada.
+                      Các nhà tư vấn cung cấp hỗ trợ và hướng dẫn ngay cả sau
+                      khi phê duyệt nhập cư, hỗ trợ giải quyết, có được các tài
+                      liệu cần thiết và định hướng cuộc sống ở Canada.
                     </p>
                   </li>
                 </ul>
@@ -267,7 +267,9 @@ export default function BookAppointment() {
           />
         </Glass>
       </Container>
-    </>
+
+      <ContactForm />
+    </div>
   );
 }
 

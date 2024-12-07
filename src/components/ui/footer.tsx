@@ -162,7 +162,7 @@ export function FancyPhone() {
     >
       <a
         href="tel:+84869967809"
-        className="group flex items-center gap-3 text-white hover:text-highlight transition-colors duration-300"
+        className="group flex items-center gap-3 text-white hover:text-[#1A2A3A] transition-colors duration-300"
       >
         <motion.div variants={itemVariants}>
           <Phone className="w-6 h-6" />
@@ -170,25 +170,25 @@ export function FancyPhone() {
         <div className="font-sans text-2xl font-bold tracking-wider flex gap-1">
           <motion.span
             variants={itemVariants}
-            className="bg-[#1A2A3A]] bg-opacity-20 px-2 py-1 rounded"
+            className="bg-highlight bg-opacity-20 px-2 py-1 rounded"
           >
             +84
           </motion.span>
           <motion.span
             variants={itemVariants}
-            className="bg-[#1A2A3A] bg-opacity-10 px-2 py-1 rounded"
+            className="bg-highlight  bg-opacity-10 px-2 py-1 rounded"
           >
             869
           </motion.span>
           <motion.span
             variants={itemVariants}
-            className="bg-[#1A2A3A] bg-opacity-10 px-2 py-1 rounded"
+            className="bg-highlight  bg-opacity-10 px-2 py-1 rounded"
           >
             967
           </motion.span>
           <motion.span
             variants={itemVariants}
-            className="bg-[#1A2A3A] bg-opacity-10 px-2 py-1 rounded"
+            className="bg-highlight  bg-opacity-10 px-2 py-1 rounded"
           >
             809
           </motion.span>
