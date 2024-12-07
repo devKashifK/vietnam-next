@@ -1,10 +1,12 @@
 "use client";
 
 import { Icon } from "@iconify/react";
-import React from "react";
+import React, { useRef } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Button } from "./button";
+import { Phone } from "lucide-react";
+import { motion, useInView } from "framer-motion";
 
 export default function Footer() {
   const navigate = useRouter();
@@ -13,13 +15,14 @@ export default function Footer() {
     <footer className="w-full mx-auto  text-white pb-14 lg:pb-0">
       <div className="px-10 bg-black w-full bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-20 h-max  py-2 text-xl pt-3  flex  justify-between items-center font-primary tracking-widest text-white">
         <img src="/logo.png" alt="logo" className="w-40" />
-        <a
+        {/* <a
           href="tel:+84869967809"
           className="inline-flex text-black items-center justify-center space-x-2 hover:underline"
         >
           <Icon icon="mdi:phone" className="w-5 h-5" />
           <span> +84 869967809</span>
-        </a>
+        </a> */}
+        <FancyPhone />
       </div>
       <div className=" py-8 mx-auto w-full bg-[#1A2A3A]">
         <div className="grid px-12 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -125,5 +128,72 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+export function FancyPhone() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.5 });
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={containerVariants}
+      className="flex items-center justify-center px-4 py-3  rounded-lg "
+    >
+      <a
+        href="tel:+84869967809"
+        className="group flex items-center gap-3 text-white hover:text-highlight transition-colors duration-300"
+      >
+        <motion.div variants={itemVariants}>
+          <Phone className="w-6 h-6" />
+        </motion.div>
+        <div className="font-sans text-2xl font-bold tracking-wider flex gap-1">
+          <motion.span
+            variants={itemVariants}
+            className="bg-[#1A2A3A]] bg-opacity-20 px-2 py-1 rounded"
+          >
+            +84
+          </motion.span>
+          <motion.span
+            variants={itemVariants}
+            className="bg-[#1A2A3A] bg-opacity-10 px-2 py-1 rounded"
+          >
+            869
+          </motion.span>
+          <motion.span
+            variants={itemVariants}
+            className="bg-[#1A2A3A] bg-opacity-10 px-2 py-1 rounded"
+          >
+            967
+          </motion.span>
+          <motion.span
+            variants={itemVariants}
+            className="bg-[#1A2A3A] bg-opacity-10 px-2 py-1 rounded"
+          >
+            809
+          </motion.span>
+        </div>
+      </a>
+    </motion.div>
   );
 }
