@@ -24,9 +24,24 @@ export default function Yukon() {
                 {pageData[0].title}
               </h3>
 
-              <p className="text-sm text-black/60 text-left">
-                {pageData[0].content}
-              </p>
+              <div>
+                {Array.isArray(pageData[0].content) ? (
+                  <ul className="list-inside flex flex-col gap-2">
+                    {pageData[0].content.map((item, index) => (
+                      <li
+                        key={index}
+                        className="text-sm text-black/60 text-left"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-sm text-black/60 text-left">
+                    {pageData[0].content}
+                  </p>
+                )}
+              </div>
             </div>
           </div>
         </Glass>
@@ -42,6 +57,7 @@ export default function Yukon() {
                   key={index}
                   title={item.title}
                   description={item.description}
+                  readMore={false}
                 />
               );
             })}
@@ -63,9 +79,24 @@ export default function Yukon() {
                   {pageData[1].title}
                 </h3>
 
-                <p className="text-sm text-black/60 text-left">
-                  {pageData[1].content}
-                </p>
+                <div>
+                  {Array.isArray(pageData[1].content) ? (
+                    <ul className="list-inside flex flex-col gap-2">
+                      {pageData[1].content.map((item, index) => (
+                        <li
+                          key={index}
+                          className="text-sm text-black/60 text-left"
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-sm text-black/60 text-left">
+                      {pageData[1].content}
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
           </Glass>
@@ -87,6 +118,7 @@ export default function Yukon() {
                     key={index}
                     title={item.title}
                     description={item.description}
+                    readMore={false}
                   />
                 );
               })}
@@ -109,9 +141,24 @@ export default function Yukon() {
                   {pageData[2].title}
                 </h3>
 
-                <p className="text-sm text-black/60 text-left">
-                  {pageData[2].content}
-                </p>
+                <div>
+                  {Array.isArray(pageData[2].content) ? (
+                    <ul className="list-inside flex flex-col gap-2">
+                      {pageData[2].content.map((item, index) => (
+                        <li
+                          key={index}
+                          className="text-sm text-black/60 text-left"
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-sm text-black/60 text-left">
+                      {pageData[2].content}
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
           </Glass>
@@ -133,6 +180,7 @@ export default function Yukon() {
                     key={index}
                     title={item.title}
                     description={item.description}
+                    readMore={false}
                   />
                 );
               })}
@@ -155,9 +203,24 @@ export default function Yukon() {
                   {pageData[3].title}
                 </h3>
 
-                <p className="text-sm text-black/60 text-left">
-                  {pageData[3].content}
-                </p>
+                <div>
+                  {Array.isArray(pageData[3].content) ? (
+                    <ul className="list-inside flex flex-col gap-2">
+                      {pageData[3].content.map((item, index) => (
+                        <li
+                          key={index}
+                          className="text-sm text-black/60 text-left"
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-sm text-black/60 text-left">
+                      {pageData[3].content}
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
           </Glass>

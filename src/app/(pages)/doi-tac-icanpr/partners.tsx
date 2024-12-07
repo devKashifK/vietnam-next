@@ -38,6 +38,14 @@ export default function Partners() {
       <Container>
         <Glass className="flex flex-col gap-6">
           <Title
+            title="GreenTech Resources & GTR Immigration"
+            subtitle="Công ty mẹ tại Canada"
+            description="Đối tác chiến lược với GreenTech Resources & GTR IImmigration- CIC CANADA JOBS - Ngân Hàng Việc Làm cho người nước ngoài.
+Chuyên tuyển dụng nhiều vị trí, chủ doanh nghiệp hỗ trợ LMIA cho lao động nước ngoài"
+          />
+        </Glass>
+        <Glass className="flex flex-col gap-6">
+          <Title
             title="Study Abroad"
             subtitle="iCANPR"
             description="Khi nói đến du học, Canada là một trong những điểm đến hàng đầu với hệ thống giáo dục đẳng cấp thế giới và môi trường sống an toàn, thân thiện. Để mang đến cơ hội học tập tốt nhất cho sinh viên quốc tế, chúng tôi không ngừng tìm kiếm và xây dựng các mối quan hệ đối tác là các trường, cơ sở đào tạo uy tín."

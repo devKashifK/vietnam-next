@@ -27,11 +27,11 @@ export default function HeroDefault({
         backgroundPosition: "start",
       }}
     >
-      <div className="relative z-10">
+      <div className="relative ">
         <Navbar defaultStyle={true} />
         <div className="flex justify-center items-center w-full h-[55vh] mt-10">
           <div
-            className=" bg-black bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 h-max px-6 text-6xl py-6 flex justify-center items-center font-primary tracking-widest text-white lg:mt-0 mt-[6rem]"
+            className=" bg-black bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 h-max px-6 text-6xl py-6 flex justify-center items-center font-primary tracking-widest text-white lg:mt-0 mt-[6rem] text-center"
             dangerouslySetInnerHTML={{ __html: displayText }}
           />
         </div>

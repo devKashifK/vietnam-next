@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Reddit_Sans_Condensed } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+import CircularMenu from "@/components/ui/action-bar";
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -59,6 +60,7 @@ export default function RootLayout({
           src="https://salesiq.zohopublic.com/widget?wc=siqa0752c8be10fd2a9c8a8ee410ead149d053833bd70cb502f6d44d629c00581b8"
           strategy="afterInteractive"
         />
+        <CircularMenu position="left" />
       </body>
     </html>
   );

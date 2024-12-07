@@ -28,6 +28,7 @@ export default function About() {
             description={
               "Mạng lưới luật sư di trú của chúng tôi sẽ đảm bảo mọi thủ tục pháp lý của bạn được thực hiện chính xác và nhanh chóng, giúp giảm thiểu rủi ro và thời gian chờ đợi."
             }
+            link="/doi-tac-icanpr"
           />
           <HoverCard
             color="bg-green-400"
@@ -36,6 +37,7 @@ export default function About() {
             description={
               "Chúng tôi hợp tác chặt chẽ với nhiều trường đại học, cao đẳng uy tín tại Canada, giúp bạn có nhiều lựa chọn về học tập và các chương trình học bổng"
             }
+            link="/doi-tac-icanpr"
           />
           <HoverCard
             color="bg-sky-400"
@@ -46,6 +48,7 @@ export default function About() {
             description={
               "Mạng lưới luật sư di trú của chúng tôi sẽ đảm bảo mọi thủ tục pháp lý của bạn được thực hiện chính xác và nhanh chóng, giúp giảm thiểu rủi ro và thời gian chờ đợi."
             }
+            link="#"
           />
         </div>
       </Container>

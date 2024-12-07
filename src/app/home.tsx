@@ -29,14 +29,14 @@ export default function Home() {
             title="Các chương trình định cư phù hợp cho người Việt"
             description={
               <div className="flex flex-col gap-3 mt-2">
-                <p className="text-black/50">
+                <p className="text-black/50 text-center">
                   Canada có nhiều chương trình định cư, nhưng phù hợp và lộ
                   trình nhanh nhất cho người Việt là các chương trình AINP
                   (Alberta Immigrant Nominee Program) của tỉnh bang Alberta và
                   SINP (Saskatchewan Immigrant Nominee Program) của tỉnh bang
                   Saskatchewan dành cho lao động lành nghề.
                 </p>
-                <p className="text-black/50">
+                <p className="text-black/50 text-center">
                   Bên cạnh đó, chương trình C11 mở ra cánh cửa nhập cư cho doanh
                   nhân, chủ doanh nghiệp với vốn đầu tư tối thiểu chỉ CAD
                   100.000.

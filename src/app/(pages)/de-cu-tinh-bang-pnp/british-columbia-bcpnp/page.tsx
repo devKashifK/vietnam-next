@@ -25,10 +25,24 @@ export default function BritishColumbia() {
               <h3 className="tracking-wide text-left text-4xl text-black/70">
                 {pageData[0].title}
               </h3>
-
-              <p className="text-sm text-black/60 text-left">
-                {pageData[0].content}
-              </p>
+              <div>
+                {Array.isArray(pageData[0].content) ? (
+                  <ul className="list-inside flex flex-col gap-2">
+                    {pageData[0].content.map((item, index) => (
+                      <li
+                        key={index}
+                        className="text-sm text-black/60 text-left"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-sm text-black/60 text-left">
+                    {pageData[0].content}
+                  </p>
+                )}
+              </div>
             </div>
           </div>
         </Glass>
@@ -43,6 +57,7 @@ export default function BritishColumbia() {
                 key={index}
                 title={item.title}
                 description={item.description}
+                readMore={false}
               />
             );
           })}
@@ -61,6 +76,7 @@ export default function BritishColumbia() {
                   key={index}
                   title={item.title}
                   description={item.description}
+                  readMore={false}
                 />
               );
             })}
@@ -81,9 +97,24 @@ export default function BritishColumbia() {
                 {pageData[2].title}
               </h3>
 
-              <p className="text-sm text-black/60 text-left">
-                {pageData[2].content}
-              </p>
+              <div>
+                {Array.isArray(pageData[2].content) ? (
+                  <ul className="list-inside flex flex-col gap-2">
+                    {pageData[2].content.map((item, index) => (
+                      <li
+                        key={index}
+                        className="text-sm text-black/60 text-left"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-sm text-black/60 text-left">
+                    {pageData[2].content}
+                  </p>
+                )}
+              </div>
             </div>
           </div>
         </Container>
@@ -101,6 +132,7 @@ export default function BritishColumbia() {
                   key={index}
                   title={item.title}
                   description={item.description}
+                  readMore={false}
                 />
               );
             })}
@@ -122,9 +154,24 @@ export default function BritishColumbia() {
                   {pageData[3].title}
                 </h3>
 
-                <p className="text-sm text-black/60 text-left">
-                  {pageData[3].content}
-                </p>
+                <div>
+                  {Array.isArray(pageData[3].content) ? (
+                    <ul className="list-inside flex flex-col gap-2">
+                      {pageData[3].content.map((item, index) => (
+                        <li
+                          key={index}
+                          className="text-sm text-black/60 text-left"
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-sm text-black/60 text-left">
+                      {pageData[3].content}
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
           </Glass>
@@ -172,9 +219,24 @@ export default function BritishColumbia() {
                   {pageData[4].title}
                 </h3>
 
-                <p className="text-sm text-black/60 text-left">
-                  {pageData[4].content}
-                </p>
+                <div>
+                  {Array.isArray(pageData[4].content) ? (
+                    <ul className="list-inside flex flex-col gap-2">
+                      {pageData[4].content.map((item, index) => (
+                        <li
+                          key={index}
+                          className="text-sm text-black/60 text-left"
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-sm text-black/60 text-left">
+                      {pageData[4].content}
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
           </Glass>
@@ -194,6 +256,7 @@ export default function BritishColumbia() {
                   key={index}
                   title={item.title}
                   description={item.description}
+                  readMore={false}
                 />
               );
             })}
@@ -214,10 +277,24 @@ export default function BritishColumbia() {
                 <h3 className="tracking-wide text-left text-4xl text-black/70">
                   {pageData[5].title}
                 </h3>
-
-                <p className="text-sm text-black/60 text-left">
-                  {pageData[5].content}
-                </p>
+                <div>
+                  {Array.isArray(pageData[5].content) ? (
+                    <ul className="list-inside flex flex-col gap-2">
+                      {pageData[5].content.map((item, index) => (
+                        <li
+                          key={index}
+                          className="text-sm text-black/60 text-left"
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-sm text-black/60 text-left">
+                      {pageData[5].content}
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
           </Glass>

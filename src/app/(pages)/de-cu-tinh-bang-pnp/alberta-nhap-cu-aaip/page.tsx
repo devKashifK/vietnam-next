@@ -7,7 +7,6 @@ import Title from "@/components/ui/Title";
 import Glass from "@/lib/helpers";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import TitleWithDoubleBorder from "@/components/ui/title-with-double-border";
-import TitleWithBottomBorder from "@/components/ui/title-with-bottom-border";
 import { ServicesCard } from "@/components/ui/services-card";
 
 export default function Alberta() {
@@ -28,9 +27,24 @@ export default function Alberta() {
                 {pageData[0].title}
               </h3>
 
-              <p className="text-sm text-black/60 text-left">
-                {pageData[0].content}
-              </p>
+              <div>
+                {Array.isArray(pageData[0].content) ? (
+                  <ul className="list-inside flex flex-col gap-2">
+                    {pageData[0].content.map((item, index) => (
+                      <li
+                        key={index}
+                        className="text-sm text-black/60 text-left"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-sm text-black/60 text-left">
+                    {pageData[0].content}
+                  </p>
+                )}
+              </div>
             </div>
           </div>
         </Glass>
@@ -38,13 +52,14 @@ export default function Alberta() {
       <Container className="flex flex-col gap-5 px-10">
         <TitleWithDoubleBorder>{pageData[1].section}</TitleWithDoubleBorder>
         <h4 className="text-4xl text-black/50">{pageData[1].title}</h4>
-        <div className="py-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="py-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
           {pageData[1]?.subsections.map((item, index) => {
             return (
               <ServicesCard
                 key={index}
                 title={item.title}
                 description={item.description}
+                readMore={false}
               />
             );
           })}
@@ -55,13 +70,14 @@ export default function Alberta() {
           <TitleWithDoubleBorder>{pageData[2].section}</TitleWithDoubleBorder>
           <h4 className="text-4xl text-black/50">{pageData[2].title}</h4>
         </div>
-        <div className="py-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="py-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
           {pageData[2]?.subsections.map((item, index) => {
             return (
               <ServicesCard
                 key={index}
                 title={item.title}
                 description={item.description}
+                readMore={false}
               />
             );
           })}
@@ -72,7 +88,7 @@ export default function Alberta() {
           <TitleWithDoubleBorder>{pageData[3].section}</TitleWithDoubleBorder>
           <h4 className="text-4xl text-black/50">{pageData[3].title}</h4>
         </div>
-        <div className="py-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="py-6 grid grid-cols-1 lg:grid-cols-2 ">
           {pageData[3]?.subsections.map((item, index) => {
             return (
               <Feature

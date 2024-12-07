@@ -16,7 +16,7 @@ export default function CTA() {
     <>
       <Container
         effect="none"
-        className="flex flex-col mx-auto  md:flex-row relative z-[10000]"
+        className="flex flex-col mx-auto  md:flex-row relative"
       >
         {/* <Title
           title={
@@ -27,7 +27,7 @@ export default function CTA() {
           cta={"All Solutions"}
         /> */}
         <div className="flex gap-4 min-h-screen  mx-auto">
-          <div className="flex-1 items-center justify-center grid grid-cols-1 md:grid-cols-2 gap-10  relative z-50">
+          <div className="flex-1 items-center justify-center grid grid-cols-1 md:grid-cols-2 gap-10  relative ">
             {CtaDetails.map((item, index) => (
               <CtaCard item={item} key={item.id} />
             ))}

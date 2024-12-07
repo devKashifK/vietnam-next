@@ -27,13 +27,13 @@ export function CardWithImage({
       >
         <div className="absolute w-full h-full top-0 left-0 transition duration-300 group-hover/card:bg-black opacity-20"></div>
 
-        <div className="text content flex justify-end h-full items-start flex-col relative z-10">
+        <div className="text content flex justify-end h-full items-start flex-col relative">
           <TitleWithBottomBorder titleClass="text-white group-hover/card:text-white">
             {title}
           </TitleWithBottomBorder>
           <div className="group-hover/card:flex hidden transition-all duration-150 ease-linear">
             {typeof description === "string" ? (
-              <p className="font-normal text-left  text-sm text-gray-50 group-hover/card:text-white relative z-10 my-4">
+              <p className="font-normal text-left  line-clamp-6 text-sm text-gray-50 group-hover/card:text-white relative my-4">
                 {description}
               </p>
             ) : (
@@ -45,7 +45,7 @@ export function CardWithImage({
               // href={}
               href={href}
               // to={}
-              className="group-hover/card:bg-background px-3 py-1 group-hover/card:flex  hidden text-white rounded-none relative transition-all duration-150 z-10 ease-linear"
+              className="group-hover/card:bg-background px-3 py-1 group-hover/card:flex  hidden text-white rounded-none relative transition-all duration-150 ease-linear"
             >
               Xem thêm
             </Link>

@@ -1,6 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import Link from "next/link";
 import React, { useState } from "react";
 
 export default function HoverCard({
@@ -10,6 +11,7 @@ export default function HoverCard({
   cta,
   color = "bg-background",
   className,
+  link = "#",
 }: {
   icon?: string | React.ReactNode;
   title?: string | React.ReactNode;
@@ -17,10 +19,12 @@ export default function HoverCard({
   cta?: string | React.ReactNode;
   color?: string;
   className?: string;
+  link?: string;
 }) {
   const [isHovered, setIsHovered] = useState(false);
   return (
-    <div
+    <Link
+      href={link}
       className={cn(
         "group flex-1 relative cursor-pointer overflow-hidden bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20 border-background shadow-md  px-6 pt-10 pb-8 ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-md sm:mx-auto sm:max-w-sm sm:px-10",
         className
@@ -62,6 +66,6 @@ export default function HoverCard({
           )}
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

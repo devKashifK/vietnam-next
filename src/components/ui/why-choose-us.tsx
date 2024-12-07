@@ -33,7 +33,7 @@ export default function WhyChooseUs() {
           </div>
         </div>
         <div className="w-full  md:flex-1 flex flex-col gap-3 justify-center items-center h-max">
-          <ul className="flex gap-6 flex-wrap justify-center cursor-pointer ">
+          <ul className="flex gap-6 flex-wrap justify-center">
             <li className="text-center flex gap-1 justify-center bg-background/40 font-primary tracking-widest px-8 w-full md:w-[200px]  flex-col items-center text-white/90 py-6">
               <Icon icon={"iconamoon:profile-light"} className="text-4xl" />
               Đội ngũ tư vấn chuyên nghiệp

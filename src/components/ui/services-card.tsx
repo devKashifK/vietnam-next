@@ -5,9 +5,11 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 export const ServicesCard = ({
   title,
   description,
+  readMore = true,
 }: {
   title?: string | React.ReactNode;
   description?: string;
+  readMore?: boolean;
 }) => {
   return (
     <Glass className="flex flex-col px-10 gap-3 ">
@@ -23,7 +25,7 @@ export const ServicesCard = ({
       </div>
       <p className="text-sm text-left text-black/80">
         {description}
-        <span className="text-black"> ...read more</span>
+        {readMore && <span className="text-black"> ...read more</span>}
       </p>
       {/* <div className="w-full flex justify-start items-start mt-4">
         <div

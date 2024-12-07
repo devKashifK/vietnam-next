@@ -121,7 +121,7 @@ const cacheData = {
     text: "Tính điểm CRS",
     image: "/federalSkill.png",
   },
-  "doanh-nghiep-c11-visa" :{
+  "doanh-nghiep-c11-visa": {
     text: "Chương Trình Doanh nhân diện điều hành doanh nghiệp (C11 - Significant Benefit Program)",
     image: "/federalSkill.png",
   },
