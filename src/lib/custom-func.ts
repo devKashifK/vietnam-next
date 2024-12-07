@@ -107,47 +107,47 @@ const cacheData = {
 
   "thuong-mai-co-tay-nghe-lien-bang": {
     text: "Thương mại tay nghề liên bangs Program",
-    image: "/federalSkill.png",
+    image: "/federalSkill.jpg",
   },
   "cong-nhan-lanh-nghe-lien-bang": {
     text: "Công nhân lành nghề liên bang Program",
-    image: "/federalSkill.png",
+    image: "/federalSkill.jpg",
   },
   "lop-hoc-trai-nghiem-canada": {
     text: "Lớp trải nghiệm Canada",
-    image: "/federalSkill.png",
+    image: "/federalSkill.jpg",
   },
   "tinh-toan-diem-crs": {
     text: "Tính điểm CRS",
-    image: "/federalSkill.png",
+    image: "/federalSkill.jpg",
   },
   "doanh-nghiep-c11-visa": {
     text: "Chương Trình Doanh nhân diện điều hành doanh nghiệp (C11 - Significant Benefit Program)",
-    image: "/federalSkill.png",
+    image: "/federalSkill.jpg",
   },
   ["viec-lam-dinh-cu"]: {
     text: "Việc làm định cư",
-    image: "/federalSkill.png",
+    image: "/federalSkill.jpg",
   },
   ["du-hoc-dinh-cu"]: {
     text: "Du học - định cư",
-    image: "/federalSkill.png",
+    image: "/federalSkill.jpg",
   },
   ["doanh-nghiệp-C11-visa"]: {
     text: "Doanh nghiệp C11 Visa",
-    image: "/federalSkill.png",
+    image: "/federalSkill.jpg",
   },
   "start-up-visa": {
     text: "Start Up Visa",
-    image: "/federalSkill.png",
+    image: "/federalSkill.jpg",
   },
   ["bao-lanh-gia-dinh"]: {
     text: "Bảo lãnh gia đình",
-    image: "/federalSkill.png",
+    image: "/federalSkill.jpg",
   },
   ["khach-hang-thanh-cong"]: {
     text: "Khách hàng thành công",
-    image: "/federalSkill.png",
+    image: "/federalSkill.jpg",
   },
 
   "de-cu-tinh-bang-pnp": {

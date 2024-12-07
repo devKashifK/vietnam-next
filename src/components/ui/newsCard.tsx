@@ -97,7 +97,7 @@ function getRandomImage() {
     "/experince.jpg",
     "/expressEntry.png",
     "/family.jpg",
-    "/federalSkill.png",
+    "/federalSkill.jpg",
     "/foru1.png",
     "/foru2.png",
     "immigrate.jpg",

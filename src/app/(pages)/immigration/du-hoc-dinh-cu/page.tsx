@@ -21,6 +21,7 @@ export default function StudyAbroadSettlement() {
               id={index}
               title={item.title}
               description={truncateTextHeading(item.description, 30)}
+              readMore={false}
             />
           ))}
         </div>

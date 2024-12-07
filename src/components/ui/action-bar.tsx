@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Settings, Mail, Key, Camera, Plus, Phone } from "lucide-react";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 interface CircularMenuProps {
   position: "left" | "right";
@@ -11,13 +12,21 @@ interface CircularMenuProps {
 export default function CircularMenu({
   position = "right",
 }: CircularMenuProps) {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    { icon: Phone, label: "Phone", href: "tel:+84869967809" },
-    { icon: Mail, label: "Messages", href: "mailto:tuvan@icanpr.vn" },
-    { icon: Key, label: "Security", href: "#" },
-    { icon: Camera, label: "SCAN", href: "#" },
+    { icon: "material-symbols:call", label: "Phone", href: "tel:+84869967809" },
+    {
+      icon: "material-symbols-light:mail",
+      label: "Messages",
+      href: "mailto:tuvan@icanpr.vn",
+    },
+    {
+      icon: "simple-icons:zalo",
+      label: "Zalo",
+      href: "https://zalo.me/84869967809",
+    },
+    { icon: "material-symbols:android-camera", label: "SCAN", href: "#" },
   ];
 
   return (
@@ -27,10 +36,10 @@ export default function CircularMenu({
           {isOpen && (
             <>
               {menuItems.map((item, index) => {
-                const baseAngle = -215; // Start from the top-left corner
-                const angleIncrement = 45; // Spread items clockwise
+                const baseAngle = -215;
+                const angleIncrement = 45;
                 const angle = baseAngle + index * angleIncrement;
-                const radius = 80; // Distance from the center
+                const radius = 80;
                 const x = Math.cos((angle * Math.PI) / 180) * radius;
                 const y = Math.sin((angle * Math.PI) / 180) * radius;
 
@@ -51,7 +60,10 @@ export default function CircularMenu({
                     aria-label={item.label}
                   >
                     <a href={item.href}>
-                      <item.icon className="text-white text-xl w-5 h-5" />
+                      <Icon
+                        icon={item.icon}
+                        className="text-white text-xl w-5 h-5"
+                      />
                     </a>
                   </motion.button>
                 );
@@ -62,12 +74,16 @@ export default function CircularMenu({
 
         <motion.button
           className="w-14 h-14 rounded-full bg-[#E54D2E] shadow-lg flex items-center justify-center z-10 relative hover:scale-110 transition-transform"
+          onMouseEnter={() => setIsOpen(true)}
           onClick={() => setIsOpen(!isOpen)}
           animate={{ rotate: isOpen ? 45 : 0 }}
           aria-expanded={isOpen}
           aria-label={isOpen ? "Close menu" : "Open menu"}
         >
-          <Plus className="w-14 h-14 text-white" />
+          <Icon
+            icon={"material-symbols:list-alt-add-rounded"}
+            className="w-14 h-14 text-white"
+          />
         </motion.button>
       </div>
     </div>

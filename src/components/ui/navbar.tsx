@@ -72,12 +72,11 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
             )}
           >
             <Link
-              // to={"/ve-icanpr"}
               href={"/ve-icanpr"}
               className="bg-transparent text-xs font-light flex flex-col gap-0.5 group"
             >
-              <span className={"text-highlight font-semibold text-xs"}>
-                Về Chúng Tôi
+              <span className={"text-[#E54D2E] font-semibold text-[11px]"}>
+                VỀ CHÚNG TÔI
               </span>
               <div className="group-hover:bg-background w-full border border-transparent ease-out duration-150"></div>
             </Link>
@@ -85,8 +84,8 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
               href={"/lmia-map"}
               className="bg-transparent text-xs font-light flex flex-col gap-0.5 group"
             >
-              <span className={"text-highlight font-semibold text-xs"}>
-                Bản đồ LMIA
+              <span className={"text-[#E54D2E] font-semibold text-[11px]"}>
+                BẢN ĐỒ LMIA
               </span>
               <div className="group-hover:bg-background w-full border border-transparent ease-out duration-150"></div>
             </Link>
@@ -94,8 +93,8 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
               href={"/cong-viec-nong"}
               className="bg-transparent text-xs font-light flex flex-col gap-0.5 group"
             >
-              <span className={"text-highlight font-semibold text-xs"}>
-                Công Việc Nóng
+              <span className={"text-[#E54D2E] font-semibold text-[11px]"}>
+                CÔNG VIỆC NÓNG
               </span>
               <div className="group-hover:bg-background w-full border border-transparent ease-out duration-150"></div>
             </Link>
@@ -104,8 +103,8 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
               href={"/tin-tuc"}
               className="bg-transparent text-xs font-light flex flex-col gap-0.5 group"
             >
-              <span className={"text-highlight font-semibold text-xs"}>
-                Tin Tức
+              <span className={"text-[#E54D2E] font-semibold text-[11px]"}>
+                TIN TỨC
               </span>
               <div className="group-hover:bg-background w-full border border-transparent ease-out duration-150"></div>
             </Link>
@@ -114,8 +113,8 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
               href="tel:+84869967809"
               className="text-xs flex font-light flex-col gap-0.5 group"
             >
-              <span className={"text-highlight font-semibold text-xs"}>
-                Tư vấn +84 869967809
+              <span className={"text-[#E54D2E] font-semibold text-[11px]"}>
+                TƯ VẤN +84 869967809
               </span>
 
               <div className="group-hover:bg-background w-full border border-transparent ease-out duration-150"></div>
@@ -124,8 +123,8 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
               href={"mailto:tuvan@icanpr.vn"}
               className="text-xs flex font-light flex-col gap-0.5 group"
             >
-              <span className={"text-highlight font-semibold text-xs"}>
-                tuvan@icanpr.vn
+              <span className={"text-[#E54D2E] font-semibold text-[11px]"}>
+                TUVAN@ICANPR.VN
               </span>
               <div className="group-hover:bg-background w-full border border-transparent ease-out duration-150"></div>
             </Link>
@@ -133,13 +132,12 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
               href={"/immigration/khach-hang-thanh-cong"}
               className="text-xs font-light flex flex-col gap-0.5 group"
             >
-              <span className={"text-highlight font-semibold text-xs"}>
-                Bảo đảm
+              <span className={"text-[#E54D2E] font-semibold text-[11px]"}>
+                BẢO ĐẢM
               </span>
               <div className="group-hover:bg-background w-full border border-transparent ease-out duration-150"></div>
             </Link>
 
-            {/* {!isFixed && ( */}
             <>
               <a
                 href="https://api.whatsapp.com/send?phone=84869967809"
@@ -156,7 +154,6 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
                 <Icon icon={"simple-icons:zalo"} className="text-xl" />
               </a>
             </>
-            {/* )} */}
           </div>
 
           <div className="flex justify-start gap-4 items-center px-0 ml-4 w-full h-20">
@@ -186,7 +183,7 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
                     ) : (
                       <NavigationMenuTrigger
                         className={cn(
-                          "bg-transparent text-xs  data-[state=open]:border-b-highlight data-[state=open]:border-b-2 py-0 data-[state=open]:text-highlight  border-r border-white/40  data-[state=open]:bg-transparent focus:border-highlight rounded-none h-[3.15rem] ml-0 font-bold relative"
+                          "bg-transparent text-[11px]  data-[state=open]:border-b-highlight data-[state=open]:border-b-2 py-0 data-[state=open]:text-highlight  border-r border-white/40  data-[state=open]:bg-transparent focus:border-highlight rounded-none h-[3.15rem] ml-0 font-bold relative"
                         )}
                       >
                         {navItem.path}
@@ -753,7 +750,7 @@ const router = [
   },
 
   {
-    path: "Nhập cư Canada",
+    path: "NHẬP CƯ CANADA",
     // path: "Định cư Canada",
 
     children: [
@@ -812,7 +809,7 @@ const router = [
     ],
   },
   {
-    path: "Chương trình đề cử cấp tỉnh",
+    path: "CHƯƠNG TRÌNH ĐỀ CỬ CẤP TỈNH",
     // path: "Đề cử tỉnh bang PNP"
     children: [
       {
@@ -874,7 +871,7 @@ const router = [
     ],
   },
   {
-    path: "Cuộc sống Canada",
+    path: "CUỘC SỐNG CANADA",
     // path: "Cuộc sống Canada",
     children: [
       {
@@ -974,7 +971,7 @@ const router = [
   },
 
   {
-    path: "Thông tin hữu ích",
+    path: "THÔNG TIN HỮU ÍCH",
     // path: "Thông tin hữu ích",
     children: [
       {
@@ -1003,7 +1000,7 @@ const router = [
     ],
   },
   {
-    path: "Tuyển dụng",
+    path: "TUYỂN DỤNG",
     // path:"Tuyển dụng",
     children: [
       {
