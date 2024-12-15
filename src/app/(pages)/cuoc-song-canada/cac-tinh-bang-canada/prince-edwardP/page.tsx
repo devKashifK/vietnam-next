@@ -35,7 +35,7 @@ export default function PrinceEdwardP() {
               </p>
             </div>
           }
-          image="/province/newbrun/g.png"
+          image="edward-b"
         />
         <CTAWithImage
           flip={true}
@@ -54,7 +54,7 @@ export default function PrinceEdwardP() {
               </p>
             </div>
           }
-          image="/province/newbrun/b.png"
+          image="edward-a"
         />
       </Container>
 
@@ -83,7 +83,7 @@ export default function PrinceEdwardP() {
             những cơ hội mới tại đây.
           </p>
         }
-        image={"/service.jpg"}
+        image={"service"}
       />
     </>
   );

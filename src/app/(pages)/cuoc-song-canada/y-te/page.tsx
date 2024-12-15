@@ -6,7 +6,7 @@ export default function Medical() {
     <div className="flex flex-col gap-10 py-10">
       <CTAWithImage
         title="Medicare— một trong những lý dó Canada có một trong những chất lượng cuộc sống cao nhất thế giới."
-        image="/med.jpg"
+        image="med"
         description={
           <div className="flex flex-col gap-2">
             <p>
@@ -33,7 +33,7 @@ export default function Medical() {
       <CTAWithImage
         flip
         title="Bảo Hiểm Học Sinh Quốc Tế."
-        image="/med2.jpg"
+        image="med2"
         description={
           <div className="flex flex-col gap-2">
             <p>
@@ -53,7 +53,7 @@ export default function Medical() {
       />
 
       <CTADefault
-        image="/business.jpg"
+        image="business"
         subtitle="Chúng tôi có thể giúp bạn"
         description={
           <div className="flex flex-col gap-2 mt-4">

@@ -362,7 +362,7 @@ export default function Quebec() {
       )}
 
       <CTAWithImage
-        image="/canada.jpg"
+        image="quebec-b"
         title={ctaSection[0].title}
         description={ctaSection[0].content}
         subtitle={ctaSection[0].section}
@@ -371,7 +371,7 @@ export default function Quebec() {
       {ctaSection[1] && (
         <CTAWithImage
           flip
-          image="/canada.jpg"
+          image="quebec-a"
           title={ctaSection[1].title}
           description={ctaSection[1].content}
           subtitle={ctaSection[1].section}

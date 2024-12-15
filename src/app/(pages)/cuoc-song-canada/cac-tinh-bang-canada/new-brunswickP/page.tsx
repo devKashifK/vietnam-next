@@ -34,7 +34,7 @@ export default function NewBrunswickP() {
               </p>
             </div>
           }
-          image="/province/newbrun/g.png"
+          image="newbrunswick-b"
         />
         <CTAWithImage
           flip={true}
@@ -54,7 +54,7 @@ export default function NewBrunswickP() {
               </p>
             </div>
           }
-          image="/province/newbrun/b.png"
+          image="newbrunswick-c"
         />
       </Container>
 
@@ -83,7 +83,7 @@ export default function NewBrunswickP() {
             những cơ hội mới tại đây.
           </p>
         }
-        image={"/service.jpg"}
+        image={"service"}
       />
     </>
   );

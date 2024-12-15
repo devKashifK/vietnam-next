@@ -38,7 +38,7 @@ export default function AlbertaP() {
               </p>
             </div>
           }
-          image="/alberta.png"
+          image="alberta"
         />
         <CTAWithImage
           flip={true}
@@ -56,7 +56,7 @@ export default function AlbertaP() {
               </p>
             </div>
           }
-          image="/province/alberta/g.png"
+          image="alberta-a"
         />
         <CTAWithImage
           title={"University of Calgary"}
@@ -73,7 +73,7 @@ export default function AlbertaP() {
               </p>
             </div>
           }
-          image="/province/alberta/d.png"
+          image="alberta-b"
         />
       </Container>
       <Container>
@@ -112,7 +112,7 @@ export default function AlbertaP() {
             những cơ hội mới tại đây.
           </p>
         }
-        image={"/service.jpg"}
+        image={"service"}
       />
     </>
   );

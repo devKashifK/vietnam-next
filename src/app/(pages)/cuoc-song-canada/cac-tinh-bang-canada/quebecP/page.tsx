@@ -35,7 +35,7 @@ export default function QuebecP() {
               </p>
             </div>
           }
-          image="/province/newbrun/g.png"
+          image="quebec-a"
         />
         <CTAWithImage
           flip={true}
@@ -57,7 +57,7 @@ export default function QuebecP() {
               </p>
             </div>
           }
-          image="/province/newbrun/b.png"
+          image="quebec-b"
         />
         <CTAWithImage
           title={"Université de Montréal"}
@@ -74,7 +74,7 @@ export default function QuebecP() {
               </p>
             </div>
           }
-          image="/province/quebec/e.png"
+          image="quebec-a"
         />
       </Container>
       <Container>
@@ -113,7 +113,7 @@ export default function QuebecP() {
             những cơ hội mới tại đây.
           </p>
         }
-        image={"/service.jpg"}
+        image={"service"}
       />
     </>
   );

@@ -38,7 +38,7 @@ export default function ManitobaP() {
               </p>
             </div>
           }
-          image="/province/br/g.png"
+          image="manitoba-c"
         />
         <CTAWithImage
           flip={true}
@@ -60,7 +60,7 @@ export default function ManitobaP() {
               </p>
             </div>
           }
-          image="/british.jpg"
+          image="manitoba-d"
         />
       </Container>
 
@@ -89,7 +89,7 @@ export default function ManitobaP() {
             những cơ hội mới tại đây.
           </p>
         }
-        image={"/service.jpg"}
+        image={"service"}
       />
     </>
   );

@@ -151,7 +151,7 @@ export default function Home() {
               </p>
             </div>
           }
-          image="/aaa.jpg"
+          image="graduate"
           ctaAction={
             "Hãy cùng bắt đầu hành trình thay đổi cuộc sống này cùng nhau nào!"
           }

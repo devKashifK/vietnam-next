@@ -228,7 +228,7 @@ export default function Yukon() {
       )}
 
       <CTAWithImage
-        image="/canada.jpg"
+        image="yukon-b"
         title={ctaSection[0].title}
         description={ctaSection[0].content}
         subtitle={ctaSection[0].section}
@@ -237,7 +237,7 @@ export default function Yukon() {
       {ctaSection[1] && (
         <CTAWithImage
           flip
-          image="/canada.jpg"
+          image="yukon-a"
           title={ctaSection[1].title}
           description={ctaSection[1].content}
           subtitle={ctaSection[1].section}
@@ -246,7 +246,7 @@ export default function Yukon() {
       )}
 
       <CTADefault
-        image="/business.jpg"
+        image="business"
         subtitle="Chúng tôi có thể giúp bạn"
         description={
           <div className="flex flex-col gap-2 mt-4">

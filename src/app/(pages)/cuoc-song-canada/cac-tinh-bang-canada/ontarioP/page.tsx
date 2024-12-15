@@ -38,7 +38,7 @@ export default function OntarioP() {
               </p>
             </div>
           }
-          image="/province/newbrun/g.png"
+          image="ontario-a"
         />
         <CTAWithImage
           flip={true}
@@ -61,7 +61,7 @@ export default function OntarioP() {
               </p>
             </div>
           }
-          image="/province/newbrun/b.png"
+          image="ontario-b"
         />
       </Container>
 
@@ -90,7 +90,7 @@ export default function OntarioP() {
             những cơ hội mới tại đây.
           </p>
         }
-        image={"/service.jpg"}
+        image={"service"}
       />
     </>
   );

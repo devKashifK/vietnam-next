@@ -39,7 +39,7 @@ export default function BrcolumbiaP() {
               </p>
             </div>
           }
-          image="/province/br/g.png"
+          image="br-c"
         />
         <CTAWithImage
           flip={true}
@@ -58,7 +58,7 @@ export default function BrcolumbiaP() {
               </p>
             </div>
           }
-          image="/british.jpg"
+          image="br-a"
         />
       </Container>
       <Container>
@@ -97,7 +97,7 @@ export default function BrcolumbiaP() {
             những cơ hội mới tại đây.
           </p>
         }
-        image={"/service.jpg"}
+        image={"service"}
       />
     </>
   );

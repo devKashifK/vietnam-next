@@ -37,7 +37,7 @@ export default function NovaScotiaP() {
               </p>
             </div>
           }
-          image="/province/newbrun/g.png"
+          image="nova-a"
         />
         <CTAWithImage
           flip={true}
@@ -55,7 +55,7 @@ export default function NovaScotiaP() {
               </p>
             </div>
           }
-          image="/province/newbrun/b.png"
+          image="nova-b"
         />
       </Container>
 

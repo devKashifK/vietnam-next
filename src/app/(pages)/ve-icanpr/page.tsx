@@ -141,7 +141,7 @@ export default function About() {
               </p>
             </div>
           }
-          image="/alberta.png"
+          image="alberta"
           ctaAction={"Xem thêm chương trình AAIP"}
           link="/de-cu-tinh-bang-pnp/alberta-nhap-cu-aaip"
         />
@@ -178,7 +178,7 @@ export default function About() {
               </p>
             </div>
           }
-          image="/saskatchewan.jpg"
+          image="saskatchewan-a"
           ctaAction={"Xem thêm về SINP"}
           link="/de-cu-tinh-bang-pnp/saskatchewan-sinp"
         />
@@ -196,7 +196,7 @@ export default function About() {
             những cơ hội mới tại đây.
           </p>
         }
-        image={"/service.jpg"}
+        image={"service"}
       />
     </>
   );

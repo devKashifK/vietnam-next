@@ -1,6 +1,5 @@
 "use client";
-
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import Navbar from "./navbar";
 import { Button } from "./custom";
 import { Autoplay } from "swiper/modules";
@@ -11,9 +10,10 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useRouter } from "next/navigation";
 import { List, UL } from "./list";
+import MediaItem from "./media-item";
 
 export default function Hero() {
-  const images = ["/aaa.jpg", "/hero-2.jpg", "/hero-3.jpg"];
+  const images = ["homepage-hero", "hero-2", "hero-3"];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [nextImageIndex, setNextImageIndex] = useState(1);
   const [slide, setSlide] = useState(true);
@@ -27,8 +27,8 @@ export default function Hero() {
         setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
         setNextImageIndex((prevIndex) => (prevIndex + 1) % images.length);
         setSlide(true);
-      }, 500); // Slide animation duration
-    }, 5000); // Duration between image changes
+      }, 500);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [images.length]);
@@ -55,12 +55,8 @@ export default function Hero() {
                 modules={[Autoplay]}
               >
                 {images.map((item, index) => (
-                  <SwiperSlide className="!py-0 !px-0" key={index}>
-                    <img
-                      src={`${item}`}
-                      alt={item}
-                      className="w-full h-full "
-                    />
+                  <SwiperSlide className="!py-0 !px-0 " key={index}>
+                    <MediaItem title={item} className={"w-full h-full"} />
                   </SwiperSlide>
                 ))}
               </Swiper>

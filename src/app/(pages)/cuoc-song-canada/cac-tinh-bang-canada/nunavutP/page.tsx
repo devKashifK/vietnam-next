@@ -45,7 +45,7 @@ export default function NunavutP() {
               </p>
             </div>
           }
-          image="/province/newbrun/g.png"
+          image="nunavut-a"
         />
       </Container>
 
@@ -79,7 +79,7 @@ export default function NunavutP() {
             những cơ hội mới tại đây.
           </p>
         }
-        image={"/service.jpg"}
+        image={"service"}
       />
     </>
   );

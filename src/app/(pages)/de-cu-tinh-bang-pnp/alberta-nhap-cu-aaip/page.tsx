@@ -109,7 +109,7 @@ export default function Alberta() {
       </Container>
 
       <CTAWithImage
-        image="/canada.jpg"
+        image="canada"
         title={pageData[4].title}
         description={pageData[4].content}
         subtitle={pageData[4].section}
@@ -117,7 +117,7 @@ export default function Alberta() {
       />
       <CTAWithImage
         flip
-        image="/canada.jpg"
+        image="canada"
         title={pageData[5].title}
         description={pageData[5].content}
         subtitle={pageData[5].section}
@@ -125,7 +125,7 @@ export default function Alberta() {
       />
 
       <CTADefault
-        image="/business.jpg"
+        image="business"
         subtitle="Chúng tôi có thể giúp bạn"
         description={
           <div className="flex flex-col gap-2 mt-4">

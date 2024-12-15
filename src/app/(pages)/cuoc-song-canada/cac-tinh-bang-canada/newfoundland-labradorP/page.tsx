@@ -38,7 +38,7 @@ export default function NewfoundlandLabradorP() {
               </p>
             </div>
           }
-          image="/province/newbrun/g.png"
+          image="newfoundland-a"
         />
         <CTAWithImage
           flip={true}
@@ -55,7 +55,7 @@ export default function NewfoundlandLabradorP() {
               </p>
             </div>
           }
-          image="/province/newbrun/b.png"
+          image="newfoundland-b"
         />
       </Container>
 
@@ -84,7 +84,7 @@ export default function NewfoundlandLabradorP() {
             những cơ hội mới tại đây.
           </p>
         }
-        image={"/service.jpg"}
+        image={"service"}
       />
     </>
   );

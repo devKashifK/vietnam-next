@@ -38,7 +38,7 @@ export default function SaskatchewanP() {
               </p>
             </div>
           }
-          image="/province/newbrun/g.png"
+          image="saskatchewan-b"
         />
         <CTAWithImage
           flip={true}
@@ -56,7 +56,7 @@ export default function SaskatchewanP() {
               </p>
             </div>
           }
-          image="/province/newbrun/b.png"
+          image="saskatchewan-a"
         />
       </Container>
       <Container>
@@ -95,7 +95,7 @@ export default function SaskatchewanP() {
             những cơ hội mới tại đây.
           </p>
         }
-        image={"/service.jpg"}
+        image={"service"}
       />
     </>
   );

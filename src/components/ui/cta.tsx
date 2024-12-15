@@ -10,6 +10,7 @@ import Container from "./container";
 import Glass from "@/lib/helpers";
 import TitleWithBottomBorder from "./title-with-bottom-border";
 import Link from "next/link";
+import MediaItem from "./media-item";
 
 export default function CTA() {
   return (
@@ -61,7 +62,7 @@ export const CtaCard = ({ item }) => {
   return (
     <div className="flex hover:bg-background group flex-col  bg-content px-4 py-4 border-gray-100 shadow-md  sm:w-[420px] md:w-full h-[517px] md:h-max justify-start items-center transition-all duration-100 ease-in-out">
       <div className="w-full">
-        <img src={item.image} alt={item.title} className="w-full" />
+        <MediaItem title={item.image} className="h-[250px] lg:h-[370px]" />
       </div>
       <div className="px-8 flex flex-col gap-2 py-5">
         <div className="flex flex-col gap-0">
@@ -102,7 +103,9 @@ export const CtaCard2 = ({ item, flip }) => {
         <img
           src={item.image}
           alt={item.title}
-          className={cn("h-[250px] w-full lg:h-[220px] bg-cover z-10 relative")}
+          className={cn(
+            "!h-[250px] w-full lg:h-[220px] bg-cover z-10 relative"
+          )}
         />
       </div>
       <div
@@ -148,7 +151,7 @@ export function truncateTextHeading(text) {
 const CtaDetails = [
   {
     id: 1,
-    image: "/ao-dai-traditional-dress-vietnam.jpg",
+    image: "Immigration",
     title: "Nhập cư",
     subtitle:
       "Exploring Canada for immigration is an exciting and life-altering choice.",
@@ -159,7 +162,7 @@ const CtaDetails = [
   },
   {
     id: 2,
-    image: "/work12.jpg",
+    image: "work12",
     title: "Làm việc",
     subtitle:
       "Working in Canada offers a wide array of opportunities for skilled workers from around the world.",
@@ -171,7 +174,7 @@ const CtaDetails = [
   {
     id: 3,
     title: "Kinh doanh",
-    image: "/business.jpg",
+    image: "business",
     subtitle:
       "Đầu tư và xây dựng doanh nghiệp của bạn trong khi đảm bảo quyền thường trú cho gia đình tại Canada. ",
     labels: ["Quebec Investor", "Start Up Visa"],
@@ -182,7 +185,7 @@ const CtaDetails = [
   {
     id: 4,
     title: "Học tập",
-    image: "/mom.jpg",
+    image: "mom",
     subtitle:
       "Học tập tại Canada mang đến nền giáo dục hàng đầu, trải nghiệm văn hóa đa dạng và cơ hội tuyệt vời cho sự phát triển cá nhân và nghề nghiệp.",
     labels: ["High Quality Education", "Diverse Campuses and Programs"],
@@ -194,7 +197,7 @@ const CtaDetails = [
   {
     id: 5,
     title: "Bảo lãnh gia đình",
-    image: "/hero-25.jpg",
+    image: "family12",
     subtitle:
       "Chương trình cho phép các cá nhân đủ điều kiện bảo lãnh người thân gần gũi của họ để định cư lâu dài tại Canada.",
     labels: ["Sponsoring a spouse or partner", "Sponsoring dependent children"],
@@ -205,7 +208,7 @@ const CtaDetails = [
 
   {
     id: 6,
-    image: "/vietnamese-people-a-culture-of-hospitality.jpg",
+    image: "not-sure",
     title: "Chưa chắc chắn?",
     subtitle:
       "Cảm thấy không chắc chắn về hành trình di cư của bạn? Đội ngũ dày dạn kinh nghiệm của ICAN sẵn sàng cung cấp hướng dẫn và hỗ trợ chuyên môn cho bạn!",
@@ -299,7 +302,7 @@ export const CTAWithImage = ({
       )}
     >
       <div
-        className="flex-1 relative h-auto lg:h-[590px]"
+        className="flex-1 relative h-auto lg:h-[620px]"
 
         // style={{
         //   backgroundImage: `url(/hero-3.jpg)`,
@@ -308,11 +311,12 @@ export const CTAWithImage = ({
         // }}
       >
         <div className="bg-[rgba(0, 0, 0, 0.2)] absolute top-0 left-0 z-10 w-full bg-opacity-80 h-auto lg:h-[590px]"></div>
-        <img
+        {/* <img
           src={image}
           className="relative w-full object-cover h-full"
           alt={title}
-        />
+        /> */}
+        <MediaItem title={image} className="w-full h-full" />
       </div>
       <div className="flex-1 bg-white border-t  border-b border-black/5  flex flex-col gap-6 py-10 px-8">
         <TitleWithBottomBorder titleClass="">{subtitle}</TitleWithBottomBorder>

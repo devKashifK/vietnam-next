@@ -41,7 +41,7 @@ export default function NorthwestTerritoriesP() {
               </p>
             </div>
           }
-          image="/province/newbrun/g.png"
+          image="northwest-b"
         />
         <CTAWithImage
           flip={true}
@@ -59,7 +59,7 @@ export default function NorthwestTerritoriesP() {
               </p>
             </div>
           }
-          image="/province/newbrun/b.png"
+          image="northwest-a"
         />
       </Container>
 
@@ -88,7 +88,7 @@ export default function NorthwestTerritoriesP() {
             những cơ hội mới tại đây.
           </p>
         }
-        image={"/service.jpg"}
+        image={"service"}
       />
     </>
   );

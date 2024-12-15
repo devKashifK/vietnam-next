@@ -1,5 +1,6 @@
 // cache.ts
 
+import { fetchMediaByExactTitle } from "@/graphql/lib/query";
 import { text } from "stream/consumers";
 
 // Define the cache object
@@ -22,29 +23,29 @@ const cacheData = {
   "/": "We are a team of professionals who are passionate about helping you achieve",
   about: {
     text: "GreenTech Resources Worldwide <br /> Canada",
-    image: "/about.png",
+    image: "about",
   },
   ["tin-tuc"]: {
     text: "Tin tức",
-    image: "/news.jpg",
+    image: "news",
   },
   ["việc-làm"]: {
     text: "Việc làm",
-    image: "/hero-2.jpg",
+    image: "hero-2",
   },
   ["bảo-lãnh"]: {
     text: "Bảo lãnh",
-    image: "/about.png",
+    image: "about",
   },
 
   ["doanh-nghiep"]: {
     text: "Doanh Nghiệp",
-    image: "/service.jpg",
+    image: "service",
   },
 
   ["tư-vấn"]: {
     text: "Tư vấn",
-    image: "/service.jpg",
+    image: "service",
   },
   ["dịch-vụ"]: {
     text: "Dịch vụ",
@@ -64,294 +65,301 @@ const cacheData = {
   },
   ["ve-icanpr"]: {
     text: "Về iCanPR",
-    image: "/about.png",
+    image: "about",
   },
   ["doi-tac-icanpr"]: {
     text: "Đối tác iCanPR",
-    image: "/service.jpg",
+    image: "service",
   },
   ["lien-he"]: {
     text: "Liên hệ",
-    image: "/successcustomers.png",
+    image: "successcustomers",
   },
-
-  // "our-success-customers": {
-  //   text: "Our Success Stories",
-  //   image: "/successcustomers.png",
-  // },
-
-  // "book-appointment": {
-  //   text: "Book an Appointment",
-  //   image: "/service.jpg",
-  // },
-  // "why-choose-us": {
-  //   text: "Why Choose Us",
-  //   image: "/about.png",
-  // },
-  // "our-service": {
-  //   text: "Our <br /> Services",
-  //   image: "/service.jpg",
-  // },
-  // "certificate-membership": {
-  //   text: "Certification and Membership",
-  //   image: "/about.png",
-  // },
-  // "customer-testimonials": {
-  //   text: "Please Rate Our Quality",
-  //   image: "/testimonial.jpg",
-  // },
   "nhap-canh-nhanh": {
     text: "Nhập cảnh nhanh",
-    image: "/expressEntry.png",
+    image: "expressEntry",
   },
 
   "thuong-mai-co-tay-nghe-lien-bang": {
     text: "Thương mại tay nghề liên bangs Program",
-    image: "/federalSkill.jpg",
+    image: "federalSkill",
   },
   "cong-nhan-lanh-nghe-lien-bang": {
     text: "Công nhân lành nghề liên bang Program",
-    image: "/federalSkill.jpg",
+    image: "federalSkill",
   },
   "lop-hoc-trai-nghiem-canada": {
     text: "Lớp trải nghiệm Canada",
-    image: "/federalSkill.jpg",
+    image: "federalSkill",
   },
   "tinh-toan-diem-crs": {
     text: "Tính điểm CRS",
-    image: "/federalSkill.jpg",
+    image: "federalSkill",
   },
   "doanh-nghiep-c11-visa": {
     text: "Chương Trình Doanh nhân diện điều hành doanh nghiệp (C11 - Significant Benefit Program)",
-    image: "/federalSkill.jpg",
+    image: "federalSkill",
   },
   ["viec-lam-dinh-cu"]: {
     text: "Việc làm định cư",
-    image: "/federalSkill.jpg",
+    image: "federalSkill",
   },
   ["du-hoc-dinh-cu"]: {
     text: "Du học - định cư",
-    image: "/federalSkill.jpg",
+    image: "federalSkill",
   },
   ["doanh-nghiệp-C11-visa"]: {
     text: "Doanh nghiệp C11 Visa",
-    image: "/federalSkill.jpg",
+    image: "federalSkill",
   },
   "start-up-visa": {
     text: "Start Up Visa",
-    image: "/federalSkill.jpg",
+    image: "federalSkill",
   },
   ["bao-lanh-gia-dinh"]: {
     text: "Bảo lãnh gia đình",
-    image: "/federalSkill.jpg",
+    image: "federalSkill",
   },
   ["khach-hang-thanh-cong"]: {
     text: "Khách hàng thành công",
-    image: "/federalSkill.jpg",
+    image: "federalSkill",
   },
 
   "de-cu-tinh-bang-pnp": {
     text: "Provincial Nominee Programs",
-    image: "/immigrationProvincial.png",
+    image: "immigrationProvincial",
   },
   "alberta-nhap-cu-aaip": {
     text: "Chương trình Di Trú Lợi Thế của tỉnh bang Alberta (AAIP)",
-    image: "/alberta.png",
+    image: "alberta",
   },
 
   "british-columbia-bcpnp": {
     text: "Chương trình đề cử tỉnh bang British Columbia (BC PNP)",
-    image: "/british.jpg",
+    image: "br-a",
   },
   "ontario-oinp": {
     text: "Chương trình đề cử tỉnh bang Ontario (OINP)",
-    image: "/ontario.png",
+    image: "ontario-a",
   },
   "manitoba-mpnp": {
     text: "Chương trình Đề Cử Tỉnh Bang Manitoba (MPNP)",
-    image: "/manitoba.png",
+    image: "manitoba-a",
   },
   "new-brunswick-nbpnp": {
     text: "Chương trình đề cử tỉnh bang New Brunswick (NB PNP)",
-    image: "/newbrunswick.png",
+    image: "newbrunswick-a",
   },
-  // "newfoundland-and-labrador": {
-  //   text: "Newfoundland and Labrador",
-  //   image: "/newbrunswick.png",
-  // },
 
-  // "northwest-territories": {
-  //   text: "Northwest Territories",
-  //   image: "/northwestterritories.png",
-  // },
   "nova-scotia-nsnp": {
     text: "CHƯƠNG TRÌNH ĐỀ CỬ TỈNH BANG NOVA SCOTIA",
-    image: "/novaScotia.jpg",
+    image: "nova-a",
   },
   "prince-edward-island-peipnp": {
     text: "Chương trình đề cử tỉnh bang Prince Edward Island (PEI PNP)",
-    image: "/novaScotia.jpg",
+    image: "edward-b",
   },
   "saskatchewan-sinp": {
     text: "Chương trình đề cử tỉnh bang Saskatchewan (SINP)",
-    image: "/saskatchewan.jpg",
+    image: "saskatchewan-a",
   },
   "cuoc-song-canada": {
     text: "Cuộc sống Canada",
-    image: "/canada.jpg",
+    image: "canada",
   },
 
   quebec: {
     text: "Chương Trình Đề Cử Tỉnh Bang Quebec",
-    image: "/northwestterritories.png",
+    image: "quebec-a",
   },
   // path: "các-tỉnh-bang-canada",
 
   "yukon-ynp": {
     text: "Chương trình đề cử tỉnh bang Yukon (YPNP)",
-    image: "/yukon.jpg",
+    image: "yukon-a",
   },
 
   "các-tỉnh-bang-canada": {
     text: "Các Tỉnh Bang Canada",
-    image: "/canada.jpg",
+    image: "canada",
   },
   "tinh-alberta": {
     text: "Tinh Alberta",
-    image: "/alberta.png",
+    image: "alberta-b",
   },
   brcolumbiaP: {
     text: "British Colombia (BC PNP)",
-    image: "/british.jpg",
+    image: "br-b",
   },
   manitobaP: {
     text: "Manitoba Tinh",
-    image: "/manitoba.png",
+    image: "manitoba-b",
   },
   "new-brunswickP": {
     text: "New Brunswick Tinh",
-    image: "/newbrunswick.png",
+    image: "newbrunswick-b",
   },
   "newfoundland-labradorP": {
     text: "Newfoundland and Labrador",
-    image: "/newbrunswick.png",
+    image: "newfoundland-a",
   },
   "northwest-territoriesP": {
     text: "Northwest Territories Tinh",
-    image: "/northwestterritories.png",
+    image: "northwest-a",
   },
   "nova-scotiaP": {
     text: "Nova Scotia Tinh",
-    image: "/novaScotia.jpg",
+    image: "nova-b",
   },
   nunavutP: {
     text: "Nunavut Tinh",
-    image: "/novaScotia.jpg",
+    image: "nunavut-a",
   },
   ontarioP: {
     text: "Ontario Tinh",
-    image: "/ontario.png",
+    image: "ontario-b",
   },
   "prince-edwardP": {
     text: "Prince Edward Island Tinh",
-    image: "/novaScotia.jpg",
+    image: "edward-a",
   },
   saskatchewanP: {
     text: "Saskatchewan Tinh",
-    image: "/saskatchewan.jpg",
+    image: "saskatchewan-b",
   },
   yukonP: {
     text: "Yukon Tinh",
-    image: "/yukon.jpg",
+    image: " yukon-b",
   },
   quebecP: {
     text: "Quebec Tinh",
-    image: "/northwestterritories.png",
+    image: "quebec-b",
   },
   ["moi-truong-canada"]: {
     text: "Môi trường Canada",
-    image: "/about.png",
+    image: "about",
   },
   ["van-hoa-ton-gaio"]: {
     text: "Văn hóa & tôn giáo",
-    image: "/canada.jpg",
+    image: "canada",
   },
   ["giao-duc-canada"]: {
     text: "Giáo dục Canada",
-    image: "/alberta.png",
+    image: "alberta-c",
   },
   ["y-te"]: {
     text: "Y Tế",
-    image: "/canada.jpg",
+    image: "canada",
   },
   ["ty-gia-do-canada"]: {
     text: "Tỷ giá đô Canada",
-    image: "/about.png",
+    image: "about",
   },
   ["chinh-sach-thue"]: {
     text: "Chính sách thuế",
-    image: "/saskatchewan.jpg",
+    image: "saskatchewan-a",
   },
   ["cau-hoi-thuong-gap"]: {
     text: "Câu hỏi thường gặp",
-    image: "/about.png",
+    image: "about",
   },
   ["trang-web-huu-ich"]: {
     text: "Trang web hữu ích",
-    image: "/about.png",
+    image: "about",
   },
   ["thuat-ngu-trong-di-tru"]: {
-    image: "/about.png",
+    image: "about",
     text: "Thuật ngữ trong di trú",
   },
   ["CLB-la-gi"]: {
     text: "CLB là gì? Cách quy đổi điểm đương đương?",
-    image: "/canada.jpg",
+    image: "canada",
   },
   ["lam-viec-cho-icanpr"]: {
     text: "Làm việc cho iCanPR",
-    image: "/job-bann.jpg",
+    image: "job-bann",
   },
   ["tong-hợp-viec-lam-canada"]: {
     text: "Tổng hợp việc làm Canada",
-    image: "/about.png",
+    image: "about",
   },
   ["cong-nhan-trai-ga"]: {
     text: "Công nhân trại gà",
-    image: "/about.png",
+    image: "about",
   },
   ["dau-bep-mon-au"]: {
     text: "Đầu bếp Món Âu",
-    image: "/cook.png",
+    image: "cook",
   },
   ["lmia-map"]: {
     text: "LMIA Map",
-    image: "/lmia.jpg",
+    image: "lmia",
   },
   ["cong-viec-nong"]: {
     text: "Cong Viec Nong",
-    image: "/work.jpg",
+    image: "work",
   },
   ["dinh-cu-canada"]: {
     text: "Định cư Canada",
-    image: "/immigration-cannada.jpg",
+    image: "immigration-cannada",
   },
   ["book-appointment"]: {
     text: "Book Appointment",
-    image: "/book.webp",
+    image: "work",
   },
 };
-export const getCachedData = (pathname: string) => {
-  const sanitizedPath = pathname.replace(/^\/|\/$/g, ""); // removes leading and trailing slashes
-  console.log(sanitizedPath, "sanitizedPath"); // helpful for debugging
+export const getCachedData = async (pathname) => {
+  console.log(pathname, "checkPathanme");
+  const sanitizedPath = pathname.replace(/^\/|\/$/g, ""); // Sanitize the path
 
-  if (cacheData[sanitizedPath]) {
-    console.log(cacheData[sanitizedPath]);
-    return cacheData[sanitizedPath];
+  // Define default values for missing entries
+  const defaultText = `Default text for ${sanitizedPath}`;
+  const fallbackImage = "/fallback-image.jpg";
+  console.log(pathname, cacheData[pathname], "sanitizedPath23");
+
+  try {
+    // Attempt to fetch the resolved image
+    const resolvedImage = await getImage(cacheData[pathname].image);
+
+    return {
+      text: cacheData[pathname].text, // You can adjust how text is generated
+      image: resolvedImage || fallbackImage, // Use resolved image or fallback
+    };
+  } catch (error) {
+    console.error(`Error resolving data for: ${sanitizedPath}`, error);
+
+    // Return fallback values in case of errors
+    return {
+      text: defaultText,
+      image: fallbackImage,
+    };
+  }
+};
+
+const imageCache = {};
+
+/**
+ * Fetches the image URL for a given title and caches it.
+ * @param {string} title - The title of the image.
+ * @returns {Promise<string>} - The image URL or fallback.
+ */
+export async function getImage(title) {
+  if (imageCache[title]) {
+    return imageCache[title];
   }
 
-  return {
-    text: "",
-    image: "/news.jpg",
-  };
-};
+  try {
+    const image = await fetchMediaByExactTitle(title);
+    if (image?.sourceUrl) {
+      imageCache[title] = image.sourceUrl; // Cache the image
+      return image.sourceUrl;
+    }
+
+    // Fallback for missing images
+    const fallbackImage = "/fallback-image.jpg";
+    imageCache[title] = fallbackImage; // Cache the fallback
+    return fallbackImage;
+  } catch (error) {
+    return "/fallback-image.jpg"; // Return fallback on error
+  }
+}

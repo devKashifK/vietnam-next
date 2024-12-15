@@ -62,7 +62,7 @@ export default function CanadaImmigration() {
             </p>
           </div>
         }
-        image="/aaa.jpg"
+        image="aaa"
         ctaAction={"Du HOC DINH CU CANADA"}
         link="/immigration/du-hoc-dinh-cu"
       />
@@ -86,7 +86,7 @@ export default function CanadaImmigration() {
             </p>
           </div>
         }
-        image="/about.png"
+        image="about"
         ctaAction={"Việc làm định cư Canada"}
         link="/immigration/nhap-canh-nhanh/cong-nhan-lanh-nghe-lien-bang"
       />
@@ -114,7 +114,7 @@ export default function CanadaImmigration() {
             </p>
           </div>
         }
-        image="/service.jpg"
+        image="service"
         ctaAction={"Chương trình SUV"}
         link="/immigration/start-up-visa"
       />
@@ -136,14 +136,14 @@ export default function CanadaImmigration() {
             </p>
           </div>
         }
-        image="/vietnamese-people-a-culture-of-hospitality.jpg"
+        image="yukon-a"
         ctaAction={"Chương trình SUV"}
         link="/immigration/start-up-visa"
       />
       <CTADefault
         title="Chúng tôi có thể giúp bạn"
         description="iCan PR hiểu rằng di trú/ định cư tại Canada là một hành trình nhiều thay đổi và thách thức. Mục tiêu và nhiệm vụ của chúng tôi trở thành đối tác đáng tin cậy của bạn trong hành trình này."
-        image="/service.jpg"
+        image="service"
         descriptionClassName="text-white text-center"
       />
     </>

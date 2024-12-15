@@ -258,7 +258,7 @@ export default function NewBrunswick() {
       )}
 
       <CTAWithImage
-        image="/canada.jpg"
+        image="newbrunswick-b"
         title={ctaSection[0].title}
         description={ctaSection[0].content}
         subtitle={ctaSection[0].section}
@@ -267,7 +267,7 @@ export default function NewBrunswick() {
       {ctaSection[1] && (
         <CTAWithImage
           flip
-          image="/canada.jpg"
+          image="newbrunswick-a"
           title={ctaSection[1].title}
           description={ctaSection[1].content}
           subtitle={ctaSection[1].section}
@@ -276,7 +276,7 @@ export default function NewBrunswick() {
       )}
 
       <CTADefault
-        image="/business.jpg"
+        image="business"
         subtitle="Chúng tôi có thể giúp bạn"
         description={
           <div className="flex flex-col gap-2 mt-4">

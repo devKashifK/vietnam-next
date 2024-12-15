@@ -277,7 +277,7 @@ export default function Manitoba() {
       )}
 
       <CTAWithImage
-        image="/canada.jpg"
+        image="manitoba-b"
         title={ctaSection[0].title}
         description={ctaSection[0].content}
         subtitle={ctaSection[0].section}
@@ -285,7 +285,7 @@ export default function Manitoba() {
       />
       <CTAWithImage
         flip
-        image="/canada.jpg"
+        image="graduate"
         title={ctaSection[1].title}
         description={ctaSection[1].content}
         subtitle={ctaSection[1].section}

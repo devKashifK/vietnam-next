@@ -11,7 +11,7 @@ export default function DoanhNghiepC11VisaPage() {
     <div className="py-10 flex flex-col gap-10">
       <CTAWithImage
         desClassName="text-left h-68"
-        image="/hero-2.jpg"
+        image="hero-2"
         title="Tổng Quan Chương Trình"
         description={
           <div className="flex flex-col gap-2 text-left">

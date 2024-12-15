@@ -55,7 +55,7 @@ export default function YukonP() {
               </p>
             </div>
           }
-          image="/province/newbrun/g.png"
+          image="yukon-a"
         />
       </Container>
 
@@ -84,7 +84,7 @@ export default function YukonP() {
             những cơ hội mới tại đây.
           </p>
         }
-        image={"/service.jpg"}
+        image={"service"}
       />
     </>
   );
