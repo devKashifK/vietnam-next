@@ -23,8 +23,13 @@ export default function Home() {
       <Hero />
       <div className="py-10 sm:py-10 flex flex-col gap-12">
         {/* <CTA /> */}
-        <NewsShowcase />
         {/* <WhyChooseUs /> */}
+        <Container effect="none" className="w-full py-16 ">
+          {" "}
+          <div className="flex gap-5">
+            <NewsShowcase />
+          </div>
+        </Container>
         <Container className="gap-10">
           <Title
             subtitle="Chúng tôi tự tin có thể giúp giấc mơ Canada của gia đình bạn thành sự thật"

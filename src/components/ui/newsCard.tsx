@@ -45,7 +45,7 @@ export const NewsFeedCard = ({
         >
           <div>
             {" "}
-            <p className="text-2xl text-wrap text-black/60 font-semibold text-left">
+            <p className="text-2xl text-wrap text-black/60 font-semibold text-left line-clamp-2">
               {title}
             </p>
             {/* {subTitle && (
@@ -58,7 +58,7 @@ export const NewsFeedCard = ({
                 dangerouslySetInnerHTML={{
                   __html: truncateTextHeading(description, 40),
                 }}
-                className="text-sm font-normal text-left pb-5 h-[100px] text-stone-700"
+                className="text-sm font-normal mt-4 text-left pb-5 h-[100px] text-stone-700"
               />
             )}
           </div>

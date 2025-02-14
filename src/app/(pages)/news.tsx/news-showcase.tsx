@@ -5,7 +5,6 @@ import { NewsFeedCard } from "@/components/ui/newsCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { supabase } from "@/supabaseClient";
-import { LoadingAnimation } from "../tin-tuc/page";
 
 export default function NewsShowcase() {
   const [data, setData] = useState([]);
@@ -60,53 +59,76 @@ export default function NewsShowcase() {
     fetchNews();
   }, []);
 
-  if (loading) return <LoadingAnimation />;
+  if (loading)
+    return (
+      <div className="min-h-[450px] w-full flex items-center justify-center">
+        <div className="relative flex flex-col items-center gap-4">
+          <div className="relative">
+            <div className="w-16 h-16 border-4 border-primary/20 rounded-full" />
+            <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin absolute top-0 left-0" />
+          </div>
+          <div className="flex flex-col items-center gap-1">
+            <span className="text-primary font-medium">Loading news</span>
+            <span className="flex gap-1">
+              <span className="w-2 h-2 rounded-full bg-primary animate-bounce [animation-delay:-0.3s]" />
+              <span className="w-2 h-2 rounded-full bg-primary animate-bounce [animation-delay:-0.15s]" />
+              <span className="w-2 h-2 rounded-full bg-primary animate-bounce" />
+            </span>
+          </div>
+        </div>
+      </div>
+    );
   return (
-    <Swiper
-      spaceBetween={30}
-      // slidesPerView={2}
-      breakpoints={{
-        // When the viewport is >= 768px
-        768: {
-          slidesPerView: 3,
-        },
-
-        // When the viewport is >= 320px
-        320: {
-          slidesPerView: 1,
-        },
-      }}
-      autoplay={{ delay: 2500, disableOnInteraction: false }}
-      className="flex flex-row"
-      style={{ width: "100%" }}
-    >
-      {data &&
-        data.map((item, index) => {
-          // const formattedDate = new Date(item.created_at).toLocaleDateString(
-          //   undefined,
-          //   {
-          //     year: "numeric",
-          //     month: "long",
-          //     day: "numeric",
-          //   }
-          // );
-          return (
-            <SwiperSlide key={index} className="w-[480px]">
+    <div className="w-full py-8">
+      <Swiper
+        spaceBetween={30}
+        breakpoints={{
+          1024: {
+            slidesPerView: 3,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          320: {
+            slidesPerView: 1,
+          },
+        }}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        }}
+        modules={[Autoplay]}
+        className="flex flex-row"
+        style={{ width: "100%", height: "100%" }}
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {data?.map((item, index) => (
+            <SwiperSlide
+              key={index}
+              className="h-full flex items-stretch"
+              style={{
+                minHeight: "450px",
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
               <NewsFeedCard
                 title={item.title}
                 subTitle={item.subTitle}
-                // author={item.author && item.author.toUpperCase()}
                 date={item.date}
                 description={item.content}
                 image={item.image}
                 key={item.id}
                 id={item.id}
                 slug={item.slug}
+                className="h-full flex flex-col"
               />
             </SwiperSlide>
-          );
-        })}
-    </Swiper>
+          ))}
+        </div>
+      </Swiper>
+    </div>
   );
 }
 

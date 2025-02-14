@@ -8,6 +8,98 @@ import { Button } from "./button";
 import { Phone } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 
+const provinces = [
+  {
+    path: "/de-cu-tinh-bang-pnp/alberta-nhap-cu-aaip",
+    element: "Alberta Nhap Cu (AAIP)",
+  },
+
+  {
+    path: "/de-cu-tinh-bang-pnp/british-columbia-bcpnp",
+    element: "British Colombia (BC PNP)",
+  },
+  {
+    path: "/de-cu-tinh-bang-pnp/ontario-oinp",
+    element: "Ontario (OINP)",
+  },
+
+  {
+    path: "/de-cu-tinh-bang-pnp/manitoba-mpnp",
+    element: "Manitoba (MPNP)",
+  },
+  {
+    path: "/de-cu-tinh-bang-pnp/new-brunswick-nbpnp",
+    element: "New Brunswick (NBPNP)",
+  },
+  // {
+  //   path: "/de-cu-tinh-bang-pnp/newfoundland-and-labrador",
+  //   element: "Newfoundland and Labrador",
+  // },
+
+  // {
+  //   path: "/de-cu-tinh-bang-pnp/northwest-territories",
+  //   element: "Northwest Territories",
+  // },
+  {
+    path: "/de-cu-tinh-bang-pnp/nova-scotia-nsnp",
+    element: "Nova Scotia (NSNP)",
+  },
+  // {
+  //   path: "/de-cu-tinh-bang-pnp/nanuvut",
+  //   element: "Nanuvut",
+  // },
+
+  {
+    path: "/de-cu-tinh-bang-pnp/prince-edward-island-peipnp",
+    element: "Prince Edward Island (PEI PNP)",
+  },
+  {
+    path: "/de-cu-tinh-bang-pnp/quebec",
+    element: "Quebec",
+  },
+  {
+    path: "/de-cu-tinh-bang-pnp/saskatchewan-sinp",
+    element: "Saskatchewan (SINP)",
+  },
+  {
+    path: "/de-cu-tinh-bang-pnp/yukon-ynp",
+    element: "Yukon (YNP)",
+  },
+];
+const services = [
+  {
+    id: "settle-in-canada",
+    title: "Định cư Canada",
+    description:
+      "Chọn Canada để định cư là một quyết định thú vị và thay đổi cuộc đời. Canada nổi tiếng với chất lượng cuộc sống, sự đa dạng văn hóa và hứa hẹn nhiều cơ hội. Hãy cùng tìm kiếm lựa chọn định cư phù hợp nhất cho gia đình bạn!",
+    ctaText: "Tìm hiểu thêm",
+    ctaLink: "/immigration/dinh-cu-canada",
+  },
+  {
+    id: "work-in-canada",
+    title: "Làm việc tại Canada",
+    description:
+      "Canada với nhiều cơ hội việc làm đa dạng, thúc đẩy sự phát triển nghề nghiệp và trải nghiệm toàn cầu. Là một quốc gia phồn thịnh và thân thiện đang chào đón các chuyên gia có kỹ năng và người lao động thời vụ.",
+    ctaText: "Khám phá cơ hội",
+    ctaLink: "/immigration/nhap-canh-nhanh/cong-nhan-lanh-nghe-lien-bang",
+  },
+  {
+    id: "study-in-canada",
+    title: "Du học tại Canada",
+    description:
+      "Học tập tại Canada chắc chắn mang đến cho bạn một giáo dục hàng đầu thế giới, sự đa dạng văn hóa phong phú và một lối đi tới tương lai đầy triển vọng, tất cả trong một môi trường thân thiện và mở cửa, đón nhận sự đa dạng.",
+    ctaText: "Tìm hiểu chương trình",
+    ctaLink: "/immigration/du-hoc-dinh-cu",
+  },
+  {
+    id: "family-sponsorship",
+    title: "Bảo Lãnh",
+    description:
+      "Với kiến thức chuyên sâu về luật di trú và quy trình đoàn tụ gia đình tại Canada, chúng tôi cam kết hỗ trợ bạn trong việc kết nối và tái hợp với người thân yêu của mình, tạo nên những khoảnh khắc đáng trân trọng và ấm áp tại Canada.",
+    ctaText: "Xem thêm chi tiết",
+    ctaLink: "/immigration/family-sponsorship",
+  },
+];
 export default function Footer() {
   const navigate = useRouter();
 
@@ -25,10 +117,13 @@ export default function Footer() {
         <FancyPhone />
       </div>
       <div className=" py-8 mx-auto w-full bg-[#1A2A3A]">
-        <div className="grid px-12 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid px-12 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Logo and Links */}
           <div className="space-y-4  ">
-            <nav className="grid gap-2 text-sm">
+            <nav className="grid gap-1 text-sm">
+              <Link href="/ve-icanpr" className="hover:underline pt-3">
+                <h3 className="text-lg font-semibold">Ve iCanPR</h3>
+              </Link>
               <Link href="/ve-icanpr" className="hover:underline">
                 Giới thiệu về công ty iCanPR
               </Link>
@@ -39,12 +134,45 @@ export default function Footer() {
                 Đối tác iCanPR
               </Link>
               <Link
+                href="/immigration/dinh-cu-canada"
+                className="hover:underline pt-3"
+              >
+                <h3 className="text-lg font-semibold">
+                  Dịch vụ nổi bật của ICanPR
+                </h3>
+              </Link>
+
+              {services.map((service, index) => (
+                <Link href={service.ctaLink} key={index}>
+                  {service.title}
+                </Link>
+              ))}
+
+              {/* <Link
                 href="/cuoc-song-canada/cac-tinh-bang-canada/tinh-alberta"
                 className="hover:underline"
               >
                 Chương trình tỉnh bang
-              </Link>
+              </Link> */}
             </nav>
+          </div>
+
+          <div className="space-y-4">
+            <Link
+              href="/cuoc-song-canada/cac-tinh-bang-canada/tinh-alberta"
+              className="hover:underline"
+            >
+              <h3 className="text-lg font-semibold"> Chương trình tỉnh bang</h3>
+            </Link>
+            <div className="space-y-2 text-sm">
+              {provinces.map((province) => (
+                <Link href={province.path} key={province.path}>
+                  <ul className="hover:underline py-0.5">
+                    <li>{province.element}</li>
+                  </ul>
+                </Link>
+              ))}
+            </div>
           </div>
 
           {/* Contact Information */}

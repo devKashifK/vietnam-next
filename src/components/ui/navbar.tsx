@@ -333,17 +333,17 @@ export const mobileConfig = [
     apis: [
       {
         provider: "internal",
-        name: "Công nhân lành nghề liên bang",
+        name: "Lao Động Lành Nghề Liên Bang (FSW)",
         path: "/immigration/nhap-canh-nhanh/cong-nhan-lanh-nghe-lien-bang",
       },
       {
         provider: "internal",
-        name: "Thương mại tay nghề liên bang",
+        name: "Lao Động Tay Nghề Liên Bang (FST)",
         path: "/immigration/nhap-canh-nhanh/thuong-mai-co-tay-nghe-lien-bang",
       },
       {
         provider: "internal",
-        name: "Lớp trải nghiệm Canada",
+        name: "Canada Experience Class (CEC)",
         path: "/immigration/nhap-canh-nhanh/lop-hoc-trai-nghiem-canada",
       },
       {
