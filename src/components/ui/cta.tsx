@@ -123,7 +123,7 @@ export const CtaCard2 = ({ item, flip }) => {
 
         <p className="text-xs text-left text-black/80">
           {truncateText(item.description)}...{" "}
-          <span className="text-black">Read More</span>
+          <span className="text-black">Xem thêm</span>
         </p>
         <div className="w-full flex justify-end items-end mt-4">
           <Link

@@ -10,7 +10,7 @@ export function InfiniteMovingCardsDemo() {
   return (
     <Container effect="slide-left">
       <Title
-        subtitle="Khách Hàng Hạnh Phúc Nói Gì"
+        subtitle="Phản hồi từ khách hàng"
         title="Câu Chuyện Thực Tế"
         cta="All Stories"
         to="/customer-testimonials"

@@ -67,7 +67,9 @@ export default function Footer() {
                   +84 869967809
                 </a>
               </p>
-              <p>Giờ làm việc: 9:00 - 5:00, Thứ 2- Thứ 6, 9-12:00 sáng Thứ 7</p>
+              <p>
+                Giờ làm việc: 8:30 - 5:30, Thứ 2- Thứ 6 Thứ 7: vui lòng đặt hẹn
+              </p>
             </div>
           </div>
 
@@ -97,10 +99,7 @@ export default function Footer() {
                 )
               )}
             </div>
-            <p className="text-sm">
-              Nhận các nguồn lực và công cụ có thể giúp bạn chuẩn bị cho tương
-              lai. Bạn có thể hủy bất cứ lúc nào.
-            </p>
+            <p className="text-sm">Đăng ký nhận thông tin từ iCanPR</p>
             <form className="space-y-2">
               <input
                 type="email"

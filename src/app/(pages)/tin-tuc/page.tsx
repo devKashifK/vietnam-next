@@ -129,7 +129,7 @@ function NewsGrid() {
                     href={`/tin-tuc/${post.slug}`}
                     className="border bg-gray-200 text-sm px-2 py-0.5 rounded-md"
                   >
-                    Read More
+                    Xem thêm
                   </Link>
                 </CardFooter>
               </Card>

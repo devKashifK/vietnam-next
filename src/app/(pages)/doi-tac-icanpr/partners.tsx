@@ -64,7 +64,7 @@ Chuyên tuyển dụng nhiều vị trí, chủ doanh nghiệp hỗ trợ LMIA c
       </Container>
       <CTADefault
         image="/service.jpg"
-        subtitle="Chúng tôi có thể giúp bạn"
+        title="Chúng tôi có thể giúp bạn"
         description={
           <div className="flex flex-col gap-2 mt-4">
             <p className="text-lg text-white">

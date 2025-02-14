@@ -11,6 +11,20 @@ export default function NewsShowcase() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  function formatDate(isoString) {
+    const date = new Date(isoString);
+    return date
+      .toLocaleString("en-GB", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+      })
+      .replace(/\//g, "-"); // Replace / with - for desired format
+  }
+
   useEffect(() => {
     const fetchNews = async () => {
       try {
@@ -28,7 +42,7 @@ export default function NewsShowcase() {
           subTitle: post.excerpt.rendered,
           content: post.excerpt.rendered,
           author: post.author,
-          date: post.date,
+          date: formatDate(post.date),
           slug: post.slug,
           image:
             post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||

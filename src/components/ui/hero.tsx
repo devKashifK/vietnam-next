@@ -68,21 +68,27 @@ export default function Hero() {
                   Đạt được gia đình của bạn Canada <br />
                   <strong className="text-background ">
                     {/* dreams with us */}
-                    ước mơ cùng chúng tôi
+                    của gia đình bạn cùng iCanPR
                   </strong>
                   <br />
                 </p>
               </div>
 
               <p className="text-left text-base -mt-2 w-full text-black">
-                ICanPR là công ty chuyên môi giới tuyển dụng và tư vấn nhập cư
-                hàng đầu tại Việt Nam
+                iCanPR cung cấp dịch vụ hỗ trợ các cá nhân và gia đình có nhu
+                cầu định cư Canada dễ dàng tiếp cận thông tin, cơ hội định cư
+                Canada diện việc làm cho lao động có tay nghề, thành lập doanh
+                nghiệp / đầu tư định cư cho doanh nhân và lộ trình du học – định
+                cư Canada.
               </p>
 
               <p className="text-left text-base -mt-2 w-full text-black">
-                Chúng tôi tự tin có khả năng cung cấp giải pháp, giúp rút ngắn
+                {/* Chúng tôi tự tin có khả năng cung cấp giải pháp, giúp rút ngắn
                 hành trình đến với đất nước Canada yên bình và xinh đẹp cho cả
-                gia đình:
+                gia đình: */}
+                iCanPR giúp bạn tối ưu lộ trình, chuẩn bị kỹ lưỡng hồ sơ, giải
+                pháp rút ngắn hành trình đến với đất nước Canada yên bình và
+                xinh đẹp cho cả gia đình:
               </p>
 
               <UL>
@@ -119,7 +125,7 @@ export default function Hero() {
                       icon={"teenyicons:appointments-outline"}
                       className="-mt-0.5"
                     />
-                    Đặt một cuộc hẹn
+                    Tư Vấn Miễn Phí
                   </span>
                 </Button>
               </div>

@@ -39,24 +39,30 @@ export const NewsFeedCard = ({
             <span className="">AUG</span>
           </span> */}
         </div>
-        <div className="px-10 flex flex-col gap-6 h-[280px] py-8 bg-content  ">
-          <p className="text-2xl text-black/60 font-semibold text-left">
-            {truncateTextHeading(title)}
-          </p>
-          {/* {subTitle && (
+        <div
+          className="px-10 flex flex-col gap-6 h-[320px] py-8 bg-content justify-between 
+        "
+        >
+          <div>
+            {" "}
+            <p className="text-2xl text-wrap text-black/60 font-semibold text-left">
+              {title}
+            </p>
+            {/* {subTitle && (
             <h5 className="text-lg font-normal text-red-600 text-left pb-3">
               {subTitle}
             </h5>
           )} */}
-          {description && (
-            <p
-              dangerouslySetInnerHTML={{
-                __html: truncateTextHeading(description, 40),
-              }}
-              className="text-sm font-normal text-left pb-5 h-[100px] text-stone-700"
-            />
-          )}
-          <div className="flex flex flex-col gap-2 text-stone-500 pb-4 text-xs">
+            {description && (
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: truncateTextHeading(description, 40),
+                }}
+                className="text-sm font-normal text-left pb-5 h-[100px] text-stone-700"
+              />
+            )}
+          </div>
+          <div className="flex  flex-col gap-2 text-stone-500 pb-4 text-xs ">
             <div className="flex gap-1 ">
               <Icon
                 icon={"carbon:time"}
@@ -75,7 +81,7 @@ export const NewsFeedCard = ({
                 href={`/tin-tuc/${slug}`}
                 className="bg-background flex justify-center items-center text-slate-50 px-3 py-1 text-sm text-left w-[50%]"
               >
-                Read More
+                Xem thêm
               </Link>
             </div>
           </div>

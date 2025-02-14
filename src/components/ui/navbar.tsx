@@ -94,7 +94,8 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
               className="bg-transparent text-xs font-light flex flex-col gap-0.5 group"
             >
               <span className={"text-[#E54D2E] font-semibold text-[11px]"}>
-                CÔNG VIỆC NÓNG
+                {/* CÔNG VIỆC NÓNG */}
+                BẢN ĐỒ VIỆC LÀM
               </span>
               <div className="group-hover:bg-background w-full border border-transparent ease-out duration-150"></div>
             </Link>
@@ -109,7 +110,7 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
               <div className="group-hover:bg-background w-full border border-transparent ease-out duration-150"></div>
             </Link>
 
-            <Link
+            {/* <Link
               href="tel:+84869967809"
               className="text-xs flex font-light flex-col gap-0.5 group"
             >
@@ -127,13 +128,14 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
                 TUVAN@ICANPR.VN
               </span>
               <div className="group-hover:bg-background w-full border border-transparent ease-out duration-150"></div>
-            </Link>
+            </Link> */}
             <Link
               href={"/immigration/khach-hang-thanh-cong"}
               className="text-xs font-light flex flex-col gap-0.5 group"
             >
               <span className={"text-[#E54D2E] font-semibold text-[11px]"}>
-                BẢO ĐẢM
+                {/* BẢO ĐẢM */}
+                KHÁCH HÀNG THÀNH CÔNG
               </span>
               <div className="group-hover:bg-background w-full border border-transparent ease-out duration-150"></div>
             </Link>
@@ -321,7 +323,7 @@ export const mobileConfig = [
     ],
   },
   {
-    name: "Nhập cảnh nhanh",
+    name: "Express Entry",
     icon: "mdi:airplane-takeoff",
     heading: "font-semibold text-red-800",
     pointer: "bg-red-700",
@@ -750,12 +752,32 @@ const router = [
   },
 
   {
-    path: "NHẬP CƯ CANADA",
+    path: "ĐỊNH CƯ CANADA",
     // path: "Định cư Canada",
 
     children: [
       {
-        path: "Nhập cảnh nhanh",
+        path: "/immigration/viec-lam-dinh-cu",
+        element: "Việc làm định cư",
+        // element: "Immigration work",
+      },
+      {
+        path: "/immigration/du-hoc-dinh-cu",
+        element: "Du học – định cư",
+        // element: "Study abroad - settlement",
+      },
+      {
+        path: "/immigration/doanh-nghiep-c11-visa",
+        element: "Doanh nghiệp C11 Visa",
+        // element: "C11 Visa Business",
+      },
+      {
+        path: "/immigration/start-up-visa",
+        element: "Visa khởi nghiệp",
+      },
+
+      {
+        path: "Express Entry",
         element: `Nhập cảnh nhanh`,
         children: [
           {
@@ -776,26 +798,6 @@ const router = [
           },
         ],
       },
-
-      {
-        path: "/immigration/viec-lam-dinh-cu",
-        element: "Việc làm định cư",
-        // element: "Immigration work",
-      },
-      {
-        path: "/immigration/du-hoc-dinh-cu",
-        element: "Du học – định cư",
-        // element: "Study abroad - settlement",
-      },
-      {
-        path: "/immigration/doanh-nghiep-c11-visa",
-        element: "Doanh nghiệp C11 Visa",
-        // element: "C11 Visa Business",
-      },
-      {
-        path: "/immigration/start-up-visa",
-        element: "Visa khởi nghiệp",
-      },
       {
         path: "/immigration/bao-lanh-gia-dinh",
         element: "Bảo lãnh gia đình",
@@ -809,7 +811,7 @@ const router = [
     ],
   },
   {
-    path: "CHƯƠNG TRÌNH ĐỀ CỬ CẤP TỈNH",
+    path: "CHƯƠNG TRÌNH ĐỀ CỬ CẤP TỈNH BANG",
     // path: "Đề cử tỉnh bang PNP"
     children: [
       {

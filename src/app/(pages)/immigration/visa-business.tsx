@@ -220,7 +220,7 @@ export default function VisaBusiness() {
       </Container>
       <CTADefault
         image="/immigration.png"
-        subtitle="Chúng tôi có thể giúp bạn"
+        title="Chúng tôi có thể giúp bạn"
         description={
           <div className="flex flex-col gap-2 mt-4">
             <p className="text-lg text-white">

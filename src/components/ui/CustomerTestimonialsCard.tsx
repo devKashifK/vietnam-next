@@ -46,7 +46,7 @@ export const CustomerTestimonialsCard = ({
       </div>
       <p className="text-xs text-left text-black/80">
         {description}
-        <span className="text-black">Read More</span>
+        <span className="text-black">Xem thêm</span>
       </p>
       <div className="w-full flex justify-start items-start mt-4"></div>
       <div className="absolute -bottom-6 right-10 rotate-180 w-14 h-14 rounded-full border bg-white flex justify-center items-center">
