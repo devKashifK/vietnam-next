@@ -238,7 +238,7 @@ export const CTADefault = ({
       {/* Large blurred highlight accent */}
    
       {/* Left: Content */}
-      <div className="relative z-20 py-20 px-20 md:px-20 bg-blue-50 w-[60%] flex flex-col items-start justify-start gap-6">
+      <div className="relative z-20 py-20 px-20 md:px-20 bg-white-50 w-[60%] flex flex-col items-start justify-start gap-6">
         {/* Subtitle badge */}
         {subtitle && (
           <span className="mb-2 bg-highlight/20 text-highlight font-bold px-4 py-1 rounded-full text-xs tracking-wide uppercase">
@@ -319,7 +319,7 @@ export const CTAWithImage = ({
   return (
     <section
       className={cn(
-        "relative w-full min-h-[480px] flex justify-center items-center overflow-hidden bg-blue-50 py-10 lg:py-0",
+        "relative w-full min-h-[480px] flex justify-center items-center overflow-hidden bg-white py-20 lg:py-20",
         flip ? "lg:flex-row-reverse" : ""
       )}
     >
@@ -381,7 +381,7 @@ export const CTAWithImage = ({
           <img src="/immigration.png" alt="Immigration" className="w-full h-full object-cover rounded-2xl" />
         </div>
         {/* Vertical divider for large screens */}
-        <div className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 w-1 h-2/3 bg-gradient-to-b from-blue-100 via-blue-200 to-blue-100 opacity-60 rounded-full -ml-8" />
+        <div className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 w-1 h-2/3 bg-highlight opacity-60 rounded-full -ml-8" />
       </div>
     </section>
   );

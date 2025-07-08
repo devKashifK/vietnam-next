@@ -111,7 +111,7 @@ export default function Container({
     return (
       <div
         className={cn(
-          "flex flex-col lg:gap-4 gap-0 py-28 w-full lg:w-full px-40 bg-blue-50",
+          "flex flex-col lg:gap-4 gap-0 py-28 w-full lg:w-full px-40 bg-white",
           className
         )}
         {...props}

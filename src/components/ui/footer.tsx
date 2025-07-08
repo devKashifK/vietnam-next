@@ -228,7 +228,7 @@ export default function Footer() {
               )}
             </div>
             <p className="text-sm">Đăng ký nhận thông tin từ iCanPR</p>
-            <form className="space-y-2">
+            {/* <form className="space-y-2">
               <input
                 type="email"
                 placeholder="Email"
@@ -240,7 +240,7 @@ export default function Footer() {
               >
                 <span className="text-sm">Tư vấn miễn phí</span>
               </Button>
-            </form>
+            </form> */}
           </div>
         </div>
         <div className="mt-8 pt-4 border-t px-10  flex  flex-row justify-between items-center space-y-4 md:space-y-0">

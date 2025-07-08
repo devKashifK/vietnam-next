@@ -6,8 +6,7 @@ import { Heart, GraduationCap, Briefcase, MapPin, ArrowRight } from "lucide-reac
 
 export default function OurService() {
   return (
-    <section className="w-full py-12 bg-[#FAFAF8]">
-      <Container>
+      <Container effect="bg" className="bg-[#FAFAF8] w-full py-20">
         <div className="flex flex-col gap-10 px-4 md:px-6 mx-auto">
           <Title title="Dịch vụ nổi bật của ICanPR" className="text-left mb-4 text-3xl md:text-4xl font-extrabold text-[#6B3F1D]" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
@@ -39,7 +38,6 @@ export default function OurService() {
           </div>
         </div>
       </Container>
-    </section>
   );
 }
 
