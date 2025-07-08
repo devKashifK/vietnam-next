@@ -37,99 +37,13 @@ export default function Hero() {
 
   return (
     <div className="flex flex-col gap-2 w-full">
-      <div className="w-full mx-auto   lg:h-[600px] shadow-md flex justify-start items-start flex-col overflow-hidden relative">
+      <div className="w-full mx-auto   shadow-md flex justify-start items-start flex-col overflow-hidden relative">
         <div className="absolute top-0 left-0 w-full h-full bg-bg-[rgba(0, 0, 0, 0.2)]"></div>
 
         <div className="flex flex-col w-full  h-full relative ">
           <Navbar type={"hero"} />
           <div className="flex flex-col  md:flex-row  h-full">
-            <div className="md:w-[50%] w-[100%]">
-              <Swiper
-                spaceBetween={50}
-                slidesPerView={1}
-                autoplay={{ delay: 2500, disableOnInteraction: false }}
-                onSlideChange={() => console.log("slide change")}
-                onSwiper={(swiper) => console.log(swiper)}
-                className="flex gap-2 py-0 w-full h-full overflow-hidden"
-                style={{ width: "100%" }}
-                modules={[Autoplay]}
-              >
-                {images.map((item, index) => (
-                  <SwiperSlide className="!py-0 !px-0 " key={index}>
-                    <MediaItem title={item} className={"w-full h-full"} />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
-            <div className="px-6 lg:px-20 pb-14 lg:pb-20 pt-10 flex-1 h-full bg-white flex gap-8 flex-col justify-center items-center">
-              <div className="flex gap-1 flex-col justify-center items-start w-full relative">
-                <p className="lg:text-3xl text-2xl text-left text-black">
-                  {/* Achieve your family Canada */}
-                  Đạt được gia đình của bạn Canada <br />
-                  <strong className="text-background ">
-                    {/* dreams with us */}
-                    của gia đình bạn cùng iCanPR
-                  </strong>
-                  <br />
-                </p>
-              </div>
-
-              <p className="text-left text-base -mt-2 w-full text-black">
-                iCanPR cung cấp dịch vụ hỗ trợ các cá nhân và gia đình có nhu
-                cầu định cư Canada dễ dàng tiếp cận thông tin, cơ hội định cư
-                Canada diện việc làm cho lao động có tay nghề, thành lập doanh
-                nghiệp / đầu tư định cư cho doanh nhân và lộ trình du học – định
-                cư Canada.
-              </p>
-
-              <p className="text-left text-base -mt-2 w-full text-black">
-                {/* Chúng tôi tự tin có khả năng cung cấp giải pháp, giúp rút ngắn
-                hành trình đến với đất nước Canada yên bình và xinh đẹp cho cả
-                gia đình: */}
-                iCanPR giúp bạn tối ưu lộ trình, chuẩn bị kỹ lưỡng hồ sơ, giải
-                pháp rút ngắn hành trình đến với đất nước Canada yên bình và
-                xinh đẹp cho cả gia đình:
-              </p>
-
-              <UL>
-                <List className="text-sm">
-                  Giải pháp di trú thiết kế riêng, phù hợp với hồ sơ từng khách
-                  hàng
-                </List>
-                <List className="text-sm">
-                  Kết nối khách hàng với nhà tuyển dụng tại Canada
-                </List>
-                <List className="text-sm">
-                  Xúc tiến các dự án đầu tư kinh doanh
-                </List>
-                <List className="text-sm">
-                  An cư dễ dàng tại Canada. Chúng tôi cung cấp hỗ trợ để bạn có
-                  một sự chuyển đổi mượt mà, giúp bạn cảm thấy như ở nhà tại một
-                  đất nước mới – Canada.
-                </List>
-              </UL>
-
-              <div className="flex w-full justify-start items-start">
-                <Button
-                  className="py-3 -mt-4 w-[190px] bg-background"
-                  icon={
-                    <div className="flex gap-2 text-[10px] justify-center items-center">
-                      <Icon icon={"mdi:phone"} />
-                      <span>+84 869967809</span>
-                    </div>
-                  }
-                  onClick={() => navigate.push("/lien-he")}
-                >
-                  <span className="text-[10px] relative flex gap-1 justify-start items-center">
-                    <Icon
-                      icon={"teenyicons:appointments-outline"}
-                      className="-mt-0.5"
-                    />
-                    Tư Vấn Miễn Phí
-                  </span>
-                </Button>
-              </div>
-            </div>
+          <VideoFrame text={"IcanPr"} /> 
 
             {/* <div className="w-[104px]"></div> */}
           </div>
@@ -139,6 +53,71 @@ export default function Hero() {
   );
 }
 
+
+const VideoFrame = ({text , video = "/video/banner.mp4"}) => {
+  return (
+    <div className="relative w-full" style={{ height: "80vh" }}>
+      <div className="absolute top-0 left-0 w-full h-full bg-black/10"></div>
+      <video 
+        src={video}
+        autoPlay
+        muted
+        className="w-full h-full object-cover"
+        preload="auto"
+        loop
+        playsInline
+        webkit-playsinline="true"
+        x5-playsinline="true"
+        style={{ width: "100%", height: "100%" }}
+      />
+      <div className="absolute inset-0 flex items-center justify-center z-20">
+        <AnimatedText text={text}/>
+      </div>
+    </div>
+  )
+}
+
+export function AnimatedText({text}) {
+  return (
+    <div className="relative">
+      {/* Outline text */}
+      <h2
+        className="absolute tracking-wider left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[10rem] text-transparent"
+        style={{ WebkitTextStroke: '2px #EFF6FF' }}
+      >
+        {text}
+      </h2>
+
+      {/* Animated fill text */}
+      <h2
+        className="absolute left-1/2 top-1/2 tracking-wider -translate-x-1/2 -translate-y-1/2 text-[10rem] text-blue-50 animate-textClip"
+      >
+        {text}
+      </h2>
+      {/* Custom keyframes for clip-path animation */}
+      <style>{`
+        @keyframes clipPathAnim {
+          0%, 100% {
+            clip-path: polygon(
+              0% 45%, 16% 44%, 33% 50%, 54% 60%,
+              70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%
+            );
+          }
+          50% {
+            clip-path: polygon(
+              0% 60%, 15% 65%, 34% 66%, 51% 62%,
+              67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%
+            );
+          }
+        }
+
+        .animate-textClip {
+          animation: clipPathAnim 4s ease-in-out infinite;
+        }
+      `}</style>
+    </div>
+  );
+}
 {
   /* Current Image */
 }

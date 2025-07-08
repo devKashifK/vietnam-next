@@ -15,42 +15,44 @@ export function CardWithImage({
   href?: string;
 }) {
   return (
-    <div className="lg:max-w-xs w-full group/card">
-      <div
-        className={cn(
-          "overflow-hidden relative card h-96  shadow-md border border-black/5  max-w-sm mx-auto backgroundImage flex flex-col justify-between p-4",
-          " bg-cover bg-center bg-no-repeat"
+    <div className="w-full max-w-2xl bg-white rounded-2xl    flex flex-row overflow-hidden">
+      {/* Image section */}
+      <div className="min-w-[180px] max-w-[220px] h-full flex-shrink-0 flex items-center justify-center bg-gray-100">
+        {image && (
+          <img
+            src={image}
+            alt={title || "Card image"}
+            className="object-cover w-full h-full rounded-l-2xl"
+          />
         )}
-        style={{
-          backgroundImage: `url(${image})`,
-        }}
-      >
-        <div className="absolute w-full h-full top-0 left-0 transition duration-300 group-hover/card:bg-black opacity-20"></div>
-
-        <div className="text content flex justify-end h-full items-start flex-col relative">
-          <TitleWithBottomBorder titleClass="text-white group-hover/card:text-white">
-            {title}
-          </TitleWithBottomBorder>
-          <div className="group-hover/card:flex hidden transition-all duration-150 ease-linear">
-            {typeof description === "string" ? (
-              <p className="font-normal text-left  line-clamp-6 text-sm text-gray-50 group-hover/card:text-white relative my-4">
-                {description}
-              </p>
+      </div>
+      {/* Content section */}
+      <div className="flex flex-col justify-center px-8 py-6 flex-1">
+        <div className="text-2xl font-bold text-[#6B3A1A] mb-4">
+          {title}
+        </div>
+      
+        {/* Description (optional, only show if present) */}
+        {description && (
+          <div className=" text-gray-700 text-sm line-clamp-4">
+            {typeof description === "string" ? ( 
+              <p>{description}</p>
             ) : (
               description
             )}
           </div>
-          {href !== "/" && (
+        )}
+        {/* Optional link */}
+        {href !== "/" && (
+          <div className="mt-4">
             <Link
-              // href={}
               href={href}
-              // to={}
-              className="group-hover/card:bg-background px-3 py-1 group-hover/card:flex  hidden text-white rounded-none relative transition-all duration-150 ease-linear"
+              className="inline-block px-4 py-2 bg-[#6B3A1A] text-white rounded-md text-sm font-semibold hover:bg-[#54301a] transition"
             >
               Xem thêm
             </Link>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );

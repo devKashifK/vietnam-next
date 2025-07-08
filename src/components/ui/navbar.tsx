@@ -57,108 +57,86 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
           isFixed ? "fixed w-full z-[100000000000]" : "relative"
         )}
       >
-        <div className="h-full flex justify-center w-[400px] !bg-content items-center px-8 border-r border-background ">
-          <img
-            src="/logo.png"
-            alt="logo"
-            className="w-[95%] cursor-pointer"
-            onClick={() => navigate.push("/")}
-          />
-        </div>
-        <div className="flex flex-col w-full justify-start items-start h-24">
+     
+        <div className="flex flex-col  w-full justify-start items-start h-24">
           <div
             className={cn(
-              "w-full flex gap-5 py-2 justify-end items-center border-b border-background/40 px-16"
+              "w-full flex gap-5 py-2 justify-between items-center border-b bg-[#2E1506] text-white border-background/40 px-8"
             )}
           >
+
+            <div className="flex gap-2">
             <Link
               href={"/ve-icanpr"}
               className="bg-transparent text-xs font-light flex flex-col gap-0.5 group"
             >
-              <span className={"text-[#E54D2E] font-semibold text-[11px]"}>
+              <span className={"text-white  text-[11px] flex items-center gap-1"}>
+                <Icon icon="material-symbols:contact-emergency" className="text-xs" />
+                Liên hệ
+              </span>
+            </Link>
+            </div>
+            <div className="flex gap-8">
+            <Link
+              href={"/ve-icanpr"}
+              className="bg-transparent text-xs font-light flex flex-col gap-0.5 group"
+            >
+              <span className={"text-white  text-[11px] flex items-center gap-1"}>
+                <Icon icon="mdi:information-outline" className="text-xs" />
                 VỀ CHÚNG TÔI
               </span>
-              <div className="group-hover:bg-background w-full border border-transparent ease-out duration-150"></div>
             </Link>
             <Link
               href={"/lmia-map"}
               className="bg-transparent text-xs font-light flex flex-col gap-0.5 group"
             >
-              <span className={"text-[#E54D2E] font-semibold text-[11px]"}>
+              <span className={"text-white  text-[11px] flex items-center gap-1"}>
+                <Icon icon="mdi:map-marker-outline" className="text-xs" />
                 BẢN ĐỒ LMIA
               </span>
-              <div className="group-hover:bg-background w-full border border-transparent ease-out duration-150"></div>
             </Link>
             <Link
               href={"/cong-viec-nong"}
               className="bg-transparent text-xs font-light flex flex-col gap-0.5 group"
             >
-              <span className={"text-[#E54D2E] font-semibold text-[11px]"}>
-                {/* CÔNG VIỆC NÓNG */}
+              <span className={"text-white  text-[11px] flex items-center gap-1"}>
+                <Icon icon="mdi:briefcase-outline" className="text-xs" />
                 BẢN ĐỒ VIỆC LÀM
               </span>
-              <div className="group-hover:bg-background w-full border border-transparent ease-out duration-150"></div>
             </Link>
 
             <Link
               href={"/tin-tuc"}
               className="bg-transparent text-xs font-light flex flex-col gap-0.5 group"
             >
-              <span className={"text-[#E54D2E] font-semibold text-[11px]"}>
+              <span className={"text-white text-[11px] flex items-center gap-1"}>
+                <Icon icon="mdi:newspaper-variant-outline" className="text-xs" />
                 TIN TỨC
               </span>
-              <div className="group-hover:bg-background w-full border border-transparent ease-out duration-150"></div>
             </Link>
-
-            {/* <Link
-              href="tel:+84869967809"
-              className="text-xs flex font-light flex-col gap-0.5 group"
-            >
-              <span className={"text-[#E54D2E] font-semibold text-[11px]"}>
-                TƯ VẤN +84 869967809
-              </span>
-
-              <div className="group-hover:bg-background w-full border border-transparent ease-out duration-150"></div>
-            </Link>
-            <Link
-              href={"mailto:tuvan@icanpr.vn"}
-              className="text-xs flex font-light flex-col gap-0.5 group"
-            >
-              <span className={"text-[#E54D2E] font-semibold text-[11px]"}>
-                TUVAN@ICANPR.VN
-              </span>
-              <div className="group-hover:bg-background w-full border border-transparent ease-out duration-150"></div>
-            </Link> */}
             <Link
               href={"/immigration/khach-hang-thanh-cong"}
               className="text-xs font-light flex flex-col gap-0.5 group"
             >
-              <span className={"text-[#E54D2E] font-semibold text-[11px]"}>
-                {/* BẢO ĐẢM */}
+              <span className={"text-white text-[11px] flex items-center gap-1"}>
+                <Icon icon="mdi:star-outline" className="text-sm" />
                 KHÁCH HÀNG THÀNH CÔNG
               </span>
-              <div className="group-hover:bg-background w-full border border-transparent ease-out duration-150"></div>
             </Link>
+            </div>
 
-            <>
-              <a
-                href="https://api.whatsapp.com/send?phone=84869967809"
-                target="_blank"
-                className="text-xs bg-green-500 text-white px-3 rounded-sm justify-center items-center py-1 flex  gap-2 group w-max -mr-6"
-              >
-                <Icon icon={"mdi:whatsapp"} className="text-xl" />
-              </a>
-              <a
-                href="https://zalo.me/84869967809"
-                target="_blank"
-                className="text-xs bg-blue-500 text-white px-3 rounded-sm justify-center items-center py-1 flex  gap-2 group w-max  ml-2"
-              >
-                <Icon icon={"simple-icons:zalo"} className="text-xl" />
-              </a>
-            </>
           </div>
 
-          <div className="flex justify-start gap-4 items-center px-0 ml-4 w-full h-20">
+          <div className="flex  gap-4 justify-between items-center px-0 w-full h-20">
+          <div className=" flex w-[10%] justify-center  items-center px-8 ">
+          <img
+            src="/logo.png"
+            alt="logo"
+            className="w-full cursor-pointer"
+            onClick={() => navigate.push("/")}
+          />
+        </div>
+        <div className="w-[90%] flex justify-end px-10">
             <NavigationMenu>
               <NavigationMenuList className="flex gap-0 py-0">
                 {router.map((navItem) => (
@@ -166,34 +144,16 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
                     key={navItem.path}
                     className="relative min-w-12 !px-0"
                   >
-                    {navItem.element ? (
-                      <NavigationMenuLink
-                        className={cn(
-                          "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-highlight focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-highlight data-[state=open]:bg-highlight hover:bg-[#b33d3d] relative group bg-transparent "
-                        )}
-                      >
-                        <Link
-                          className={cn(
-                            type === "default" &&
-                              "text-white  group-hover:text-highlight"
-                          )}
-                          href={navItem.path}
-                        >
-                          {navItem.element}
-                        </Link>
-                      </NavigationMenuLink>
-                    ) : (
-                      <NavigationMenuTrigger
-                        className={cn(
-                          "bg-transparent text-[11px]  data-[state=open]:border-b-highlight data-[state=open]:border-b-2 py-0 data-[state=open]:text-highlight  border-r border-white/40  data-[state=open]:bg-transparent focus:border-highlight rounded-none h-[3.15rem] ml-0 font-bold relative"
-                        )}
-                      >
-                        {navItem.path}
-                      </NavigationMenuTrigger>
-                    )}
+                    <NavigationMenuTrigger
+                      className={cn(
+                        "bg-transparent text-[11px]  data-[state=open]:border-b-highlight data-[state=open]:border-b-0 py-0 data-[state=open]:text-highlight  border-r border-white/40  data-[state=open]:bg-transparent focus:border-[#2E1506] rounded-none h-[3.15rem] ml-0 font-bold relative flex items-center gap-2"
+                      )}
+                    >
+                      {navItem.path}
+                    </NavigationMenuTrigger>
                     {navItem.children && (
-                      <NavigationMenuContent className="absolute bg-background border-none  rounded-none left-0 px-0 z-[100000000000000000000] h-max max-h-80 overflow-y-scroll overflow-visible">
-                        <div className="w-[200px] z-[100000000000000000000] py-2">
+                      <NavigationMenuContent className="absolute bg-white border-none  rounded-none left-0 px-0 z-[100000000000000000000] h-max max-h-auto overflow-y-scroll overflow-visible">
+                        <div className="w-[200px] h-auto z-[100000000000000000000] py-0">
                           {renderSubmenus(
                             navItem.children,
                             hoveredPath,
@@ -206,6 +166,7 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
                 ))}
               </NavigationMenuList>
             </NavigationMenu>
+            </div>
           </div>
         </div>
         {/* <div className="w-[110px]"></div> */}
@@ -215,13 +176,12 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
 }
 
 const renderSubmenus = (submenus, hoveredPath, setHoveredPath) => {
-  console.log(submenus, "checkSubMenus");
   return (
-    <ul className=" z-[1000000000000000000] overflow-visible">
+    <ul className="z-[1000000000000000000] overflow-visible ">
       {submenus.map((subPage) => (
         <li
           key={subPage.path}
-          className="flex text-left w-full  border-highlight border-b last:border-b-0  "
+          className="flex text-left w-full py-1 hover:bg-black hover:text-white  text-black border-black border-b last:border-b-0  "
           onMouseEnter={() => setHoveredPath(subPage.path)}
           onMouseLeave={() => setHoveredPath(null)}
         >
@@ -229,20 +189,23 @@ const renderSubmenus = (submenus, hoveredPath, setHoveredPath) => {
             <div className="w-full z-[10000]  overflow-visible">
               <div
                 className={cn(
-                  "flex justify-between cursor-pointer items-center text-left text-sm px-2 w-full text-white rounded-md py-1 relative"
+                  "flex justify-between cursor-pointer items-center text-left text-sm px-2 w-full  rounded-md py-1 relative"
                 )}
               >
-                <span className="text-white">{subPage.path}</span>
+                <span className="flex items-center gap-2 ">
+                  <Icon icon={submenuIconMap[subPage.path] || 'mdi:menu'} className="text-base" />
+                  {subPage.element || subPage.path}
+                </span>
                 <Icon icon={"zondicons:cheveron-right"} />
               </div>
               {hoveredPath === subPage.path && (
                 <div
-                  className={`absolute top-0 left-[200px] z-[10000] w-[300px] bg-background text-left py-0.5 flex flex-col transition-all duration-300 transform ease-out z-1000000000`}
+                  className={`absolute top-0 left-[200px] z-[10000] w-[300px] bg-white text-left py-0.5 flex flex-col transition-all duration-300 transform ease-out z-1000000000`}
                 >
                   {subPage.children.map((item) => (
                     <Link
                       key={item.path}
-                      className="text-left hover:bg-[#b33d3d] text-text py-1  text-sm border-b last:border-b-0 px-2 w-full"
+                      className="text-left hover:bg-[#b33d3d] text-black py-1  text-sm border-b last:border-b-0 px-2 w-full flex items-center gap-2"
                       href={item.path}
                     >
                       <motion.div
@@ -252,8 +215,9 @@ const renderSubmenus = (submenus, hoveredPath, setHoveredPath) => {
                         //   color: "#fff",
                         // }}
                         transition={{ type: "spring", stiffness: 200 }}
-                        className="px-3 py-1 "
+                        className="px-3 py-1 flex items-center gap-2"
                       >
+                        <Icon icon={submenuIconMap[item.path] || 'mdi:menu'} className="text-base" />
                         {item.element}
                       </motion.div>
                     </Link>
@@ -264,9 +228,10 @@ const renderSubmenus = (submenus, hoveredPath, setHoveredPath) => {
           ) : (
             <Link
               target={subPage.external ? "_blank" : "_parent"}
-              className="text-left hover:bg-[#b33d3d] text-text py-1  text-sm border-b last:border-b-0 px-2 w-full"
+              className="text-left   py-1  text-sm border-b last:border-b-0 px-2 w-full flex items-center gap-2"
               href={subPage.path}
             >
+              <Icon icon={submenuIconMap[subPage.path] || 'mdi:menu'} className="text-base" />
               {subPage.element}
             </Link>
           )}
@@ -1030,3 +995,59 @@ const router = [
     ],
   },
 ];
+
+// Icon mapping for top-level and submenu items
+const navIconMap = {
+  'ICANPR': 'mdi:information-outline',
+  'ĐỊNH CƯ CANADA': 'mdi:account-question-outline',
+  'CHƯƠNG TRÌNH ĐỀ CỬ CẤP TỈNH BANG': 'mdi:map-marker-multiple-outline',
+  'CUỘC SỐNG CANADA': 'mdi:briefcase-outline',
+  'THÔNG TIN HỮU ÍCH': 'mdi:briefcase-outline',
+  'TUYỂN DỤNG': 'mdi:briefcase-check-outline',
+};
+const submenuIconMap = {
+  '/ve-icanpr': 'mdi:information-outline',
+  '/doi-tac-icanpr': 'mdi:account-group-outline',
+  '/lien-he': 'mdi:email-outline',
+  '/immigration/viec-lam-dinh-cu': 'mdi:briefcase-account-outline',
+  '/immigration/du-hoc-dinh-cu': 'mdi:school-outline',
+  '/immigration/doanh-nghiep-c11-visa': 'mdi:domain',
+  '/immigration/start-up-visa': 'mdi:rocket-launch-outline',
+  '/immigration/bao-lanh-gia-dinh': 'mdi:account-multiple-plus-outline',
+  '/immigration/khach-hang-thanh-cong': 'mdi:star-outline',
+  '/de-cu-tinh-bang-pnp/alberta-nhap-cu-aaip': 'mdi:map-marker',
+  '/de-cu-tinh-bang-pnp/british-columbia-bcpnp': 'mdi:map-marker',
+  '/de-cu-tinh-bang-pnp/ontario-oinp': 'mdi:map-marker',
+  '/de-cu-tinh-bang-pnp/manitoba-mpnp': 'mdi:map-marker',
+  '/de-cu-tinh-bang-pnp/new-brunswick-nbpnp': 'mdi:map-marker',
+  '/de-cu-tinh-bang-pnp/nova-scotia-nsnp': 'mdi:map-marker',
+  '/de-cu-tinh-bang-pnp/prince-edward-island-peipnp': 'mdi:map-marker',
+  '/de-cu-tinh-bang-pnp/quebec': 'mdi:map-marker',
+  '/de-cu-tinh-bang-pnp/saskatchewan-sinp': 'mdi:map-marker',
+  '/de-cu-tinh-bang-pnp/yukon-ynp': 'mdi:map-marker',
+  '/cuoc-song-canada/cac-tinh-bang-canada/tinh-alberta': 'mdi:map-marker',
+  '/cuoc-song-canada/cac-tinh-bang-canada/brcolumbiaP': 'mdi:map-marker',
+  '/cuoc-song-canada/cac-tinh-bang-canada/manitobaP': 'mdi:map-marker',
+  '/cuoc-song-canada/cac-tinh-bang-canada/new-brunswickP': 'mdi:map-marker',
+  '/cuoc-song-canada/cac-tinh-bang-canada/newfoundland-labradorP': 'mdi:map-marker',
+  '/cuoc-song-canada/cac-tinh-bang-canada/northwest-territoriesP': 'mdi:map-marker',
+  '/cuoc-song-canada/cac-tinh-bang-canada/nova-scotiaP': 'mdi:map-marker',
+  '/cuoc-song-canada/cac-tinh-bang-canada/nunavutP': 'mdi:map-marker',
+  '/cuoc-song-canada/cac-tinh-bang-canada/ontarioP': 'mdi:map-marker',
+  '/cuoc-song-canada/cac-tinh-bang-canada/prince-edwardP': 'mdi:map-marker',
+  '/cuoc-song-canada/cac-tinh-bang-canada/quebecP': 'mdi:map-marker',
+  '/cuoc-song-canada/cac-tinh-bang-canada/saskatchewanP': 'mdi:map-marker',
+  '/cuoc-song-canada/cac-tinh-bang-canada/yukonP': 'mdi:map-marker',
+  '/cuoc-song-canada/moi-truong-canada': 'mdi:leaf',
+  '/cuoc-song-canada/van-hoa-ton-gaio': 'mdi:account-group',
+  '/cuoc-song-canada/y-te': 'mdi:medical-bag',
+  '/cuoc-song-canada/giao-duc-canada': 'mdi:school',
+  '/cuoc-song-canada/ty-gia-do-canada': 'mdi:currency-usd',
+  '/cuoc-song-canada/chinh-sach-thue': 'mdi:scale-balance',
+  '/thong-tin-huu-ich/cau-hoi-thuong-gap': 'mdi:frequently-asked-questions',
+  '/thong-tin-huu-ich/trang-web-huu-ich': 'mdi:web',
+  '/thong-tin-huu-ich/thuat-ngu-trong-di-tru': 'mdi:book-open-variant',
+  '/thong-tin-huu-ich/CLB-la-gi': 'mdi:help-circle-outline',
+  '/tuyen-dung/lam-viec-cho-icanpr': 'mdi:briefcase-check-outline',
+  '/tuyen-dung/dau-bep-mon-au': 'mdi:chef-hat',
+};

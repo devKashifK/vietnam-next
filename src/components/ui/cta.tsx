@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { Button } from "./custom";
 import { Icon } from "@iconify/react/dist/iconify.js";
 // import { Link } from "react-router-dom";
 import { useRouter } from "next/navigation";
@@ -11,6 +10,7 @@ import Glass from "@/lib/helpers";
 import TitleWithBottomBorder from "./title-with-bottom-border";
 import Link from "next/link";
 import MediaItem from "./media-item";
+import { Button } from "./button";
 
 export default function CTA() {
   return (
@@ -234,43 +234,63 @@ export const CTADefault = ({
 }) => {
   const navigate = useRouter();
   return (
-    <Container>
-      <Glass
-        className="flex-col  gap-8 py-20 justify-center items-center bg-cover bg-center relative"
-        style={{ backgroundImage: `url(${image})` }}
-      >
-        <div className="flex absolute left-0 top-0 w-full h-full bg-black/60"></div>
-        <div className="flex flex-col justify-center items-center gap-8 md:gap-3 relative px-8">
-          <h4 className="text-4xl tracking-wider text-center text-white ">
-            {title}
-          </h4>
-          {typeof subtitle === "string" ? (
-            <p className="text-lg text-white/90">{subtitle}</p>
-          ) : (
-            subtitle
-          )}
-          {typeof description === "string" ? (
-            <p className={cn("text-sm", descriptionClassName)}>{description}</p>
-          ) : (
-            description
-          )}
+    <section className="relative w-full min-h-[420px] flex flex-col md:flex-row items-stretch justify-center bg-white overflow-hidden">
+      {/* Large blurred highlight accent */}
+   
+      {/* Left: Content */}
+      <div className="relative z-20 py-20 px-20 md:px-20 bg-blue-50 w-[60%] flex flex-col items-start justify-start gap-6">
+        {/* Subtitle badge */}
+        {subtitle && (
+          <span className="mb-2 bg-highlight/20 text-highlight font-bold px-4 py-1 rounded-full text-xs tracking-wide uppercase">
+            {subtitle}
+          </span>
+        )}
+        {/* Title with highlight underline */}
+        <h2 className="text-3xl md:text-5xl font-extrabold text-[#6B3F1D] leading-tight mb-2">
+          {title}
+          <span className="block w-16 h-1 bg-[#6B3F1D] mt-2 rounded-full" />
+        </h2>
+        {/* Description */}
+        {typeof description === "string" ? (
+          <p className={cn("text-base md:text-lg text-black leading-relaxed mb-4", descriptionClassName)}>
+            {description}
+          </p>
+        ) : (
+          <div className={cn("text-base md:text-lg text-black leading-relaxed mb-4", descriptionClassName)}>{description}</div>
+        )}
+        {/* CTA Button and Trust Badge */}
+        <div className="flex flex-col sm:flex-row items-start justify-start gap-4 w-full mt-2">
           <Button
             onClick={() => navigate.push("/lien-he")}
-            className="py-3 w-[190px]"
-            icon={
-              <div className="flex gap-2 text-[10px] justify-center items-center">
-                <Icon icon={"mdi:phone"} />
-                <span>+84 869967809</span>
-              </div>
-            }
+            className="py-3 px-8 bg-highlight text-white font-bold rounded-lg shadow-md hover:bg-highlight/90 focus:outline-none focus:ring-2 focus:ring-highlight text-base flex gap-2 items-center justify-center"
+           
           >
-            <span className="text-[10px] relative flex gap-1 justify-start items-center">
+            <span className="text-[13px] flex gap-1 items-center">
               Đặt lịch hẹn tư vấn miễn phí
             </span>
           </Button>
+          <Button className="flex items-center gap-1 text-highlight text-xs font-bold bg-highlight/10 px-3 py-1 rounded-md shadow hover:text-white">
+            <Icon icon="mdi:shield-check" className="" /> Được chứng nhận RCIC
+          </Button>
         </div>
-      </Glass>
-    </Container>
+      </div>
+      {image && (
+        <div className="relative w-[40%] h-[320px] md:h-auto min-h-[220px] max-h-[600px] md:max-h-none flex items-stretch justify-end mt-8 md:mt-0 overflow-hidden  shadow-xl group">
+          <img
+            src={image}
+            alt="CTA"
+            className="w-full h-full object-cover  transition-transform duration-1000 ease-in-out group-hover:scale-105"
+          />
+          {/* Gradient overlay for depth */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent rounded-l-2xl pointer-events-none" />
+          {/* Floating badge (optional) */}
+          {/* <div className="absolute bottom-4 right-4 bg-highlight text-white text-xs font-bold px-3 py-1 rounded shadow-lg flex items-center gap-1">
+            <Icon icon="mdi:shield-check" className="inline" />
+            RCIC Certified
+          </div> */}
+        </div>
+      )}
+    </section>
   );
 };
 
@@ -294,57 +314,78 @@ export const CTAWithImage = ({
   desClassName?: string;
 }) => {
   const navigate = useRouter();
+  // For demo, use the same image twice. You can pass a second image prop if needed.
+  const image2 = image;
   return (
-    <Container
+    <section
       className={cn(
-        "flex bg-content py-0 shadow-2xl  ",
-        flip ? "flex-col lg:flex-row-reverse" : " flex-col lg:flex-row"
+        "relative w-full min-h-[480px] flex justify-center items-center overflow-hidden bg-blue-50 py-10 lg:py-0",
+        flip ? "lg:flex-row-reverse" : ""
       )}
     >
-      <div
-        className="flex-1 relative h-auto lg:h-[620px]"
-
-        // style={{
-        //   backgroundImage: `url(/hero-3.jpg)`,
-        //   backgroundSize: "cover",
-        //   backgroundPosition: "center",
-        // }}
-      >
-        <div className="bg-[rgba(0, 0, 0, 0.2)] absolute top-0 left-0 z-10 w-full bg-opacity-80 h-auto lg:h-[590px]"></div>
-        {/* <img
-          src={image}
-          className="relative w-full object-cover h-full"
-          alt={title}
-        /> */}
-        <MediaItem title={image} className="w-full h-full" />
-      </div>
-      <div className="flex-1 bg-white border-t  border-b border-black/5  flex flex-col gap-6 py-10 px-8">
-        <TitleWithBottomBorder titleClass="">{subtitle}</TitleWithBottomBorder>
-        <h2 className="text-4xl text-left uppercase">{title}</h2>
-
+      <div className="relative z-20 flex flex-col justify-center gap-5 lg:gap-6 px-8 py-12 w-full max-w-screen-lg lg:max-w-[640px] min-h-[340px]">
+        {/* Accent line or icon above title */}
+        <div className="mb-2 flex items-center gap-2">
+          <span className="inline-block w-8 h-1 rounded-full bg-highlight" />
+          <span className="text-xs text-highlight font-semibold tracking-widest uppercase">{subtitle}</span>
+        </div>
+        {/* Title */}
+        <h2 className="text-3xl md:text-5xl font-extrabold text-highlight uppercase mb-4 leading-tight">
+          {title}
+        </h2>
+        {/* Description */}
         {typeof description === "string" ? (
-          <p className="text-left">{description}</p>
+          <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-xl mb-4">
+            {description}
+          </p>
         ) : (
           <div
             className={cn(
-              "h-64 overflow-y-auto text-left pretty-scroll",
+              "max-w-xl text-gray-700 text-base leading-relaxed mb-4",
               desClassName
             )}
           >
             {description}
           </div>
         )}
-
+        {/* Trust Signals */}
+        <div className="flex items-center gap-4 mb-6">
+          <span className="flex items-center gap-1 text-highlight text-xs font-semibold bg-white/80 px-3 py-1 rounded-full">
+            <Icon icon="mdi:shield-check" className="text-highlight" /> Được chứng nhận RCIC
+          </span>
+          <span className="flex items-center gap-1 text-highlight text-xs font-semibold bg-white/80 px-3 py-1 rounded-full">
+            <Icon icon="mdi:lock" className="text-highlight" /> Bảo mật & Riêng tư
+          </span>
+        </div>
+        {/* CTA Button (Vietnamese, clean style) */}
         {link !== "/" && ctaAction && (
-          <button
-            className="flex gap-2 bg-background text-text w-full lg:w-max justify-center items-center rounded-none"
-            onClick={() => navigate.push(link)}
-          >
-            {ctaAction}
-            <Icon icon={"simple-icons:aircanada"} className="" />
-          </button>
+          <div className="mt-2">
+            <button
+              className="group flex gap-2 bg-highlight text-white text-sm font-bold py-3 px-8 rounded-lg shadow-md  sm:text-sm w-full sm:w-auto justify-center items-center transition-all duration-200 hover:bg-highlight/90 focus:outline-none focus:ring-2 focus:ring-highlight text-left"
+              onClick={() => navigate.push(link)}
+            >
+              {ctaAction}
+              <Icon icon={"simple-icons:aircanada"} className="ml-2 text-lg group-hover:translate-x-1 transition-transform" />
+            </button>
+          </div>
         )}
       </div>
-    </Container>
+      {/* Image Area with subtle divider */}
+      <div className="relative w-full max-w-[520px] flex justify-center items-center mt-8 lg:mt-0 h-[340px] lg:h-[520px] ml-0 lg:ml-8">
+        {/* Main image card (from props) */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[260px] h-[340px] lg:w-[400px] lg:h-[520px] bg-white rounded-2xl shadow-2xl border-2 border-highlight z-10 overflow-hidden flex items-center justify-center">
+          <MediaItem title={image} className="w-full h-full object-cover rounded-2xl" />
+        </div>
+        {/* Secondary image card (static image) */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[120px] h-[160px] lg:w-[180px] lg:h-[240px] bg-white rounded-2xl shadow-xl border-2 border-white z-20 overflow-hidden flex items-center justify-center" style={{marginLeft: '150px', marginTop: '80px'}}>
+          <img src="/immigration.png" alt="Immigration" className="w-full h-full object-cover rounded-2xl" />
+        </div>
+        {/* Vertical divider for large screens */}
+        <div className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 w-1 h-2/3 bg-gradient-to-b from-blue-100 via-blue-200 to-blue-100 opacity-60 rounded-full -ml-8" />
+      </div>
+    </section>
   );
 };
+
+
+

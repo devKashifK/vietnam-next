@@ -104,8 +104,8 @@ export default function Footer() {
   const navigate = useRouter();
 
   return (
-    <footer className="w-full mx-auto  text-white pb-14 lg:pb-0">
-      <div className="px-10 bg-black w-full bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-20 h-max  py-2 text-xl pt-3  flex  justify-between items-center font-primary tracking-widest text-white">
+    <footer className="w-full mx-auto  bg-[#FAFAF8]  text-white pb-14 lg:pb-0">
+      <div className="px-10  w-full border-b h-max  py-2 pt-20 text-xl   flex  justify-between items-center font-primary tracking-widest text-white">
         <img src="/logo.png" alt="logo" className="w-40" />
         {/* <a
           href="tel:+84869967809"
@@ -116,7 +116,7 @@ export default function Footer() {
         </a> */}
         <FancyPhone />
       </div>
-      <div className=" py-8 mx-auto w-full bg-[#1A2A3A]">
+      <div className=" py-8 mx-auto w-full  text-black">
         <div className="grid px-12 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Logo and Links */}
           <div className="space-y-4  ">
@@ -232,19 +232,19 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Email"
-                className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded focus:outline-none focus:ring-1 focus:ring-white text-white placeholder-white/50"
+                className="w-full px-3 py-2 bg-blue-50 border border-white/20 rounded focus:outline-none focus:ring-1 focus:ring-white text-black placeholder-black/50"
               />
               <Button
                 onClick={() => navigate.push("/lien-he")}
-                className="w-full py-2 px-4 bg-white text-primary hover:bg-primary-foreground transition-colors"
+                className="w-full py-2 px-4 bg-blue-50 text-primary hover:bg-primary-foreground transition-colors"
               >
                 <span className="text-sm">Tư vấn miễn phí</span>
               </Button>
             </form>
           </div>
         </div>
-        <div className="mt-8 pt-4 border-t px-10 border-white/10 flex  flex-row justify-between items-center space-y-4 md:space-y-0">
-          <p className="text-sm text-white/60">
+        <div className="mt-8 pt-4 border-t px-10  flex  flex-row justify-between items-center space-y-4 md:space-y-0">
+          <p className="text-sm text-black">
             © iCanPr - All rights reserved
           </p>
           <img
@@ -254,6 +254,7 @@ export default function Footer() {
           />
         </div>
       </div>
+     
     </footer>
   );
 }

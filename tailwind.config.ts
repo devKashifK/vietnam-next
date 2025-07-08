@@ -31,7 +31,7 @@ module.exports = {
   		colors: {
   			secondary: '#343436',
   			destructive: '#242424',
-  			highlight: '#b33d3d',
+  			highlight: '#6B3F1D',
   			background: '#E54D2E',
   			text: '#f4f4f4',
   			content: '#FFFFFF',

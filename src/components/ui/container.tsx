@@ -107,11 +107,11 @@ export default function Container({
         {children}
       </motion.div>
     );
-  } else if (effect === "none") {
+  } else if (effect === "bg") {
     return (
       <div
         className={cn(
-          "flex flex-col lg:gap-4 gap-0 py-6 w-[94%] lg:w-[80%]  mr-auto ml-auto m mt-2 mb-2",
+          "flex flex-col lg:gap-4 gap-0 py-28 w-full lg:w-full px-40 bg-blue-50",
           className
         )}
         {...props}
