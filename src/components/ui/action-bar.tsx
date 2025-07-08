@@ -46,7 +46,7 @@ export default function CircularMenu({
                 return (
                   <motion.button
                     key={item.label}
-                    className="absolute z-[9999999999999999999999] w-12 h-12 rounded-full bg-[#E54D2E] shadow-lg flex items-center justify-center hover:scale-110 transition-transform"
+                    className="absolute z-[9999999999999999999999] w-12 h-12 rounded-full bg-highlight shadow-lg flex items-center justify-center hover:scale-110 transition-transform"
                     initial={{ scale: 0, x: 0, y: 0 }}
                     animate={{
                       scale: 1,
@@ -73,7 +73,7 @@ export default function CircularMenu({
         </AnimatePresence>
 
         <motion.button
-          className="w-14 h-14 rounded-full bg-[#E54D2E] shadow-lg flex items-center justify-center z-10 relative hover:scale-110 transition-transform"
+          className="w-14 h-14 rounded-full bg-highlight shadow-lg flex items-center justify-center z-10 relative hover:scale-110 transition-transform"
           onMouseEnter={() => setIsOpen(true)}
           onClick={() => setIsOpen(!isOpen)}
           animate={{ rotate: isOpen ? 45 : 0 }}

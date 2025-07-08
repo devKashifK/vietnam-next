@@ -12,15 +12,16 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 export default function About() {
   return (
     <>
-      <Container className="flex flex-col gap-10">
+      <Container effect="bg" className="flex flex-col gap-10">
         <Title
           title={"Giới thiệu về công ty"}
           subtitle="Ưu Thế của iCANPR"
           description={
             "Tại iCANPR, chúng tôi tự hào về mạng lưới đối tác mạnh mẽ và đa dạng, từ các tổ chức giáo dục, nhà tuyển dụng, đến các luật sư di trú hàng đầu tại Canada. Chúng tôi tự tin cung cấp thông tin cập nhật và chính xác nhất và đảm bảo gia đình bạn nhận được sự hỗ trợ toàn diện trong suốt quá trình từ tư vấn, hoàn thiện hồ sơ đến ổn định và xây dựng cuộc sống mới tại Canada"
           }
+          effect={false}
         />
-        <div className="flex gap-6 md:flex-row flex-col">
+        <div className="flex gap-6 md:flex-row flex-col bg-gradient-to-br from-white via-blue-50 to-blue-100 p-6 rounded-2xl shadow-inner">
           <HoverCard
             title={"Quan Hệ Chặt Chẽ với Nhà Tuyển Dụng"}
             color="bg-yellow-400"
@@ -29,6 +30,7 @@ export default function About() {
               "Mạng lưới luật sư di trú của chúng tôi sẽ đảm bảo mọi thủ tục pháp lý của bạn được thực hiện chính xác và nhanh chóng, giúp giảm thiểu rủi ro và thời gian chờ đợi."
             }
             link="/doi-tac-icanpr"
+            className="flex-1 min-w-[260px] bg-white rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl border border-gray-100 p-6 flex flex-col items-center text-center"
           />
           <HoverCard
             color="bg-green-400"
@@ -38,6 +40,7 @@ export default function About() {
               "Chúng tôi hợp tác chặt chẽ với nhiều trường đại học, cao đẳng uy tín tại Canada, giúp bạn có nhiều lựa chọn về học tập và các chương trình học bổng"
             }
             link="/doi-tac-icanpr"
+            className="flex-1 min-w-[260px] bg-white rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl border border-gray-100 p-6 flex flex-col items-center text-center"
           />
           <HoverCard
             color="bg-sky-400"
@@ -49,6 +52,7 @@ export default function About() {
               "Mạng lưới luật sư di trú của chúng tôi sẽ đảm bảo mọi thủ tục pháp lý của bạn được thực hiện chính xác và nhanh chóng, giúp giảm thiểu rủi ro và thời gian chờ đợi."
             }
             link="#"
+            className="flex-1 min-w-[260px] bg-white rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl border border-gray-100 p-6 flex flex-col items-center text-center"
           />
         </div>
       </Container>

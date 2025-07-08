@@ -12,6 +12,7 @@ export default function Title({
   className,
   descriptionClassName,
   titleClassName,
+  effect = true,
 }: {
   title?: string | React.ReactNode;
   subtitle?: string;
@@ -21,6 +22,7 @@ export default function Title({
   className?: string;
   descriptionClassName?: string;
   titleClassName?: string;
+  effect ? : boolean;
 }) {
   return (
     <div className=" flex w-full px-4 lg:px-0 justify-between">
@@ -32,7 +34,9 @@ export default function Title({
       >
         {subtitle && (
        <div className="mb-2 flex items-center gap-2">
+                {effect && (
           <span className="inline-block w-8 h-1 rounded-full bg-highlight" />
+                )}
           <span className="text-xs text-highlight font-semibold tracking-widest uppercase">{subtitle}</span>
         </div>
         )}
@@ -54,7 +58,9 @@ export default function Title({
                 )}
               >
                 {title}
+                {effect && (
           <span className="block w-16 h-1 bg-[#6B3F1D] mt-2 rounded-full" />
+        )}
               </h2>
             </div>
           ) : (
@@ -67,7 +73,7 @@ export default function Title({
           (typeof description === "string" ? (
             <p
               className={cn(
-                "text-left lg:text-center text-black/50 w-full lg:w-[70%]",
+                "text-left lg:text-left text-black/50 w-full lg:w-[70%]",
                 descriptionClassName
               )}
             >

@@ -49,7 +49,7 @@ export default function HeroDefault({
           />
         </div>
       </div>
-      <div className="absolute  bg-background bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 w-full py-1 bottom-0 px-12  flex justify-start items-center gap-2 cursor-pointer">
+      <div className="absolute  bg-highlight bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 w-full py-1 bottom-0 px-12  flex justify-start items-center gap-2 cursor-pointer">
         <Link
           // to={"/"}
           href={"/"}
