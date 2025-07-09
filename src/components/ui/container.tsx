@@ -120,4 +120,17 @@ export default function Container({
       </div>
     );
   }
+  else if (effect === "bg-color") {
+    return (
+      <div
+        className={cn(
+          "flex flex-col lg:gap-4 gap-0 py-28 w-full lg:w-full px-40 bg-[#FAFAF8]",
+          className
+        )}
+        {...props}
+      >
+        {children}
+      </div>
+    );
+  }
 }

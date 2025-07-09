@@ -1,10 +1,9 @@
+"use client"
 import Container from "@/components/ui/container";
 import { CTADefault, CTAWithImage } from "@/components/ui/cta";
 import HoverCard from "@/components/ui/hover-card";
 import { List, UL } from "@/components/ui/list";
 import Title from "@/components/ui/Title";
-import TitleWithBottomBorder from "@/components/ui/title-with-bottom-border";
-import TitleWithDoubleBorder from "@/components/ui/title-with-double-border";
 import Glass from "@/lib/helpers";
 import { cn } from "@/lib/utils";
 import { Icon } from "@iconify/react/dist/iconify.js";
@@ -13,103 +12,134 @@ export default function About() {
   return (
     <>
       <Container effect="bg" className="flex flex-col gap-10">
-        <Title
-          title={"Giới thiệu về công ty"}
-          subtitle="Ưu Thế của iCANPR"
-          description={
-            "Tại iCANPR, chúng tôi tự hào về mạng lưới đối tác mạnh mẽ và đa dạng, từ các tổ chức giáo dục, nhà tuyển dụng, đến các luật sư di trú hàng đầu tại Canada. Chúng tôi tự tin cung cấp thông tin cập nhật và chính xác nhất và đảm bảo gia đình bạn nhận được sự hỗ trợ toàn diện trong suốt quá trình từ tư vấn, hoàn thiện hồ sơ đến ổn định và xây dựng cuộc sống mới tại Canada"
-          }
-          effect={false}
-        />
-        <div className="flex gap-6 md:flex-row flex-col bg-gradient-to-br from-white via-blue-50 to-blue-100 p-6 rounded-2xl shadow-inner">
-          <HoverCard
-            title={"Quan Hệ Chặt Chẽ với Nhà Tuyển Dụng"}
-            color="bg-yellow-400"
-            icon={"game-icons:relationship-bounds"}
+        <div className="flex flex-col gap-6">
+          <Title
+            title={"Giới thiệu về công ty"}
+            subtitle="Ưu Thế của iCANPR"
             description={
-              "Mạng lưới luật sư di trú của chúng tôi sẽ đảm bảo mọi thủ tục pháp lý của bạn được thực hiện chính xác và nhanh chóng, giúp giảm thiểu rủi ro và thời gian chờ đợi."
+              "Tại iCANPR, chúng tôi tự hào về mạng lưới đối tác mạnh mẽ và đa dạng, từ các tổ chức giáo dục, nhà tuyển dụng, đến các luật sư di trú hàng đầu tại Canada. Chúng tôi tự tin cung cấp thông tin cập nhật và chính xác nhất và đảm bảo gia đình bạn nhận được sự hỗ trợ toàn diện trong suốt quá trình từ tư vấn, hoàn thiện hồ sơ đến ổn định và xây dựng cuộc sống mới tại Canada"
             }
-            link="/doi-tac-icanpr"
-            className="flex-1 min-w-[260px] bg-white rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl border border-gray-100 p-6 flex flex-col items-center text-center"
-          />
-          <HoverCard
-            color="bg-green-400"
-            title={"Liên Kết với Các Tổ Chức Giáo Dục:"}
-            icon={"cil:education"}
-            description={
-              "Chúng tôi hợp tác chặt chẽ với nhiều trường đại học, cao đẳng uy tín tại Canada, giúp bạn có nhiều lựa chọn về học tập và các chương trình học bổng"
-            }
-            link="/doi-tac-icanpr"
-            className="flex-1 min-w-[260px] bg-white rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl border border-gray-100 p-6 flex flex-col items-center text-center"
-          />
-          <HoverCard
-            color="bg-sky-400"
-            title={"Hỗ Trợ Pháp Lý Từ Các Luật Sư Di Trú"}
-            icon={
-              "streamline:legal-justice-hammer-hammer-work-legal-mallet-office-company-gavel-justice-judge-arbitration-court"
-            }
-            description={
-              "Mạng lưới luật sư di trú của chúng tôi sẽ đảm bảo mọi thủ tục pháp lý của bạn được thực hiện chính xác và nhanh chóng, giúp giảm thiểu rủi ro và thời gian chờ đợi."
-            }
-            link="#"
-            className="flex-1 min-w-[260px] bg-white rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl border border-gray-100 p-6 flex flex-col items-center text-center"
+            effect={true}
+            className="mb-2"
+            titleClassName="text-4xl md:text-5xl font-extrabold text-[#6B3F1D] tracking-wider"
           />
         </div>
-      </Container>
-      <Container effect="slide-left">
-        <Glass className="flex flex-col lg:flex-row  gap-10 md:gap-2 h-max px-10 py-10">
-          <div className="w-full md:flex-1 flex flex-col gap-2">
-            <TitleWithDoubleBorder>iCanPR</TitleWithDoubleBorder>
-            <div className="flex flex-col justify-start gap-6">
-              <TitleWithBottomBorder titleClass="md:text-xl text-left">
-                Chuyên môn
-              </TitleWithBottomBorder>
-              <p className="text-sm text-black/60 text-left">
-                Chào mừng đến với iCANPR, nơi chúng tôi giúp bạn thực hiện giấc
-                mơ định cư tại Canada.
-              </p>
-              <p className="text-sm text-black/60 text-left">
-                Với đội ngũ chuyên gia giàu kinh nghiệm và mạng lưới đối tác
-                rộng khắp, chúng tôi cam kết mang đến cho bạn giải pháp định cư
-                tối ưu nhất.
-              </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 bg-white p-8 px-0 rounded-3xl shadow-sm">
+          {[{
+            title: "Quan Hệ Chặt Chẽ với Nhà Tuyển Dụng",
+            color: "bg-yellow-100",
+            icon: "game-icons:relationship-bounds",
+            description: "Mạng lưới luật sư di trú của chúng tôi sẽ đảm bảo mọi thủ tục pháp lý của bạn được thực hiện chính xác và nhanh chóng, giúp giảm thiểu rủi ro và thời gian chờ đợi.",
+            link: "/doi-tac-icanpr"
+          }, {
+            title: "Liên Kết với Các Tổ Chức Giáo Dục",
+            color: "bg-green-100",
+            icon: "cil:education",
+            description: "Chúng tôi hợp tác chặt chẽ với nhiều trường đại học, cao đẳng uy tín tại Canada, giúp bạn có nhiều lựa chọn về học tập và các chương trình học bổng",
+            link: "/doi-tac-icanpr"
+          }, {
+            title: "Hỗ Trợ Pháp Lý Từ Các Luật Sư Di Trú",
+            color: "bg-sky-100",
+            icon: "streamline:legal-justice-hammer-hammer-work-legal-mallet-office-company-gavel-justice-judge-arbitration-court",
+            description: "Mạng lưới luật sư di trú của chúng tôi sẽ đảm bảo mọi thủ tục pháp lý của bạn được thực hiện chính xác và nhanh chóng, giúp giảm thiểu rủi ro và thời gian chờ đợi.",
+            link: "#"
+          }].map((card, idx) => (
+            <div
+              key={card.title}
+              className="flex flex-col items-center text-center bg-white rounded-2xl border border-[#e5dacb] shadow-sm p-8 transition-all duration-200 hover:shadow-md hover:border-[#6B3F1D]"
+            >
+              <div className={`flex justify-center items-center h-16 w-16 rounded-full mb-4 ${card.color}`}> 
+                <Icon icon={card.icon} className="text-3xl text-[#6B3F1D]" />
+              </div>
+              <h3 className="text-lg font-bold text-[#6B3F1D] tracking-wide mb-2">{card.title}</h3>
+              <p className="text-gray-700 text-base mb-2">{card.description}</p>
+              <a href={card.link} className="mt-2 text-highlight font-semibold text-sm underline underline-offset-4 hover:text-[#6B3F1D] transition-colors">Tìm hiểu thêm</a>
             </div>
-          </div>
-          <div className="w-full  md:flex-1 flex flex-col gap-3 justify-center items-center h-max">
-            <ul className="grid grid-cols-1 lg:grid-cols-2 gap-6 justify-center">
-              <li className="text-center flex gap-1 justify-center bg-highlight/80 font-primary tracking-widest px-8 w-full md:w-[200px]  flex-col items-center text-white/90 py-6">
-                <Icon icon={"hugeicons:job-search"} className="text-4xl" />
-                Cơ hội việc làm cho người nước ngoài
+          ))}
+        </div>
+      </Container>
+      <Container effect="bg-color" className="">
+        <div className="flex flex-col md:flex-row items-center gap-10">
+          {/* Left: Text and Features */}
+          <div className="flex-1 flex flex-col gap-6">
+            <h2 className="text-3xl font-bold text-highlight">Tại sao chọn iCANPR?</h2>
+            <p className="text-base text-gray-700 mb-4 max-w-lg">
+              Chúng tôi là đối tác tin cậy trên hành trình định cư Canada của bạn. Đội ngũ chuyên gia tận tâm, giải pháp toàn diện, và sự đồng hành từ A-Z giúp bạn an tâm thực hiện giấc mơ mới.
+            </p>
+            <ul className="space-y-5">
+              <li className="flex items-start gap-4 group">
+                <span className="bg-blue-100 text-highlight rounded-full p-3 shadow-md group-hover:scale-110 transition-transform">
+                  <Icon icon="mdi:briefcase-search-outline" className="text-2xl" />
+                </span>
+                <div>
+                  <span className="font-semibold text-highlight">Cơ hội việc làm đa dạng</span>
+                  <p className="text-gray-600 text-sm">Kết nối với nhiều nhà tuyển dụng uy tín tại Canada.</p>
+                </div>
               </li>
-              <li className="text-center flex gap-1 justify-center bg-background/80 font-primary tracking-widest px-8 py-6 w-full md:w-[200px]  flex-col items-center text-white/90">
-                <Icon
-                  icon={
-                    "streamline:money-graph-bar-increase-up-product-performance-increase-arrow-graph-business-chart"
-                  }
-                  className="text-4xl"
-                />
-                Thành lập doanh nghiệp tại Canada
+              <li className="flex items-start gap-4 group">
+                <span className="bg-green-100 text-highlight rounded-full p-3 shadow-md group-hover:scale-110 transition-transform">
+                  <Icon icon="mdi:domain-plus" className="text-2xl" />
+                </span>
+                <div>
+                  <span className="font-semibold text-highlight">Hỗ trợ doanh nghiệp & khởi nghiệp</span>
+                  <p className="text-gray-600 text-sm">Tư vấn thành lập doanh nghiệp, phát triển ý tưởng kinh doanh tại Canada.</p>
+                </div>
               </li>
-              <li className="text-center flex gap-1 justify-center bg-background/80  font-primary tracking-widest px-8 py-6 w-full md:w-[200px]  flex-col items-center text-white/90">
-                <Icon
-                  icon={"material-symbols:conversion-path"}
-                  className="text-4xl"
-                />
-                Lộ trình từ du học đến định cư Canada
+              <li className="flex items-start gap-4 group">
+                <span className="bg-yellow-100 text-highlight rounded-full p-3 shadow-md group-hover:scale-110 transition-transform">
+                  <Icon icon="mdi:school-outline" className="text-2xl" />
+                </span>
+                <div>
+                  <span className="font-semibold text-yellow-800">Lộ trình du học đến định cư</span>
+                  <p className="text-gray-600 text-sm">Định hướng học tập, hỗ trợ chuyển tiếp sang định cư lâu dài.</p>
+                </div>
               </li>
-              <li className="text-center flex gap-1 justify-center bg-highlight/80 font-primary tracking-widest px-8 py-6 w-full md:w-[200px]  flex-col items-center text-white/90">
-                <Icon
-                  icon={"ph:chalkboard-teacher-bold"}
-                  className="text-4xl"
-                />
-                Xử lý hồ sơ bị từ chối bởi IRCC Canada
+              <li className="flex items-start gap-4 group">
+                <span className="bg-red-100 text-highlight rounded-full p-3 shadow-md group-hover:scale-110 transition-transform">
+                  <Icon icon="mdi:account-check-outline" className="text-2xl" />
+                </span>
+                <div>
+                  <span className="font-semibold text-highlight">Xử lý hồ sơ chuyên nghiệp</span>
+                  <p className="text-gray-600 text-sm">Tư vấn, chuẩn bị và xử lý hồ sơ nhanh chóng, minh bạch.</p>
+                </div>
               </li>
             </ul>
           </div>
-        </Glass>
-      </Container>
-      <Container>
-        <Title title={"ICANPR"} subtitle="Các chương trình định cư phổ biến" />
+          {/* Right: Image */}
+          <div className="flex-1 flex flex-col justify-center items-center h-full">
+            <div className="relative w-full max-w-2xl md:max-w-3xl h-[34rem] flex items-center justify-center">
+              {/* Back image 1 */}
+              <img
+                src="/canada.jpg"
+                alt="Canada background"
+                className="absolute top-20 left-16 w-80 h-[22rem] object-cover rounded-2xl shadow-md border border-gray-200 rotate-[-8deg] z-0 transition-transform transition-shadow duration-300 hover:scale-105 hover:shadow-2xl"
+                style={{ zIndex: 0 }}
+              />
+              {/* Back image 2 */}
+              <img
+                src="/immigration.png"
+                alt="Immigration background"
+                className="absolute top-8 right-16 w-80 h-[22rem] object-cover rounded-2xl shadow-md border border-gray-200 rotate-[7deg] z-10 transition-transform transition-shadow duration-300 hover:scale-105 hover:shadow-2xl"
+                style={{ zIndex: 1 }}
+              />
+              {/* Main image */}
+              <div className="relative w-96 h-[26rem] z-20 transition-transform transition-shadow duration-300 hover:scale-105 hover:shadow-2xl">
+                {/* Badge */}
+                <div className="absolute top-4 left-4 bg-blue-600 text-white px-5 py-2 rounded-full text-base font-semibold shadow-sm">
+                  Đối tác tin cậy
+                </div>
+                <img
+                  src="/aaa.jpg"
+                  alt="Canada Success"
+                  className="w-full h-full object-cover rounded-2xl shadow-lg border border-gray-200"
+                />
+              </div>
+            </div>
+            <div className="mt-6 text-lg text-gray-500 text-center font-medium">
+              Đồng hành cùng bạn đến Canada
+            </div>
+          </div>
+        </div>
       </Container>
       <div className=" flex flex-col gap-10">
         <CTAWithImage
@@ -188,18 +218,7 @@ export default function About() {
         />
       </div>
       <CTADefault
-        title="Chúng tôi có thể giúp bạn
-"
-        subtitle={
-          <p className="text-lg text-white/90">
-            iCan PR hiểu rằng di trú/ định cư tại Canada là một hành trình nhiều
-            thay đổi và thách thức.
-            <br /> Mục tiêu và nhiệm vụ của chúng tôi trở thành đối tác đáng tin
-            cậy của bạn trong hành trình này. Chúng tôi mong <br />
-            muốn giúp bạn hiện thực hóa ước mơ định cư Canada, sẳn sàng chào đón
-            những cơ hội mới tại đây.
-          </p>
-        }
+        title="Chúng tôi có thể giúp bạn"
         image={"service"}
       />
     </>

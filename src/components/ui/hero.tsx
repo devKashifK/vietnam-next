@@ -33,7 +33,6 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, [images.length]);
 
-  console.log(images);
 
   return (
     <div className="flex flex-col gap-2 w-full">
