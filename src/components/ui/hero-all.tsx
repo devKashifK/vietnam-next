@@ -33,24 +33,22 @@ export default function HeroDefault({
   // console.log(displayImage, getCachedData(lastPath), "checkMedia2333");
 
   return (
-    <div
-      className="flex flex-col gap-2 mx-auto bg-center relative bg-cover aspect-square  w-full  h-[90vh]"
-      style={{
-        backgroundImage: `url(${data?.image})`,
-        backgroundPosition: "start",
-      }}
-    >
-      <div className="relative ">
+    <div>
         <Navbar defaultStyle={true} />
-        <div className="flex justify-center items-center w-full h-[55vh] mt-10">
-          <div
-            className=" bg-black bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 h-max px-6 text-6xl py-6 flex justify-center items-center font-primary tracking-widest text-white lg:mt-0 mt-[6rem] text-center"
-            dangerouslySetInnerHTML={{ __html: data?.text }}
-          />
-        </div>
-      </div>
-      <div className="absolute  bg-highlight bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 w-full py-1 bottom-0 px-12  flex justify-start items-center gap-2 cursor-pointer">
-        <Link
+    <div
+className="relative min-h-[28.75rem] xsm:min-h-[10.75rem] xsm:mt-[3.75rem] overflow-hidden pt-[3.75rem] sm:min-h-[36.45rem] sm:pt-[6.44rem]"
+    >
+      <img alt="" draggable="false" loading="lazy" width="3200" height="956" decoding="async" data-nimg="1" className="absolute inset-0 h-full w-full object-cover" src={data?.image} style={{color : "transparent"}} />
+
+
+            <div className="absolute inset-0 h-full w-full bg-black/30"></div>
+            <div className="absolute inset-0 h-full w-full bg-[linear-gradient(26deg,rgba(0,0,0,0.30)_-19.37%,rgba(0,0,0,0.00)_128.25%)]"></div>
+
+        <div className="z-1 relative mx-auto flex max-w-full flex-col  sm:max-w-[90rem] sm:flex-col sm:flex-wrap sm:px-0 mt-[3.94rem] sm:mt-[1.5rem ">
+          <div className="px-20 flex flex-col gap-5">
+          <div className="flex flex-col gap-2">
+            <div className="flex flex-row justify-start items-center gap-3">
+          <Link
           // to={"/"}
           href={"/"}
           className="text-white/60 uppercase font-primary tracking-widest"
@@ -64,8 +62,21 @@ export default function HeroDefault({
         <span className="text-white relative  font-bold uppercase font-primary tracking-widest">
           {lastPath}
         </span>
+        </div>
+        <div className="bg-white/40 w-[250px] h-[1px]"></div>
+
+          </div>
+          <div
+            className=" text-[2.375rem] font-medium leading-[1.2] tracking-[-0.0475rem] text-white sm:text-[5rem] sm:tracking-[-0.1rem]"
+            dangerouslySetInnerHTML={{ __html: data?.text }}
+          />
+          </div>
+        </div>
       </div>
-      {/* </div> */}
-    </div>
+      {/* <div className="absolute  bg-highlight bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 w-full py-1 bottom-0 px-12  flex justify-start items-center gap-2 cursor-pointer">
+      
+      </div> */}
+      </div>
+
   );
 }

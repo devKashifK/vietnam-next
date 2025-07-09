@@ -15,6 +15,7 @@ export const NewsFeedCard = ({
   description,
   id,
   slug,
+  variant,
 }: {
   image?: string;
   title?: string;
@@ -23,7 +24,44 @@ export const NewsFeedCard = ({
   description?: string;
   id?: string;
   slug?: string;
+  variant?: 'showcase';
 }) => {
+  if (variant === 'showcase') {
+    return (
+      <div className="w-full h-full">
+        <div className="relative rounded-xl overflow-hidden group shadow-lg h-[450px] flex flex-col justify-end">
+          <img
+            src={image ? image : getRandomImage()}
+            className="object-cover w-full h-full absolute inset-0 z-0 group-hover:scale-105 transition-transform duration-300"
+            alt={title}
+          />
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black-40 z-10" />
+          {/* Top-right arrow button */}
+          <Link
+            href={`/tin-tuc/${slug}`}
+            className="absolute top-4 right-4 z-20 bg-white rounded-xl p-2 shadow-md hover:bg-[#B33D3D] hover:text-white transition-colors"
+            aria-label="Xem chi tiết"
+          >
+            <Icon icon="mdi:arrow-top-right" className="text-2xl" />
+          </Link>
+          {/* Content at bottom */}
+          <div className="relative z-20 p-6 flex flex-col gap-3">
+            <h2 className="text-white text-lg font-semibold leading-tight mb-2 line-clamp-2 drop-shadow-lg">
+              {title}
+            </h2>
+            {/* Date */}
+            <div className="flex items-center gap-2 text-white/90 text-base">
+              <Icon icon="mdi:calendar" className="text-lg" />
+              <span>{date}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Default style
   return (
     <div className="w-full h-full">
       <div className="flex flex-col hover:shadow-xl transition-all duration-150 ease-in-out border border-slate-400 cursor-pointer">
@@ -33,11 +71,6 @@ export const NewsFeedCard = ({
             className="object-cover w-full h-52"
             alt={title}
           />
-
-          {/* <span className="bg-red-600 text-slate-50 h-14 w-14 flex flex-col justify-center items-center rounded-full text-wrap absolute right-4 top-4 text-sm font-bold">
-            <span>14</span>
-            <span className="">AUG</span>
-          </span> */}
         </div>
         <div
           className="px-10 flex flex-col gap-6 h-[320px] py-8 bg-content justify-between 
@@ -48,11 +81,6 @@ export const NewsFeedCard = ({
             <p className="text-2xl text-wrap text-black/60 font-semibold text-left line-clamp-2">
               {title}
             </p>
-            {/* {subTitle && (
-            <h5 className="text-lg font-normal text-red-600 text-left pb-3">
-              {subTitle}
-            </h5>
-          )} */}
             {description && (
               <p
                 dangerouslySetInnerHTML={{
@@ -70,12 +98,6 @@ export const NewsFeedCard = ({
               />
               <span className="text-black/60">{date}</span>
             </div>
-            {/* <Icon
-                icon={"carbon:chat"}
-                className="text-center text-black/60 mt-0.5"
-              />
-              <span className="text-black/60">Author : {author}</span>
-            </div> */}
             <div className="pb-6">
               <Link
                 href={`/tin-tuc/${slug}`}

@@ -10,11 +10,11 @@ import WhyChooseUs from "@/components/ui/why-choose-us";
 import Glass from "@/lib/helpers";
 import React from "react";
 import CountUp from "react-countup";
-import NewsShowcase from "./(pages)/news.tsx/news-showcase";
 import Title from "@/components/ui/Title";
 import OurService from "@/components/ui/hom-service";
 import { CardWithImage } from "@/components/ui/card-with-image";
 import { OverlaySection } from "@/components/ui/overlay-section";
+import NewsShowcase from "@/components/ui/news-showcase";
 
 export default function Home() {
   return (
@@ -79,6 +79,7 @@ export default function Home() {
           />
         </Container>
         <TestimonialsSection />
+        <NewsShowcase />
         <CTADefault
           image="/service.jpg"
           title="Chúng tôi có thể giúp bạn"
